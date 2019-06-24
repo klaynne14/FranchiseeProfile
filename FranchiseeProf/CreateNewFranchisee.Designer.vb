@@ -32,7 +32,7 @@ Partial Class pnlMain
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.pnlInfo = New System.Windows.Forms.Panel()
         Me.btnSubmitFranchisee = New System.Windows.Forms.Button()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.lblBranch = New System.Windows.Forms.Label()
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.cbStatus = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -49,7 +49,7 @@ Partial Class pnlMain
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
         Me.txtFName = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -159,7 +159,7 @@ Partial Class pnlMain
         '
         Me.pnlInfo.Controls.Add(Me.dgvUserProfile)
         Me.pnlInfo.Controls.Add(Me.btnSubmitFranchisee)
-        Me.pnlInfo.Controls.Add(Me.Label19)
+        Me.pnlInfo.Controls.Add(Me.lblBranch)
         Me.pnlInfo.Controls.Add(Me.lblStatus)
         Me.pnlInfo.Controls.Add(Me.cbStatus)
         Me.pnlInfo.Controls.Add(Me.Label17)
@@ -176,7 +176,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.Label11)
         Me.pnlInfo.Controls.Add(Me.btnAddNewFranchisee)
         Me.pnlInfo.Controls.Add(Me.txtFName)
-        Me.pnlInfo.Controls.Add(Me.Label13)
+        Me.pnlInfo.Controls.Add(Me.lblPersoInfo)
         Me.pnlInfo.Controls.Add(Me.pbUserProfile)
         Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.pnlInfo.Location = New System.Drawing.Point(375, 15)
@@ -196,16 +196,16 @@ Partial Class pnlMain
         Me.btnSubmitFranchisee.Text = "Submit"
         Me.btnSubmitFranchisee.UseVisualStyleBackColor = False
         '
-        'Label19
+        'lblBranch
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label19.Location = New System.Drawing.Point(118, 328)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(70, 18)
-        Me.Label19.TabIndex = 33
-        Me.Label19.Text = "Branch"
+        Me.lblBranch.AutoSize = True
+        Me.lblBranch.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBranch.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblBranch.Location = New System.Drawing.Point(118, 328)
+        Me.lblBranch.Name = "lblBranch"
+        Me.lblBranch.Size = New System.Drawing.Size(70, 18)
+        Me.lblBranch.TabIndex = 33
+        Me.lblBranch.Text = "Branch"
         '
         'lblStatus
         '
@@ -281,6 +281,8 @@ Partial Class pnlMain
         '
         'dtpFranchise
         '
+        Me.dtpFranchise.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText
+        Me.dtpFranchise.CalendarTitleForeColor = System.Drawing.Color.DimGray
         Me.dtpFranchise.Location = New System.Drawing.Point(277, 252)
         Me.dtpFranchise.Name = "dtpFranchise"
         Me.dtpFranchise.Size = New System.Drawing.Size(221, 21)
@@ -370,16 +372,16 @@ Partial Class pnlMain
         Me.txtFName.Size = New System.Drawing.Size(167, 24)
         Me.txtFName.TabIndex = 9
         '
-        'Label13
+        'lblPersoInfo
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label13.Location = New System.Drawing.Point(118, 102)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(195, 18)
-        Me.Label13.TabIndex = 6
-        Me.Label13.Text = "Personal Information"
+        Me.lblPersoInfo.AutoSize = True
+        Me.lblPersoInfo.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPersoInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblPersoInfo.Location = New System.Drawing.Point(118, 102)
+        Me.lblPersoInfo.Name = "lblPersoInfo"
+        Me.lblPersoInfo.Size = New System.Drawing.Size(195, 18)
+        Me.lblPersoInfo.TabIndex = 6
+        Me.lblPersoInfo.Text = "Personal Information"
         '
         'pbUserProfile
         '
@@ -580,7 +582,7 @@ Partial Class pnlMain
     Friend WithEvents pnlInfo As Panel
     Friend WithEvents pbUserProfile As PictureBox
     Friend WithEvents txtFName As TextBox
-    Friend WithEvents Label13 As Label
+    Friend WithEvents lblPersoInfo As Label
     Friend WithEvents btnAddNewFranchisee As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Label17 As Label
@@ -597,7 +599,7 @@ Partial Class pnlMain
     Friend WithEvents lblStatus As Label
     Friend WithEvents cbStatus As ComboBox
     Friend WithEvents btnSubmitFranchisee As Button
-    Friend WithEvents Label19 As Label
+    Friend WithEvents lblBranch As Label
     Friend WithEvents dgvUserProfile As DataGridView
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
