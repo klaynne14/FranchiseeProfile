@@ -75,10 +75,6 @@
     <Compile Include="Add New Branch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewFranchisee.Designer.vb">
-      <DependentUpon>CreateNewFranchisee.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CreateNewFranchisee.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -86,10 +82,10 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.vb">
-      <DependentUpon>Main.vb</DependentUpon>
+    <Compile Include="CreateNewFranchisee.Designer.vb">
+      <DependentUpon>CreateNewFranchisee.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main.vb">
+    <Compile Include="CreateNewFranchisee.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -114,9 +110,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateNewFranchisee.resx">
       <DependentUpon>CreateNewFranchisee.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
