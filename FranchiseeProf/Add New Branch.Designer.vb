@@ -27,15 +27,16 @@ Partial Class Add_New_Branch
         Me.pnlBorderRight = New System.Windows.Forms.Panel()
         Me.pnlBorderLeft = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.btnAddNew = New System.Windows.Forms.Button()
+        Me.pnlFranchiseTerm = New System.Windows.Forms.Panel()
+        Me.lblFranchiseTerm = New System.Windows.Forms.Label()
+        Me.cbStatus = New System.Windows.Forms.ComboBox()
+        Me.cbBranch = New System.Windows.Forms.ComboBox()
+        Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.pnlBorderLeft.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.pnlFranchiseTerm.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlBorderTop
@@ -74,79 +75,90 @@ Partial Class Add_New_Branch
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.ComboBox3)
-        Me.Panel1.Controls.Add(Me.ComboBox2)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.btnAddNew)
+        Me.Panel1.Controls.Add(Me.pnlFranchiseTerm)
+        Me.Panel1.Controls.Add(Me.cbStatus)
+        Me.Panel1.Controls.Add(Me.cbBranch)
+        Me.Panel1.Controls.Add(Me.cbBusinessUnit)
         Me.Panel1.Location = New System.Drawing.Point(6, 45)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(410, 162)
         Me.Panel1.TabIndex = 3
         '
-        'Button3
+        'btnAddNew
         '
-        Me.Button3.BackColor = System.Drawing.Color.SkyBlue
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button3.Location = New System.Drawing.Point(318, 118)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(71, 30)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "Add New"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnAddNew.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnAddNew.Location = New System.Drawing.Point(318, 118)
+        Me.btnAddNew.Name = "btnAddNew"
+        Me.btnAddNew.Size = New System.Drawing.Size(71, 30)
+        Me.btnAddNew.TabIndex = 17
+        Me.btnAddNew.Text = "Add New"
+        Me.btnAddNew.UseVisualStyleBackColor = False
         '
-        'Panel2
+        'pnlFranchiseTerm
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.Window
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(31, 65)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(136, 21)
-        Me.Panel2.TabIndex = 3
+        Me.pnlFranchiseTerm.BackColor = System.Drawing.SystemColors.Window
+        Me.pnlFranchiseTerm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlFranchiseTerm.Controls.Add(Me.lblFranchiseTerm)
+        Me.pnlFranchiseTerm.Location = New System.Drawing.Point(31, 65)
+        Me.pnlFranchiseTerm.Name = "pnlFranchiseTerm"
+        Me.pnlFranchiseTerm.Size = New System.Drawing.Size(136, 21)
+        Me.pnlFranchiseTerm.TabIndex = 3
         '
-        'Label1
+        'lblFranchiseTerm
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.Window
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(3, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Franchise Term"
+        Me.lblFranchiseTerm.AutoSize = True
+        Me.lblFranchiseTerm.BackColor = System.Drawing.SystemColors.Window
+        Me.lblFranchiseTerm.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFranchiseTerm.ForeColor = System.Drawing.Color.DimGray
+        Me.lblFranchiseTerm.Location = New System.Drawing.Point(3, 3)
+        Me.lblFranchiseTerm.Name = "lblFranchiseTerm"
+        Me.lblFranchiseTerm.Size = New System.Drawing.Size(94, 13)
+        Me.lblFranchiseTerm.TabIndex = 0
+        Me.lblFranchiseTerm.Text = "Franchise Term"
         '
-        'ComboBox3
+        'cbStatus
         '
-        Me.ComboBox3.ForeColor = System.Drawing.Color.DimGray
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(226, 65)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(101, 21)
-        Me.ComboBox3.TabIndex = 2
-        Me.ComboBox3.Text = "Status"
+        Me.cbStatus.ForeColor = System.Drawing.Color.DimGray
+        Me.cbStatus.FormattingEnabled = True
+        Me.cbStatus.Location = New System.Drawing.Point(226, 65)
+        Me.cbStatus.Name = "cbStatus"
+        Me.cbStatus.Size = New System.Drawing.Size(101, 21)
+        Me.cbStatus.TabIndex = 2
+        Me.cbStatus.Text = "Status"
         '
-        'ComboBox2
+        'cbBranch
         '
-        Me.ComboBox2.ForeColor = System.Drawing.Color.DimGray
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(226, 26)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(163, 21)
-        Me.ComboBox2.TabIndex = 1
-        Me.ComboBox2.Text = "Branch"
+        Me.cbBranch.ForeColor = System.Drawing.Color.DimGray
+        Me.cbBranch.FormattingEnabled = True
+        Me.cbBranch.Location = New System.Drawing.Point(226, 26)
+        Me.cbBranch.Name = "cbBranch"
+        Me.cbBranch.Size = New System.Drawing.Size(163, 21)
+        Me.cbBranch.TabIndex = 1
+        Me.cbBranch.Text = "Branch"
         '
-        'ComboBox1
+        'cbBusinessUnit
         '
-        Me.ComboBox1.ForeColor = System.Drawing.Color.DimGray
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(30, 26)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(155, 21)
-        Me.ComboBox1.TabIndex = 0
-        Me.ComboBox1.Text = "Business Unit"
+        Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
+        Me.cbBusinessUnit.FormattingEnabled = True
+        Me.cbBusinessUnit.Location = New System.Drawing.Point(30, 26)
+        Me.cbBusinessUnit.Name = "cbBusinessUnit"
+        Me.cbBusinessUnit.Size = New System.Drawing.Size(155, 21)
+        Me.cbBusinessUnit.TabIndex = 0
+        Me.cbBusinessUnit.Text = "Business Unit"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label2.Location = New System.Drawing.Point(18, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(141, 18)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Add New Branch"
         '
         'Add_New_Branch
         '
@@ -154,6 +166,7 @@ Partial Class Add_New_Branch
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SkyBlue
         Me.ClientSize = New System.Drawing.Size(423, 215)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlBorderBottom)
         Me.Controls.Add(Me.pnlBorderTop)
@@ -164,9 +177,10 @@ Partial Class Add_New_Branch
         Me.Text = "Add_New_Branch"
         Me.pnlBorderLeft.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.pnlFranchiseTerm.ResumeLayout(False)
+        Me.pnlFranchiseTerm.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents pnlBorderTop As Panel
@@ -174,10 +188,11 @@ Partial Class Add_New_Branch
     Friend WithEvents pnlBorderRight As Panel
     Friend WithEvents pnlBorderLeft As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button3 As Button
+    Friend WithEvents pnlFranchiseTerm As Panel
+    Friend WithEvents lblFranchiseTerm As Label
+    Friend WithEvents cbStatus As ComboBox
+    Friend WithEvents cbBranch As ComboBox
+    Friend WithEvents cbBusinessUnit As ComboBox
+    Friend WithEvents btnAddNew As Button
+    Friend WithEvents Label2 As Label
 End Class
