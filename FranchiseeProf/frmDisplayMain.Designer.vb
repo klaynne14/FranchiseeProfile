@@ -63,21 +63,7 @@ Partial Class pnlMain
         Me.dgvUserProfile = New System.Windows.Forms.DataGridView()
         Me.btnSubmitFranchisee = New System.Windows.Forms.Button()
         Me.lblBranch = New System.Windows.Forms.Label()
-        Me.lblStatus = New System.Windows.Forms.Label()
-        Me.cbStatus = New System.Windows.Forms.ComboBox()
-        Me.lblContact = New System.Windows.Forms.Label()
-        Me.lblAddress = New System.Windows.Forms.Label()
-        Me.lblEmail = New System.Windows.Forms.Label()
-        Me.lblLName = New System.Windows.Forms.Label()
-        Me.lblFName = New System.Windows.Forms.Label()
-        Me.txtContact = New System.Windows.Forms.TextBox()
-        Me.txtAddress = New System.Windows.Forms.TextBox()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.txtLName = New System.Windows.Forms.TextBox()
-        Me.lblCreateNewFr = New System.Windows.Forms.Label()
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
-        Me.txtFName = New System.Windows.Forms.TextBox()
-        Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -515,21 +501,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.dgvUserProfile)
         Me.pnlInfo.Controls.Add(Me.btnSubmitFranchisee)
         Me.pnlInfo.Controls.Add(Me.lblBranch)
-        Me.pnlInfo.Controls.Add(Me.lblStatus)
-        Me.pnlInfo.Controls.Add(Me.cbStatus)
-        Me.pnlInfo.Controls.Add(Me.lblContact)
-        Me.pnlInfo.Controls.Add(Me.lblAddress)
-        Me.pnlInfo.Controls.Add(Me.lblEmail)
-        Me.pnlInfo.Controls.Add(Me.lblLName)
-        Me.pnlInfo.Controls.Add(Me.lblFName)
-        Me.pnlInfo.Controls.Add(Me.txtContact)
-        Me.pnlInfo.Controls.Add(Me.txtAddress)
-        Me.pnlInfo.Controls.Add(Me.txtEmail)
-        Me.pnlInfo.Controls.Add(Me.txtLName)
-        Me.pnlInfo.Controls.Add(Me.lblCreateNewFr)
         Me.pnlInfo.Controls.Add(Me.btnAddNewFranchisee)
-        Me.pnlInfo.Controls.Add(Me.txtFName)
-        Me.pnlInfo.Controls.Add(Me.lblPersoInfo)
         Me.pnlInfo.Controls.Add(Me.pbUserProfile)
         Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.pnlInfo.Location = New System.Drawing.Point(375, 15)
@@ -568,128 +540,6 @@ Partial Class pnlMain
         Me.lblBranch.TabIndex = 33
         Me.lblBranch.Text = "Branch"
         '
-        'lblStatus
-        '
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(274, 233)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(43, 13)
-        Me.lblStatus.TabIndex = 32
-        Me.lblStatus.Text = "Status"
-        '
-        'cbStatus
-        '
-        Me.cbStatus.FormattingEnabled = True
-        Me.cbStatus.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.cbStatus.Location = New System.Drawing.Point(277, 249)
-        Me.cbStatus.Name = "cbStatus"
-        Me.cbStatus.Size = New System.Drawing.Size(93, 21)
-        Me.cbStatus.TabIndex = 31
-        '
-        'lblContact
-        '
-        Me.lblContact.AutoSize = True
-        Me.lblContact.Location = New System.Drawing.Point(639, 186)
-        Me.lblContact.Name = "lblContact"
-        Me.lblContact.Size = New System.Drawing.Size(74, 13)
-        Me.lblContact.TabIndex = 29
-        Me.lblContact.Text = "Contact No."
-        '
-        'lblAddress
-        '
-        Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(274, 186)
-        Me.lblAddress.Name = "lblAddress"
-        Me.lblAddress.Size = New System.Drawing.Size(53, 13)
-        Me.lblAddress.TabIndex = 28
-        Me.lblAddress.Text = "Address"
-        '
-        'lblEmail
-        '
-        Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(639, 139)
-        Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(38, 13)
-        Me.lblEmail.TabIndex = 27
-        Me.lblEmail.Text = "Email"
-        '
-        'lblLName
-        '
-        Me.lblLName.AutoSize = True
-        Me.lblLName.Location = New System.Drawing.Point(455, 139)
-        Me.lblLName.Name = "lblLName"
-        Me.lblLName.Size = New System.Drawing.Size(67, 13)
-        Me.lblLName.TabIndex = 26
-        Me.lblLName.Text = "Last Name"
-        '
-        'lblFName
-        '
-        Me.lblFName.AutoSize = True
-        Me.lblFName.Location = New System.Drawing.Point(274, 139)
-        Me.lblFName.Name = "lblFName"
-        Me.lblFName.Size = New System.Drawing.Size(68, 13)
-        Me.lblFName.TabIndex = 25
-        Me.lblFName.Text = "First Name"
-        '
-        'txtContact
-        '
-        Me.txtContact.BackColor = System.Drawing.SystemColors.Window
-        Me.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtContact.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContact.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtContact.Location = New System.Drawing.Point(642, 202)
-        Me.txtContact.MaxLength = 32
-        Me.txtContact.Name = "txtContact"
-        Me.txtContact.Size = New System.Drawing.Size(167, 24)
-        Me.txtContact.TabIndex = 22
-        '
-        'txtAddress
-        '
-        Me.txtAddress.BackColor = System.Drawing.SystemColors.Window
-        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAddress.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAddress.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtAddress.Location = New System.Drawing.Point(277, 202)
-        Me.txtAddress.MaxLength = 64
-        Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(348, 24)
-        Me.txtAddress.TabIndex = 21
-        '
-        'txtEmail
-        '
-        Me.txtEmail.BackColor = System.Drawing.SystemColors.Window
-        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtEmail.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtEmail.Location = New System.Drawing.Point(642, 155)
-        Me.txtEmail.MaxLength = 32
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(167, 24)
-        Me.txtEmail.TabIndex = 20
-        '
-        'txtLName
-        '
-        Me.txtLName.BackColor = System.Drawing.SystemColors.Window
-        Me.txtLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLName.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLName.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtLName.Location = New System.Drawing.Point(458, 155)
-        Me.txtLName.MaxLength = 32
-        Me.txtLName.Name = "txtLName"
-        Me.txtLName.Size = New System.Drawing.Size(167, 24)
-        Me.txtLName.TabIndex = 19
-        '
-        'lblCreateNewFr
-        '
-        Me.lblCreateNewFr.AutoSize = True
-        Me.lblCreateNewFr.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCreateNewFr.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblCreateNewFr.Location = New System.Drawing.Point(32, 29)
-        Me.lblCreateNewFr.Name = "lblCreateNewFr"
-        Me.lblCreateNewFr.Size = New System.Drawing.Size(283, 25)
-        Me.lblCreateNewFr.TabIndex = 18
-        Me.lblCreateNewFr.Text = "Create New Franchisee"
-        '
         'btnAddNewFranchisee
         '
         Me.btnAddNewFranchisee.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
@@ -702,35 +552,11 @@ Partial Class pnlMain
         Me.btnAddNewFranchisee.Text = "Add New"
         Me.btnAddNewFranchisee.UseVisualStyleBackColor = False
         '
-        'txtFName
-        '
-        Me.txtFName.BackColor = System.Drawing.SystemColors.Window
-        Me.txtFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFName.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFName.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtFName.Location = New System.Drawing.Point(277, 155)
-        Me.txtFName.MaxLength = 32
-        Me.txtFName.Name = "txtFName"
-        Me.txtFName.Size = New System.Drawing.Size(167, 24)
-        Me.txtFName.TabIndex = 9
-        '
-        'lblPersoInfo
-        '
-        Me.lblPersoInfo.AutoSize = True
-        Me.lblPersoInfo.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPersoInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblPersoInfo.Location = New System.Drawing.Point(118, 102)
-        Me.lblPersoInfo.Name = "lblPersoInfo"
-        Me.lblPersoInfo.Size = New System.Drawing.Size(195, 18)
-        Me.lblPersoInfo.TabIndex = 6
-        Me.lblPersoInfo.Text = "Personal Information"
-        '
         'pbUserProfile
         '
         Me.pbUserProfile.BackColor = System.Drawing.Color.Gainsboro
-        Me.pbUserProfile.Image = CType(resources.GetObject("pbUserProfile.Image"), System.Drawing.Image)
         Me.pbUserProfile.InitialImage = Nothing
-        Me.pbUserProfile.Location = New System.Drawing.Point(121, 139)
+        Me.pbUserProfile.Location = New System.Drawing.Point(54, 139)
         Me.pbUserProfile.Name = "pbUserProfile"
         Me.pbUserProfile.Size = New System.Drawing.Size(115, 115)
         Me.pbUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -950,21 +776,7 @@ Partial Class pnlMain
     Friend WithEvents dgvUserProfile As DataGridView
     Friend WithEvents btnSubmitFranchisee As Button
     Friend WithEvents lblBranch As Label
-    Friend WithEvents lblStatus As Label
-    Friend WithEvents cbStatus As ComboBox
-    Friend WithEvents lblContact As Label
-    Friend WithEvents lblAddress As Label
-    Friend WithEvents lblEmail As Label
-    Friend WithEvents lblLName As Label
-    Friend WithEvents lblFName As Label
-    Friend WithEvents txtContact As TextBox
-    Friend WithEvents txtAddress As TextBox
-    Friend WithEvents txtEmail As TextBox
-    Friend WithEvents txtLName As TextBox
-    Friend WithEvents lblCreateNewFr As Label
     Friend WithEvents btnAddNewFranchisee As Button
-    Friend WithEvents txtFName As TextBox
-    Friend WithEvents lblPersoInfo As Label
     Friend WithEvents pbUserProfile As PictureBox
     Friend WithEvents tcProd As TabPage
     Friend WithEvents Panel1 As Panel
