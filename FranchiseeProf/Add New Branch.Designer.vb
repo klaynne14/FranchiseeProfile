@@ -28,15 +28,19 @@ Partial Class Add_New_Branch
         Me.pnlBorderLeft = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnAddNew = New System.Windows.Forms.Button()
-        Me.pnlFranchiseTerm = New System.Windows.Forms.Panel()
-        Me.lblFranchiseTerm = New System.Windows.Forms.Label()
         Me.cbStatus = New System.Windows.Forms.ComboBox()
         Me.cbBranch = New System.Windows.Forms.ComboBox()
         Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.dtpStartTerm = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEndTerm = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.pnlBorderLeft.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.pnlFranchiseTerm.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlBorderTop
@@ -75,79 +79,60 @@ Partial Class Add_New_Branch
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.dtpEndTerm)
+        Me.Panel1.Controls.Add(Me.dtpStartTerm)
         Me.Panel1.Controls.Add(Me.btnAddNew)
-        Me.Panel1.Controls.Add(Me.pnlFranchiseTerm)
         Me.Panel1.Controls.Add(Me.cbStatus)
         Me.Panel1.Controls.Add(Me.cbBranch)
         Me.Panel1.Controls.Add(Me.cbBusinessUnit)
         Me.Panel1.Location = New System.Drawing.Point(6, 45)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(410, 162)
+        Me.Panel1.Size = New System.Drawing.Size(446, 198)
         Me.Panel1.TabIndex = 3
         '
         'btnAddNew
         '
-        Me.btnAddNew.BackColor = System.Drawing.Color.SkyBlue
+        Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNew.Location = New System.Drawing.Point(318, 118)
+        Me.btnAddNew.Location = New System.Drawing.Point(328, 147)
         Me.btnAddNew.Name = "btnAddNew"
-        Me.btnAddNew.Size = New System.Drawing.Size(71, 30)
+        Me.btnAddNew.Size = New System.Drawing.Size(86, 30)
         Me.btnAddNew.TabIndex = 17
         Me.btnAddNew.Text = "Add New"
         Me.btnAddNew.UseVisualStyleBackColor = False
-        '
-        'pnlFranchiseTerm
-        '
-        Me.pnlFranchiseTerm.BackColor = System.Drawing.SystemColors.Window
-        Me.pnlFranchiseTerm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlFranchiseTerm.Controls.Add(Me.lblFranchiseTerm)
-        Me.pnlFranchiseTerm.Location = New System.Drawing.Point(31, 65)
-        Me.pnlFranchiseTerm.Name = "pnlFranchiseTerm"
-        Me.pnlFranchiseTerm.Size = New System.Drawing.Size(136, 21)
-        Me.pnlFranchiseTerm.TabIndex = 3
-        '
-        'lblFranchiseTerm
-        '
-        Me.lblFranchiseTerm.AutoSize = True
-        Me.lblFranchiseTerm.BackColor = System.Drawing.SystemColors.Window
-        Me.lblFranchiseTerm.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFranchiseTerm.ForeColor = System.Drawing.Color.DimGray
-        Me.lblFranchiseTerm.Location = New System.Drawing.Point(3, 3)
-        Me.lblFranchiseTerm.Name = "lblFranchiseTerm"
-        Me.lblFranchiseTerm.Size = New System.Drawing.Size(94, 13)
-        Me.lblFranchiseTerm.TabIndex = 0
-        Me.lblFranchiseTerm.Text = "Franchise Term"
         '
         'cbStatus
         '
         Me.cbStatus.ForeColor = System.Drawing.Color.DimGray
         Me.cbStatus.FormattingEnabled = True
-        Me.cbStatus.Location = New System.Drawing.Point(226, 65)
+        Me.cbStatus.Location = New System.Drawing.Point(32, 147)
         Me.cbStatus.Name = "cbStatus"
         Me.cbStatus.Size = New System.Drawing.Size(101, 21)
         Me.cbStatus.TabIndex = 2
-        Me.cbStatus.Text = "Status"
         '
         'cbBranch
         '
         Me.cbBranch.ForeColor = System.Drawing.Color.DimGray
         Me.cbBranch.FormattingEnabled = True
-        Me.cbBranch.Location = New System.Drawing.Point(226, 26)
+        Me.cbBranch.Location = New System.Drawing.Point(234, 42)
         Me.cbBranch.Name = "cbBranch"
-        Me.cbBranch.Size = New System.Drawing.Size(163, 21)
+        Me.cbBranch.Size = New System.Drawing.Size(180, 21)
         Me.cbBranch.TabIndex = 1
-        Me.cbBranch.Text = "Branch"
         '
         'cbBusinessUnit
         '
         Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
         Me.cbBusinessUnit.FormattingEnabled = True
-        Me.cbBusinessUnit.Location = New System.Drawing.Point(30, 26)
+        Me.cbBusinessUnit.Location = New System.Drawing.Point(31, 42)
         Me.cbBusinessUnit.Name = "cbBusinessUnit"
-        Me.cbBusinessUnit.Size = New System.Drawing.Size(155, 21)
+        Me.cbBusinessUnit.Size = New System.Drawing.Size(180, 21)
         Me.cbBusinessUnit.TabIndex = 0
-        Me.cbBusinessUnit.Text = "Business Unit"
         '
         'Label2
         '
@@ -160,12 +145,73 @@ Partial Class Add_New_Branch
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Add New Branch"
         '
+        'dtpStartTerm
+        '
+        Me.dtpStartTerm.Location = New System.Drawing.Point(31, 93)
+        Me.dtpStartTerm.Name = "dtpStartTerm"
+        Me.dtpStartTerm.Size = New System.Drawing.Size(180, 20)
+        Me.dtpStartTerm.TabIndex = 18
+        '
+        'dtpEndTerm
+        '
+        Me.dtpEndTerm.CustomFormat = ""
+        Me.dtpEndTerm.Location = New System.Drawing.Point(234, 93)
+        Me.dtpEndTerm.Name = "dtpEndTerm"
+        Me.dtpEndTerm.Size = New System.Drawing.Size(180, 20)
+        Me.dtpEndTerm.TabIndex = 19
+        Me.dtpEndTerm.Value = New Date(2019, 6, 25, 0, 0, 0, 0)
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(28, 77)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(105, 13)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "Franchise Start Term"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(231, 77)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(102, 13)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "Franchise End Term"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(28, 26)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 13)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Business Unit"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(231, 26)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(41, 13)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Branch"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(29, 131)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(37, 13)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "Status"
+        '
         'Add_New_Branch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.SkyBlue
-        Me.ClientSize = New System.Drawing.Size(423, 215)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(460, 255)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlBorderBottom)
@@ -177,8 +223,7 @@ Partial Class Add_New_Branch
         Me.Text = "Add_New_Branch"
         Me.pnlBorderLeft.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.pnlFranchiseTerm.ResumeLayout(False)
-        Me.pnlFranchiseTerm.PerformLayout()
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -188,11 +233,16 @@ Partial Class Add_New_Branch
     Friend WithEvents pnlBorderRight As Panel
     Friend WithEvents pnlBorderLeft As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents pnlFranchiseTerm As Panel
-    Friend WithEvents lblFranchiseTerm As Label
     Friend WithEvents cbStatus As ComboBox
     Friend WithEvents cbBranch As ComboBox
     Friend WithEvents cbBusinessUnit As ComboBox
     Friend WithEvents btnAddNew As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents dtpEndTerm As DateTimePicker
+    Friend WithEvents dtpStartTerm As DateTimePicker
+    Friend WithEvents Label6 As Label
 End Class
