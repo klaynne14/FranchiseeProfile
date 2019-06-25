@@ -24,18 +24,36 @@ Partial Class pnlMain
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pnlMain))
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.pbMainLogo = New System.Windows.Forms.PictureBox()
+        Me.lblMainHeader1 = New System.Windows.Forms.Label()
+        Me.lblMainHeader2 = New System.Windows.Forms.Label()
+        Me.pnlBackdrop = New System.Windows.Forms.Panel()
+        Me.tcFranchisee = New System.Windows.Forms.TabControl()
+        Me.tcDMS = New System.Windows.Forms.TabPage()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.tcFranchiseProf = New System.Windows.Forms.TabPage()
+        Me.pnlUPDash = New System.Windows.Forms.Panel()
+        Me.lvUserProfile = New System.Windows.Forms.ListView()
+        Me.pnlUPHeader = New System.Windows.Forms.Panel()
+        Me.btnCreateNew = New System.Windows.Forms.Button()
+        Me.btnPrintSel = New System.Windows.Forms.Button()
+        Me.btnDownload = New System.Windows.Forms.Button()
+        Me.lblSearch = New System.Windows.Forms.Label()
+        Me.txtSearchBar = New System.Windows.Forms.TextBox()
+        Me.pnlUPStatus = New System.Windows.Forms.Panel()
+        Me.lblUPStatus = New System.Windows.Forms.Label()
+        Me.lblStatDiv = New System.Windows.Forms.Label()
+        Me.lblRowCount = New System.Windows.Forms.Label()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.dgvUserProfile = New System.Windows.Forms.DataGridView()
         Me.btnSubmitFranchisee = New System.Windows.Forms.Button()
         Me.lblBranch = New System.Windows.Forms.Label()
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.cbStatus = New System.Windows.Forms.ComboBox()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lblFranchiseTerm = New System.Windows.Forms.Label()
         Me.lblContact = New System.Windows.Forms.Label()
         Me.lblAddress = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
@@ -46,33 +64,55 @@ Partial Class pnlMain
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtLName = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblCreateNewFr = New System.Windows.Forms.Label()
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
         Me.txtFName = New System.Windows.Forms.TextBox()
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.lvUserProfile = New System.Windows.Forms.ListView()
+        Me.tcProd = New System.Windows.Forms.TabPage()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lblSearch = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dgvUserProfile = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.pnlInfo.SuspendLayout()
-        CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBackdrop.SuspendLayout()
+        Me.tcFranchisee.SuspendLayout()
+        Me.tcDMS.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.tcFranchiseProf.SuspendLayout()
+        Me.pnlUPDash.SuspendLayout()
+        Me.pnlUPHeader.SuspendLayout()
+        Me.pnlUPStatus.SuspendLayout()
+        Me.pnlInfo.SuspendLayout()
         CType(Me.dgvUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tcProd.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -86,74 +126,261 @@ Partial Class pnlMain
         Me.lblTitle.TabIndex = 9
         Me.lblTitle.Text = "  "
         '
-        'PictureBox1
+        'pbMainLogo
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 1)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(118, 56)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
+        Me.pbMainLogo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pbMainLogo.Image = CType(resources.GetObject("pbMainLogo.Image"), System.Drawing.Image)
+        Me.pbMainLogo.Location = New System.Drawing.Point(1, 1)
+        Me.pbMainLogo.Name = "pbMainLogo"
+        Me.pbMainLogo.Size = New System.Drawing.Size(118, 56)
+        Me.pbMainLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbMainLogo.TabIndex = 10
+        Me.pbMainLogo.TabStop = False
         '
-        'Label1
+        'lblMainHeader1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(136, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(290, 16)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "DMS+ For Waffle Time Group of Companies"
+        Me.lblMainHeader1.AutoSize = True
+        Me.lblMainHeader1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.lblMainHeader1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMainHeader1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblMainHeader1.Location = New System.Drawing.Point(136, 12)
+        Me.lblMainHeader1.Name = "lblMainHeader1"
+        Me.lblMainHeader1.Size = New System.Drawing.Size(290, 16)
+        Me.lblMainHeader1.TabIndex = 11
+        Me.lblMainHeader1.Text = "DMS+ For Waffle Time Group of Companies"
         '
-        'Label2
+        'lblMainHeader2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(136, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(286, 16)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "MIS Department Arsenal Street, Iloilo City"
+        Me.lblMainHeader2.AutoSize = True
+        Me.lblMainHeader2.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.lblMainHeader2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMainHeader2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblMainHeader2.Location = New System.Drawing.Point(136, 28)
+        Me.lblMainHeader2.Name = "lblMainHeader2"
+        Me.lblMainHeader2.Size = New System.Drawing.Size(286, 16)
+        Me.lblMainHeader2.TabIndex = 12
+        Me.lblMainHeader2.Text = "MIS Department Arsenal Street, Iloilo City"
         '
-        'Panel1
+        'pnlBackdrop
         '
-        Me.Panel1.BackColor = System.Drawing.Color.DarkGray
-        Me.Panel1.Controls.Add(Me.TabControl1)
-        Me.Panel1.Location = New System.Drawing.Point(0, 60)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1440, 841)
-        Me.Panel1.TabIndex = 13
+        Me.pnlBackdrop.BackColor = System.Drawing.Color.DarkGray
+        Me.pnlBackdrop.Controls.Add(Me.tcFranchisee)
+        Me.pnlBackdrop.Location = New System.Drawing.Point(0, 60)
+        Me.pnlBackdrop.Name = "pnlBackdrop"
+        Me.pnlBackdrop.Size = New System.Drawing.Size(1440, 841)
+        Me.pnlBackdrop.TabIndex = 13
         '
-        'TabControl1
+        'tcFranchisee
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1401, 768)
-        Me.TabControl1.TabIndex = 0
+        Me.tcFranchisee.Controls.Add(Me.tcDMS)
+        Me.tcFranchisee.Controls.Add(Me.tcFranchiseProf)
+        Me.tcFranchisee.Controls.Add(Me.tcProd)
+        Me.tcFranchisee.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tcFranchisee.Location = New System.Drawing.Point(0, 0)
+        Me.tcFranchisee.Name = "tcFranchisee"
+        Me.tcFranchisee.SelectedIndex = 0
+        Me.tcFranchisee.Size = New System.Drawing.Size(1401, 768)
+        Me.tcFranchisee.TabIndex = 0
         '
-        'TabPage1
+        'tcDMS
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TabPage1.Controls.Add(Me.pnlInfo)
-        Me.TabPage1.Controls.Add(Me.Panel3)
-        Me.TabPage1.Controls.Add(Me.lvUserProfile)
-        Me.TabPage1.Controls.Add(Me.Panel2)
-        Me.TabPage1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1393, 742)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "DMS+ Dashboard"
+        Me.tcDMS.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tcDMS.Controls.Add(Me.Panel1)
+        Me.tcDMS.Controls.Add(Me.Panel3)
+        Me.tcDMS.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tcDMS.Location = New System.Drawing.Point(4, 22)
+        Me.tcDMS.Name = "tcDMS"
+        Me.tcDMS.Padding = New System.Windows.Forms.Padding(3)
+        Me.tcDMS.Size = New System.Drawing.Size(1393, 742)
+        Me.tcDMS.TabIndex = 0
+        Me.tcDMS.Text = "DMS+ Dashboard"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel3.Controls.Add(Me.Label9)
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.Label7)
+        Me.Panel3.Location = New System.Drawing.Point(15, 765)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(350, 30)
+        Me.Panel3.TabIndex = 16
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label9.Location = New System.Drawing.Point(102, 8)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(220, 13)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "Names in Red are inactive franchisee"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label8.Location = New System.Drawing.Point(85, 2)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(19, 23)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "|"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label7.Location = New System.Drawing.Point(15, 8)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(42, 13)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Rows:"
+        '
+        'tcFranchiseProf
+        '
+        Me.tcFranchiseProf.Controls.Add(Me.pnlUPDash)
+        Me.tcFranchiseProf.Controls.Add(Me.pnlInfo)
+        Me.tcFranchiseProf.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tcFranchiseProf.Location = New System.Drawing.Point(4, 22)
+        Me.tcFranchiseProf.Name = "tcFranchiseProf"
+        Me.tcFranchiseProf.Padding = New System.Windows.Forms.Padding(3)
+        Me.tcFranchiseProf.Size = New System.Drawing.Size(1393, 742)
+        Me.tcFranchiseProf.TabIndex = 1
+        Me.tcFranchiseProf.Text = "Franchise Profiling"
+        Me.tcFranchiseProf.UseVisualStyleBackColor = True
+        '
+        'pnlUPDash
+        '
+        Me.pnlUPDash.Controls.Add(Me.lvUserProfile)
+        Me.pnlUPDash.Controls.Add(Me.pnlUPHeader)
+        Me.pnlUPDash.Controls.Add(Me.pnlUPStatus)
+        Me.pnlUPDash.Location = New System.Drawing.Point(15, 15)
+        Me.pnlUPDash.Name = "pnlUPDash"
+        Me.pnlUPDash.Size = New System.Drawing.Size(350, 659)
+        Me.pnlUPDash.TabIndex = 20
+        '
+        'lvUserProfile
+        '
+        Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvUserProfile.Location = New System.Drawing.Point(3, 103)
+        Me.lvUserProfile.Name = "lvUserProfile"
+        Me.lvUserProfile.Size = New System.Drawing.Size(344, 523)
+        Me.lvUserProfile.TabIndex = 21
+        Me.lvUserProfile.UseCompatibleStateImageBehavior = False
+        '
+        'pnlUPHeader
+        '
+        Me.pnlUPHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.pnlUPHeader.Controls.Add(Me.btnCreateNew)
+        Me.pnlUPHeader.Controls.Add(Me.btnPrintSel)
+        Me.pnlUPHeader.Controls.Add(Me.btnDownload)
+        Me.pnlUPHeader.Controls.Add(Me.lblSearch)
+        Me.pnlUPHeader.Controls.Add(Me.txtSearchBar)
+        Me.pnlUPHeader.Location = New System.Drawing.Point(1, 1)
+        Me.pnlUPHeader.Name = "pnlUPHeader"
+        Me.pnlUPHeader.Size = New System.Drawing.Size(350, 100)
+        Me.pnlUPHeader.TabIndex = 20
+        '
+        'btnCreateNew
+        '
+        Me.btnCreateNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnCreateNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCreateNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnCreateNew.Location = New System.Drawing.Point(5, 11)
+        Me.btnCreateNew.Name = "btnCreateNew"
+        Me.btnCreateNew.Size = New System.Drawing.Size(99, 24)
+        Me.btnCreateNew.TabIndex = 19
+        Me.btnCreateNew.Text = "Create New"
+        Me.btnCreateNew.UseVisualStyleBackColor = False
+        '
+        'btnPrintSel
+        '
+        Me.btnPrintSel.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnPrintSel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrintSel.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnPrintSel.Location = New System.Drawing.Point(246, 11)
+        Me.btnPrintSel.Name = "btnPrintSel"
+        Me.btnPrintSel.Size = New System.Drawing.Size(99, 24)
+        Me.btnPrintSel.TabIndex = 18
+        Me.btnPrintSel.Text = "Print Selected"
+        Me.btnPrintSel.UseVisualStyleBackColor = False
+        '
+        'btnDownload
+        '
+        Me.btnDownload.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDownload.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnDownload.Location = New System.Drawing.Point(142, 11)
+        Me.btnDownload.Name = "btnDownload"
+        Me.btnDownload.Size = New System.Drawing.Size(99, 24)
+        Me.btnDownload.TabIndex = 17
+        Me.btnDownload.Text = "Download"
+        Me.btnDownload.UseVisualStyleBackColor = False
+        '
+        'lblSearch
+        '
+        Me.lblSearch.AutoSize = True
+        Me.lblSearch.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSearch.ForeColor = System.Drawing.SystemColors.Window
+        Me.lblSearch.Location = New System.Drawing.Point(16, 69)
+        Me.lblSearch.Name = "lblSearch"
+        Me.lblSearch.Size = New System.Drawing.Size(47, 13)
+        Me.lblSearch.TabIndex = 1
+        Me.lblSearch.Text = "Search"
+        '
+        'txtSearchBar
+        '
+        Me.txtSearchBar.Location = New System.Drawing.Point(69, 66)
+        Me.txtSearchBar.Name = "txtSearchBar"
+        Me.txtSearchBar.Size = New System.Drawing.Size(266, 21)
+        Me.txtSearchBar.TabIndex = 0
+        '
+        'pnlUPStatus
+        '
+        Me.pnlUPStatus.BackColor = System.Drawing.Color.Gainsboro
+        Me.pnlUPStatus.Controls.Add(Me.lblUPStatus)
+        Me.pnlUPStatus.Controls.Add(Me.lblStatDiv)
+        Me.pnlUPStatus.Controls.Add(Me.lblRowCount)
+        Me.pnlUPStatus.Location = New System.Drawing.Point(1, 628)
+        Me.pnlUPStatus.Name = "pnlUPStatus"
+        Me.pnlUPStatus.Size = New System.Drawing.Size(350, 30)
+        Me.pnlUPStatus.TabIndex = 22
+        '
+        'lblUPStatus
+        '
+        Me.lblUPStatus.AutoSize = True
+        Me.lblUPStatus.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUPStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblUPStatus.Location = New System.Drawing.Point(102, 8)
+        Me.lblUPStatus.Name = "lblUPStatus"
+        Me.lblUPStatus.Size = New System.Drawing.Size(220, 13)
+        Me.lblUPStatus.TabIndex = 2
+        Me.lblUPStatus.Text = "Names in Red are inactive franchisee"
+        '
+        'lblStatDiv
+        '
+        Me.lblStatDiv.AutoSize = True
+        Me.lblStatDiv.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStatDiv.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.lblStatDiv.Location = New System.Drawing.Point(85, 2)
+        Me.lblStatDiv.Name = "lblStatDiv"
+        Me.lblStatDiv.Size = New System.Drawing.Size(19, 23)
+        Me.lblStatDiv.TabIndex = 1
+        Me.lblStatDiv.Text = "|"
+        '
+        'lblRowCount
+        '
+        Me.lblRowCount.AutoSize = True
+        Me.lblRowCount.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRowCount.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblRowCount.Location = New System.Drawing.Point(15, 8)
+        Me.lblRowCount.Name = "lblRowCount"
+        Me.lblRowCount.Size = New System.Drawing.Size(42, 13)
+        Me.lblRowCount.TabIndex = 0
+        Me.lblRowCount.Text = "Rows:"
         '
         'pnlInfo
         '
@@ -162,7 +389,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.lblBranch)
         Me.pnlInfo.Controls.Add(Me.lblStatus)
         Me.pnlInfo.Controls.Add(Me.cbStatus)
-        Me.pnlInfo.Controls.Add(Me.Label17)
+        Me.pnlInfo.Controls.Add(Me.lblFranchiseTerm)
         Me.pnlInfo.Controls.Add(Me.lblContact)
         Me.pnlInfo.Controls.Add(Me.lblAddress)
         Me.pnlInfo.Controls.Add(Me.lblEmail)
@@ -173,7 +400,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.txtAddress)
         Me.pnlInfo.Controls.Add(Me.txtEmail)
         Me.pnlInfo.Controls.Add(Me.txtLName)
-        Me.pnlInfo.Controls.Add(Me.Label11)
+        Me.pnlInfo.Controls.Add(Me.lblCreateNewFr)
         Me.pnlInfo.Controls.Add(Me.btnAddNewFranchisee)
         Me.pnlInfo.Controls.Add(Me.txtFName)
         Me.pnlInfo.Controls.Add(Me.lblPersoInfo)
@@ -182,7 +409,15 @@ Partial Class pnlMain
         Me.pnlInfo.Location = New System.Drawing.Point(375, 15)
         Me.pnlInfo.Name = "pnlInfo"
         Me.pnlInfo.Size = New System.Drawing.Size(975, 659)
-        Me.pnlInfo.TabIndex = 17
+        Me.pnlInfo.TabIndex = 18
+        '
+        'dgvUserProfile
+        '
+        Me.dgvUserProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUserProfile.Location = New System.Drawing.Point(121, 392)
+        Me.dgvUserProfile.Name = "dgvUserProfile"
+        Me.dgvUserProfile.Size = New System.Drawing.Size(816, 180)
+        Me.dgvUserProfile.TabIndex = 35
         '
         'btnSubmitFranchisee
         '
@@ -225,14 +460,14 @@ Partial Class pnlMain
         Me.cbStatus.Size = New System.Drawing.Size(93, 21)
         Me.cbStatus.TabIndex = 31
         '
-        'Label17
+        'lblFranchiseTerm
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(274, 236)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(94, 13)
-        Me.Label17.TabIndex = 30
-        Me.Label17.Text = "Franchise Term"
+        Me.lblFranchiseTerm.AutoSize = True
+        Me.lblFranchiseTerm.Location = New System.Drawing.Point(274, 236)
+        Me.lblFranchiseTerm.Name = "lblFranchiseTerm"
+        Me.lblFranchiseTerm.Size = New System.Drawing.Size(94, 13)
+        Me.lblFranchiseTerm.TabIndex = 30
+        Me.lblFranchiseTerm.Text = "Franchise Term"
         '
         'lblContact
         '
@@ -337,16 +572,16 @@ Partial Class pnlMain
         Me.txtLName.Size = New System.Drawing.Size(167, 24)
         Me.txtLName.TabIndex = 19
         '
-        'Label11
+        'lblCreateNewFr
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label11.Location = New System.Drawing.Point(32, 29)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(283, 25)
-        Me.Label11.TabIndex = 18
-        Me.Label11.Text = "Create New Franchisee"
+        Me.lblCreateNewFr.AutoSize = True
+        Me.lblCreateNewFr.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCreateNewFr.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblCreateNewFr.Location = New System.Drawing.Point(32, 29)
+        Me.lblCreateNewFr.Name = "lblCreateNewFr"
+        Me.lblCreateNewFr.Size = New System.Drawing.Size(283, 25)
+        Me.lblCreateNewFr.TabIndex = 18
+        Me.lblCreateNewFr.Text = "Create New Franchisee"
         '
         'btnAddNewFranchisee
         '
@@ -386,6 +621,7 @@ Partial Class pnlMain
         'pbUserProfile
         '
         Me.pbUserProfile.BackColor = System.Drawing.Color.Gainsboro
+        Me.pbUserProfile.Image = CType(resources.GetObject("pbUserProfile.Image"), System.Drawing.Image)
         Me.pbUserProfile.InitialImage = Nothing
         Me.pbUserProfile.Location = New System.Drawing.Point(121, 139)
         Me.pbUserProfile.Name = "pbUserProfile"
@@ -394,119 +630,58 @@ Partial Class pnlMain
         Me.pbUserProfile.TabIndex = 0
         Me.pbUserProfile.TabStop = False
         '
-        'Panel3
+        'tcProd
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel3.Controls.Add(Me.Label9)
-        Me.Panel3.Controls.Add(Me.Label8)
-        Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Location = New System.Drawing.Point(15, 765)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(350, 30)
-        Me.Panel3.TabIndex = 16
+        Me.tcProd.Controls.Add(Me.Panel5)
+        Me.tcProd.Location = New System.Drawing.Point(4, 22)
+        Me.tcProd.Name = "tcProd"
+        Me.tcProd.Size = New System.Drawing.Size(1393, 742)
+        Me.tcProd.TabIndex = 2
+        Me.tcProd.Text = "Production (Dry)"
+        Me.tcProd.UseVisualStyleBackColor = True
         '
-        'Label9
+        'Panel1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(102, 8)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(220, 13)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Names in Red are inactive franchisee"
+        Me.Panel1.Controls.Add(Me.ListView1)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.Panel4)
+        Me.Panel1.Location = New System.Drawing.Point(15, 15)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(350, 659)
+        Me.Panel1.TabIndex = 21
         '
-        'Label8
+        'ListView1
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label8.Location = New System.Drawing.Point(85, 2)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(19, 23)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "|"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(15, 8)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(42, 13)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Rows:"
-        '
-        'lvUserProfile
-        '
-        Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvUserProfile.Location = New System.Drawing.Point(15, 115)
-        Me.lvUserProfile.Name = "lvUserProfile"
-        Me.lvUserProfile.Size = New System.Drawing.Size(350, 559)
-        Me.lvUserProfile.TabIndex = 15
-        Me.lvUserProfile.UseCompatibleStateImageBehavior = False
+        Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListView1.Location = New System.Drawing.Point(3, 103)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(344, 523)
+        Me.ListView1.TabIndex = 21
+        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.lblSearch)
-        Me.Panel2.Controls.Add(Me.txtSearch)
-        Me.Panel2.Location = New System.Drawing.Point(15, 15)
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Location = New System.Drawing.Point(1, 1)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(350, 100)
-        Me.Panel2.TabIndex = 14
-        '
-        'lblSearch
-        '
-        Me.lblSearch.AutoSize = True
-        Me.lblSearch.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSearch.ForeColor = System.Drawing.SystemColors.Window
-        Me.lblSearch.Location = New System.Drawing.Point(16, 69)
-        Me.lblSearch.Name = "lblSearch"
-        Me.lblSearch.Size = New System.Drawing.Size(47, 13)
-        Me.lblSearch.TabIndex = 1
-        Me.lblSearch.Text = "Search"
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(69, 66)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(266, 21)
-        Me.txtSearch.TabIndex = 0
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1393, 742)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Franchise Profiling"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'dgvUserProfile
-        '
-        Me.dgvUserProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUserProfile.Location = New System.Drawing.Point(121, 392)
-        Me.dgvUserProfile.Name = "dgvUserProfile"
-        Me.dgvUserProfile.Size = New System.Drawing.Size(816, 180)
-        Me.dgvUserProfile.TabIndex = 35
+        Me.Panel2.TabIndex = 20
         '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button1.Location = New System.Drawing.Point(143, 11)
+        Me.Button1.Location = New System.Drawing.Point(5, 11)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 24)
-        Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Download"
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "Create New"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
@@ -514,7 +689,7 @@ Partial Class pnlMain
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button2.Location = New System.Drawing.Point(247, 11)
+        Me.Button2.Location = New System.Drawing.Point(246, 11)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(99, 24)
         Me.Button2.TabIndex = 18
@@ -526,12 +701,204 @@ Partial Class pnlMain
         Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button3.Location = New System.Drawing.Point(5, 11)
+        Me.Button3.Location = New System.Drawing.Point(142, 11)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(99, 24)
-        Me.Button3.TabIndex = 19
-        Me.Button3.Text = "Create New"
+        Me.Button3.TabIndex = 17
+        Me.Button3.Text = "Download"
         Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label1.Location = New System.Drawing.Point(16, 69)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(47, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Search"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(69, 66)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(266, 21)
+        Me.TextBox1.TabIndex = 0
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Location = New System.Drawing.Point(1, 628)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(350, 30)
+        Me.Panel4.TabIndex = 22
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Location = New System.Drawing.Point(102, 8)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(220, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Names in Red are inactive franchisee"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label3.Location = New System.Drawing.Point(85, 2)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(19, 23)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "|"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label4.Location = New System.Drawing.Point(15, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(42, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Rows:"
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.ListView2)
+        Me.Panel5.Controls.Add(Me.Panel6)
+        Me.Panel5.Controls.Add(Me.Panel7)
+        Me.Panel5.Location = New System.Drawing.Point(15, 15)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(350, 659)
+        Me.Panel5.TabIndex = 21
+        '
+        'ListView2
+        '
+        Me.ListView2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ListView2.Location = New System.Drawing.Point(3, 103)
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(344, 523)
+        Me.ListView2.TabIndex = 21
+        Me.ListView2.UseCompatibleStateImageBehavior = False
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.Panel6.Controls.Add(Me.Button4)
+        Me.Panel6.Controls.Add(Me.Button5)
+        Me.Panel6.Controls.Add(Me.Button6)
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Controls.Add(Me.TextBox2)
+        Me.Panel6.Location = New System.Drawing.Point(1, 1)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(350, 100)
+        Me.Panel6.TabIndex = 20
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button4.Location = New System.Drawing.Point(5, 11)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(99, 24)
+        Me.Button4.TabIndex = 19
+        Me.Button4.Text = "Create New"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button5.Location = New System.Drawing.Point(246, 11)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(99, 24)
+        Me.Button5.TabIndex = 18
+        Me.Button5.Text = "Print Selected"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button6.Location = New System.Drawing.Point(142, 11)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(99, 24)
+        Me.Button6.TabIndex = 17
+        Me.Button6.Text = "Download"
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label5.Location = New System.Drawing.Point(16, 69)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(47, 13)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Search"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(69, 66)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(266, 21)
+        Me.TextBox2.TabIndex = 0
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel7.Controls.Add(Me.Label6)
+        Me.Panel7.Controls.Add(Me.Label10)
+        Me.Panel7.Controls.Add(Me.Label11)
+        Me.Panel7.Location = New System.Drawing.Point(1, 628)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(350, 30)
+        Me.Panel7.TabIndex = 22
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(102, 8)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(220, 13)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Names in Red are inactive franchisee"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label10.Location = New System.Drawing.Point(85, 2)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(19, 23)
+        Me.Label10.TabIndex = 1
+        Me.Label10.Text = "|"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label11.Location = New System.Drawing.Point(15, 8)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(42, 13)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "Rows:"
         '
         'pnlMain
         '
@@ -539,53 +906,76 @@ Partial Class pnlMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1366, 768)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pnlBackdrop)
+        Me.Controls.Add(Me.lblMainHeader2)
+        Me.Controls.Add(Me.lblMainHeader1)
+        Me.Controls.Add(Me.pbMainLogo)
         Me.Controls.Add(Me.lblTitle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "pnlMain"
         Me.Text = "Main"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.pnlInfo.ResumeLayout(False)
-        Me.pnlInfo.PerformLayout()
-        CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlBackdrop.ResumeLayout(False)
+        Me.tcFranchisee.ResumeLayout(False)
+        Me.tcDMS.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.tcFranchiseProf.ResumeLayout(False)
+        Me.pnlUPDash.ResumeLayout(False)
+        Me.pnlUPHeader.ResumeLayout(False)
+        Me.pnlUPHeader.PerformLayout()
+        Me.pnlUPStatus.ResumeLayout(False)
+        Me.pnlUPStatus.PerformLayout()
+        Me.pnlInfo.ResumeLayout(False)
+        Me.pnlInfo.PerformLayout()
+        CType(Me.dgvUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tcProd.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.dgvUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblTitle As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pbMainLogo As PictureBox
+    Friend WithEvents lblMainHeader1 As Label
+    Friend WithEvents lblMainHeader2 As Label
+    Friend WithEvents pnlBackdrop As Panel
+    Friend WithEvents tcFranchisee As TabControl
+    Friend WithEvents tcDMS As TabPage
+    Friend WithEvents tcFranchiseProf As TabPage
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents lvUserProfile As ListView
-    Friend WithEvents lblSearch As Label
-    Friend WithEvents txtSearch As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents pnlUPDash As Panel
+    Friend WithEvents lvUserProfile As ListView
+    Friend WithEvents pnlUPHeader As Panel
+    Friend WithEvents btnCreateNew As Button
+    Friend WithEvents btnPrintSel As Button
+    Friend WithEvents btnDownload As Button
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents txtSearchBar As TextBox
+    Friend WithEvents pnlUPStatus As Panel
+    Friend WithEvents lblUPStatus As Label
+    Friend WithEvents lblStatDiv As Label
+    Friend WithEvents lblRowCount As Label
     Friend WithEvents pnlInfo As Panel
-    Friend WithEvents pbUserProfile As PictureBox
-    Friend WithEvents txtFName As TextBox
-    Friend WithEvents lblPersoInfo As Label
-    Friend WithEvents btnAddNewFranchisee As Button
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label17 As Label
+    Friend WithEvents dgvUserProfile As DataGridView
+    Friend WithEvents btnSubmitFranchisee As Button
+    Friend WithEvents lblBranch As Label
+    Friend WithEvents lblStatus As Label
+    Friend WithEvents cbStatus As ComboBox
+    Friend WithEvents lblFranchiseTerm As Label
     Friend WithEvents lblContact As Label
     Friend WithEvents lblAddress As Label
     Friend WithEvents lblEmail As Label
@@ -596,12 +986,34 @@ Partial Class pnlMain
     Friend WithEvents txtAddress As TextBox
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtLName As TextBox
-    Friend WithEvents lblStatus As Label
-    Friend WithEvents cbStatus As ComboBox
-    Friend WithEvents btnSubmitFranchisee As Button
-    Friend WithEvents lblBranch As Label
-    Friend WithEvents dgvUserProfile As DataGridView
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents lblCreateNewFr As Label
+    Friend WithEvents btnAddNewFranchisee As Button
+    Friend WithEvents txtFName As TextBox
+    Friend WithEvents lblPersoInfo As Label
+    Friend WithEvents pbUserProfile As PictureBox
+    Friend WithEvents tcProd As TabPage
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents ListView2 As ListView
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
 End Class
