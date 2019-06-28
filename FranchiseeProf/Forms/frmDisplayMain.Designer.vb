@@ -30,18 +30,6 @@ Partial Class pnlMain
         Me.pnlBackdrop = New System.Windows.Forms.Panel()
         Me.tcFranchisee = New System.Windows.Forms.TabControl()
         Me.tcDMS = New System.Windows.Forms.TabPage()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -60,31 +48,48 @@ Partial Class pnlMain
         Me.lblStatDiv = New System.Windows.Forms.Label()
         Me.lblRowCount = New System.Windows.Forms.Label()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.btnEditProfile = New System.Windows.Forms.Button()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblAge = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblDateOfBirth = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblGender = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblReligion = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblNationality = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblCivilStatus = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblAddress2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblAddress1 = New System.Windows.Forms.Label()
+        Me.lblFPFStatus = New System.Windows.Forms.Label()
+        Me.lblIDFranchisee = New System.Windows.Forms.Label()
+        Me.lblFullName = New System.Windows.Forms.Label()
         Me.dgvUserProfile = New System.Windows.Forms.DataGridView()
-        Me.btnSubmitFranchisee = New System.Windows.Forms.Button()
+        Me.btnSaveChanges = New System.Windows.Forms.Button()
         Me.lblBranch = New System.Windows.Forms.Label()
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.ListView2 = New System.Windows.Forms.ListView()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
         Me.tcDMS.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.tcFranchiseProf.SuspendLayout()
         Me.pnlUPDash.SuspendLayout()
@@ -93,10 +98,6 @@ Partial Class pnlMain
         Me.pnlInfo.SuspendLayout()
         CType(Me.dgvUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tcProd.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -104,7 +105,7 @@ Partial Class pnlMain
         Me.lblTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTitle.Font = New System.Drawing.Font("Verdana", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.White
-        Me.lblTitle.Location = New System.Drawing.Point(0, 0)
+        Me.lblTitle.Location = New System.Drawing.Point(0, -5)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(1366, 59)
         Me.lblTitle.TabIndex = 9
@@ -169,7 +170,6 @@ Partial Class pnlMain
         'tcDMS
         '
         Me.tcDMS.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.tcDMS.Controls.Add(Me.Panel1)
         Me.tcDMS.Controls.Add(Me.Panel3)
         Me.tcDMS.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tcDMS.Location = New System.Drawing.Point(4, 22)
@@ -178,136 +178,6 @@ Partial Class pnlMain
         Me.tcDMS.Size = New System.Drawing.Size(1393, 742)
         Me.tcDMS.TabIndex = 0
         Me.tcDMS.Text = "DMS+ Dashboard"
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.ListView1)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Location = New System.Drawing.Point(15, 15)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(350, 659)
-        Me.Panel1.TabIndex = 21
-        '
-        'ListView1
-        '
-        Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListView1.Location = New System.Drawing.Point(3, 103)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(344, 523)
-        Me.ListView1.TabIndex = 21
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Location = New System.Drawing.Point(1, 1)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(350, 100)
-        Me.Panel2.TabIndex = 20
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button1.Location = New System.Drawing.Point(5, 11)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(99, 24)
-        Me.Button1.TabIndex = 19
-        Me.Button1.Text = "Create New"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button2.Location = New System.Drawing.Point(246, 11)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(99, 24)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Print Selected"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button3.Location = New System.Drawing.Point(142, 11)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(99, 24)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "Download"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label1.Location = New System.Drawing.Point(16, 69)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Search"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(69, 66)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(266, 21)
-        Me.TextBox1.TabIndex = 0
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel4.Controls.Add(Me.Label2)
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Location = New System.Drawing.Point(1, 628)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(350, 30)
-        Me.Panel4.TabIndex = 22
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(102, 8)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(220, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Names in Red are inactive franchisee"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(85, 2)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(19, 23)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "|"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(15, 8)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(42, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Rows:"
         '
         'Panel3
         '
@@ -498,54 +368,424 @@ Partial Class pnlMain
         '
         'pnlInfo
         '
+        Me.pnlInfo.Controls.Add(Me.btnEditProfile)
+        Me.pnlInfo.Controls.Add(Me.Label22)
+        Me.pnlInfo.Controls.Add(Me.Label23)
+        Me.pnlInfo.Controls.Add(Me.Label20)
+        Me.pnlInfo.Controls.Add(Me.Label21)
+        Me.pnlInfo.Controls.Add(Me.Label16)
+        Me.pnlInfo.Controls.Add(Me.Label17)
+        Me.pnlInfo.Controls.Add(Me.Label18)
+        Me.pnlInfo.Controls.Add(Me.Label19)
+        Me.pnlInfo.Controls.Add(Me.Label14)
+        Me.pnlInfo.Controls.Add(Me.Label15)
+        Me.pnlInfo.Controls.Add(Me.Label10)
+        Me.pnlInfo.Controls.Add(Me.Label12)
+        Me.pnlInfo.Controls.Add(Me.Label13)
+        Me.pnlInfo.Controls.Add(Me.lblAge)
+        Me.pnlInfo.Controls.Add(Me.Label11)
+        Me.pnlInfo.Controls.Add(Me.lblDateOfBirth)
+        Me.pnlInfo.Controls.Add(Me.Label5)
+        Me.pnlInfo.Controls.Add(Me.lblGender)
+        Me.pnlInfo.Controls.Add(Me.Label3)
+        Me.pnlInfo.Controls.Add(Me.lblReligion)
+        Me.pnlInfo.Controls.Add(Me.Label6)
+        Me.pnlInfo.Controls.Add(Me.lblNationality)
+        Me.pnlInfo.Controls.Add(Me.Label4)
+        Me.pnlInfo.Controls.Add(Me.lblCivilStatus)
+        Me.pnlInfo.Controls.Add(Me.Label2)
+        Me.pnlInfo.Controls.Add(Me.lblAddress2)
+        Me.pnlInfo.Controls.Add(Me.Label1)
+        Me.pnlInfo.Controls.Add(Me.lblAddress1)
+        Me.pnlInfo.Controls.Add(Me.lblFPFStatus)
+        Me.pnlInfo.Controls.Add(Me.lblIDFranchisee)
+        Me.pnlInfo.Controls.Add(Me.lblFullName)
         Me.pnlInfo.Controls.Add(Me.dgvUserProfile)
-        Me.pnlInfo.Controls.Add(Me.btnSubmitFranchisee)
+        Me.pnlInfo.Controls.Add(Me.btnSaveChanges)
         Me.pnlInfo.Controls.Add(Me.lblBranch)
         Me.pnlInfo.Controls.Add(Me.btnAddNewFranchisee)
         Me.pnlInfo.Controls.Add(Me.pbUserProfile)
-        Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.pnlInfo.Location = New System.Drawing.Point(375, 15)
         Me.pnlInfo.Name = "pnlInfo"
         Me.pnlInfo.Size = New System.Drawing.Size(975, 659)
         Me.pnlInfo.TabIndex = 18
         '
+        'btnEditProfile
+        '
+        Me.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditProfile.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnEditProfile.Location = New System.Drawing.Point(844, 559)
+        Me.btnEditProfile.Name = "btnEditProfile"
+        Me.btnEditProfile.Size = New System.Drawing.Size(103, 40)
+        Me.btnEditProfile.TabIndex = 67
+        Me.btnEditProfile.Text = "Edit"
+        Me.btnEditProfile.UseVisualStyleBackColor = False
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label22.Location = New System.Drawing.Point(826, 229)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(83, 13)
+        Me.Label22.TabIndex = 66
+        Me.Label22.Text = "Tel Number 2"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.Label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label23.Location = New System.Drawing.Point(826, 212)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(71, 17)
+        Me.Label23.TabIndex = 65
+        Me.Label23.Text = "3201425"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label20.Location = New System.Drawing.Point(826, 190)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(83, 13)
+        Me.Label20.TabIndex = 64
+        Me.Label20.Text = "Tel Number 1"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label21.Location = New System.Drawing.Point(826, 173)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(71, 17)
+        Me.Label21.TabIndex = 63
+        Me.Label21.Text = "3201425"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label16.Location = New System.Drawing.Point(699, 229)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(103, 13)
+        Me.Label16.TabIndex = 62
+        Me.Label16.Text = "Mobile Number 2"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label17.Location = New System.Drawing.Point(699, 212)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(107, 17)
+        Me.Label17.TabIndex = 61
+        Me.Label17.Text = "09123456789"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label18.Location = New System.Drawing.Point(699, 190)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(103, 13)
+        Me.Label18.TabIndex = 60
+        Me.Label18.Text = "Mobile Number 1"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label19.Location = New System.Drawing.Point(699, 173)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(107, 17)
+        Me.Label19.TabIndex = 59
+        Me.Label19.Text = "09123456789"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label14.Location = New System.Drawing.Point(510, 229)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(99, 13)
+        Me.Label14.TabIndex = 58
+        Me.Label14.Text = "Email Address 2"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label15.Location = New System.Drawing.Point(510, 212)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(147, 17)
+        Me.Label15.TabIndex = 57
+        Me.Label15.Text = "address@email.com"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label10.Location = New System.Drawing.Point(510, 190)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(99, 13)
+        Me.Label10.TabIndex = 56
+        Me.Label10.Text = "Email Address 1"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label12.Location = New System.Drawing.Point(510, 173)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(147, 17)
+        Me.Label12.TabIndex = 55
+        Me.Label12.Text = "address@email.com"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label13.Location = New System.Drawing.Point(826, 153)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(29, 13)
+        Me.Label13.TabIndex = 54
+        Me.Label13.Text = "Age"
+        '
+        'lblAge
+        '
+        Me.lblAge.AutoSize = True
+        Me.lblAge.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblAge.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAge.Location = New System.Drawing.Point(826, 136)
+        Me.lblAge.Name = "lblAge"
+        Me.lblAge.Size = New System.Drawing.Size(26, 17)
+        Me.lblAge.TabIndex = 53
+        Me.lblAge.Text = "20"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label11.Location = New System.Drawing.Point(599, 153)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(80, 13)
+        Me.Label11.TabIndex = 52
+        Me.Label11.Text = "Date of Birth"
+        '
+        'lblDateOfBirth
+        '
+        Me.lblDateOfBirth.AutoSize = True
+        Me.lblDateOfBirth.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblDateOfBirth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDateOfBirth.Location = New System.Drawing.Point(599, 136)
+        Me.lblDateOfBirth.Name = "lblDateOfBirth"
+        Me.lblDateOfBirth.Size = New System.Drawing.Size(154, 17)
+        Me.lblDateOfBirth.TabIndex = 51
+        Me.lblDateOfBirth.Text = "September 19, 1998"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label5.Location = New System.Drawing.Point(510, 153)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.TabIndex = 50
+        Me.Label5.Text = "Gender"
+        '
+        'lblGender
+        '
+        Me.lblGender.AutoSize = True
+        Me.lblGender.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblGender.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblGender.Location = New System.Drawing.Point(510, 136)
+        Me.lblGender.Name = "lblGender"
+        Me.lblGender.Size = New System.Drawing.Size(38, 17)
+        Me.lblGender.TabIndex = 49
+        Me.lblGender.Text = "Male"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label3.Location = New System.Drawing.Point(365, 229)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 48
+        Me.Label3.Text = "Religion"
+        '
+        'lblReligion
+        '
+        Me.lblReligion.AutoSize = True
+        Me.lblReligion.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblReligion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblReligion.Location = New System.Drawing.Point(365, 212)
+        Me.lblReligion.Name = "lblReligion"
+        Me.lblReligion.Size = New System.Drawing.Size(117, 17)
+        Me.lblReligion.TabIndex = 47
+        Me.lblReligion.Text = "Roman Catholic"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label6.Location = New System.Drawing.Point(256, 229)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(67, 13)
+        Me.Label6.TabIndex = 46
+        Me.Label6.Text = "Nationality"
+        '
+        'lblNationality
+        '
+        Me.lblNationality.AutoSize = True
+        Me.lblNationality.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblNationality.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblNationality.Location = New System.Drawing.Point(256, 212)
+        Me.lblNationality.Name = "lblNationality"
+        Me.lblNationality.Size = New System.Drawing.Size(55, 17)
+        Me.lblNationality.TabIndex = 45
+        Me.lblNationality.Text = "Filipino"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label4.Location = New System.Drawing.Point(144, 229)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 13)
+        Me.Label4.TabIndex = 44
+        Me.Label4.Text = "Civil Status"
+        '
+        'lblCivilStatus
+        '
+        Me.lblCivilStatus.AutoSize = True
+        Me.lblCivilStatus.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblCivilStatus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblCivilStatus.Location = New System.Drawing.Point(144, 212)
+        Me.lblCivilStatus.Name = "lblCivilStatus"
+        Me.lblCivilStatus.Size = New System.Drawing.Size(50, 17)
+        Me.lblCivilStatus.TabIndex = 43
+        Me.lblCivilStatus.Text = "Single"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label2.Location = New System.Drawing.Point(144, 190)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(64, 13)
+        Me.Label2.TabIndex = 42
+        Me.Label2.Text = "Address 2"
+        '
+        'lblAddress2
+        '
+        Me.lblAddress2.AutoSize = True
+        Me.lblAddress2.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblAddress2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAddress2.Location = New System.Drawing.Point(144, 173)
+        Me.lblAddress2.Name = "lblAddress2"
+        Me.lblAddress2.Size = New System.Drawing.Size(338, 17)
+        Me.lblAddress2.TabIndex = 41
+        Me.lblAddress2.Text = "Address, Address, Address, Address, Address"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.Label1.Location = New System.Drawing.Point(144, 153)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(64, 13)
+        Me.Label1.TabIndex = 40
+        Me.Label1.Text = "Address 1"
+        '
+        'lblAddress1
+        '
+        Me.lblAddress1.AutoSize = True
+        Me.lblAddress1.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblAddress1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAddress1.Location = New System.Drawing.Point(144, 136)
+        Me.lblAddress1.Name = "lblAddress1"
+        Me.lblAddress1.Size = New System.Drawing.Size(338, 17)
+        Me.lblAddress1.TabIndex = 39
+        Me.lblAddress1.Text = "Address, Address, Address, Address, Address"
+        '
+        'lblFPFStatus
+        '
+        Me.lblFPFStatus.AutoSize = True
+        Me.lblFPFStatus.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFPFStatus.ForeColor = System.Drawing.Color.ForestGreen
+        Me.lblFPFStatus.Location = New System.Drawing.Point(144, 86)
+        Me.lblFPFStatus.Name = "lblFPFStatus"
+        Me.lblFPFStatus.Size = New System.Drawing.Size(69, 17)
+        Me.lblFPFStatus.TabIndex = 38
+        Me.lblFPFStatus.Text = "ACTIVE"
+        '
+        'lblIDFranchisee
+        '
+        Me.lblIDFranchisee.AutoSize = True
+        Me.lblIDFranchisee.Font = New System.Drawing.Font("Verdana", 10.0!)
+        Me.lblIDFranchisee.Location = New System.Drawing.Point(144, 50)
+        Me.lblIDFranchisee.Name = "lblIDFranchisee"
+        Me.lblIDFranchisee.Size = New System.Drawing.Size(103, 17)
+        Me.lblIDFranchisee.TabIndex = 37
+        Me.lblIDFranchisee.Text = "Franchisee ID"
+        '
+        'lblFullName
+        '
+        Me.lblFullName.AutoSize = True
+        Me.lblFullName.Font = New System.Drawing.Font("Verdana", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFullName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblFullName.Location = New System.Drawing.Point(143, 27)
+        Me.lblFullName.Name = "lblFullName"
+        Me.lblFullName.Size = New System.Drawing.Size(252, 23)
+        Me.lblFullName.TabIndex = 36
+        Me.lblFullName.Text = "FName MName LName"
+        '
         'dgvUserProfile
         '
         Me.dgvUserProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUserProfile.Location = New System.Drawing.Point(121, 392)
+        Me.dgvUserProfile.Location = New System.Drawing.Point(28, 344)
         Me.dgvUserProfile.Name = "dgvUserProfile"
-        Me.dgvUserProfile.Size = New System.Drawing.Size(816, 180)
+        Me.dgvUserProfile.Size = New System.Drawing.Size(919, 180)
         Me.dgvUserProfile.TabIndex = 35
         '
-        'btnSubmitFranchisee
+        'btnSaveChanges
         '
-        Me.btnSubmitFranchisee.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.btnSubmitFranchisee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSubmitFranchisee.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSubmitFranchisee.Location = New System.Drawing.Point(834, 595)
-        Me.btnSubmitFranchisee.Name = "btnSubmitFranchisee"
-        Me.btnSubmitFranchisee.Size = New System.Drawing.Size(103, 40)
-        Me.btnSubmitFranchisee.TabIndex = 34
-        Me.btnSubmitFranchisee.Text = "Submit"
-        Me.btnSubmitFranchisee.UseVisualStyleBackColor = False
+        Me.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSaveChanges.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnSaveChanges.Location = New System.Drawing.Point(844, 605)
+        Me.btnSaveChanges.Name = "btnSaveChanges"
+        Me.btnSaveChanges.Size = New System.Drawing.Size(103, 40)
+        Me.btnSaveChanges.TabIndex = 34
+        Me.btnSaveChanges.Text = "Save Changes"
+        Me.btnSaveChanges.UseVisualStyleBackColor = False
         '
         'lblBranch
         '
         Me.lblBranch.AutoSize = True
         Me.lblBranch.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBranch.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblBranch.Location = New System.Drawing.Point(118, 328)
+        Me.lblBranch.Location = New System.Drawing.Point(25, 280)
         Me.lblBranch.Name = "lblBranch"
-        Me.lblBranch.Size = New System.Drawing.Size(70, 18)
+        Me.lblBranch.Size = New System.Drawing.Size(62, 18)
         Me.lblBranch.TabIndex = 33
-        Me.lblBranch.Text = "Branch"
+        Me.lblBranch.Text = "Outlet"
         '
         'btnAddNewFranchisee
         '
         Me.btnAddNewFranchisee.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnAddNewFranchisee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNewFranchisee.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNewFranchisee.Location = New System.Drawing.Point(121, 362)
+        Me.btnAddNewFranchisee.Location = New System.Drawing.Point(28, 314)
         Me.btnAddNewFranchisee.Name = "btnAddNewFranchisee"
         Me.btnAddNewFranchisee.Size = New System.Drawing.Size(99, 24)
         Me.btnAddNewFranchisee.TabIndex = 16
@@ -556,152 +796,21 @@ Partial Class pnlMain
         '
         Me.pbUserProfile.BackColor = System.Drawing.Color.Gainsboro
         Me.pbUserProfile.InitialImage = Nothing
-        Me.pbUserProfile.Location = New System.Drawing.Point(54, 139)
+        Me.pbUserProfile.Location = New System.Drawing.Point(28, 16)
         Me.pbUserProfile.Name = "pbUserProfile"
-        Me.pbUserProfile.Size = New System.Drawing.Size(115, 115)
+        Me.pbUserProfile.Size = New System.Drawing.Size(95, 95)
         Me.pbUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbUserProfile.TabIndex = 0
         Me.pbUserProfile.TabStop = False
         '
         'tcProd
         '
-        Me.tcProd.Controls.Add(Me.Panel5)
         Me.tcProd.Location = New System.Drawing.Point(4, 22)
         Me.tcProd.Name = "tcProd"
         Me.tcProd.Size = New System.Drawing.Size(1393, 742)
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.ListView2)
-        Me.Panel5.Controls.Add(Me.Panel6)
-        Me.Panel5.Controls.Add(Me.Panel7)
-        Me.Panel5.Location = New System.Drawing.Point(15, 15)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(350, 659)
-        Me.Panel5.TabIndex = 21
-        '
-        'ListView2
-        '
-        Me.ListView2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListView2.Location = New System.Drawing.Point(3, 103)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(344, 523)
-        Me.ListView2.TabIndex = 21
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.Button4)
-        Me.Panel6.Controls.Add(Me.Button5)
-        Me.Panel6.Controls.Add(Me.Button6)
-        Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Controls.Add(Me.TextBox2)
-        Me.Panel6.Location = New System.Drawing.Point(1, 1)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(350, 100)
-        Me.Panel6.TabIndex = 20
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button4.Location = New System.Drawing.Point(5, 11)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(99, 24)
-        Me.Button4.TabIndex = 19
-        Me.Button4.Text = "Create New"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button5.Location = New System.Drawing.Point(246, 11)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(99, 24)
-        Me.Button5.TabIndex = 18
-        Me.Button5.Text = "Print Selected"
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button6.Location = New System.Drawing.Point(142, 11)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(99, 24)
-        Me.Button6.TabIndex = 17
-        Me.Button6.Text = "Download"
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label5.Location = New System.Drawing.Point(16, 69)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 13)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Search"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(69, 66)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(266, 21)
-        Me.TextBox2.TabIndex = 0
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel7.Controls.Add(Me.Label6)
-        Me.Panel7.Controls.Add(Me.Label10)
-        Me.Panel7.Controls.Add(Me.Label11)
-        Me.Panel7.Location = New System.Drawing.Point(1, 628)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(350, 30)
-        Me.Panel7.TabIndex = 22
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(102, 8)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(220, 13)
-        Me.Label6.TabIndex = 2
-        Me.Label6.Text = "Names in Red are inactive franchisee"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label10.Location = New System.Drawing.Point(85, 2)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(19, 23)
-        Me.Label10.TabIndex = 1
-        Me.Label10.Text = "|"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label11.Location = New System.Drawing.Point(15, 8)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(42, 13)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "Rows:"
         '
         'pnlMain
         '
@@ -721,11 +830,6 @@ Partial Class pnlMain
         Me.pnlBackdrop.ResumeLayout(False)
         Me.tcFranchisee.ResumeLayout(False)
         Me.tcDMS.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.tcFranchiseProf.ResumeLayout(False)
@@ -738,12 +842,6 @@ Partial Class pnlMain
         Me.pnlInfo.PerformLayout()
         CType(Me.dgvUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tcProd.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -774,33 +872,41 @@ Partial Class pnlMain
     Friend WithEvents lblRowCount As Label
     Friend WithEvents pnlInfo As Panel
     Friend WithEvents dgvUserProfile As DataGridView
-    Friend WithEvents btnSubmitFranchisee As Button
+    Friend WithEvents btnSaveChanges As Button
     Friend WithEvents lblBranch As Label
     Friend WithEvents btnAddNewFranchisee As Button
     Friend WithEvents pbUserProfile As PictureBox
     Friend WithEvents tcProd As TabPage
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents ListView2 As ListView
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblIDFranchisee As Label
+    Friend WithEvents lblFullName As Label
+    Friend WithEvents lblFPFStatus As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents lblAge As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents lblDateOfBirth As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lblGender As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblReligion As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents lblNationality As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lblCivilStatus As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblAddress2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblAddress1 As Label
+    Friend WithEvents btnEditProfile As Button
 End Class
