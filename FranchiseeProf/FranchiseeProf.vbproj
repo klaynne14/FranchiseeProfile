@@ -69,23 +69,23 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddNewBranch.Designer.vb">
+    <Compile Include="Forms\frmAddNewBranch.Designer.vb">
       <DependentUpon>frmAddNewBranch.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddNewBranch.vb">
+    <Compile Include="Forms\frmAddNewBranch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCreateNewFranchisee.vb">
+    <Compile Include="Forms\frmCreateNewFranchisee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCreateNewFranchisee.Designer.vb">
+    <Compile Include="Forms\frmCreateNewFranchisee.Designer.vb">
       <DependentUpon>frmCreateNewFranchisee.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDisplayMain.Designer.vb">
+    <Compile Include="Forms\frmDisplayMain.Designer.vb">
       <DependentUpon>frmDisplayMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmDisplayMain.vb">
+    <Compile Include="Forms\frmDisplayMain.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -105,13 +105,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAddNewBranch.resx">
+    <EmbeddedResource Include="Forms\frmAddNewBranch.resx">
       <DependentUpon>frmAddNewBranch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDisplayMain.resx">
+    <EmbeddedResource Include="Forms\frmDisplayMain.resx">
       <DependentUpon>frmDisplayMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateNewFranchisee.resx">
+    <EmbeddedResource Include="Forms\frmCreateNewFranchisee.resx">
       <DependentUpon>frmCreateNewFranchisee.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
