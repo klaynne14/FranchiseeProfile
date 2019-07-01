@@ -12,4 +12,5 @@
         frmAddNewOutlet.Show()
 
     End Sub
+
 End Class

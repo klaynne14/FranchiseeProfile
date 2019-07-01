@@ -7,4 +7,24 @@
         Me.CenterToParent()
 
     End Sub
+
+    Private Sub CbClosedStatus_CheckedChanged(sender As Object, e As EventArgs) Handles cbOutletStatus.CheckedChanged
+        If cbOutletStatus.Checked Then
+            lblOutletClosedDate.Visible = True
+            lblOutletClosedStatus.Visible = True
+            cbOutletClosedStatus.Visible = True
+            dtpOutletClosedDate.Visible = True
+        Else
+            lblOutletClosedDate.Visible = False
+            lblOutletClosedStatus.Visible = False
+            cbOutletClosedStatus.Visible = False
+            dtpOutletClosedDate.Visible = False
+        End If
+
+    End Sub
+
+    Private Sub frmAddNewOutlet_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
+
+    End Sub
+
 End Class

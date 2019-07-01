@@ -41,15 +41,15 @@ Partial Class frmAddNewOutlet
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.lblOutletClosedStatus = New System.Windows.Forms.Label()
+        Me.cbOutletClosedStatus = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.cbOutletStatus = New System.Windows.Forms.CheckBox()
+        Me.lblOutletClosedDate = New System.Windows.Forms.Label()
+        Me.dtpOutletClosedDate = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.dtpOutletStartDate = New System.Windows.Forms.DateTimePicker()
+        Me.txtOutletAddress = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -112,15 +112,15 @@ Partial Class frmAddNewOutlet
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.ComboBox2)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.lblOutletClosedStatus)
+        Me.Panel1.Controls.Add(Me.cbOutletClosedStatus)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.CheckBox1)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.DateTimePicker2)
+        Me.Panel1.Controls.Add(Me.cbOutletStatus)
+        Me.Panel1.Controls.Add(Me.lblOutletClosedDate)
+        Me.Panel1.Controls.Add(Me.dtpOutletClosedDate)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.DateTimePicker1)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.dtpOutletStartDate)
+        Me.Panel1.Controls.Add(Me.txtOutletAddress)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -260,25 +260,27 @@ Partial Class frmAddNewOutlet
         Me.ComboBox2.Size = New System.Drawing.Size(125, 21)
         Me.ComboBox2.TabIndex = 35
         '
-        'Label8
+        'lblOutletClosedStatus
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(365, 95)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(84, 13)
-        Me.Label8.TabIndex = 34
-        Me.Label8.Text = "Closed status"
+        Me.lblOutletClosedStatus.AutoSize = True
+        Me.lblOutletClosedStatus.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOutletClosedStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblOutletClosedStatus.Location = New System.Drawing.Point(365, 95)
+        Me.lblOutletClosedStatus.Name = "lblOutletClosedStatus"
+        Me.lblOutletClosedStatus.Size = New System.Drawing.Size(84, 13)
+        Me.lblOutletClosedStatus.TabIndex = 34
+        Me.lblOutletClosedStatus.Text = "Closed status"
+        Me.lblOutletClosedStatus.Visible = False
         '
-        'ComboBox1
+        'cbOutletClosedStatus
         '
-        Me.ComboBox1.ForeColor = System.Drawing.Color.DimGray
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(368, 72)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(125, 21)
-        Me.ComboBox1.TabIndex = 33
+        Me.cbOutletClosedStatus.ForeColor = System.Drawing.Color.DimGray
+        Me.cbOutletClosedStatus.FormattingEnabled = True
+        Me.cbOutletClosedStatus.Location = New System.Drawing.Point(368, 72)
+        Me.cbOutletClosedStatus.Name = "cbOutletClosedStatus"
+        Me.cbOutletClosedStatus.Size = New System.Drawing.Size(125, 21)
+        Me.cbOutletClosedStatus.TabIndex = 33
+        Me.cbOutletClosedStatus.Visible = False
         '
         'Label7
         '
@@ -291,33 +293,35 @@ Partial Class frmAddNewOutlet
         Me.Label7.TabIndex = 32
         Me.Label7.Text = "Status"
         '
-        'CheckBox1
+        'cbOutletStatus
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(368, 29)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(52, 17)
-        Me.CheckBox1.TabIndex = 31
-        Me.CheckBox1.Text = "Close"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.cbOutletStatus.AutoSize = True
+        Me.cbOutletStatus.Location = New System.Drawing.Point(368, 29)
+        Me.cbOutletStatus.Name = "cbOutletStatus"
+        Me.cbOutletStatus.Size = New System.Drawing.Size(52, 17)
+        Me.cbOutletStatus.TabIndex = 31
+        Me.cbOutletStatus.Text = "Close"
+        Me.cbOutletStatus.UseVisualStyleBackColor = True
         '
-        'Label6
+        'lblOutletClosedDate
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(365, 141)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(77, 13)
-        Me.Label6.TabIndex = 30
-        Me.Label6.Text = "Date Closed"
+        Me.lblOutletClosedDate.AutoSize = True
+        Me.lblOutletClosedDate.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOutletClosedDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblOutletClosedDate.Location = New System.Drawing.Point(365, 141)
+        Me.lblOutletClosedDate.Name = "lblOutletClosedDate"
+        Me.lblOutletClosedDate.Size = New System.Drawing.Size(77, 13)
+        Me.lblOutletClosedDate.TabIndex = 30
+        Me.lblOutletClosedDate.Text = "Date Closed"
+        Me.lblOutletClosedDate.Visible = False
         '
-        'DateTimePicker2
+        'dtpOutletClosedDate
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(368, 118)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(180, 20)
-        Me.DateTimePicker2.TabIndex = 29
+        Me.dtpOutletClosedDate.Location = New System.Drawing.Point(368, 118)
+        Me.dtpOutletClosedDate.Name = "dtpOutletClosedDate"
+        Me.dtpOutletClosedDate.Size = New System.Drawing.Size(180, 20)
+        Me.dtpOutletClosedDate.TabIndex = 29
+        Me.dtpOutletClosedDate.Visible = False
         '
         'Label3
         '
@@ -330,19 +334,19 @@ Partial Class frmAddNewOutlet
         Me.Label3.TabIndex = 28
         Me.Label3.Text = "Date start"
         '
-        'DateTimePicker1
+        'dtpOutletStartDate
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(32, 118)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(180, 20)
-        Me.DateTimePicker1.TabIndex = 27
+        Me.dtpOutletStartDate.Location = New System.Drawing.Point(32, 118)
+        Me.dtpOutletStartDate.Name = "dtpOutletStartDate"
+        Me.dtpOutletStartDate.Size = New System.Drawing.Size(180, 20)
+        Me.dtpOutletStartDate.TabIndex = 27
         '
-        'TextBox1
+        'txtOutletAddress
         '
-        Me.TextBox1.Location = New System.Drawing.Point(32, 72)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(300, 20)
-        Me.TextBox1.TabIndex = 26
+        Me.txtOutletAddress.Location = New System.Drawing.Point(32, 72)
+        Me.txtOutletAddress.Name = "txtOutletAddress"
+        Me.txtOutletAddress.Size = New System.Drawing.Size(300, 20)
+        Me.txtOutletAddress.TabIndex = 26
         '
         'Label1
         '
@@ -480,15 +484,15 @@ Partial Class frmAddNewOutlet
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents lblOutletClosedStatus As Label
+    Friend WithEvents cbOutletClosedStatus As ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents cbOutletStatus As CheckBox
+    Friend WithEvents lblOutletClosedDate As Label
+    Friend WithEvents dtpOutletClosedDate As DateTimePicker
     Friend WithEvents Label3 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents dtpOutletStartDate As DateTimePicker
+    Friend WithEvents txtOutletAddress As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnClose As Button
 End Class
