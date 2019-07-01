@@ -96,6 +96,9 @@ Partial Class pnlMain
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
+        Me.idFranchisee = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.FPFLName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.FPFFName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -268,7 +271,7 @@ Partial Class pnlMain
         Me.pnlUPDash.Controls.Add(Me.pnlUPHeader)
         Me.pnlUPDash.Location = New System.Drawing.Point(15, 15)
         Me.pnlUPDash.Name = "pnlUPDash"
-        Me.pnlUPDash.Size = New System.Drawing.Size(350, 639)
+        Me.pnlUPDash.Size = New System.Drawing.Size(350, 653)
         Me.pnlUPDash.TabIndex = 20
         '
         'tsFrachiseeRowStatus
@@ -277,7 +280,7 @@ Partial Class pnlMain
         Me.tsFrachiseeRowStatus.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.tsFrachiseeRowStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.tsFrachiseeRowStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripLabel2, Me.ToolStripSeparator1, Me.ToolStripLabel3})
-        Me.tsFrachiseeRowStatus.Location = New System.Drawing.Point(0, 614)
+        Me.tsFrachiseeRowStatus.Location = New System.Drawing.Point(0, 628)
         Me.tsFrachiseeRowStatus.Name = "tsFrachiseeRowStatus"
         Me.tsFrachiseeRowStatus.Padding = New System.Windows.Forms.Padding(0)
         Me.tsFrachiseeRowStatus.Size = New System.Drawing.Size(350, 25)
@@ -309,12 +312,15 @@ Partial Class pnlMain
         '
         'lvUserProfile
         '
+        Me.lvUserProfile.BackColor = System.Drawing.SystemColors.Window
         Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvUserProfile.Location = New System.Drawing.Point(3, 103)
+        Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.FPFLName, Me.FPFFName})
+        Me.lvUserProfile.Location = New System.Drawing.Point(1, 103)
         Me.lvUserProfile.Name = "lvUserProfile"
-        Me.lvUserProfile.Size = New System.Drawing.Size(344, 508)
+        Me.lvUserProfile.Size = New System.Drawing.Size(349, 523)
         Me.lvUserProfile.TabIndex = 21
         Me.lvUserProfile.UseCompatibleStateImageBehavior = False
+        Me.lvUserProfile.View = System.Windows.Forms.View.Details
         '
         'pnlUPHeader
         '
@@ -326,7 +332,7 @@ Partial Class pnlMain
         Me.pnlUPHeader.Controls.Add(Me.txtSearchBar)
         Me.pnlUPHeader.Location = New System.Drawing.Point(1, 1)
         Me.pnlUPHeader.Name = "pnlUPHeader"
-        Me.pnlUPHeader.Size = New System.Drawing.Size(350, 100)
+        Me.pnlUPHeader.Size = New System.Drawing.Size(349, 100)
         Me.pnlUPHeader.TabIndex = 20
         '
         'btnCreateNew
@@ -433,7 +439,7 @@ Partial Class pnlMain
         Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.pnlInfo.Location = New System.Drawing.Point(368, 0)
         Me.pnlInfo.Name = "pnlInfo"
-        Me.pnlInfo.Size = New System.Drawing.Size(990, 656)
+        Me.pnlInfo.Size = New System.Drawing.Size(990, 668)
         Me.pnlInfo.TabIndex = 18
         '
         'lblPermanentlyClosed
@@ -921,6 +927,21 @@ Partial Class pnlMain
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
         '
+        'idFranchisee
+        '
+        Me.idFranchisee.Text = "ID"
+        Me.idFranchisee.Width = 87
+        '
+        'FPFLName
+        '
+        Me.FPFLName.Text = "Last Name"
+        Me.FPFLName.Width = 130
+        '
+        'FPFFName
+        '
+        Me.FPFFName.Text = "First Name"
+        Me.FPFFName.Width = 161
+        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1030,4 +1051,7 @@ Partial Class pnlMain
     Friend WithEvents lblBranch As Label
     Friend WithEvents btnAddNewFranchisee As Button
     Friend WithEvents pbUserProfile As PictureBox
+    Friend WithEvents idFranchisee As ColumnHeader
+    Friend WithEvents FPFLName As ColumnHeader
+    Friend WithEvents FPFFName As ColumnHeader
 End Class
