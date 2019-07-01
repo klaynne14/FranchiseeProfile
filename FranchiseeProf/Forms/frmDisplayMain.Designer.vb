@@ -443,7 +443,7 @@ Partial Class pnlMain
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label22.Location = New System.Drawing.Point(804, 253)
+        Me.Label22.Location = New System.Drawing.Point(666, 253)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(79, 12)
         Me.Label22.TabIndex = 66
@@ -454,7 +454,7 @@ Partial Class pnlMain
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.Label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label23.Location = New System.Drawing.Point(804, 236)
+        Me.Label23.Location = New System.Drawing.Point(666, 236)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(56, 13)
         Me.Label23.TabIndex = 65
@@ -464,7 +464,7 @@ Partial Class pnlMain
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label20.Location = New System.Drawing.Point(804, 210)
+        Me.Label20.Location = New System.Drawing.Point(666, 210)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(79, 12)
         Me.Label20.TabIndex = 64
@@ -475,7 +475,7 @@ Partial Class pnlMain
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label21.Location = New System.Drawing.Point(804, 193)
+        Me.Label21.Location = New System.Drawing.Point(666, 193)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(56, 13)
         Me.Label21.TabIndex = 63
@@ -485,7 +485,7 @@ Partial Class pnlMain
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label16.Location = New System.Drawing.Point(651, 253)
+        Me.Label16.Location = New System.Drawing.Point(513, 253)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(99, 12)
         Me.Label16.TabIndex = 62
@@ -496,7 +496,7 @@ Partial Class pnlMain
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(651, 236)
+        Me.Label17.Location = New System.Drawing.Point(513, 236)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(84, 13)
         Me.Label17.TabIndex = 61
@@ -506,7 +506,7 @@ Partial Class pnlMain
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label18.Location = New System.Drawing.Point(651, 210)
+        Me.Label18.Location = New System.Drawing.Point(513, 210)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(99, 12)
         Me.Label18.TabIndex = 60
@@ -517,7 +517,7 @@ Partial Class pnlMain
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.Label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label19.Location = New System.Drawing.Point(651, 193)
+        Me.Label19.Location = New System.Drawing.Point(513, 193)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(84, 13)
         Me.Label19.TabIndex = 59
@@ -527,7 +527,7 @@ Partial Class pnlMain
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label14.Location = New System.Drawing.Point(506, 253)
+        Me.Label14.Location = New System.Drawing.Point(780, 253)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(94, 12)
         Me.Label14.TabIndex = 58
@@ -538,7 +538,7 @@ Partial Class pnlMain
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(505, 236)
+        Me.Label15.Location = New System.Drawing.Point(779, 236)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(121, 13)
         Me.Label15.TabIndex = 57
@@ -548,7 +548,7 @@ Partial Class pnlMain
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label10.Location = New System.Drawing.Point(505, 209)
+        Me.Label10.Location = New System.Drawing.Point(779, 209)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(94, 12)
         Me.Label10.TabIndex = 56
@@ -559,7 +559,7 @@ Partial Class pnlMain
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label12.Location = New System.Drawing.Point(505, 192)
+        Me.Label12.Location = New System.Drawing.Point(779, 192)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(121, 13)
         Me.Label12.TabIndex = 55
@@ -569,7 +569,7 @@ Partial Class pnlMain
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label13.Location = New System.Drawing.Point(805, 163)
+        Me.Label13.Location = New System.Drawing.Point(667, 163)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(26, 12)
         Me.Label13.TabIndex = 54
@@ -580,7 +580,7 @@ Partial Class pnlMain
         Me.lblAge.AutoSize = True
         Me.lblAge.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblAge.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblAge.Location = New System.Drawing.Point(805, 146)
+        Me.lblAge.Location = New System.Drawing.Point(667, 146)
         Me.lblAge.Name = "lblAge"
         Me.lblAge.Size = New System.Drawing.Size(21, 13)
         Me.lblAge.TabIndex = 53
@@ -590,7 +590,7 @@ Partial Class pnlMain
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label11.Location = New System.Drawing.Point(652, 163)
+        Me.Label11.Location = New System.Drawing.Point(514, 163)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 12)
         Me.Label11.TabIndex = 52
@@ -601,7 +601,7 @@ Partial Class pnlMain
         Me.lblDateOfBirth.AutoSize = True
         Me.lblDateOfBirth.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblDateOfBirth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblDateOfBirth.Location = New System.Drawing.Point(652, 146)
+        Me.lblDateOfBirth.Location = New System.Drawing.Point(514, 146)
         Me.lblDateOfBirth.Name = "lblDateOfBirth"
         Me.lblDateOfBirth.Size = New System.Drawing.Size(124, 13)
         Me.lblDateOfBirth.TabIndex = 51
@@ -611,7 +611,7 @@ Partial Class pnlMain
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label5.Location = New System.Drawing.Point(507, 163)
+        Me.Label5.Location = New System.Drawing.Point(781, 163)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(45, 12)
         Me.Label5.TabIndex = 50
@@ -622,7 +622,7 @@ Partial Class pnlMain
         Me.lblGender.AutoSize = True
         Me.lblGender.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblGender.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblGender.Location = New System.Drawing.Point(507, 146)
+        Me.lblGender.Location = New System.Drawing.Point(781, 146)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(33, 13)
         Me.lblGender.TabIndex = 49

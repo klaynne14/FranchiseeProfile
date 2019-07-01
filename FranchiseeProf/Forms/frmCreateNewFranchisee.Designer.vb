@@ -113,7 +113,7 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Controls.Add(Me.lblPersoInfo)
         Me.Panel1.Location = New System.Drawing.Point(10, 48)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(928, 332)
+        Me.Panel1.Size = New System.Drawing.Size(956, 332)
         Me.Panel1.TabIndex = 0
         '
         'cbFPFStatus
@@ -158,7 +158,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label16.Location = New System.Drawing.Point(806, 184)
+        Me.Label16.Location = New System.Drawing.Point(655, 184)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(83, 13)
         Me.Label16.TabIndex = 82
@@ -170,7 +170,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtTelNum2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelNum2.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtTelNum2.ForeColor = System.Drawing.Color.Black
-        Me.txtTelNum2.Location = New System.Drawing.Point(809, 160)
+        Me.txtTelNum2.Location = New System.Drawing.Point(658, 160)
         Me.txtTelNum2.MaxLength = 32
         Me.txtTelNum2.Name = "txtTelNum2"
         Me.txtTelNum2.Size = New System.Drawing.Size(85, 21)
@@ -181,7 +181,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label17.Location = New System.Drawing.Point(806, 138)
+        Me.Label17.Location = New System.Drawing.Point(655, 138)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(83, 13)
         Me.Label17.TabIndex = 80
@@ -193,7 +193,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtTelNum1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelNum1.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtTelNum1.ForeColor = System.Drawing.Color.Black
-        Me.txtTelNum1.Location = New System.Drawing.Point(809, 114)
+        Me.txtTelNum1.Location = New System.Drawing.Point(658, 114)
         Me.txtTelNum1.MaxLength = 32
         Me.txtTelNum1.Name = "txtTelNum1"
         Me.txtTelNum1.Size = New System.Drawing.Size(85, 21)
@@ -204,7 +204,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label15.Location = New System.Drawing.Point(685, 184)
+        Me.Label15.Location = New System.Drawing.Point(534, 184)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(103, 13)
         Me.Label15.TabIndex = 78
@@ -216,7 +216,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtMobileNum2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtMobileNum2.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtMobileNum2.ForeColor = System.Drawing.Color.Black
-        Me.txtMobileNum2.Location = New System.Drawing.Point(688, 160)
+        Me.txtMobileNum2.Location = New System.Drawing.Point(537, 160)
         Me.txtMobileNum2.MaxLength = 32
         Me.txtMobileNum2.Name = "txtMobileNum2"
         Me.txtMobileNum2.Size = New System.Drawing.Size(115, 21)
@@ -227,7 +227,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label14.Location = New System.Drawing.Point(685, 138)
+        Me.Label14.Location = New System.Drawing.Point(534, 138)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(103, 13)
         Me.Label14.TabIndex = 76
@@ -239,7 +239,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtMobileNum1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtMobileNum1.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtMobileNum1.ForeColor = System.Drawing.Color.Black
-        Me.txtMobileNum1.Location = New System.Drawing.Point(688, 114)
+        Me.txtMobileNum1.Location = New System.Drawing.Point(537, 114)
         Me.txtMobileNum1.MaxLength = 32
         Me.txtMobileNum1.Name = "txtMobileNum1"
         Me.txtMobileNum1.Size = New System.Drawing.Size(115, 21)
@@ -251,7 +251,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtEmailAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEmailAddress2.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtEmailAddress2.ForeColor = System.Drawing.Color.Black
-        Me.txtEmailAddress2.Location = New System.Drawing.Point(537, 160)
+        Me.txtEmailAddress2.Location = New System.Drawing.Point(750, 160)
         Me.txtEmailAddress2.MaxLength = 32
         Me.txtEmailAddress2.Name = "txtEmailAddress2"
         Me.txtEmailAddress2.Size = New System.Drawing.Size(145, 21)
@@ -262,7 +262,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label13.Location = New System.Drawing.Point(534, 184)
+        Me.Label13.Location = New System.Drawing.Point(747, 184)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(99, 13)
         Me.Label13.TabIndex = 73
@@ -274,7 +274,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtEmailAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEmailAddress1.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtEmailAddress1.ForeColor = System.Drawing.Color.Black
-        Me.txtEmailAddress1.Location = New System.Drawing.Point(537, 114)
+        Me.txtEmailAddress1.Location = New System.Drawing.Point(750, 114)
         Me.txtEmailAddress1.MaxLength = 32
         Me.txtEmailAddress1.Name = "txtEmailAddress1"
         Me.txtEmailAddress1.Size = New System.Drawing.Size(145, 21)
@@ -285,7 +285,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label12.Location = New System.Drawing.Point(534, 138)
+        Me.Label12.Location = New System.Drawing.Point(746, 138)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(99, 13)
         Me.Label12.TabIndex = 71
@@ -602,7 +602,7 @@ Partial Class frmCreateNewFranchisee
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(952, 395)
+        Me.ClientSize = New System.Drawing.Size(978, 395)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
