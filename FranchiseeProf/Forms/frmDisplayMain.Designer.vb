@@ -90,7 +90,6 @@ Partial Class pnlMain
         Me.lblFPFStatus = New System.Windows.Forms.Label()
         Me.lblIDFranchisee = New System.Windows.Forms.Label()
         Me.lblFullName = New System.Windows.Forms.Label()
-        Me.dgvOutlet = New System.Windows.Forms.DataGridView()
         Me.btnSaveChanges = New System.Windows.Forms.Button()
         Me.lblBranch = New System.Windows.Forms.Label()
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
@@ -99,17 +98,23 @@ Partial Class pnlMain
         Me.idFranchisee = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.FPFLName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.FPFFName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.SignOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
         Me.tcDMS.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.tcFranchiseProf.SuspendLayout()
+        Me.tsUserStatus.SuspendLayout()
         Me.pnlUPDash.SuspendLayout()
         Me.tsFrachiseeRowStatus.SuspendLayout()
         Me.pnlUPHeader.SuspendLayout()
         Me.pnlInfo.SuspendLayout()
-        CType(Me.dgvOutlet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -178,7 +183,7 @@ Partial Class pnlMain
         Me.tcFranchisee.Margin = New System.Windows.Forms.Padding(0)
         Me.tcFranchisee.Name = "tcFranchisee"
         Me.tcFranchisee.SelectedIndex = 0
-        Me.tcFranchisee.Size = New System.Drawing.Size(1366, 722)
+        Me.tcFranchisee.Size = New System.Drawing.Size(1366, 719)
         Me.tcFranchisee.TabIndex = 0
         '
         'tcDMS
@@ -247,7 +252,7 @@ Partial Class pnlMain
         Me.tcFranchiseProf.Location = New System.Drawing.Point(4, 22)
         Me.tcFranchiseProf.Margin = New System.Windows.Forms.Padding(0)
         Me.tcFranchiseProf.Name = "tcFranchiseProf"
-        Me.tcFranchiseProf.Size = New System.Drawing.Size(1358, 696)
+        Me.tcFranchiseProf.Size = New System.Drawing.Size(1358, 693)
         Me.tcFranchiseProf.TabIndex = 1
         Me.tcFranchiseProf.Text = "Franchise Profiling"
         Me.tcFranchiseProf.UseVisualStyleBackColor = True
@@ -258,7 +263,8 @@ Partial Class pnlMain
         Me.tsUserStatus.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.tsUserStatus.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.tsUserStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.tsUserStatus.Location = New System.Drawing.Point(0, 671)
+        Me.tsUserStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1, Me.ToolStripSeparator2, Me.ToolStripLabel4})
+        Me.tsUserStatus.Location = New System.Drawing.Point(0, 668)
         Me.tsUserStatus.Name = "tsUserStatus"
         Me.tsUserStatus.Size = New System.Drawing.Size(1358, 25)
         Me.tsUserStatus.TabIndex = 21
@@ -271,7 +277,7 @@ Partial Class pnlMain
         Me.pnlUPDash.Controls.Add(Me.pnlUPHeader)
         Me.pnlUPDash.Location = New System.Drawing.Point(15, 15)
         Me.pnlUPDash.Name = "pnlUPDash"
-        Me.pnlUPDash.Size = New System.Drawing.Size(350, 653)
+        Me.pnlUPDash.Size = New System.Drawing.Size(350, 650)
         Me.pnlUPDash.TabIndex = 20
         '
         'tsFrachiseeRowStatus
@@ -280,7 +286,7 @@ Partial Class pnlMain
         Me.tsFrachiseeRowStatus.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.tsFrachiseeRowStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.tsFrachiseeRowStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripLabel2, Me.ToolStripSeparator1, Me.ToolStripLabel3})
-        Me.tsFrachiseeRowStatus.Location = New System.Drawing.Point(0, 628)
+        Me.tsFrachiseeRowStatus.Location = New System.Drawing.Point(0, 625)
         Me.tsFrachiseeRowStatus.Name = "tsFrachiseeRowStatus"
         Me.tsFrachiseeRowStatus.Padding = New System.Windows.Forms.Padding(0)
         Me.tsFrachiseeRowStatus.Size = New System.Drawing.Size(350, 25)
@@ -315,7 +321,7 @@ Partial Class pnlMain
         Me.lvUserProfile.BackColor = System.Drawing.SystemColors.Window
         Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.FPFLName, Me.FPFFName})
-        Me.lvUserProfile.Location = New System.Drawing.Point(1, 103)
+        Me.lvUserProfile.Location = New System.Drawing.Point(1, 99)
         Me.lvUserProfile.Name = "lvUserProfile"
         Me.lvUserProfile.Size = New System.Drawing.Size(349, 523)
         Me.lvUserProfile.TabIndex = 21
@@ -391,6 +397,7 @@ Partial Class pnlMain
         '
         'pnlInfo
         '
+        Me.pnlInfo.Controls.Add(Me.ListView1)
         Me.pnlInfo.Controls.Add(Me.lblPermanentlyClosed)
         Me.pnlInfo.Controls.Add(Me.lblTemporaryClosed)
         Me.pnlInfo.Controls.Add(Me.lblTotalActive)
@@ -431,7 +438,6 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.lblFPFStatus)
         Me.pnlInfo.Controls.Add(Me.lblIDFranchisee)
         Me.pnlInfo.Controls.Add(Me.lblFullName)
-        Me.pnlInfo.Controls.Add(Me.dgvOutlet)
         Me.pnlInfo.Controls.Add(Me.btnSaveChanges)
         Me.pnlInfo.Controls.Add(Me.lblBranch)
         Me.pnlInfo.Controls.Add(Me.btnAddNewFranchisee)
@@ -531,9 +537,9 @@ Partial Class pnlMain
         Me.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditProfile.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnEditProfile.Location = New System.Drawing.Point(817, 541)
+        Me.btnEditProfile.Location = New System.Drawing.Point(853, 543)
         Me.btnEditProfile.Name = "btnEditProfile"
-        Me.btnEditProfile.Size = New System.Drawing.Size(103, 40)
+        Me.btnEditProfile.Size = New System.Drawing.Size(105, 30)
         Me.btnEditProfile.TabIndex = 67
         Me.btnEditProfile.Text = "Edit"
         Me.btnEditProfile.UseVisualStyleBackColor = False
@@ -702,9 +708,9 @@ Partial Class pnlMain
         Me.lblDateOfBirth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblDateOfBirth.Location = New System.Drawing.Point(514, 146)
         Me.lblDateOfBirth.Name = "lblDateOfBirth"
-        Me.lblDateOfBirth.Size = New System.Drawing.Size(124, 13)
+        Me.lblDateOfBirth.Size = New System.Drawing.Size(120, 13)
         Me.lblDateOfBirth.TabIndex = 51
-        Me.lblDateOfBirth.Text = "September 19, 1998"
+        Me.lblDateOfBirth.Text = "December 15, 1998"
         '
         'Label5
         '
@@ -807,9 +813,9 @@ Partial Class pnlMain
         Me.lblAddress2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblAddress2.Location = New System.Drawing.Point(140, 192)
         Me.lblAddress2.Name = "lblAddress2"
-        Me.lblAddress2.Size = New System.Drawing.Size(269, 13)
+        Me.lblAddress2.Size = New System.Drawing.Size(199, 13)
         Me.lblAddress2.TabIndex = 41
-        Me.lblAddress2.Text = "Address, Address, Address, Address, Address"
+        Me.lblAddress2.Text = "Door 4, Arsenal Street, Iloilo City"
         '
         'Label1
         '
@@ -828,9 +834,9 @@ Partial Class pnlMain
         Me.lblAddress1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblAddress1.Location = New System.Drawing.Point(141, 146)
         Me.lblAddress1.Name = "lblAddress1"
-        Me.lblAddress1.Size = New System.Drawing.Size(269, 13)
+        Me.lblAddress1.Size = New System.Drawing.Size(199, 13)
         Me.lblAddress1.TabIndex = 39
-        Me.lblAddress1.Text = "Address, Address, Address, Address, Address"
+        Me.lblAddress1.Text = "Door 4, Arsenal Street, Iloilo City"
         '
         'lblFPFStatus
         '
@@ -860,26 +866,18 @@ Partial Class pnlMain
         Me.lblFullName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblFullName.Location = New System.Drawing.Point(139, 41)
         Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(206, 18)
+        Me.lblFullName.Size = New System.Drawing.Size(210, 18)
         Me.lblFullName.TabIndex = 36
-        Me.lblFullName.Text = "FName MName LName"
-        '
-        'dgvOutlet
-        '
-        Me.dgvOutlet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvOutlet.Location = New System.Drawing.Point(28, 344)
-        Me.dgvOutlet.Name = "dgvOutlet"
-        Me.dgvOutlet.Size = New System.Drawing.Size(919, 180)
-        Me.dgvOutlet.TabIndex = 35
+        Me.lblFullName.Text = "Meep Meep Habaradas"
         '
         'btnSaveChanges
         '
         Me.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSaveChanges.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSaveChanges.Location = New System.Drawing.Point(708, 541)
+        Me.btnSaveChanges.Location = New System.Drawing.Point(742, 543)
         Me.btnSaveChanges.Name = "btnSaveChanges"
-        Me.btnSaveChanges.Size = New System.Drawing.Size(103, 40)
+        Me.btnSaveChanges.Size = New System.Drawing.Size(105, 30)
         Me.btnSaveChanges.TabIndex = 34
         Me.btnSaveChanges.Text = "Save Changes"
         Me.btnSaveChanges.UseVisualStyleBackColor = False
@@ -900,9 +898,9 @@ Partial Class pnlMain
         Me.btnAddNewFranchisee.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnAddNewFranchisee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNewFranchisee.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNewFranchisee.Location = New System.Drawing.Point(28, 314)
+        Me.btnAddNewFranchisee.Location = New System.Drawing.Point(28, 320)
         Me.btnAddNewFranchisee.Name = "btnAddNewFranchisee"
-        Me.btnAddNewFranchisee.Size = New System.Drawing.Size(99, 24)
+        Me.btnAddNewFranchisee.Size = New System.Drawing.Size(99, 30)
         Me.btnAddNewFranchisee.TabIndex = 16
         Me.btnAddNewFranchisee.Text = "Add New"
         Me.btnAddNewFranchisee.UseVisualStyleBackColor = False
@@ -942,6 +940,47 @@ Partial Class pnlMain
         Me.FPFFName.Text = "First Name"
         Me.FPFFName.Width = 161
         '
+        'ToolStripDropDownButton1
+        '
+        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.SignOutToolStripMenuItem})
+        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
+        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(87, 22)
+        Me.ToolStripDropDownButton1.Text = "@username"
+        '
+        'SignOutToolStripMenuItem
+        '
+        Me.SignOutToolStripMenuItem.Name = "SignOutToolStripMenuItem"
+        Me.SignOutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SignOutToolStripMenuItem.Text = "Sign out"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(43, 22)
+        Me.ToolStripLabel4.Text = "Ready"
+        '
+        'ListView1
+        '
+        Me.ListView1.Location = New System.Drawing.Point(28, 356)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(928, 146)
+        Me.ListView1.TabIndex = 76
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -964,6 +1003,8 @@ Partial Class pnlMain
         Me.Panel3.PerformLayout()
         Me.tcFranchiseProf.ResumeLayout(False)
         Me.tcFranchiseProf.PerformLayout()
+        Me.tsUserStatus.ResumeLayout(False)
+        Me.tsUserStatus.PerformLayout()
         Me.pnlUPDash.ResumeLayout(False)
         Me.pnlUPDash.PerformLayout()
         Me.tsFrachiseeRowStatus.ResumeLayout(False)
@@ -972,7 +1013,6 @@ Partial Class pnlMain
         Me.pnlUPHeader.PerformLayout()
         Me.pnlInfo.ResumeLayout(False)
         Me.pnlInfo.PerformLayout()
-        CType(Me.dgvOutlet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1046,7 +1086,6 @@ Partial Class pnlMain
     Friend WithEvents lblFPFStatus As Label
     Friend WithEvents lblIDFranchisee As Label
     Friend WithEvents lblFullName As Label
-    Friend WithEvents dgvOutlet As DataGridView
     Friend WithEvents btnSaveChanges As Button
     Friend WithEvents lblBranch As Label
     Friend WithEvents btnAddNewFranchisee As Button
@@ -1054,4 +1093,10 @@ Partial Class pnlMain
     Friend WithEvents idFranchisee As ColumnHeader
     Friend WithEvents FPFLName As ColumnHeader
     Friend WithEvents FPFFName As ColumnHeader
+    Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SignOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents ListView1 As ListView
 End Class

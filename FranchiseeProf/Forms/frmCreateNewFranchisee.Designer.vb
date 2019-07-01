@@ -113,7 +113,7 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Controls.Add(Me.lblPersoInfo)
         Me.Panel1.Location = New System.Drawing.Point(10, 48)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(956, 332)
+        Me.Panel1.Size = New System.Drawing.Size(938, 332)
         Me.Panel1.TabIndex = 0
         '
         'cbFPFStatus
@@ -590,7 +590,7 @@ Partial Class frmCreateNewFranchisee
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(913, 13)
+        Me.btnClose.Location = New System.Drawing.Point(923, 13)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 49
@@ -602,7 +602,7 @@ Partial Class frmCreateNewFranchisee
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(978, 395)
+        Me.ClientSize = New System.Drawing.Size(958, 395)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
