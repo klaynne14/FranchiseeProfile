@@ -50,6 +50,7 @@ Partial Class pnlMain
         Me.lvUserProfile = New System.Windows.Forms.ListView()
         Me.idFranchisee = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.FName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.LName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlUPHeader = New System.Windows.Forms.Panel()
         Me.btnCreateNew = New System.Windows.Forms.Button()
         Me.btnPrintSel = New System.Windows.Forms.Button()
@@ -103,7 +104,6 @@ Partial Class pnlMain
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.LName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -364,12 +364,17 @@ Partial Class pnlMain
         'idFranchisee
         '
         Me.idFranchisee.Text = "ID"
-        Me.idFranchisee.Width = 87
+        Me.idFranchisee.Width = 38
         '
         'FName
         '
         Me.FName.Text = "First Name"
-        Me.FName.Width = 140
+        Me.FName.Width = 166
+        '
+        'LName
+        '
+        Me.LName.Text = "Last Name"
+        Me.LName.Width = 148
         '
         'pnlUPHeader
         '
@@ -975,10 +980,6 @@ Partial Class pnlMain
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
-        '
-        'LName
-        '
-        Me.LName.Text = "Last Name"
         '
         'pnlMain
         '
