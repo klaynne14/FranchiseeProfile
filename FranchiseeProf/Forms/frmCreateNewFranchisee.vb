@@ -3,7 +3,7 @@
 
 Public Class frmCreateNewFranchisee
 
-    Dim afs As clsFranchisee = New clsFranchisee
+
 
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -15,6 +15,8 @@ Public Class frmCreateNewFranchisee
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        Dim afs As clsFranchisee = New clsFranchisee
+
         afs.FName = txtFName.Text
         afs.LName = txtLName.Text
         afs.MName = txtMName.Text

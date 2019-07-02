@@ -27,6 +27,7 @@ Partial Class frmAddNewOutlet
         Me.pnlBorderRight = New System.Windows.Forms.Panel()
         Me.pnlBorderLeft = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtLocationName = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
@@ -46,18 +47,19 @@ Partial Class frmAddNewOutlet
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cbOutletStatus = New System.Windows.Forms.CheckBox()
         Me.lblOutletClosedDate = New System.Windows.Forms.Label()
-        Me.dtpOutletClosedDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDateClosed = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.dtpOutletStartDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDateOpened = New System.Windows.Forms.DateTimePicker()
         Me.txtOutletAddress = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnAddNew = New System.Windows.Forms.Button()
-        Me.cbBranch = New System.Windows.Forms.ComboBox()
         Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.txtRelocAddress = New System.Windows.Forms.TextBox()
+        Me.lblRelocAddress = New System.Windows.Forms.Label()
         Me.pnlBorderLeft.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -98,6 +100,9 @@ Partial Class frmAddNewOutlet
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.txtRelocAddress)
+        Me.Panel1.Controls.Add(Me.lblRelocAddress)
+        Me.Panel1.Controls.Add(Me.txtLocationName)
         Me.Panel1.Controls.Add(Me.TextBox6)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.TextBox7)
@@ -117,20 +122,26 @@ Partial Class frmAddNewOutlet
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.cbOutletStatus)
         Me.Panel1.Controls.Add(Me.lblOutletClosedDate)
-        Me.Panel1.Controls.Add(Me.dtpOutletClosedDate)
+        Me.Panel1.Controls.Add(Me.dtpDateClosed)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.dtpOutletStartDate)
+        Me.Panel1.Controls.Add(Me.dtpDateOpened)
         Me.Panel1.Controls.Add(Me.txtOutletAddress)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnAddNew)
-        Me.Panel1.Controls.Add(Me.cbBranch)
         Me.Panel1.Controls.Add(Me.cbBusinessUnit)
         Me.Panel1.Location = New System.Drawing.Point(6, 44)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(585, 390)
         Me.Panel1.TabIndex = 3
+        '
+        'txtLocationName
+        '
+        Me.txtLocationName.Location = New System.Drawing.Point(163, 26)
+        Me.txtLocationName.Name = "txtLocationName"
+        Me.txtLocationName.Size = New System.Drawing.Size(169, 20)
+        Me.txtLocationName.TabIndex = 49
         '
         'TextBox6
         '
@@ -276,6 +287,7 @@ Partial Class frmAddNewOutlet
         '
         Me.cbOutletClosedStatus.ForeColor = System.Drawing.Color.DimGray
         Me.cbOutletClosedStatus.FormattingEnabled = True
+        Me.cbOutletClosedStatus.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated"})
         Me.cbOutletClosedStatus.Location = New System.Drawing.Point(368, 72)
         Me.cbOutletClosedStatus.Name = "cbOutletClosedStatus"
         Me.cbOutletClosedStatus.Size = New System.Drawing.Size(125, 21)
@@ -315,13 +327,13 @@ Partial Class frmAddNewOutlet
         Me.lblOutletClosedDate.Text = "Date Closed"
         Me.lblOutletClosedDate.Visible = False
         '
-        'dtpOutletClosedDate
+        'dtpDateClosed
         '
-        Me.dtpOutletClosedDate.Location = New System.Drawing.Point(368, 118)
-        Me.dtpOutletClosedDate.Name = "dtpOutletClosedDate"
-        Me.dtpOutletClosedDate.Size = New System.Drawing.Size(180, 20)
-        Me.dtpOutletClosedDate.TabIndex = 29
-        Me.dtpOutletClosedDate.Visible = False
+        Me.dtpDateClosed.Location = New System.Drawing.Point(368, 118)
+        Me.dtpDateClosed.Name = "dtpDateClosed"
+        Me.dtpDateClosed.Size = New System.Drawing.Size(180, 20)
+        Me.dtpDateClosed.TabIndex = 29
+        Me.dtpDateClosed.Visible = False
         '
         'Label3
         '
@@ -330,16 +342,16 @@ Partial Class frmAddNewOutlet
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label3.Location = New System.Drawing.Point(29, 141)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 13)
+        Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 28
-        Me.Label3.Text = "Date start"
+        Me.Label3.Text = "Date Opened"
         '
-        'dtpOutletStartDate
+        'dtpDateOpened
         '
-        Me.dtpOutletStartDate.Location = New System.Drawing.Point(32, 118)
-        Me.dtpOutletStartDate.Name = "dtpOutletStartDate"
-        Me.dtpOutletStartDate.Size = New System.Drawing.Size(180, 20)
-        Me.dtpOutletStartDate.TabIndex = 27
+        Me.dtpDateOpened.Location = New System.Drawing.Point(32, 118)
+        Me.dtpDateOpened.Name = "dtpDateOpened"
+        Me.dtpDateOpened.Size = New System.Drawing.Size(180, 20)
+        Me.dtpDateOpened.TabIndex = 27
         '
         'txtOutletAddress
         '
@@ -366,9 +378,9 @@ Partial Class frmAddNewOutlet
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label5.Location = New System.Drawing.Point(160, 50)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 13)
+        Me.Label5.Size = New System.Drawing.Size(54, 13)
         Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Branch"
+        Me.Label5.Text = "Location"
         '
         'Label4
         '
@@ -393,19 +405,11 @@ Partial Class frmAddNewOutlet
         Me.btnAddNew.Text = "Add New"
         Me.btnAddNew.UseVisualStyleBackColor = False
         '
-        'cbBranch
-        '
-        Me.cbBranch.ForeColor = System.Drawing.Color.DimGray
-        Me.cbBranch.FormattingEnabled = True
-        Me.cbBranch.Location = New System.Drawing.Point(163, 26)
-        Me.cbBranch.Name = "cbBranch"
-        Me.cbBranch.Size = New System.Drawing.Size(169, 21)
-        Me.cbBranch.TabIndex = 1
-        '
         'cbBusinessUnit
         '
         Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
         Me.cbBusinessUnit.FormattingEnabled = True
+        Me.cbBusinessUnit.Items.AddRange(New Object() {"Coffeebreak", "Waffle Time"})
         Me.cbBusinessUnit.Location = New System.Drawing.Point(32, 26)
         Me.cbBusinessUnit.Name = "cbBusinessUnit"
         Me.cbBusinessUnit.Size = New System.Drawing.Size(125, 21)
@@ -436,6 +440,26 @@ Partial Class frmAddNewOutlet
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'txtRelocAddress
+        '
+        Me.txtRelocAddress.Location = New System.Drawing.Point(368, 164)
+        Me.txtRelocAddress.Name = "txtRelocAddress"
+        Me.txtRelocAddress.Size = New System.Drawing.Size(180, 20)
+        Me.txtRelocAddress.TabIndex = 51
+        Me.txtRelocAddress.Visible = False
+        '
+        'lblRelocAddress
+        '
+        Me.lblRelocAddress.AutoSize = True
+        Me.lblRelocAddress.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRelocAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblRelocAddress.Location = New System.Drawing.Point(365, 187)
+        Me.lblRelocAddress.Name = "lblRelocAddress"
+        Me.lblRelocAddress.Size = New System.Drawing.Size(116, 13)
+        Me.lblRelocAddress.TabIndex = 50
+        Me.lblRelocAddress.Text = "Relocation Address"
+        Me.lblRelocAddress.Visible = False
+        '
         'frmAddNewOutlet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -464,7 +488,6 @@ Partial Class frmAddNewOutlet
     Friend WithEvents pnlBorderRight As Panel
     Friend WithEvents pnlBorderLeft As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents cbBranch As ComboBox
     Friend WithEvents cbBusinessUnit As ComboBox
     Friend WithEvents btnAddNew As Button
     Friend WithEvents Label2 As Label
@@ -489,10 +512,13 @@ Partial Class frmAddNewOutlet
     Friend WithEvents Label7 As Label
     Friend WithEvents cbOutletStatus As CheckBox
     Friend WithEvents lblOutletClosedDate As Label
-    Friend WithEvents dtpOutletClosedDate As DateTimePicker
+    Friend WithEvents dtpDateClosed As DateTimePicker
     Friend WithEvents Label3 As Label
-    Friend WithEvents dtpOutletStartDate As DateTimePicker
+    Friend WithEvents dtpDateOpened As DateTimePicker
     Friend WithEvents txtOutletAddress As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnClose As Button
+    Friend WithEvents txtLocationName As TextBox
+    Friend WithEvents txtRelocAddress As TextBox
+    Friend WithEvents lblRelocAddress As Label
 End Class
