@@ -23,6 +23,14 @@ Partial Class frmCreateNewFranchisee
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.txtCorpAuthorizedName = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.cbOwnershipType = New System.Windows.Forms.ComboBox()
+        Me.txtTinNumber = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtOccupation = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.cbFPFStatus = New System.Windows.Forms.CheckBox()
         Me.txtFaxNumber = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -65,12 +73,24 @@ Partial Class frmCreateNewFranchisee
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.txtYearStarted = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.Label23)
+        Me.Panel1.Controls.Add(Me.txtYearStarted)
+        Me.Panel1.Controls.Add(Me.Label22)
+        Me.Panel1.Controls.Add(Me.txtCorpAuthorizedName)
+        Me.Panel1.Controls.Add(Me.Label21)
+        Me.Panel1.Controls.Add(Me.cbOwnershipType)
+        Me.Panel1.Controls.Add(Me.txtTinNumber)
+        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.txtOccupation)
+        Me.Panel1.Controls.Add(Me.Label19)
         Me.Panel1.Controls.Add(Me.cbFPFStatus)
         Me.Panel1.Controls.Add(Me.txtFaxNumber)
         Me.Panel1.Controls.Add(Me.Label18)
@@ -113,8 +133,98 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Controls.Add(Me.lblPersoInfo)
         Me.Panel1.Location = New System.Drawing.Point(10, 48)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(938, 332)
+        Me.Panel1.Size = New System.Drawing.Size(958, 388)
         Me.Panel1.TabIndex = 0
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label22.Location = New System.Drawing.Point(147, 343)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(265, 13)
+        Me.Label22.TabIndex = 93
+        Me.Label22.Text = "If corporation, Name of Authorized Signatory"
+        '
+        'txtCorpAuthorizedName
+        '
+        Me.txtCorpAuthorizedName.BackColor = System.Drawing.SystemColors.Window
+        Me.txtCorpAuthorizedName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCorpAuthorizedName.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.txtCorpAuthorizedName.ForeColor = System.Drawing.Color.Black
+        Me.txtCorpAuthorizedName.Location = New System.Drawing.Point(150, 319)
+        Me.txtCorpAuthorizedName.MaxLength = 32
+        Me.txtCorpAuthorizedName.Name = "txtCorpAuthorizedName"
+        Me.txtCorpAuthorizedName.Size = New System.Drawing.Size(262, 21)
+        Me.txtCorpAuthorizedName.TabIndex = 92
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label21.Location = New System.Drawing.Point(147, 298)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(98, 13)
+        Me.Label21.TabIndex = 91
+        Me.Label21.Text = "Ownership Type"
+        '
+        'cbOwnershipType
+        '
+        Me.cbOwnershipType.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbOwnershipType.FormattingEnabled = True
+        Me.cbOwnershipType.Items.AddRange(New Object() {"Standard", "Customized"})
+        Me.cbOwnershipType.Location = New System.Drawing.Point(150, 275)
+        Me.cbOwnershipType.Name = "cbOwnershipType"
+        Me.cbOwnershipType.Size = New System.Drawing.Size(115, 21)
+        Me.cbOwnershipType.TabIndex = 90
+        '
+        'txtTinNumber
+        '
+        Me.txtTinNumber.BackColor = System.Drawing.SystemColors.Window
+        Me.txtTinNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTinNumber.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.txtTinNumber.ForeColor = System.Drawing.Color.Black
+        Me.txtTinNumber.Location = New System.Drawing.Point(658, 206)
+        Me.txtTinNumber.MaxLength = 32
+        Me.txtTinNumber.Name = "txtTinNumber"
+        Me.txtTinNumber.Size = New System.Drawing.Size(115, 21)
+        Me.txtTinNumber.TabIndex = 89
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label20.Location = New System.Drawing.Point(655, 230)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(73, 13)
+        Me.Label20.TabIndex = 88
+        Me.Label20.Text = "Tin Number"
+        '
+        'txtOccupation
+        '
+        Me.txtOccupation.BackColor = System.Drawing.SystemColors.Window
+        Me.txtOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtOccupation.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.txtOccupation.ForeColor = System.Drawing.Color.Black
+        Me.txtOccupation.Location = New System.Drawing.Point(537, 206)
+        Me.txtOccupation.MaxLength = 32
+        Me.txtOccupation.Name = "txtOccupation"
+        Me.txtOccupation.Size = New System.Drawing.Size(115, 21)
+        Me.txtOccupation.TabIndex = 87
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label19.Location = New System.Drawing.Point(534, 230)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(70, 13)
+        Me.Label19.TabIndex = 86
+        Me.Label19.Text = "Occupation"
         '
         'cbFPFStatus
         '
@@ -136,7 +246,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtFaxNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFaxNumber.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtFaxNumber.ForeColor = System.Drawing.Color.Black
-        Me.txtFaxNumber.Location = New System.Drawing.Point(537, 206)
+        Me.txtFaxNumber.Location = New System.Drawing.Point(779, 206)
         Me.txtFaxNumber.MaxLength = 32
         Me.txtFaxNumber.Name = "txtFaxNumber"
         Me.txtFaxNumber.Size = New System.Drawing.Size(145, 21)
@@ -147,7 +257,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label18.Location = New System.Drawing.Point(534, 230)
+        Me.Label18.Location = New System.Drawing.Point(776, 230)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(75, 13)
         Me.Label18.TabIndex = 83
@@ -173,7 +283,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtTelNum2.Location = New System.Drawing.Point(658, 160)
         Me.txtTelNum2.MaxLength = 32
         Me.txtTelNum2.Name = "txtTelNum2"
-        Me.txtTelNum2.Size = New System.Drawing.Size(85, 21)
+        Me.txtTelNum2.Size = New System.Drawing.Size(115, 21)
         Me.txtTelNum2.TabIndex = 81
         '
         'Label17
@@ -193,10 +303,10 @@ Partial Class frmCreateNewFranchisee
         Me.txtTelNum1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelNum1.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtTelNum1.ForeColor = System.Drawing.Color.Black
-        Me.txtTelNum1.Location = New System.Drawing.Point(658, 114)
+        Me.txtTelNum1.Location = New System.Drawing.Point(659, 114)
         Me.txtTelNum1.MaxLength = 32
         Me.txtTelNum1.Name = "txtTelNum1"
-        Me.txtTelNum1.Size = New System.Drawing.Size(85, 21)
+        Me.txtTelNum1.Size = New System.Drawing.Size(115, 21)
         Me.txtTelNum1.TabIndex = 79
         '
         'Label15
@@ -251,7 +361,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtEmailAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEmailAddress2.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtEmailAddress2.ForeColor = System.Drawing.Color.Black
-        Me.txtEmailAddress2.Location = New System.Drawing.Point(750, 160)
+        Me.txtEmailAddress2.Location = New System.Drawing.Point(779, 160)
         Me.txtEmailAddress2.MaxLength = 32
         Me.txtEmailAddress2.Name = "txtEmailAddress2"
         Me.txtEmailAddress2.Size = New System.Drawing.Size(145, 21)
@@ -262,7 +372,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label13.Location = New System.Drawing.Point(747, 184)
+        Me.Label13.Location = New System.Drawing.Point(776, 184)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(99, 13)
         Me.Label13.TabIndex = 73
@@ -274,7 +384,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtEmailAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEmailAddress1.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.txtEmailAddress1.ForeColor = System.Drawing.Color.Black
-        Me.txtEmailAddress1.Location = New System.Drawing.Point(750, 114)
+        Me.txtEmailAddress1.Location = New System.Drawing.Point(779, 114)
         Me.txtEmailAddress1.MaxLength = 32
         Me.txtEmailAddress1.Name = "txtEmailAddress1"
         Me.txtEmailAddress1.Size = New System.Drawing.Size(145, 21)
@@ -285,7 +395,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label12.Location = New System.Drawing.Point(746, 138)
+        Me.Label12.Location = New System.Drawing.Point(775, 138)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(99, 13)
         Me.Label12.TabIndex = 71
@@ -327,6 +437,7 @@ Partial Class frmCreateNewFranchisee
         '
         'dtpDateOfBirth
         '
+        Me.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDateOfBirth.Location = New System.Drawing.Point(537, 68)
         Me.dtpDateOfBirth.Name = "dtpDateOfBirth"
         Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 20)
@@ -350,7 +461,7 @@ Partial Class frmCreateNewFranchisee
         Me.cbGender.Items.AddRange(New Object() {"Male", "Female"})
         Me.cbGender.Location = New System.Drawing.Point(779, 68)
         Me.cbGender.Name = "cbGender"
-        Me.cbGender.Size = New System.Drawing.Size(115, 21)
+        Me.cbGender.Size = New System.Drawing.Size(145, 21)
         Me.cbGender.TabIndex = 64
         '
         'Label1
@@ -531,7 +642,7 @@ Partial Class frmCreateNewFranchisee
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmit.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSubmit.Location = New System.Drawing.Point(809, 266)
+        Me.btnSubmit.Location = New System.Drawing.Point(838, 319)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(86, 30)
         Me.btnSubmit.TabIndex = 48
@@ -590,19 +701,42 @@ Partial Class frmCreateNewFranchisee
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(923, 13)
+        Me.btnClose.Location = New System.Drawing.Point(943, 13)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 49
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label23.Location = New System.Drawing.Point(424, 343)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(78, 13)
+        Me.Label23.TabIndex = 95
+        Me.Label23.Text = "Year Started"
+        '
+        'txtYearStarted
+        '
+        Me.txtYearStarted.BackColor = System.Drawing.SystemColors.Window
+        Me.txtYearStarted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtYearStarted.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.txtYearStarted.ForeColor = System.Drawing.Color.Black
+        Me.txtYearStarted.Location = New System.Drawing.Point(427, 319)
+        Me.txtYearStarted.MaxLength = 32
+        Me.txtYearStarted.Name = "txtYearStarted"
+        Me.txtYearStarted.Size = New System.Drawing.Size(80, 21)
+        Me.txtYearStarted.TabIndex = 94
+        '
         'frmCreateNewFranchisee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(958, 395)
+        Me.ClientSize = New System.Drawing.Size(979, 448)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -660,4 +794,14 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents cbFPFStatus As CheckBox
     Friend WithEvents txtFaxNumber As TextBox
     Friend WithEvents Label18 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents txtCorpAuthorizedName As TextBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents cbOwnershipType As ComboBox
+    Friend WithEvents txtTinNumber As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents txtOccupation As TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents txtYearStarted As TextBox
 End Class

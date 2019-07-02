@@ -6,4 +6,5 @@
     Private Sub frmCreateNewFranchisee_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
     End Sub
+
 End Class
