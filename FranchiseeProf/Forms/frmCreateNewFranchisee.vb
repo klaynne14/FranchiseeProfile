@@ -5,60 +5,6 @@ Public Class frmCreateNewFranchisee
 
     Dim afs As clsFranchisee = New clsFranchisee
 
-    Public Function addFranchisee() As Boolean
-
-        Dim sQuery As String = "Insert Into Franchisee(FPFName,FPFLName,FPFMName,FPFStatus,FPFTotalActive,FPFTotalTempClosed,FPFTotalPermClosed,FPFOwnershipType,FPFCorpAuthorizedName,FPFYearStarted,
-                                                        FPFAddress1,FPFAddress2,FPFTinNumber,FPFAge,FPFGender,FPFCivilStatus,FPFNationality,FPFReligion,FPFOccupation,FPFMobileNum1,
-                                                        FPFMobileNum2,FPFTelNum1,FPFTelNum2,FPFFaxNum,FPFEmailAdd1,FPFEmailAdd2,idOutlet,FPFImage)
-                                Values(@FPFName,@FPFLName,@FPFMName,@FPFStatus,@FPFTotalActive,@FPFTotalTempClosed,@FPFTotalPermClosed,@FPFOwnershipType,@FPFCorpAuthorizedName,@FPFYearStarted,
-                                        @FPFAddress1,@FPFAddress2,@FPFTinNumber,@FPFAge,@FPFGender,@FPFCivilStatus,@FPFNationality,@FPFReligion,@FPFOccupation,@FPFMobileNum1,
-                                        @FPFMobileNum2,@FPFTelNum1,@FPFTelNum2,@FPFFaxNum,@FPFEmailAdd1,@FPFEmailAdd2,@idOutlet,@FPFImage)"
-
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-            Try
-                oConnection.Open()
-
-                Using oCommand As New SqlCommand(sQuery, oConnection)
-
-                    oCommand.Parameters.AddWithValue("@FPFName", afs.FName)
-                    oCommand.Parameters.AddWithValue("@FPLName", afs.LName)
-                    oCommand.Parameters.AddWithValue("@FPFMName", afs.MName)
-                    oCommand.Parameters.AddWithValue("@FPFStatus", afs.Status)
-                    oCommand.Parameters.AddWithValue("@FPFTotalActive", afs.TotalActive)
-                    oCommand.Parameters.AddWithValue("@FPFTotalTempClosed", afs.TotalTempCLosed)
-                    oCommand.Parameters.AddWithValue("@FPFTotalPermClosed", afs.TotalPermClosed)
-                    oCommand.Parameters.AddWithValue("@FPFOwnershipType", afs.OwnershipType)
-                    oCommand.Parameters.AddWithValue("@FPFCorpAuthorizedName", afs.CorpAuthorizedName)
-                    oCommand.Parameters.AddWithValue("@FPFYearStarted", afs.YearStarted)
-                    oCommand.Parameters.AddWithValue("@FPFAddress1", afs.Address1)
-                    oCommand.Parameters.AddWithValue("@FPFAddress2", afs.Address2)
-                    oCommand.Parameters.AddWithValue("@FPFTinNumber", afs.TinNumber)
-                    'oCommand.Parameters.AddWithValue("@FPFDateOfBirth", afs.DateOfBirth)
-                    oCommand.Parameters.AddWithValue("@FPFAge", afs.Age)
-                    oCommand.Parameters.AddWithValue("@FPFGender", afs.Gender)
-                    oCommand.Parameters.AddWithValue("@FPFCivilStatus", afs.CivilStatus)
-                    oCommand.Parameters.AddWithValue("@FPFNationality", afs.Nationality)
-                    oCommand.Parameters.AddWithValue("@FPFReligion", afs.Religion)
-                    oCommand.Parameters.AddWithValue("@FPFOccupation", afs.Occupation)
-                    oCommand.Parameters.AddWithValue("@FPFMobileNum1", afs.MobileNumber1)
-                    oCommand.Parameters.AddWithValue("@FPFMobileNum2", afs.MobileNumber2)
-                    oCommand.Parameters.AddWithValue("@FPFTelNum1", afs.TelNumber1)
-                    oCommand.Parameters.AddWithValue("@FPFTelNum2", afs.TelNumber2)
-                    oCommand.Parameters.AddWithValue("@FPFFaxNum", afs.FaxNumber)
-                    oCommand.Parameters.AddWithValue("@FPFEmailAdd1", afs.EmailAdd1)
-                    oCommand.Parameters.AddWithValue("@FPFEmailAdd2", afs.EmailAdd2)
-                    oCommand.Parameters.AddWithValue("@FPFImage", afs.Image)
-                    oCommand.Parameters.AddWithValue("@idOutlet", afs.LName)
-
-                    oCommand.ExecuteNonQuery()
-                    Return True
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("ERROR @addFranchisee" + ex.Message)
-            End Try
-        End Using
-        Return False
-    End Function
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
@@ -70,9 +16,59 @@ Public Class frmCreateNewFranchisee
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         afs.FName = txtFName.Text
-        'afs.DateOfBirth = dtpDateOfBirth.Value
-        If addFranchisee() Then
+        afs.LName = txtLName.Text
+        afs.MName = txtMName.Text
+        afs.Status = activeStatus
+        afs.OwnershipType = cbOwnershipType.Text
+        afs.CorpAuthorizedName = txtCorpAuthorizedName.Text
+        afs.YearStarted = txtYearStarted.Text
+        afs.Address1 = txtAddress1.Text
+        afs.Address2 = txtAddress2.Text
+        afs.TinNumber = txtTinNumber.Text
+        afs.DateOfBirth = dtpDateOfBirth.Value.Date
+        afs.Age = txtAge.Text
+        afs.Gender = cbGender.Text
+        afs.CivilStatus = txtCivilStatus.Text
+        afs.Nationality = txtNationality.Text
+        afs.Religion = txtReligion.Text
+        afs.Occupation = txtOccupation.Text
+        afs.MobileNumber1 = txtMobileNum1.Text
+        afs.MobileNumber2 = txtMobileNum2.Text
+        afs.TelNumber1 = txtTelNum1.Text
+        afs.TelNumber2 = txtTelNum2.Text
+        afs.FaxNumber = txtFaxNumber.Text
+        afs.EmailAdd1 = txtEmailAddress1.Text
+        afs.EmailAdd2 = txtEmailAddress2.Text
+
+        If afs.addFranchisee() Then
             Me.Close()
+        End If
+    End Sub
+
+    Dim activeStatus As Integer
+    Private Sub cbFPFStatus_CheckedChanged(sender As Object, e As EventArgs) Handles cbFPFStatus.CheckedChanged
+        If cbFPFStatus.Checked Then
+            activeStatus = 1
+        Else
+            activeStatus = 0
+        End If
+    End Sub
+
+
+
+    Private Sub cbOwnershipType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbOwnershipType.SelectedIndexChanged
+        Dim cbOwnershipValue As String = cbOwnershipType.Text
+
+        If cbOwnershipValue = "Corporation" Then
+            txtCorpAuthorizedName.Visible = True
+            txtYearStarted.Visible = True
+            lblIfCorp.Visible = True
+            lblYearStart.Visible = True
+        Else
+            txtCorpAuthorizedName.Visible = False
+            txtYearStarted.Visible = False
+            lblIfCorp.Visible = False
+            lblYearStart.Visible = False
         End If
     End Sub
 End Class

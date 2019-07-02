@@ -23,9 +23,10 @@ Partial Class frmCreateNewFranchisee
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label23 = New System.Windows.Forms.Label()
+        Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
+        Me.lblYearStart = New System.Windows.Forms.Label()
         Me.txtYearStarted = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
+        Me.lblIfCorp = New System.Windows.Forms.Label()
         Me.txtCorpAuthorizedName = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.cbOwnershipType = New System.Windows.Forms.ComboBox()
@@ -74,7 +75,6 @@ Partial Class frmCreateNewFranchisee
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -82,9 +82,9 @@ Partial Class frmCreateNewFranchisee
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
-        Me.Panel1.Controls.Add(Me.Label23)
+        Me.Panel1.Controls.Add(Me.lblYearStart)
         Me.Panel1.Controls.Add(Me.txtYearStarted)
-        Me.Panel1.Controls.Add(Me.Label22)
+        Me.Panel1.Controls.Add(Me.lblIfCorp)
         Me.Panel1.Controls.Add(Me.txtCorpAuthorizedName)
         Me.Panel1.Controls.Add(Me.Label21)
         Me.Panel1.Controls.Add(Me.cbOwnershipType)
@@ -136,16 +136,24 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Size = New System.Drawing.Size(958, 388)
         Me.Panel1.TabIndex = 0
         '
-        'Label23
+        'dtpDateOfBirth
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label23.Location = New System.Drawing.Point(424, 343)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(78, 13)
-        Me.Label23.TabIndex = 95
-        Me.Label23.Text = "Year Started"
+        Me.dtpDateOfBirth.Location = New System.Drawing.Point(537, 68)
+        Me.dtpDateOfBirth.Name = "dtpDateOfBirth"
+        Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 20)
+        Me.dtpDateOfBirth.TabIndex = 96
+        '
+        'lblYearStart
+        '
+        Me.lblYearStart.AutoSize = True
+        Me.lblYearStart.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblYearStart.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblYearStart.Location = New System.Drawing.Point(424, 343)
+        Me.lblYearStart.Name = "lblYearStart"
+        Me.lblYearStart.Size = New System.Drawing.Size(78, 13)
+        Me.lblYearStart.TabIndex = 95
+        Me.lblYearStart.Text = "Year Started"
+        Me.lblYearStart.Visible = False
         '
         'txtYearStarted
         '
@@ -158,17 +166,19 @@ Partial Class frmCreateNewFranchisee
         Me.txtYearStarted.Name = "txtYearStarted"
         Me.txtYearStarted.Size = New System.Drawing.Size(80, 21)
         Me.txtYearStarted.TabIndex = 94
+        Me.txtYearStarted.Visible = False
         '
-        'Label22
+        'lblIfCorp
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label22.Location = New System.Drawing.Point(147, 343)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(265, 13)
-        Me.Label22.TabIndex = 93
-        Me.Label22.Text = "If corporation, Name of Authorized Signatory"
+        Me.lblIfCorp.AutoSize = True
+        Me.lblIfCorp.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIfCorp.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblIfCorp.Location = New System.Drawing.Point(147, 343)
+        Me.lblIfCorp.Name = "lblIfCorp"
+        Me.lblIfCorp.Size = New System.Drawing.Size(265, 13)
+        Me.lblIfCorp.TabIndex = 93
+        Me.lblIfCorp.Text = "If corporation, Name of Authorized Signatory"
+        Me.lblIfCorp.Visible = False
         '
         'txtCorpAuthorizedName
         '
@@ -181,6 +191,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtCorpAuthorizedName.Name = "txtCorpAuthorizedName"
         Me.txtCorpAuthorizedName.Size = New System.Drawing.Size(262, 21)
         Me.txtCorpAuthorizedName.TabIndex = 92
+        Me.txtCorpAuthorizedName.Visible = False
         '
         'Label21
         '
@@ -197,7 +208,7 @@ Partial Class frmCreateNewFranchisee
         '
         Me.cbOwnershipType.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbOwnershipType.FormattingEnabled = True
-        Me.cbOwnershipType.Items.AddRange(New Object() {"Standard", "Customized"})
+        Me.cbOwnershipType.Items.AddRange(New Object() {"Single", "Corporation"})
         Me.cbOwnershipType.Location = New System.Drawing.Point(150, 275)
         Me.cbOwnershipType.Name = "cbOwnershipType"
         Me.cbOwnershipType.Size = New System.Drawing.Size(115, 21)
@@ -723,13 +734,6 @@ Partial Class frmCreateNewFranchisee
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'dtpDateOfBirth
-        '
-        Me.dtpDateOfBirth.Location = New System.Drawing.Point(537, 68)
-        Me.dtpDateOfBirth.Name = "dtpDateOfBirth"
-        Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 20)
-        Me.dtpDateOfBirth.TabIndex = 96
-        '
         'frmCreateNewFranchisee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -792,7 +796,7 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents cbFPFStatus As CheckBox
     Friend WithEvents txtFaxNumber As TextBox
     Friend WithEvents Label18 As Label
-    Friend WithEvents Label22 As Label
+    Friend WithEvents lblIfCorp As Label
     Friend WithEvents txtCorpAuthorizedName As TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents cbOwnershipType As ComboBox
@@ -800,7 +804,7 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents Label20 As Label
     Friend WithEvents txtOccupation As TextBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents Label23 As Label
+    Friend WithEvents lblYearStart As Label
     Friend WithEvents txtYearStarted As TextBox
     Friend WithEvents dtpDateOfBirth As DateTimePicker
 End Class
