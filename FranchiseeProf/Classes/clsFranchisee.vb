@@ -1,0 +1,33 @@
+﻿Public Class clsFranchisee
+    Public idFranchisee As Integer
+    Public unFranchisee As Integer
+    Public LName As String
+    Public FName As String
+    Public MName As String
+    Public Status As Integer
+    Public TotalActive As Integer
+    Public TotalTempCLosed As Integer
+    Public TotalPermClosed As Integer
+    Public OwnershipType As String
+    Public CorpAuthorizedName As String
+    Public YearStarted As Date
+    Public Address1 As String
+    Public Address2 As String
+    Public TinNumber As String
+    'Public DateOfBirth As Date
+    Public Age As Integer
+    Public Gender As String
+    Public CivilStatus As String
+    Public Nationality As String
+    Public Religion As String
+    Public Occupation As String
+    Public MobileNumber1 As String
+    Public MobileNumber2 As String
+    Public TelNumber1 As String
+    Public TelNumber2 As String
+    Public FaxNumber As String
+    Public EmailAdd1 As String
+    Public EmailAdd2 As String
+    Public Image As Byte
+    Public idOutlet As Integer
+End Class
