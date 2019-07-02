@@ -41,7 +41,6 @@ Partial Class frmCreateNewFranchisee
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbGender = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -89,7 +88,6 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.txtAge)
         Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.cbGender)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -324,13 +322,6 @@ Partial Class frmCreateNewFranchisee
         Me.Label10.Size = New System.Drawing.Size(80, 13)
         Me.Label10.TabIndex = 67
         Me.Label10.Text = "Date of Birth"
-        '
-        'dtpDateOfBirth
-        '
-        Me.dtpDateOfBirth.Location = New System.Drawing.Point(537, 68)
-        Me.dtpDateOfBirth.Name = "dtpDateOfBirth"
-        Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 20)
-        Me.dtpDateOfBirth.TabIndex = 66
         '
         'Label9
         '
@@ -636,7 +627,6 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents Label11 As Label
     Friend WithEvents txtAge As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents dtpDateOfBirth As DateTimePicker
     Friend WithEvents Label9 As Label
     Friend WithEvents cbGender As ComboBox
     Friend WithEvents Label1 As Label
