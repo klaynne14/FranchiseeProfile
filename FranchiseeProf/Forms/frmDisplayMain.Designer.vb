@@ -36,6 +36,11 @@ Partial Class pnlMain
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tcFranchiseProf = New System.Windows.Forms.TabPage()
         Me.tsUserStatus = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SignOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.pnlUPDash = New System.Windows.Forms.Panel()
         Me.tsFrachiseeRowStatus = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -43,6 +48,9 @@ Partial Class pnlMain
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.lvUserProfile = New System.Windows.Forms.ListView()
+        Me.idFranchisee = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.FName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.LName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlUPHeader = New System.Windows.Forms.Panel()
         Me.btnCreateNew = New System.Windows.Forms.Button()
         Me.btnPrintSel = New System.Windows.Forms.Button()
@@ -50,6 +58,7 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
         Me.lblTotalActive = New System.Windows.Forms.Label()
@@ -95,15 +104,6 @@ Partial Class pnlMain
         Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.idFranchisee = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.FPFLName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.FPFFName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.SignOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -194,7 +194,7 @@ Partial Class pnlMain
         Me.tcDMS.Location = New System.Drawing.Point(4, 22)
         Me.tcDMS.Name = "tcDMS"
         Me.tcDMS.Padding = New System.Windows.Forms.Padding(3)
-        Me.tcDMS.Size = New System.Drawing.Size(1370, 696)
+        Me.tcDMS.Size = New System.Drawing.Size(1358, 693)
         Me.tcDMS.TabIndex = 0
         Me.tcDMS.Text = "DMS+ Dashboard"
         '
@@ -270,6 +270,39 @@ Partial Class pnlMain
         Me.tsUserStatus.TabIndex = 21
         Me.tsUserStatus.Text = "ToolStrip2"
         '
+        'ToolStripDropDownButton1
+        '
+        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.SignOutToolStripMenuItem})
+        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
+        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(87, 22)
+        Me.ToolStripDropDownButton1.Text = "@username"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'SignOutToolStripMenuItem
+        '
+        Me.SignOutToolStripMenuItem.Name = "SignOutToolStripMenuItem"
+        Me.SignOutToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.SignOutToolStripMenuItem.Text = "Sign out"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel4
+        '
+        Me.ToolStripLabel4.Name = "ToolStripLabel4"
+        Me.ToolStripLabel4.Size = New System.Drawing.Size(43, 22)
+        Me.ToolStripLabel4.Text = "Ready"
+        '
         'pnlUPDash
         '
         Me.pnlUPDash.Controls.Add(Me.tsFrachiseeRowStatus)
@@ -320,13 +353,28 @@ Partial Class pnlMain
         '
         Me.lvUserProfile.BackColor = System.Drawing.SystemColors.Window
         Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.FPFLName, Me.FPFFName})
+        Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.FName, Me.LName})
         Me.lvUserProfile.Location = New System.Drawing.Point(1, 99)
         Me.lvUserProfile.Name = "lvUserProfile"
         Me.lvUserProfile.Size = New System.Drawing.Size(349, 523)
         Me.lvUserProfile.TabIndex = 21
         Me.lvUserProfile.UseCompatibleStateImageBehavior = False
         Me.lvUserProfile.View = System.Windows.Forms.View.Details
+        '
+        'idFranchisee
+        '
+        Me.idFranchisee.Text = "ID"
+        Me.idFranchisee.Width = 38
+        '
+        'FName
+        '
+        Me.FName.Text = "First Name"
+        Me.FName.Width = 166
+        '
+        'LName
+        '
+        Me.LName.Text = "Last Name"
+        Me.LName.Width = 148
         '
         'pnlUPHeader
         '
@@ -447,6 +495,14 @@ Partial Class pnlMain
         Me.pnlInfo.Name = "pnlInfo"
         Me.pnlInfo.Size = New System.Drawing.Size(990, 668)
         Me.pnlInfo.TabIndex = 18
+        '
+        'ListView1
+        '
+        Me.ListView1.Location = New System.Drawing.Point(28, 356)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(928, 146)
+        Me.ListView1.TabIndex = 76
+        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'lblPermanentlyClosed
         '
@@ -920,66 +976,10 @@ Partial Class pnlMain
         '
         Me.tcProd.Location = New System.Drawing.Point(4, 22)
         Me.tcProd.Name = "tcProd"
-        Me.tcProd.Size = New System.Drawing.Size(1370, 696)
+        Me.tcProd.Size = New System.Drawing.Size(1358, 693)
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
-        '
-        'idFranchisee
-        '
-        Me.idFranchisee.Text = "ID"
-        Me.idFranchisee.Width = 87
-        '
-        'FPFLName
-        '
-        Me.FPFLName.Text = "Last Name"
-        Me.FPFLName.Width = 130
-        '
-        'FPFFName
-        '
-        Me.FPFFName.Text = "First Name"
-        Me.FPFFName.Width = 161
-        '
-        'ToolStripDropDownButton1
-        '
-        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.SignOutToolStripMenuItem})
-        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
-        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(87, 22)
-        Me.ToolStripDropDownButton1.Text = "@username"
-        '
-        'SignOutToolStripMenuItem
-        '
-        Me.SignOutToolStripMenuItem.Name = "SignOutToolStripMenuItem"
-        Me.SignOutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SignOutToolStripMenuItem.Text = "Sign out"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'ToolStripLabel4
-        '
-        Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(43, 22)
-        Me.ToolStripLabel4.Text = "Ready"
-        '
-        'ListView1
-        '
-        Me.ListView1.Location = New System.Drawing.Point(28, 356)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(928, 146)
-        Me.ListView1.TabIndex = 76
-        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'pnlMain
         '
@@ -1091,12 +1091,12 @@ Partial Class pnlMain
     Friend WithEvents btnAddNewFranchisee As Button
     Friend WithEvents pbUserProfile As PictureBox
     Friend WithEvents idFranchisee As ColumnHeader
-    Friend WithEvents FPFLName As ColumnHeader
-    Friend WithEvents FPFFName As ColumnHeader
+    Friend WithEvents FName As ColumnHeader
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SignOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents ListView1 As ListView
+    Friend WithEvents LName As ColumnHeader
 End Class

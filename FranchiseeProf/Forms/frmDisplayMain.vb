@@ -1,5 +1,20 @@
 ﻿Public Class pnlMain
+
+    Private Sub loadFrnchisee()
+        Dim listFs As List(Of clsFranchisee) = modGeneral.getFranchiseeList
+
+        For Each item In listFs
+            Dim oItem As New ListViewItem(item.idFranchisee)
+            oItem.SubItems.Add(item.FName)
+            'oItem.SubItems.Add(item.LName)
+            oItem.Tag = item
+
+            lvUserProfile.Items.Add(oItem)
+        Next
+    End Sub
+
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        loadFrnchisee()
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
     End Sub
 
