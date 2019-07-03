@@ -95,5 +95,4 @@ Public Class clsFranchisee
         Return False
     End Function
 
-
 End Class
