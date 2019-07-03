@@ -101,7 +101,7 @@ Partial Class pnlMain
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.btnSaveChanges = New System.Windows.Forms.Button()
         Me.lblBranch = New System.Windows.Forms.Label()
-        Me.btnAddNewFranchisee = New System.Windows.Forms.Button()
+        Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -488,7 +488,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.lblFullName)
         Me.pnlInfo.Controls.Add(Me.btnSaveChanges)
         Me.pnlInfo.Controls.Add(Me.lblBranch)
-        Me.pnlInfo.Controls.Add(Me.btnAddNewFranchisee)
+        Me.pnlInfo.Controls.Add(Me.btnAddNewOutletMain)
         Me.pnlInfo.Controls.Add(Me.pbUserProfile)
         Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.pnlInfo.Location = New System.Drawing.Point(368, 0)
@@ -949,17 +949,17 @@ Partial Class pnlMain
         Me.lblBranch.TabIndex = 33
         Me.lblBranch.Text = "Outlet"
         '
-        'btnAddNewFranchisee
+        'btnAddNewOutletMain
         '
-        Me.btnAddNewFranchisee.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.btnAddNewFranchisee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNewFranchisee.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNewFranchisee.Location = New System.Drawing.Point(28, 320)
-        Me.btnAddNewFranchisee.Name = "btnAddNewFranchisee"
-        Me.btnAddNewFranchisee.Size = New System.Drawing.Size(99, 30)
-        Me.btnAddNewFranchisee.TabIndex = 16
-        Me.btnAddNewFranchisee.Text = "Add New"
-        Me.btnAddNewFranchisee.UseVisualStyleBackColor = False
+        Me.btnAddNewOutletMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnAddNewOutletMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNewOutletMain.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(28, 320)
+        Me.btnAddNewOutletMain.Name = "btnAddNewOutletMain"
+        Me.btnAddNewOutletMain.Size = New System.Drawing.Size(99, 30)
+        Me.btnAddNewOutletMain.TabIndex = 16
+        Me.btnAddNewOutletMain.Text = "Add New"
+        Me.btnAddNewOutletMain.UseVisualStyleBackColor = False
         '
         'pbUserProfile
         '
@@ -1088,7 +1088,7 @@ Partial Class pnlMain
     Friend WithEvents lblFullName As Label
     Friend WithEvents btnSaveChanges As Button
     Friend WithEvents lblBranch As Label
-    Friend WithEvents btnAddNewFranchisee As Button
+    Friend WithEvents btnAddNewOutletMain As Button
     Friend WithEvents pbUserProfile As PictureBox
     Friend WithEvents idFranchisee As ColumnHeader
     Friend WithEvents FName As ColumnHeader

@@ -10,7 +10,9 @@ Public Class frmAddNewOutlet
 
     End Sub
 
-    Dim lStatus As String
+    'Dim lStatus As String
+    Dim lDateClosed As DateTime
+    Dim lStatus As String = "Open"
     Private Sub CbClosedStatus_CheckedChanged(sender As Object, e As EventArgs) Handles cbOutletStatus.CheckedChanged
         If cbOutletStatus.Checked Then
             lblOutletClosedDate.Visible = True
@@ -19,6 +21,7 @@ Public Class frmAddNewOutlet
             dtpDateClosed.Visible = True
 
             lStatus = "Close"
+            lDateClosed = dtpDateClosed.Value.Date
         Else
             lblOutletClosedDate.Visible = False
             lblOutletClosedStatus.Visible = False
@@ -26,6 +29,7 @@ Public Class frmAddNewOutlet
             dtpDateClosed.Visible = False
 
             lStatus = "Open"
+
         End If
     End Sub
 
@@ -58,11 +62,22 @@ Public Class frmAddNewOutlet
         al.FPLCurrentAddress = txtOutletAddress.Text
         al.FPLOldAddress = ""
         al.FPLDateOpened = dtpDateOpened.Value.Date
-        al.FPLDateClosed = cbOutletClosedStatus.Text
+        al.FPLDateClosed = lDateClosed
         al.FPLStatus = lStatus
         al.FPLStatusClosed = cbOutletClosedStatus.Text
 
-        If ao.addOutlet() And al.addLocation() Then
+        Dim ap As clsPackage = New clsPackage
+        ap.FPPPackageType = cbPackageType.Text
+        ap.FPPFranchiseFee = Convert.ToInt32(txtFranchiseeFee.Text)
+        ap.FPPPackageFee = Convert.ToInt32(txtPackageFee.Text)
+        ap.FPPSecurityDeposit = Convert.ToInt32(txtSecurityDeposit.Text)
+        ap.FPPDateOfRefund = dtpDateOfRefund.Value.Date
+        ap.FPPFranchiseRemark = txtFranchiseRemark.Text
+        ap.FPPPackageRemark = txtPackageRemark.Text
+        ap.FPPDepositRemark = txtDepositRemark.Text
+
+        If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
+            MsgBox("Outlet added successfully")
             Me.Close()
         End If
     End Sub

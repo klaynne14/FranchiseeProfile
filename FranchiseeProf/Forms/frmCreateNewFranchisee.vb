@@ -45,7 +45,9 @@ Public Class frmCreateNewFranchisee
         afs.EmailAdd2 = txtEmailAddress2.Text
 
         If afs.addFranchisee() Then
+            MsgBox("Added successfully")
             Me.Close()
+
         End If
     End Sub
 
