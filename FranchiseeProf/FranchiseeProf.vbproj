@@ -70,6 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\clsFranchisee.vb" />
+    <Compile Include="Classes\clsLocation.vb" />
+    <Compile Include="Classes\clsOutlet.vb" />
+    <Compile Include="Classes\clsPackage.vb" />
     <Compile Include="Forms\frmAddNewBranch.Designer.vb">
       <DependentUpon>frmAddNewBranch.vb</DependentUpon>
     </Compile>

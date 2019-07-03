@@ -37,7 +37,7 @@ Public Class clsFranchisee
 
     Public Function addFranchisee() As Boolean
 
-        Dim sQuery As String = "Insert Into Franchisee(FPFName ,FPFLName, FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
+        Dim sQuery As String = "INSERT INTO Franchisee(FPFName ,FPFLName, FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                                         FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth ,FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                                         FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2)
 

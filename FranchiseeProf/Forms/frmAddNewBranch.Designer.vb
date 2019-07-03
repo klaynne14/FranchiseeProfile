@@ -27,37 +27,41 @@ Partial Class frmAddNewOutlet
         Me.pnlBorderRight = New System.Windows.Forms.Panel()
         Me.pnlBorderLeft = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtRelocAddress = New System.Windows.Forms.TextBox()
+        Me.lblRelocAddress = New System.Windows.Forms.Label()
+        Me.txtLocationName = New System.Windows.Forms.TextBox()
+        Me.txtDepositRemark = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txtSecurityDeposit = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtFranchiseRemark = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtFranchiseeFee = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtPackageRemark = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPackageFee = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cbPackageType = New System.Windows.Forms.ComboBox()
         Me.lblOutletClosedStatus = New System.Windows.Forms.Label()
         Me.cbOutletClosedStatus = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cbOutletStatus = New System.Windows.Forms.CheckBox()
         Me.lblOutletClosedDate = New System.Windows.Forms.Label()
-        Me.dtpOutletClosedDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDateClosed = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.dtpOutletStartDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDateOpened = New System.Windows.Forms.DateTimePicker()
         Me.txtOutletAddress = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnAddNew = New System.Windows.Forms.Button()
-        Me.cbBranch = New System.Windows.Forms.ComboBox()
         Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.dtpDateOfRefund = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.pnlBorderLeft.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -98,46 +102,77 @@ Partial Class frmAddNewOutlet
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.TextBox6)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.dtpDateOfRefund)
+        Me.Panel1.Controls.Add(Me.txtRelocAddress)
+        Me.Panel1.Controls.Add(Me.lblRelocAddress)
+        Me.Panel1.Controls.Add(Me.txtLocationName)
+        Me.Panel1.Controls.Add(Me.txtDepositRemark)
         Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Controls.Add(Me.TextBox7)
+        Me.Panel1.Controls.Add(Me.txtSecurityDeposit)
         Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Controls.Add(Me.TextBox4)
+        Me.Panel1.Controls.Add(Me.txtFranchiseRemark)
         Me.Panel1.Controls.Add(Me.Label12)
-        Me.Panel1.Controls.Add(Me.TextBox5)
+        Me.Panel1.Controls.Add(Me.txtFranchiseeFee)
         Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.TextBox3)
+        Me.Panel1.Controls.Add(Me.txtPackageRemark)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.txtPackageFee)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.ComboBox2)
+        Me.Panel1.Controls.Add(Me.cbPackageType)
         Me.Panel1.Controls.Add(Me.lblOutletClosedStatus)
         Me.Panel1.Controls.Add(Me.cbOutletClosedStatus)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.cbOutletStatus)
         Me.Panel1.Controls.Add(Me.lblOutletClosedDate)
-        Me.Panel1.Controls.Add(Me.dtpOutletClosedDate)
+        Me.Panel1.Controls.Add(Me.dtpDateClosed)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.dtpOutletStartDate)
+        Me.Panel1.Controls.Add(Me.dtpDateOpened)
         Me.Panel1.Controls.Add(Me.txtOutletAddress)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnAddNew)
-        Me.Panel1.Controls.Add(Me.cbBranch)
         Me.Panel1.Controls.Add(Me.cbBusinessUnit)
         Me.Panel1.Location = New System.Drawing.Point(6, 44)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(585, 390)
+        Me.Panel1.Size = New System.Drawing.Size(580, 426)
         Me.Panel1.TabIndex = 3
         '
-        'TextBox6
+        'txtRelocAddress
         '
-        Me.TextBox6.Location = New System.Drawing.Point(162, 321)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox6.TabIndex = 48
+        Me.txtRelocAddress.Location = New System.Drawing.Point(368, 164)
+        Me.txtRelocAddress.Name = "txtRelocAddress"
+        Me.txtRelocAddress.Size = New System.Drawing.Size(180, 20)
+        Me.txtRelocAddress.TabIndex = 51
+        Me.txtRelocAddress.Visible = False
+        '
+        'lblRelocAddress
+        '
+        Me.lblRelocAddress.AutoSize = True
+        Me.lblRelocAddress.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRelocAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblRelocAddress.Location = New System.Drawing.Point(365, 187)
+        Me.lblRelocAddress.Name = "lblRelocAddress"
+        Me.lblRelocAddress.Size = New System.Drawing.Size(116, 13)
+        Me.lblRelocAddress.TabIndex = 50
+        Me.lblRelocAddress.Text = "Relocation Address"
+        Me.lblRelocAddress.Visible = False
+        '
+        'txtLocationName
+        '
+        Me.txtLocationName.Location = New System.Drawing.Point(163, 26)
+        Me.txtLocationName.Name = "txtLocationName"
+        Me.txtLocationName.Size = New System.Drawing.Size(169, 20)
+        Me.txtLocationName.TabIndex = 49
+        '
+        'txtDepositRemark
+        '
+        Me.txtDepositRemark.Location = New System.Drawing.Point(162, 321)
+        Me.txtDepositRemark.Name = "txtDepositRemark"
+        Me.txtDepositRemark.Size = New System.Drawing.Size(169, 20)
+        Me.txtDepositRemark.TabIndex = 48
         '
         'Label14
         '
@@ -150,12 +185,14 @@ Partial Class frmAddNewOutlet
         Me.Label14.TabIndex = 47
         Me.Label14.Text = "Remarks"
         '
-        'TextBox7
+        'txtSecurityDeposit
         '
-        Me.TextBox7.Location = New System.Drawing.Point(30, 321)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox7.TabIndex = 46
+        Me.txtSecurityDeposit.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.txtSecurityDeposit.Location = New System.Drawing.Point(30, 321)
+        Me.txtSecurityDeposit.Name = "txtSecurityDeposit"
+        Me.txtSecurityDeposit.Size = New System.Drawing.Size(126, 20)
+        Me.txtSecurityDeposit.TabIndex = 46
+        Me.txtSecurityDeposit.Text = "0"
         '
         'Label15
         '
@@ -168,12 +205,12 @@ Partial Class frmAddNewOutlet
         Me.Label15.TabIndex = 45
         Me.Label15.Text = "Security Deposit"
         '
-        'TextBox4
+        'txtFranchiseRemark
         '
-        Me.TextBox4.Location = New System.Drawing.Point(163, 276)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox4.TabIndex = 44
+        Me.txtFranchiseRemark.Location = New System.Drawing.Point(163, 276)
+        Me.txtFranchiseRemark.Name = "txtFranchiseRemark"
+        Me.txtFranchiseRemark.Size = New System.Drawing.Size(169, 20)
+        Me.txtFranchiseRemark.TabIndex = 44
         '
         'Label12
         '
@@ -186,12 +223,14 @@ Partial Class frmAddNewOutlet
         Me.Label12.TabIndex = 43
         Me.Label12.Text = "Remarks"
         '
-        'TextBox5
+        'txtFranchiseeFee
         '
-        Me.TextBox5.Location = New System.Drawing.Point(31, 276)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox5.TabIndex = 42
+        Me.txtFranchiseeFee.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.txtFranchiseeFee.Location = New System.Drawing.Point(31, 276)
+        Me.txtFranchiseeFee.Name = "txtFranchiseeFee"
+        Me.txtFranchiseeFee.Size = New System.Drawing.Size(126, 20)
+        Me.txtFranchiseeFee.TabIndex = 42
+        Me.txtFranchiseeFee.Text = "0"
         '
         'Label13
         '
@@ -204,12 +243,12 @@ Partial Class frmAddNewOutlet
         Me.Label13.TabIndex = 41
         Me.Label13.Text = "Franchise fee"
         '
-        'TextBox3
+        'txtPackageRemark
         '
-        Me.TextBox3.Location = New System.Drawing.Point(163, 230)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox3.TabIndex = 40
+        Me.txtPackageRemark.Location = New System.Drawing.Point(163, 230)
+        Me.txtPackageRemark.Name = "txtPackageRemark"
+        Me.txtPackageRemark.Size = New System.Drawing.Size(169, 20)
+        Me.txtPackageRemark.TabIndex = 40
         '
         'Label11
         '
@@ -222,12 +261,14 @@ Partial Class frmAddNewOutlet
         Me.Label11.TabIndex = 39
         Me.Label11.Text = "Remarks"
         '
-        'TextBox2
+        'txtPackageFee
         '
-        Me.TextBox2.Location = New System.Drawing.Point(31, 230)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(126, 20)
-        Me.TextBox2.TabIndex = 38
+        Me.txtPackageFee.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.txtPackageFee.Location = New System.Drawing.Point(31, 230)
+        Me.txtPackageFee.Name = "txtPackageFee"
+        Me.txtPackageFee.Size = New System.Drawing.Size(126, 20)
+        Me.txtPackageFee.TabIndex = 38
+        Me.txtPackageFee.Text = "0"
         '
         'Label10
         '
@@ -251,14 +292,15 @@ Partial Class frmAddNewOutlet
         Me.Label9.TabIndex = 36
         Me.Label9.Text = "Package Type"
         '
-        'ComboBox2
+        'cbPackageType
         '
-        Me.ComboBox2.ForeColor = System.Drawing.Color.DimGray
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(32, 184)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(125, 21)
-        Me.ComboBox2.TabIndex = 35
+        Me.cbPackageType.ForeColor = System.Drawing.Color.DimGray
+        Me.cbPackageType.FormattingEnabled = True
+        Me.cbPackageType.Items.AddRange(New Object() {"Standard", "Customized", "School", "Counter"})
+        Me.cbPackageType.Location = New System.Drawing.Point(32, 184)
+        Me.cbPackageType.Name = "cbPackageType"
+        Me.cbPackageType.Size = New System.Drawing.Size(125, 21)
+        Me.cbPackageType.TabIndex = 35
         '
         'lblOutletClosedStatus
         '
@@ -276,6 +318,7 @@ Partial Class frmAddNewOutlet
         '
         Me.cbOutletClosedStatus.ForeColor = System.Drawing.Color.DimGray
         Me.cbOutletClosedStatus.FormattingEnabled = True
+        Me.cbOutletClosedStatus.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated"})
         Me.cbOutletClosedStatus.Location = New System.Drawing.Point(368, 72)
         Me.cbOutletClosedStatus.Name = "cbOutletClosedStatus"
         Me.cbOutletClosedStatus.Size = New System.Drawing.Size(125, 21)
@@ -315,13 +358,13 @@ Partial Class frmAddNewOutlet
         Me.lblOutletClosedDate.Text = "Date Closed"
         Me.lblOutletClosedDate.Visible = False
         '
-        'dtpOutletClosedDate
+        'dtpDateClosed
         '
-        Me.dtpOutletClosedDate.Location = New System.Drawing.Point(368, 118)
-        Me.dtpOutletClosedDate.Name = "dtpOutletClosedDate"
-        Me.dtpOutletClosedDate.Size = New System.Drawing.Size(180, 20)
-        Me.dtpOutletClosedDate.TabIndex = 29
-        Me.dtpOutletClosedDate.Visible = False
+        Me.dtpDateClosed.Location = New System.Drawing.Point(368, 118)
+        Me.dtpDateClosed.Name = "dtpDateClosed"
+        Me.dtpDateClosed.Size = New System.Drawing.Size(180, 20)
+        Me.dtpDateClosed.TabIndex = 29
+        Me.dtpDateClosed.Visible = False
         '
         'Label3
         '
@@ -330,16 +373,16 @@ Partial Class frmAddNewOutlet
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label3.Location = New System.Drawing.Point(29, 141)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 13)
+        Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 28
-        Me.Label3.Text = "Date start"
+        Me.Label3.Text = "Date Opened"
         '
-        'dtpOutletStartDate
+        'dtpDateOpened
         '
-        Me.dtpOutletStartDate.Location = New System.Drawing.Point(32, 118)
-        Me.dtpOutletStartDate.Name = "dtpOutletStartDate"
-        Me.dtpOutletStartDate.Size = New System.Drawing.Size(180, 20)
-        Me.dtpOutletStartDate.TabIndex = 27
+        Me.dtpDateOpened.Location = New System.Drawing.Point(32, 118)
+        Me.dtpDateOpened.Name = "dtpDateOpened"
+        Me.dtpDateOpened.Size = New System.Drawing.Size(180, 20)
+        Me.dtpDateOpened.TabIndex = 27
         '
         'txtOutletAddress
         '
@@ -366,9 +409,9 @@ Partial Class frmAddNewOutlet
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label5.Location = New System.Drawing.Point(160, 50)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 13)
+        Me.Label5.Size = New System.Drawing.Size(54, 13)
         Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Branch"
+        Me.Label5.Text = "Location"
         '
         'Label4
         '
@@ -386,26 +429,18 @@ Partial Class frmAddNewOutlet
         Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNew.Location = New System.Drawing.Point(471, 327)
+        Me.btnAddNew.Location = New System.Drawing.Point(462, 375)
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(86, 30)
         Me.btnAddNew.TabIndex = 17
         Me.btnAddNew.Text = "Add New"
         Me.btnAddNew.UseVisualStyleBackColor = False
         '
-        'cbBranch
-        '
-        Me.cbBranch.ForeColor = System.Drawing.Color.DimGray
-        Me.cbBranch.FormattingEnabled = True
-        Me.cbBranch.Location = New System.Drawing.Point(163, 26)
-        Me.cbBranch.Name = "cbBranch"
-        Me.cbBranch.Size = New System.Drawing.Size(169, 21)
-        Me.cbBranch.TabIndex = 1
-        '
         'cbBusinessUnit
         '
         Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
         Me.cbBusinessUnit.FormattingEnabled = True
+        Me.cbBusinessUnit.Items.AddRange(New Object() {"Coffeebreak", "Waffle Time"})
         Me.cbBusinessUnit.Location = New System.Drawing.Point(32, 26)
         Me.cbBusinessUnit.Name = "cbBusinessUnit"
         Me.cbBusinessUnit.Size = New System.Drawing.Size(125, 21)
@@ -429,19 +464,38 @@ Partial Class frmAddNewOutlet
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(561, 10)
+        Me.btnClose.Location = New System.Drawing.Point(566, 10)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 50
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'dtpDateOfRefund
+        '
+        Me.dtpDateOfRefund.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDateOfRefund.Location = New System.Drawing.Point(337, 321)
+        Me.dtpDateOfRefund.Name = "dtpDateOfRefund"
+        Me.dtpDateOfRefund.Size = New System.Drawing.Size(90, 20)
+        Me.dtpDateOfRefund.TabIndex = 52
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(334, 344)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 13)
+        Me.Label6.TabIndex = 53
+        Me.Label6.Text = "Date of Refund"
+        '
         'frmAddNewOutlet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(598, 442)
+        Me.ClientSize = New System.Drawing.Size(594, 477)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -464,35 +518,39 @@ Partial Class frmAddNewOutlet
     Friend WithEvents pnlBorderRight As Panel
     Friend WithEvents pnlBorderLeft As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents cbBranch As ComboBox
     Friend WithEvents cbBusinessUnit As ComboBox
     Friend WithEvents btnAddNew As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txtDepositRemark As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents txtSecurityDeposit As TextBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtFranchiseRemark As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtFranchiseeFee As TextBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtPackageRemark As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtPackageFee As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cbPackageType As ComboBox
     Friend WithEvents lblOutletClosedStatus As Label
     Friend WithEvents cbOutletClosedStatus As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents cbOutletStatus As CheckBox
     Friend WithEvents lblOutletClosedDate As Label
-    Friend WithEvents dtpOutletClosedDate As DateTimePicker
+    Friend WithEvents dtpDateClosed As DateTimePicker
     Friend WithEvents Label3 As Label
-    Friend WithEvents dtpOutletStartDate As DateTimePicker
+    Friend WithEvents dtpDateOpened As DateTimePicker
     Friend WithEvents txtOutletAddress As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnClose As Button
+    Friend WithEvents txtLocationName As TextBox
+    Friend WithEvents txtRelocAddress As TextBox
+    Friend WithEvents lblRelocAddress As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents dtpDateOfRefund As DateTimePicker
 End Class

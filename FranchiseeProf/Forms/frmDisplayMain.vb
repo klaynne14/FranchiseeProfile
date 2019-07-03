@@ -23,7 +23,7 @@
 
     End Sub
 
-    Private Sub BtnAddNewFranchisee_Click(sender As Object, e As EventArgs) Handles btnAddNewFranchisee.Click
+    Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
         frmAddNewOutlet.Show()
 
     End Sub
