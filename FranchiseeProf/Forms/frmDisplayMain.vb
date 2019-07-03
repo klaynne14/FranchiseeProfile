@@ -1,6 +1,6 @@
 ﻿Public Class pnlMain
 
-    Private Sub loadFrnchisee()
+    Private Sub loadFranchisee()
         Dim listFs As List(Of clsFranchisee) = modGeneral.getFranchiseeList
 
         For Each item In listFs
@@ -14,18 +14,21 @@
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadFrnchisee()
+        loadFranchisee()
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
     End Sub
 
     Private Sub BtnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
-        frmCreateNewFranchisee.Show()
+        frmCreateNewFranchisee.ShowDialog()
 
     End Sub
 
     Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
-        frmAddNewOutlet.Show()
+        frmAddNewOutlet.ShowDialog()
 
     End Sub
 
+    Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
+        frmAddContract.ShowDialog()
+    End Sub
 End Class

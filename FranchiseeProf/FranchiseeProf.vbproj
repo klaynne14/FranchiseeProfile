@@ -69,10 +69,17 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\clsContract.vb" />
     <Compile Include="Classes\clsFranchisee.vb" />
     <Compile Include="Classes\clsLocation.vb" />
     <Compile Include="Classes\clsOutlet.vb" />
     <Compile Include="Classes\clsPackage.vb" />
+    <Compile Include="Forms\frmAddContract.Designer.vb">
+      <DependentUpon>frmAddContract.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddContract.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmAddNewBranch.Designer.vb">
       <DependentUpon>frmAddNewBranch.vb</DependentUpon>
     </Compile>
@@ -110,6 +117,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\frmAddContract.resx">
+      <DependentUpon>frmAddContract.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAddNewBranch.resx">
       <DependentUpon>frmAddNewBranch.vb</DependentUpon>
     </EmbeddedResource>

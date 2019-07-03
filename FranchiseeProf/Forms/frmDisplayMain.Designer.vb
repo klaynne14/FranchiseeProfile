@@ -103,6 +103,7 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
+        Me.btnSelectedOutlet = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -439,6 +440,7 @@ Partial Class pnlMain
         '
         'pnlInfo
         '
+        Me.pnlInfo.Controls.Add(Me.btnSelectedOutlet)
         Me.pnlInfo.Controls.Add(Me.ListView1)
         Me.pnlInfo.Controls.Add(Me.lblPermanentlyClosed)
         Me.pnlInfo.Controls.Add(Me.lblTemporaryClosed)
@@ -975,6 +977,18 @@ Partial Class pnlMain
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
         '
+        'btnSelectedOutlet
+        '
+        Me.btnSelectedOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnSelectedOutlet.Location = New System.Drawing.Point(133, 320)
+        Me.btnSelectedOutlet.Name = "btnSelectedOutlet"
+        Me.btnSelectedOutlet.Size = New System.Drawing.Size(99, 30)
+        Me.btnSelectedOutlet.TabIndex = 77
+        Me.btnSelectedOutlet.Text = "Selected"
+        Me.btnSelectedOutlet.UseVisualStyleBackColor = False
+        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1092,4 +1106,5 @@ Partial Class pnlMain
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents ListView1 As ListView
+    Friend WithEvents btnSelectedOutlet As Button
 End Class

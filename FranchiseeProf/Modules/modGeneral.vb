@@ -10,7 +10,7 @@ Module modGeneral
         Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
         Dim fs As New clsFranchisee
         Dim fsQuery As String = "Select idFranchisee,FPFName,FPFLName,FPFMName
-                                FROM Franchisee"
+                                FROM Franchisee ORDER BY idFranchisee"
         ',, FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
         'FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
         'FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
