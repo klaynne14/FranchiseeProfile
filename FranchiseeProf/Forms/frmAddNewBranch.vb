@@ -23,8 +23,4 @@
 
     End Sub
 
-    Private Sub frmAddNewOutlet_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
-
-    End Sub
-
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class pnlMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class pnlMain
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pnlMain))
         Me.lblTitle = New System.Windows.Forms.Label()
@@ -49,8 +49,7 @@ Partial Class pnlMain
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.lvUserProfile = New System.Windows.Forms.ListView()
         Me.idFranchisee = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.FName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.LName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlUPHeader = New System.Windows.Forms.Panel()
         Me.btnCreateNew = New System.Windows.Forms.Button()
         Me.btnPrintSel = New System.Windows.Forms.Button()
@@ -353,7 +352,7 @@ Partial Class pnlMain
         '
         Me.lvUserProfile.BackColor = System.Drawing.SystemColors.Window
         Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.FName, Me.LName})
+        Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.chName})
         Me.lvUserProfile.Location = New System.Drawing.Point(1, 99)
         Me.lvUserProfile.Name = "lvUserProfile"
         Me.lvUserProfile.Size = New System.Drawing.Size(349, 523)
@@ -364,17 +363,12 @@ Partial Class pnlMain
         'idFranchisee
         '
         Me.idFranchisee.Text = "ID"
-        Me.idFranchisee.Width = 38
+        Me.idFranchisee.Width = 75
         '
-        'FName
+        'chName
         '
-        Me.FName.Text = "First Name"
-        Me.FName.Width = 166
-        '
-        'LName
-        '
-        Me.LName.Text = "Last Name"
-        Me.LName.Width = 148
+        Me.chName.Text = "Name"
+        Me.chName.Width = 231
         '
         'pnlUPHeader
         '
@@ -1091,12 +1085,11 @@ Partial Class pnlMain
     Friend WithEvents btnAddNewFranchisee As Button
     Friend WithEvents pbUserProfile As PictureBox
     Friend WithEvents idFranchisee As ColumnHeader
-    Friend WithEvents FName As ColumnHeader
+    Friend WithEvents chName As ColumnHeader
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SignOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents ListView1 As ListView
-    Friend WithEvents LName As ColumnHeader
 End Class

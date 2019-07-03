@@ -5,7 +5,7 @@
 
         For Each item In listFs
             Dim oItem As New ListViewItem(item.idFranchisee)
-            oItem.SubItems.Add(item.FName)
+            oItem.SubItems.Add(item.FName + " " + item.MName + " " + item.LName)
             'oItem.SubItems.Add(item.LName)
             oItem.Tag = item
 
