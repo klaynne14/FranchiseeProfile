@@ -353,6 +353,7 @@ Partial Class pnlMain
         Me.lvUserProfile.BackColor = System.Drawing.SystemColors.Window
         Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.chName})
+        Me.lvUserProfile.FullRowSelect = True
         Me.lvUserProfile.Location = New System.Drawing.Point(1, 99)
         Me.lvUserProfile.Name = "lvUserProfile"
         Me.lvUserProfile.Size = New System.Drawing.Size(349, 523)
@@ -363,12 +364,12 @@ Partial Class pnlMain
         'idFranchisee
         '
         Me.idFranchisee.Text = "ID"
-        Me.idFranchisee.Width = 75
+        Me.idFranchisee.Width = 52
         '
         'chName
         '
         Me.chName.Text = "Name"
-        Me.chName.Width = 231
+        Me.chName.Width = 297
         '
         'pnlUPHeader
         '
@@ -492,6 +493,8 @@ Partial Class pnlMain
         '
         'ListView1
         '
+        Me.ListView1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListView1.Location = New System.Drawing.Point(28, 356)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(928, 146)
