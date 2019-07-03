@@ -27,6 +27,8 @@ Partial Class frmAddNewOutlet
         Me.pnlBorderRight = New System.Windows.Forms.Panel()
         Me.pnlBorderLeft = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.dtpDateOfRefund = New System.Windows.Forms.DateTimePicker()
         Me.txtRelocAddress = New System.Windows.Forms.TextBox()
         Me.lblRelocAddress = New System.Windows.Forms.Label()
         Me.txtLocationName = New System.Windows.Forms.TextBox()
@@ -60,8 +62,6 @@ Partial Class frmAddNewOutlet
         Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.dtpDateOfRefund = New System.Windows.Forms.DateTimePicker()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.pnlBorderLeft.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -139,6 +139,25 @@ Partial Class frmAddNewOutlet
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(580, 426)
         Me.Panel1.TabIndex = 3
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(334, 344)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 13)
+        Me.Label6.TabIndex = 53
+        Me.Label6.Text = "Date of Refund"
+        '
+        'dtpDateOfRefund
+        '
+        Me.dtpDateOfRefund.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDateOfRefund.Location = New System.Drawing.Point(337, 321)
+        Me.dtpDateOfRefund.Name = "dtpDateOfRefund"
+        Me.dtpDateOfRefund.Size = New System.Drawing.Size(90, 20)
+        Me.dtpDateOfRefund.TabIndex = 52
         '
         'txtRelocAddress
         '
@@ -464,31 +483,12 @@ Partial Class frmAddNewOutlet
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(566, 10)
+        Me.btnClose.Location = New System.Drawing.Point(561, 10)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 50
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
-        '
-        'dtpDateOfRefund
-        '
-        Me.dtpDateOfRefund.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDateOfRefund.Location = New System.Drawing.Point(337, 321)
-        Me.dtpDateOfRefund.Name = "dtpDateOfRefund"
-        Me.dtpDateOfRefund.Size = New System.Drawing.Size(90, 20)
-        Me.dtpDateOfRefund.TabIndex = 52
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(334, 344)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 13)
-        Me.Label6.TabIndex = 53
-        Me.Label6.Text = "Date of Refund"
         '
         'frmAddNewOutlet
         '
