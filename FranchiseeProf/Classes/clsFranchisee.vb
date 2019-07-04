@@ -31,7 +31,7 @@ Public Class clsFranchisee
     Public EmailAdd1 As String
     Public EmailAdd2 As String
     'Public Image As Byte
-    'Public idOutlet As Integer
+    Public idOutlet As Integer
 
 
 
@@ -83,7 +83,7 @@ Public Class clsFranchisee
                     oCommand.Parameters.AddWithValue("@FPFEmailAdd1", Me.EmailAdd1)
                     oCommand.Parameters.AddWithValue("@FPFEmailAdd2", Me.EmailAdd2)
                     'oCommand.Parameters.AddWithValue("@FPFImage", Me.Image)
-                    'oCommand.Parameters.AddWithValue("@idOutlet",)
+                    'oCommand.Parameters.AddWithValue("@idOutlet", )
 
                     oCommand.ExecuteNonQuery()
                     Return True

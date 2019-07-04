@@ -57,6 +57,7 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.btnSelectedOutlet = New System.Windows.Forms.Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
@@ -103,7 +104,6 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.btnSelectedOutlet = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -441,6 +441,7 @@ Partial Class pnlMain
         '
         'pnlInfo
         '
+        Me.pnlInfo.BackColor = System.Drawing.Color.WhiteSmoke
         Me.pnlInfo.Controls.Add(Me.btnSelectedOutlet)
         Me.pnlInfo.Controls.Add(Me.ListView1)
         Me.pnlInfo.Controls.Add(Me.lblPermanentlyClosed)
@@ -492,10 +493,23 @@ Partial Class pnlMain
         Me.pnlInfo.Name = "pnlInfo"
         Me.pnlInfo.Size = New System.Drawing.Size(990, 668)
         Me.pnlInfo.TabIndex = 18
+        Me.pnlInfo.Visible = False
+        '
+        'btnSelectedOutlet
+        '
+        Me.btnSelectedOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnSelectedOutlet.Location = New System.Drawing.Point(133, 320)
+        Me.btnSelectedOutlet.Name = "btnSelectedOutlet"
+        Me.btnSelectedOutlet.Size = New System.Drawing.Size(99, 30)
+        Me.btnSelectedOutlet.TabIndex = 77
+        Me.btnSelectedOutlet.Text = "Selected"
+        Me.btnSelectedOutlet.UseVisualStyleBackColor = False
         '
         'ListView1
         '
-        Me.ListView1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ListView1.BackColor = System.Drawing.Color.White
         Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListView1.Location = New System.Drawing.Point(28, 356)
         Me.ListView1.Name = "ListView1"
@@ -616,9 +630,8 @@ Partial Class pnlMain
         Me.lblTelNum2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblTelNum2.Location = New System.Drawing.Point(666, 236)
         Me.lblTelNum2.Name = "lblTelNum2"
-        Me.lblTelNum2.Size = New System.Drawing.Size(56, 13)
+        Me.lblTelNum2.Size = New System.Drawing.Size(0, 13)
         Me.lblTelNum2.TabIndex = 65
-        Me.lblTelNum2.Text = "3201425"
         '
         'Label20
         '
@@ -637,9 +650,8 @@ Partial Class pnlMain
         Me.lblTelNum1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblTelNum1.Location = New System.Drawing.Point(666, 193)
         Me.lblTelNum1.Name = "lblTelNum1"
-        Me.lblTelNum1.Size = New System.Drawing.Size(56, 13)
+        Me.lblTelNum1.Size = New System.Drawing.Size(0, 13)
         Me.lblTelNum1.TabIndex = 63
-        Me.lblTelNum1.Text = "3201425"
         '
         'Label16
         '
@@ -658,9 +670,8 @@ Partial Class pnlMain
         Me.lblMobileNum2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblMobileNum2.Location = New System.Drawing.Point(513, 236)
         Me.lblMobileNum2.Name = "lblMobileNum2"
-        Me.lblMobileNum2.Size = New System.Drawing.Size(84, 13)
+        Me.lblMobileNum2.Size = New System.Drawing.Size(0, 13)
         Me.lblMobileNum2.TabIndex = 61
-        Me.lblMobileNum2.Text = "09123456789"
         '
         'Label18
         '
@@ -679,9 +690,8 @@ Partial Class pnlMain
         Me.lblMobileNum1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblMobileNum1.Location = New System.Drawing.Point(513, 193)
         Me.lblMobileNum1.Name = "lblMobileNum1"
-        Me.lblMobileNum1.Size = New System.Drawing.Size(84, 13)
+        Me.lblMobileNum1.Size = New System.Drawing.Size(0, 13)
         Me.lblMobileNum1.TabIndex = 59
-        Me.lblMobileNum1.Text = "09123456789"
         '
         'Label14
         '
@@ -700,9 +710,8 @@ Partial Class pnlMain
         Me.lblEmailAdd2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblEmailAdd2.Location = New System.Drawing.Point(779, 236)
         Me.lblEmailAdd2.Name = "lblEmailAdd2"
-        Me.lblEmailAdd2.Size = New System.Drawing.Size(121, 13)
+        Me.lblEmailAdd2.Size = New System.Drawing.Size(0, 13)
         Me.lblEmailAdd2.TabIndex = 57
-        Me.lblEmailAdd2.Text = "address@email.com"
         '
         'Label10
         '
@@ -721,9 +730,8 @@ Partial Class pnlMain
         Me.lblEmailAdd1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblEmailAdd1.Location = New System.Drawing.Point(778, 192)
         Me.lblEmailAdd1.Name = "lblEmailAdd1"
-        Me.lblEmailAdd1.Size = New System.Drawing.Size(121, 13)
+        Me.lblEmailAdd1.Size = New System.Drawing.Size(0, 13)
         Me.lblEmailAdd1.TabIndex = 55
-        Me.lblEmailAdd1.Text = "address@email.com"
         '
         'Label13
         '
@@ -742,9 +750,8 @@ Partial Class pnlMain
         Me.lblAge.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblAge.Location = New System.Drawing.Point(667, 146)
         Me.lblAge.Name = "lblAge"
-        Me.lblAge.Size = New System.Drawing.Size(21, 13)
+        Me.lblAge.Size = New System.Drawing.Size(0, 13)
         Me.lblAge.TabIndex = 53
-        Me.lblAge.Text = "20"
         '
         'Label11
         '
@@ -763,9 +770,8 @@ Partial Class pnlMain
         Me.lblDateOfBirth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblDateOfBirth.Location = New System.Drawing.Point(514, 146)
         Me.lblDateOfBirth.Name = "lblDateOfBirth"
-        Me.lblDateOfBirth.Size = New System.Drawing.Size(120, 13)
+        Me.lblDateOfBirth.Size = New System.Drawing.Size(0, 13)
         Me.lblDateOfBirth.TabIndex = 51
-        Me.lblDateOfBirth.Text = "December 15, 1998"
         '
         'Label5
         '
@@ -784,9 +790,8 @@ Partial Class pnlMain
         Me.lblGender.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblGender.Location = New System.Drawing.Point(778, 146)
         Me.lblGender.Name = "lblGender"
-        Me.lblGender.Size = New System.Drawing.Size(33, 13)
+        Me.lblGender.Size = New System.Drawing.Size(0, 13)
         Me.lblGender.TabIndex = 49
-        Me.lblGender.Text = "Male"
         '
         'Label3
         '
@@ -805,9 +810,8 @@ Partial Class pnlMain
         Me.lblReligion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblReligion.Location = New System.Drawing.Point(351, 236)
         Me.lblReligion.Name = "lblReligion"
-        Me.lblReligion.Size = New System.Drawing.Size(97, 13)
+        Me.lblReligion.Size = New System.Drawing.Size(0, 13)
         Me.lblReligion.TabIndex = 47
-        Me.lblReligion.Text = "Roman Catholic"
         '
         'Label6
         '
@@ -826,9 +830,8 @@ Partial Class pnlMain
         Me.lblNationality.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblNationality.Location = New System.Drawing.Point(245, 236)
         Me.lblNationality.Name = "lblNationality"
-        Me.lblNationality.Size = New System.Drawing.Size(46, 13)
+        Me.lblNationality.Size = New System.Drawing.Size(0, 13)
         Me.lblNationality.TabIndex = 45
-        Me.lblNationality.Text = "Filipino"
         '
         'Label4
         '
@@ -847,9 +850,8 @@ Partial Class pnlMain
         Me.lblCivilStatus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblCivilStatus.Location = New System.Drawing.Point(140, 236)
         Me.lblCivilStatus.Name = "lblCivilStatus"
-        Me.lblCivilStatus.Size = New System.Drawing.Size(42, 13)
+        Me.lblCivilStatus.Size = New System.Drawing.Size(0, 13)
         Me.lblCivilStatus.TabIndex = 43
-        Me.lblCivilStatus.Text = "Single"
         '
         'Label2
         '
@@ -868,9 +870,8 @@ Partial Class pnlMain
         Me.lblAddress2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblAddress2.Location = New System.Drawing.Point(140, 192)
         Me.lblAddress2.Name = "lblAddress2"
-        Me.lblAddress2.Size = New System.Drawing.Size(199, 13)
+        Me.lblAddress2.Size = New System.Drawing.Size(0, 13)
         Me.lblAddress2.TabIndex = 41
-        Me.lblAddress2.Text = "Door 4, Arsenal Street, Iloilo City"
         '
         'Label1
         '
@@ -889,9 +890,8 @@ Partial Class pnlMain
         Me.lblAddress1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblAddress1.Location = New System.Drawing.Point(141, 146)
         Me.lblAddress1.Name = "lblAddress1"
-        Me.lblAddress1.Size = New System.Drawing.Size(199, 13)
+        Me.lblAddress1.Size = New System.Drawing.Size(0, 13)
         Me.lblAddress1.TabIndex = 39
-        Me.lblAddress1.Text = "Door 4, Arsenal Street, Iloilo City"
         '
         'lblFPFStatus
         '
@@ -900,9 +900,8 @@ Partial Class pnlMain
         Me.lblFPFStatus.ForeColor = System.Drawing.Color.ForestGreen
         Me.lblFPFStatus.Location = New System.Drawing.Point(140, 93)
         Me.lblFPFStatus.Name = "lblFPFStatus"
-        Me.lblFPFStatus.Size = New System.Drawing.Size(54, 13)
+        Me.lblFPFStatus.Size = New System.Drawing.Size(0, 13)
         Me.lblFPFStatus.TabIndex = 38
-        Me.lblFPFStatus.Text = "ACTIVE"
         '
         'lblIDFranchisee
         '
@@ -910,9 +909,9 @@ Partial Class pnlMain
         Me.lblIDFranchisee.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblIDFranchisee.Location = New System.Drawing.Point(140, 61)
         Me.lblIDFranchisee.Name = "lblIDFranchisee"
-        Me.lblIDFranchisee.Size = New System.Drawing.Size(86, 13)
+        Me.lblIDFranchisee.Size = New System.Drawing.Size(14, 13)
         Me.lblIDFranchisee.TabIndex = 37
-        Me.lblIDFranchisee.Text = "Franchisee ID"
+        Me.lblIDFranchisee.Text = "1"
         '
         'lblFullName
         '
@@ -921,9 +920,8 @@ Partial Class pnlMain
         Me.lblFullName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblFullName.Location = New System.Drawing.Point(139, 41)
         Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(210, 18)
+        Me.lblFullName.Size = New System.Drawing.Size(0, 18)
         Me.lblFullName.TabIndex = 36
-        Me.lblFullName.Text = "Meep Meep Habaradas"
         '
         'btnSaveChanges
         '
@@ -979,18 +977,6 @@ Partial Class pnlMain
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
-        '
-        'btnSelectedOutlet
-        '
-        Me.btnSelectedOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSelectedOutlet.Location = New System.Drawing.Point(133, 320)
-        Me.btnSelectedOutlet.Name = "btnSelectedOutlet"
-        Me.btnSelectedOutlet.Size = New System.Drawing.Size(99, 30)
-        Me.btnSelectedOutlet.TabIndex = 77
-        Me.btnSelectedOutlet.Text = "Selected"
-        Me.btnSelectedOutlet.UseVisualStyleBackColor = False
         '
         'pnlMain
         '

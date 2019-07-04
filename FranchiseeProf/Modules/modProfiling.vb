@@ -3,7 +3,9 @@
 Module modProfiling
     Public Function getFranchiseeList() As List(Of clsFranchisee)
         Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
+        Dim franchiseeOutlet As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim fs As New clsFranchisee
+        'Dim fsOutlet As New clsOutlet
         Dim fsQuery As String = "Select idFranchisee,FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                     FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                     FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
@@ -16,6 +18,7 @@ Module modProfiling
 
                     While oReader.Read
                         fs = New clsFranchisee
+                        'fsOutlet = New clsOutlet
                         fs.idFranchisee = oReader("idFranchisee")
                         fs.FName = oReader("FPFName")
                         fs.LName = oReader("FPFLName")
@@ -41,7 +44,9 @@ Module modProfiling
                         fs.FaxNumber = oReader("FPFFaxNum")
                         fs.EmailAdd1 = oReader("FPFEmailAdd1")
                         fs.EmailAdd2 = oReader("FPFEmailAdd2")
+                        'fsOutlet.idOutlet = oReader("idOutlet")
 
+                        'franchiseeOutlet.Add(fsOutlet)
                         franchiseeList.Add(fs)
                     End While
                 End Using

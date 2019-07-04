@@ -452,7 +452,7 @@ Partial Class frmAddNewOutlet
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(86, 30)
         Me.btnAddNew.TabIndex = 17
-        Me.btnAddNew.Text = "Add New"
+        Me.btnAddNew.Text = "Add"
         Me.btnAddNew.UseVisualStyleBackColor = False
         '
         'cbBusinessUnit
