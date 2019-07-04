@@ -19,6 +19,8 @@ Public Class pnlMain
             If item.Status = "0" Then
                 oItem.ForeColor = Color.Red
             End If
+
+
         Next
     End Sub
 
@@ -38,6 +40,7 @@ Public Class pnlMain
     End Sub
 
     Private Sub lvUserProfile_DoubleClick(sender As Object, e As EventArgs) Handles lvUserProfile.DoubleClick
+        pnlInfo.Show()
 
         Dim i As Integer
         i = lvUserProfile.FocusedItem.Index + 1
@@ -48,6 +51,18 @@ Public Class pnlMain
                 lblIDFranchisee.Text = o.idFranchisee
                 lblFPFStatus.Text = o.Status
                 lblGender.Text = o.Gender
+                lblAddress1.Text = o.Address1
+                lblAddress2.Text = o.Address2
+                lblAge.Text = o.Age
+                lblCivilStatus.Text = o.CivilStatus
+                lblDateOfBirth.Text = o.DateOfBirth
+                lblNationality.Text = o.Nationality
+                lblTelNum1.Text = o.TelNumber1
+                lblTelNum2.Text = o.TelNumber2
+                lblMobileNum1.Text = o.MobileNumber1
+                lblMobileNum2.Text = o.MobileNumber1
+                lblEmailAdd1.Text = o.EmailAdd1
+                lblEmailAdd2.Text = o.EmailAdd2
             End If
         Next
 
@@ -59,5 +74,6 @@ Public Class pnlMain
             lblFPFStatus.ForeColor = Color.Red
         End If
     End Sub
+
 
 End Class

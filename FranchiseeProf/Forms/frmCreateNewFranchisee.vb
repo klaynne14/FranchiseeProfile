@@ -42,7 +42,6 @@ Public Class frmCreateNewFranchisee
         If afs.addFranchisee() Then
             MsgBox("Added successfully")
             Me.Close()
-
         End If
     End Sub
 
