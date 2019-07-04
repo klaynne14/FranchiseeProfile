@@ -16,11 +16,14 @@ Public Class pnlMain
             oItem.Tag = item.idFranchisee
 
             lvUserProfile.Items.Add(oItem)
+            If item.Status = "0" Then
+                oItem.ForeColor = Color.Red
+            End If
         Next
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        getlistview()
+        'getlistview()
         loadFrnchisee()
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
     End Sub
@@ -35,49 +38,26 @@ Public Class pnlMain
     End Sub
 
     Private Sub lvUserProfile_DoubleClick(sender As Object, e As EventArgs) Handles lvUserProfile.DoubleClick
-        ' getlistview()
+
         Dim i As Integer
         i = lvUserProfile.FocusedItem.Index + 1
 
         For Each o In l
             If o.idFranchisee = i Then
-                MsgBox("ID: " + Convert.ToString(o.idFranchisee) + " Fullname: " + o.FName + " " + o.MName + " " + o.LName)
-
+                lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
+                lblIDFranchisee.Text = o.idFranchisee
+                lblFPFStatus.Text = o.Status
+                lblGender.Text = o.Gender
             End If
         Next
 
-
-
-        'If lvUserProfile.SelectedItems.Count < 1 Then Return
-        'lvUserProfile.SelectedItems(0).Tag
+        If lblFPFStatus.Text = "-1" Then
+            lblFPFStatus.Text = "Active"
+            lblFPFStatus.ForeColor = Color.Green
+        Else
+            lblFPFStatus.Text = "Inactive"
+            lblFPFStatus.ForeColor = Color.Red
+        End If
     End Sub
 
-    Public Function getlistview() As Boolean
-
-        Dim fslvQuery As String = "Select idFranchisee,FPFName From Franchisee where idFranchisee = @idFranchisee"
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-            Try
-                oConnection.Open()
-                Using oCommand As New SqlCommand(fslvQuery, oConnection)
-                    Dim oReader As SqlDataReader = oCommand.ExecuteReader
-
-                    While oReader.Read
-
-                        lblIDFranchisee.Text = oReader("idFranchisee")
-                        lblFullName.Text = oReader("FPFName")
-
-                    End While
-                    Return True
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Error @getlistview() " + ex.Message)
-            End Try
-        End Using
-        Return False
-    End Function
-
-    Private Sub lvUserProfile_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvUserProfile.SelectedIndexChanged
-
-
-    End Sub
 End Class
