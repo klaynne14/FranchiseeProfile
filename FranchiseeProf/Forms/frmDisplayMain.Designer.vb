@@ -524,9 +524,9 @@ Partial Class pnlMain
         Me.btnSelectedOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSelectedOutlet.Location = New System.Drawing.Point(130, 434)
+        Me.btnSelectedOutlet.Location = New System.Drawing.Point(123, 405)
         Me.btnSelectedOutlet.Name = "btnSelectedOutlet"
-        Me.btnSelectedOutlet.Size = New System.Drawing.Size(99, 30)
+        Me.btnSelectedOutlet.Size = New System.Drawing.Size(99, 25)
         Me.btnSelectedOutlet.TabIndex = 77
         Me.btnSelectedOutlet.Text = "Selected"
         Me.btnSelectedOutlet.UseVisualStyleBackColor = False
@@ -535,9 +535,9 @@ Partial Class pnlMain
         '
         Me.ListView1.BackColor = System.Drawing.Color.White
         Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListView1.Location = New System.Drawing.Point(22, 470)
+        Me.ListView1.Location = New System.Drawing.Point(42, 436)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(928, 146)
+        Me.ListView1.Size = New System.Drawing.Size(917, 146)
         Me.ListView1.TabIndex = 76
         Me.ListView1.UseCompatibleStateImageBehavior = False
         '
@@ -630,9 +630,9 @@ Partial Class pnlMain
         Me.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditProfile.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnEditProfile.Location = New System.Drawing.Point(896, 386)
+        Me.btnEditProfile.Location = New System.Drawing.Point(859, 612)
         Me.btnEditProfile.Name = "btnEditProfile"
-        Me.btnEditProfile.Size = New System.Drawing.Size(54, 26)
+        Me.btnEditProfile.Size = New System.Drawing.Size(100, 30)
         Me.btnEditProfile.TabIndex = 67
         Me.btnEditProfile.Text = "Edit"
         Me.btnEditProfile.UseVisualStyleBackColor = False
@@ -952,9 +952,9 @@ Partial Class pnlMain
         Me.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSaveChanges.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSaveChanges.Location = New System.Drawing.Point(826, 386)
+        Me.btnSaveChanges.Location = New System.Drawing.Point(749, 612)
         Me.btnSaveChanges.Name = "btnSaveChanges"
-        Me.btnSaveChanges.Size = New System.Drawing.Size(64, 26)
+        Me.btnSaveChanges.Size = New System.Drawing.Size(100, 30)
         Me.btnSaveChanges.TabIndex = 34
         Me.btnSaveChanges.Text = "Update"
         Me.btnSaveChanges.UseVisualStyleBackColor = False
@@ -964,7 +964,7 @@ Partial Class pnlMain
         Me.lblBranch.AutoSize = True
         Me.lblBranch.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBranch.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblBranch.Location = New System.Drawing.Point(19, 394)
+        Me.lblBranch.Location = New System.Drawing.Point(39, 370)
         Me.lblBranch.Name = "lblBranch"
         Me.lblBranch.Size = New System.Drawing.Size(62, 18)
         Me.lblBranch.TabIndex = 33
@@ -975,9 +975,9 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnAddNewOutletMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNewOutletMain.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(22, 434)
+        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(42, 405)
         Me.btnAddNewOutletMain.Name = "btnAddNewOutletMain"
-        Me.btnAddNewOutletMain.Size = New System.Drawing.Size(99, 30)
+        Me.btnAddNewOutletMain.Size = New System.Drawing.Size(75, 25)
         Me.btnAddNewOutletMain.TabIndex = 16
         Me.btnAddNewOutletMain.Text = "Add New"
         Me.btnAddNewOutletMain.UseVisualStyleBackColor = False

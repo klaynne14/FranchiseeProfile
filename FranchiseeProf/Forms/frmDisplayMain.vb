@@ -56,4 +56,7 @@ Public Class pnlMain
         End If
     End Sub
 
+    Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
+        frmAddContract.ShowDialog()
+    End Sub
 End Class

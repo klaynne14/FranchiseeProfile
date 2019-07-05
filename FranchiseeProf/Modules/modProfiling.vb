@@ -57,34 +57,33 @@ Module modProfiling
         Return franchiseeList
     End Function
 
-    Public Function getIdFranchisee() As Integer
+    'Public Function getIdFranchisee() As Boolean
 
-        Dim fs As New clsFranchisee
-        Dim fsQuery As String = "Select COUNT(*)
-                                FROM Franchisee"
-        Dim unF As Integer
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-            Try
-                oConnection.Open()
-                Using oCommand As New SqlCommand(fsQuery, oConnection)
-                    Return oCommand.ExecuteScalar()
-                    'Dim oReader As SqlDataReader = oCommand.ExecuteReader
+    '    Dim fs As New clsFranchisee
+    '    Dim fsQuery As String = "Select idFranchisee
+    '                            FROM Franchisee"
+    '    Dim unF As Integer
+    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+    '        Try
+    '            oConnection.Open()
+    '            Using oCommand As New SqlCommand(fsQuery, oConnection)
+    '                Dim oReader As SqlDataReader = oCommand.ExecuteReader
 
-                    'While oReader.Read
-                    '    fs = New clsFranchisee
-                    '    fs.idFranchisee = oReader("idFranchisee")
+    '                While oReader.Read
+    '                    fs = New clsFranchisee
+    '                    fs.idFranchisee = oReader("idFranchisee")
 
-                    '    Return unF = fs.idFranchisee
-                    'End While
-                End Using
+    '                    Return True
+    '                End While
+    '            End Using
 
 
-            Catch ex As Exception
-                MessageBox.Show("Error @:getIdFranchisee " + ex.Message)
-            End Try
-        End Using
-        Return unF
-    End Function
+    '        Catch ex As Exception
+    '            MessageBox.Show("Error @:getIdFranchisee " + ex.Message)
+    '        End Try
+    '    End Using
+    '    Return False
+    'End Function
 
     Dim l As List(Of clsFranchisee)
     Public Function loadFranchisee()

@@ -56,7 +56,7 @@ Public Class frmAddNewOutlet
         ao.idPackage = 1
         ao.idContract = 1
         ao.idLocation = 1
-        ao.idFranchisee = id
+        ao.idFranchisee = 0
         'pass ids from forms
 
         'Dim al As clsLocation = New clsLocation
