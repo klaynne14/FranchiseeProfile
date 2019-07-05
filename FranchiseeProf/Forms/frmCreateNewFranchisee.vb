@@ -11,6 +11,7 @@ Public Class frmCreateNewFranchisee
         Me.CenterToParent()
     End Sub
 
+
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim afs As clsFranchisee = New clsFranchisee
 
@@ -40,7 +41,7 @@ Public Class frmCreateNewFranchisee
         afs.EmailAdd2 = txtEmailAddress2.Text
 
         If afs.addFranchisee() Then
-            MsgBox("Added successfully")
+            MsgBox("Added Successfully")
             Me.Close()
         End If
     End Sub

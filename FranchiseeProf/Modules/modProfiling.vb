@@ -57,4 +57,56 @@ Module modProfiling
         Return franchiseeList
     End Function
 
+    Public Function getIdFranchisee() As Integer
+
+        Dim fs As New clsFranchisee
+        Dim fsQuery As String = "Select COUNT(*)
+                                FROM Franchisee"
+        Dim unF As Integer
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(fsQuery, oConnection)
+                    Return oCommand.ExecuteScalar()
+                    'Dim oReader As SqlDataReader = oCommand.ExecuteReader
+
+                    'While oReader.Read
+                    '    fs = New clsFranchisee
+                    '    fs.idFranchisee = oReader("idFranchisee")
+
+                    '    Return unF = fs.idFranchisee
+                    'End While
+                End Using
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error @:getIdFranchisee " + ex.Message)
+            End Try
+        End Using
+        Return unF
+    End Function
+
+    Dim l As List(Of clsFranchisee)
+    Public Function loadFranchisee()
+        pnlMain.lvUserProfile.Items.Clear()
+        Dim listFs As List(Of clsFranchisee) = modProfiling.getFranchiseeList
+        l = modProfiling.getFranchiseeList
+
+        For Each item In listFs
+            Dim oItem As New ListViewItem()
+            oItem.Text = item.idFranchisee
+            oItem.SubItems.Add(item.FName + " " + item.MName + " " + item.LName)
+            oItem.Tag = item.idFranchisee
+
+            pnlMain.lvUserProfile.Items.Add(oItem)
+            If item.Status = "0" Then
+                oItem.ForeColor = Color.Red
+            End If
+
+
+        Next
+
+        Return listFs
+    End Function
+
 End Module
