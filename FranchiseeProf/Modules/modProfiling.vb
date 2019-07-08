@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+Imports System.Data.SqlClient
 
 Module modProfiling
     Public Function getFranchiseeList() As List(Of clsFranchisee)

@@ -60,6 +60,15 @@ Partial Class frmAddContract
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.btnSubmit)
+        Me.Panel1.Controls.Add(Me.txtRelocAddress)
+        Me.Panel1.Controls.Add(Me.lblRelocAddress)
+        Me.Panel1.Controls.Add(Me.lblOutletClosedStatus)
+        Me.Panel1.Controls.Add(Me.cbOutletClosedStatus)
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.cbOutletStatus)
+        Me.Panel1.Controls.Add(Me.lblOutletClosedDate)
+        Me.Panel1.Controls.Add(Me.dtpDateClosed)
         Me.Panel1.Controls.Add(Me.lblOutletID)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.btnAddContract)
@@ -112,7 +121,7 @@ Partial Class frmAddContract
         '
         Me.btnAddContract.Location = New System.Drawing.Point(428, 277)
         Me.btnAddContract.Name = "btnAddContract"
-        Me.btnAddContract.Size = New System.Drawing.Size(49, 23)
+        Me.btnAddContract.Size = New System.Drawing.Size(52, 23)
         Me.btnAddContract.TabIndex = 28
         Me.btnAddContract.Text = "Add"
         Me.btnAddContract.UseVisualStyleBackColor = True
@@ -354,9 +363,9 @@ Partial Class frmAddContract
         Me.Label2.ForeColor = System.Drawing.SystemColors.Window
         Me.Label2.Location = New System.Drawing.Point(12, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 17)
+        Me.Label2.Size = New System.Drawing.Size(103, 17)
         Me.Label2.TabIndex = 52
-        Me.Label2.Text = "Add Contract"
+        Me.Label2.Text = "Outlet Details"
         '
         'frmAddContract
         '
@@ -409,4 +418,13 @@ Partial Class frmAddContract
     Friend WithEvents FPCStartTerm As ColumnHeader
     Friend WithEvents FPCEndTerm As ColumnHeader
     Friend WithEvents FPCRemark As ColumnHeader
+    Friend WithEvents txtRelocAddress As TextBox
+    Friend WithEvents lblRelocAddress As Label
+    Friend WithEvents lblOutletClosedStatus As Label
+    Friend WithEvents cbOutletClosedStatus As ComboBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents cbOutletStatus As CheckBox
+    Friend WithEvents lblOutletClosedDate As Label
+    Friend WithEvents dtpDateClosed As DateTimePicker
+    Friend WithEvents btnSubmit As Button
 End Class

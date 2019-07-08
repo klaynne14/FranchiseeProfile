@@ -1,4 +1,4 @@
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class clsFranchisee
     Public idFranchisee As Integer

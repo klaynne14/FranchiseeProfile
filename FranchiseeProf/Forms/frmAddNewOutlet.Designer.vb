@@ -29,8 +29,6 @@ Partial Class frmAddNewOutlet
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtpDateOfRefund = New System.Windows.Forms.DateTimePicker()
-        Me.txtRelocAddress = New System.Windows.Forms.TextBox()
-        Me.lblRelocAddress = New System.Windows.Forms.Label()
         Me.txtLocationName = New System.Windows.Forms.TextBox()
         Me.txtDepositRemark = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -46,12 +44,6 @@ Partial Class frmAddNewOutlet
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbPackageType = New System.Windows.Forms.ComboBox()
-        Me.lblOutletClosedStatus = New System.Windows.Forms.Label()
-        Me.cbOutletClosedStatus = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.cbOutletStatus = New System.Windows.Forms.CheckBox()
-        Me.lblOutletClosedDate = New System.Windows.Forms.Label()
-        Me.dtpDateClosed = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpDateOpened = New System.Windows.Forms.DateTimePicker()
         Me.txtOutletAddress = New System.Windows.Forms.TextBox()
@@ -104,8 +96,6 @@ Partial Class frmAddNewOutlet
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.dtpDateOfRefund)
-        Me.Panel1.Controls.Add(Me.txtRelocAddress)
-        Me.Panel1.Controls.Add(Me.lblRelocAddress)
         Me.Panel1.Controls.Add(Me.txtLocationName)
         Me.Panel1.Controls.Add(Me.txtDepositRemark)
         Me.Panel1.Controls.Add(Me.Label14)
@@ -121,12 +111,6 @@ Partial Class frmAddNewOutlet
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.cbPackageType)
-        Me.Panel1.Controls.Add(Me.lblOutletClosedStatus)
-        Me.Panel1.Controls.Add(Me.cbOutletClosedStatus)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.cbOutletStatus)
-        Me.Panel1.Controls.Add(Me.lblOutletClosedDate)
-        Me.Panel1.Controls.Add(Me.dtpDateClosed)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.dtpDateOpened)
         Me.Panel1.Controls.Add(Me.txtOutletAddress)
@@ -137,7 +121,7 @@ Partial Class frmAddNewOutlet
         Me.Panel1.Controls.Add(Me.cbBusinessUnit)
         Me.Panel1.Location = New System.Drawing.Point(6, 44)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(580, 426)
+        Me.Panel1.Size = New System.Drawing.Size(463, 394)
         Me.Panel1.TabIndex = 3
         '
         'Label6
@@ -145,7 +129,7 @@ Partial Class frmAddNewOutlet
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(334, 344)
+        Me.Label6.Location = New System.Drawing.Point(334, 300)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(93, 13)
         Me.Label6.TabIndex = 53
@@ -154,30 +138,10 @@ Partial Class frmAddNewOutlet
         'dtpDateOfRefund
         '
         Me.dtpDateOfRefund.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDateOfRefund.Location = New System.Drawing.Point(337, 321)
+        Me.dtpDateOfRefund.Location = New System.Drawing.Point(337, 277)
         Me.dtpDateOfRefund.Name = "dtpDateOfRefund"
         Me.dtpDateOfRefund.Size = New System.Drawing.Size(90, 20)
         Me.dtpDateOfRefund.TabIndex = 52
-        '
-        'txtRelocAddress
-        '
-        Me.txtRelocAddress.Location = New System.Drawing.Point(368, 164)
-        Me.txtRelocAddress.Name = "txtRelocAddress"
-        Me.txtRelocAddress.Size = New System.Drawing.Size(180, 20)
-        Me.txtRelocAddress.TabIndex = 51
-        Me.txtRelocAddress.Visible = False
-        '
-        'lblRelocAddress
-        '
-        Me.lblRelocAddress.AutoSize = True
-        Me.lblRelocAddress.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRelocAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblRelocAddress.Location = New System.Drawing.Point(365, 187)
-        Me.lblRelocAddress.Name = "lblRelocAddress"
-        Me.lblRelocAddress.Size = New System.Drawing.Size(116, 13)
-        Me.lblRelocAddress.TabIndex = 50
-        Me.lblRelocAddress.Text = "Relocation Address"
-        Me.lblRelocAddress.Visible = False
         '
         'txtLocationName
         '
@@ -188,7 +152,7 @@ Partial Class frmAddNewOutlet
         '
         'txtDepositRemark
         '
-        Me.txtDepositRemark.Location = New System.Drawing.Point(162, 321)
+        Me.txtDepositRemark.Location = New System.Drawing.Point(162, 277)
         Me.txtDepositRemark.Name = "txtDepositRemark"
         Me.txtDepositRemark.Size = New System.Drawing.Size(169, 20)
         Me.txtDepositRemark.TabIndex = 48
@@ -198,7 +162,7 @@ Partial Class frmAddNewOutlet
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label14.Location = New System.Drawing.Point(160, 344)
+        Me.Label14.Location = New System.Drawing.Point(160, 300)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(58, 13)
         Me.Label14.TabIndex = 47
@@ -207,7 +171,7 @@ Partial Class frmAddNewOutlet
         'txtSecurityDeposit
         '
         Me.txtSecurityDeposit.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtSecurityDeposit.Location = New System.Drawing.Point(30, 321)
+        Me.txtSecurityDeposit.Location = New System.Drawing.Point(30, 277)
         Me.txtSecurityDeposit.Name = "txtSecurityDeposit"
         Me.txtSecurityDeposit.Size = New System.Drawing.Size(126, 20)
         Me.txtSecurityDeposit.TabIndex = 46
@@ -218,7 +182,7 @@ Partial Class frmAddNewOutlet
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label15.Location = New System.Drawing.Point(29, 344)
+        Me.Label15.Location = New System.Drawing.Point(29, 300)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(101, 13)
         Me.Label15.TabIndex = 45
@@ -226,7 +190,7 @@ Partial Class frmAddNewOutlet
         '
         'txtFranchiseRemark
         '
-        Me.txtFranchiseRemark.Location = New System.Drawing.Point(163, 276)
+        Me.txtFranchiseRemark.Location = New System.Drawing.Point(163, 232)
         Me.txtFranchiseRemark.Name = "txtFranchiseRemark"
         Me.txtFranchiseRemark.Size = New System.Drawing.Size(169, 20)
         Me.txtFranchiseRemark.TabIndex = 44
@@ -236,7 +200,7 @@ Partial Class frmAddNewOutlet
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label12.Location = New System.Drawing.Point(160, 299)
+        Me.Label12.Location = New System.Drawing.Point(160, 255)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(58, 13)
         Me.Label12.TabIndex = 43
@@ -245,7 +209,7 @@ Partial Class frmAddNewOutlet
         'txtFranchiseeFee
         '
         Me.txtFranchiseeFee.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtFranchiseeFee.Location = New System.Drawing.Point(31, 276)
+        Me.txtFranchiseeFee.Location = New System.Drawing.Point(31, 232)
         Me.txtFranchiseeFee.Name = "txtFranchiseeFee"
         Me.txtFranchiseeFee.Size = New System.Drawing.Size(126, 20)
         Me.txtFranchiseeFee.TabIndex = 42
@@ -256,7 +220,7 @@ Partial Class frmAddNewOutlet
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label13.Location = New System.Drawing.Point(31, 299)
+        Me.Label13.Location = New System.Drawing.Point(31, 255)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(83, 13)
         Me.Label13.TabIndex = 41
@@ -264,7 +228,7 @@ Partial Class frmAddNewOutlet
         '
         'txtPackageRemark
         '
-        Me.txtPackageRemark.Location = New System.Drawing.Point(163, 230)
+        Me.txtPackageRemark.Location = New System.Drawing.Point(163, 186)
         Me.txtPackageRemark.Name = "txtPackageRemark"
         Me.txtPackageRemark.Size = New System.Drawing.Size(169, 20)
         Me.txtPackageRemark.TabIndex = 40
@@ -274,7 +238,7 @@ Partial Class frmAddNewOutlet
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label11.Location = New System.Drawing.Point(160, 253)
+        Me.Label11.Location = New System.Drawing.Point(160, 209)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(58, 13)
         Me.Label11.TabIndex = 39
@@ -283,7 +247,7 @@ Partial Class frmAddNewOutlet
         'txtPackageFee
         '
         Me.txtPackageFee.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.txtPackageFee.Location = New System.Drawing.Point(31, 230)
+        Me.txtPackageFee.Location = New System.Drawing.Point(31, 186)
         Me.txtPackageFee.Name = "txtPackageFee"
         Me.txtPackageFee.Size = New System.Drawing.Size(126, 20)
         Me.txtPackageFee.TabIndex = 38
@@ -294,7 +258,7 @@ Partial Class frmAddNewOutlet
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(31, 253)
+        Me.Label10.Location = New System.Drawing.Point(31, 209)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(77, 13)
         Me.Label10.TabIndex = 37
@@ -305,7 +269,7 @@ Partial Class frmAddNewOutlet
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(28, 208)
+        Me.Label9.Location = New System.Drawing.Point(28, 164)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(86, 13)
         Me.Label9.TabIndex = 36
@@ -316,81 +280,17 @@ Partial Class frmAddNewOutlet
         Me.cbPackageType.ForeColor = System.Drawing.Color.DimGray
         Me.cbPackageType.FormattingEnabled = True
         Me.cbPackageType.Items.AddRange(New Object() {"Standard", "Customized", "School", "Counter"})
-        Me.cbPackageType.Location = New System.Drawing.Point(32, 184)
+        Me.cbPackageType.Location = New System.Drawing.Point(32, 140)
         Me.cbPackageType.Name = "cbPackageType"
         Me.cbPackageType.Size = New System.Drawing.Size(125, 21)
         Me.cbPackageType.TabIndex = 35
-        '
-        'lblOutletClosedStatus
-        '
-        Me.lblOutletClosedStatus.AutoSize = True
-        Me.lblOutletClosedStatus.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutletClosedStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblOutletClosedStatus.Location = New System.Drawing.Point(365, 95)
-        Me.lblOutletClosedStatus.Name = "lblOutletClosedStatus"
-        Me.lblOutletClosedStatus.Size = New System.Drawing.Size(84, 13)
-        Me.lblOutletClosedStatus.TabIndex = 34
-        Me.lblOutletClosedStatus.Text = "Closed status"
-        Me.lblOutletClosedStatus.Visible = False
-        '
-        'cbOutletClosedStatus
-        '
-        Me.cbOutletClosedStatus.ForeColor = System.Drawing.Color.DimGray
-        Me.cbOutletClosedStatus.FormattingEnabled = True
-        Me.cbOutletClosedStatus.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated"})
-        Me.cbOutletClosedStatus.Location = New System.Drawing.Point(368, 72)
-        Me.cbOutletClosedStatus.Name = "cbOutletClosedStatus"
-        Me.cbOutletClosedStatus.Size = New System.Drawing.Size(125, 21)
-        Me.cbOutletClosedStatus.TabIndex = 33
-        Me.cbOutletClosedStatus.Visible = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(365, 49)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(43, 13)
-        Me.Label7.TabIndex = 32
-        Me.Label7.Text = "Status"
-        '
-        'cbOutletStatus
-        '
-        Me.cbOutletStatus.AutoSize = True
-        Me.cbOutletStatus.Location = New System.Drawing.Point(368, 29)
-        Me.cbOutletStatus.Name = "cbOutletStatus"
-        Me.cbOutletStatus.Size = New System.Drawing.Size(52, 17)
-        Me.cbOutletStatus.TabIndex = 31
-        Me.cbOutletStatus.Text = "Close"
-        Me.cbOutletStatus.UseVisualStyleBackColor = True
-        '
-        'lblOutletClosedDate
-        '
-        Me.lblOutletClosedDate.AutoSize = True
-        Me.lblOutletClosedDate.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutletClosedDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblOutletClosedDate.Location = New System.Drawing.Point(365, 141)
-        Me.lblOutletClosedDate.Name = "lblOutletClosedDate"
-        Me.lblOutletClosedDate.Size = New System.Drawing.Size(77, 13)
-        Me.lblOutletClosedDate.TabIndex = 30
-        Me.lblOutletClosedDate.Text = "Date Closed"
-        Me.lblOutletClosedDate.Visible = False
-        '
-        'dtpDateClosed
-        '
-        Me.dtpDateClosed.Location = New System.Drawing.Point(368, 118)
-        Me.dtpDateClosed.Name = "dtpDateClosed"
-        Me.dtpDateClosed.Size = New System.Drawing.Size(180, 20)
-        Me.dtpDateClosed.TabIndex = 29
-        Me.dtpDateClosed.Visible = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(29, 141)
+        Me.Label3.Location = New System.Drawing.Point(335, 49)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 28
@@ -398,16 +298,17 @@ Partial Class frmAddNewOutlet
         '
         'dtpDateOpened
         '
-        Me.dtpDateOpened.Location = New System.Drawing.Point(32, 118)
+        Me.dtpDateOpened.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDateOpened.Location = New System.Drawing.Point(338, 26)
         Me.dtpDateOpened.Name = "dtpDateOpened"
-        Me.dtpDateOpened.Size = New System.Drawing.Size(180, 20)
+        Me.dtpDateOpened.Size = New System.Drawing.Size(92, 20)
         Me.dtpDateOpened.TabIndex = 27
         '
         'txtOutletAddress
         '
         Me.txtOutletAddress.Location = New System.Drawing.Point(32, 72)
         Me.txtOutletAddress.Name = "txtOutletAddress"
-        Me.txtOutletAddress.Size = New System.Drawing.Size(300, 20)
+        Me.txtOutletAddress.Size = New System.Drawing.Size(398, 20)
         Me.txtOutletAddress.TabIndex = 26
         '
         'Label1
@@ -448,7 +349,7 @@ Partial Class frmAddNewOutlet
         Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
         Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNew.Location = New System.Drawing.Point(462, 375)
+        Me.btnAddNew.Location = New System.Drawing.Point(341, 343)
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(86, 30)
         Me.btnAddNew.TabIndex = 17
@@ -483,7 +384,7 @@ Partial Class frmAddNewOutlet
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(561, 10)
+        Me.btnClose.Location = New System.Drawing.Point(439, 10)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 50
@@ -495,7 +396,7 @@ Partial Class frmAddNewOutlet
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(594, 477)
+        Me.ClientSize = New System.Drawing.Size(476, 445)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -537,20 +438,12 @@ Partial Class frmAddNewOutlet
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents cbPackageType As ComboBox
-    Friend WithEvents lblOutletClosedStatus As Label
-    Friend WithEvents cbOutletClosedStatus As ComboBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents cbOutletStatus As CheckBox
-    Friend WithEvents lblOutletClosedDate As Label
-    Friend WithEvents dtpDateClosed As DateTimePicker
     Friend WithEvents Label3 As Label
     Friend WithEvents dtpDateOpened As DateTimePicker
     Friend WithEvents txtOutletAddress As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnClose As Button
     Friend WithEvents txtLocationName As TextBox
-    Friend WithEvents txtRelocAddress As TextBox
-    Friend WithEvents lblRelocAddress As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpDateOfRefund As DateTimePicker
 End Class
