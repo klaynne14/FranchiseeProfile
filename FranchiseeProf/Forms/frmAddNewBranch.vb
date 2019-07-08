@@ -59,29 +59,29 @@ Public Class frmAddNewOutlet
         ao.idFranchisee = 0
         'pass ids from forms
 
-        'Dim al As clsLocation = New clsLocation
-        'al.FPLLocationName = txtLocationName.Text
-        'al.FPLCurrentAddress = txtOutletAddress.Text
-        'al.FPLOldAddress = ""
-        'al.FPLDateOpened = dtpDateOpened.Value.Date
-        'al.FPLDateClosed = lDateClosed
-        'al.FPLStatus = lStatus
-        'al.FPLStatusClosed = cbOutletClosedStatus.Text
+        Dim al As clsLocation = New clsLocation
+        al.FPLLocationName = txtLocationName.Text
+        al.FPLCurrentAddress = txtOutletAddress.Text
+        al.FPLOldAddress = ""
+        al.FPLDateOpened = dtpDateOpened.Value.Date
+        al.FPLDateClosed = lDateClosed
+        al.FPLStatus = lStatus
+        al.FPLStatusClosed = cbOutletClosedStatus.Text
 
-        'Dim ap As clsPackage = New clsPackage
-        'ap.FPPPackageType = cbPackageType.Text
-        'ap.FPPFranchiseFee = Convert.ToInt32(txtFranchiseeFee.Text)
-        'ap.FPPPackageFee = Convert.ToInt32(txtPackageFee.Text)
-        'ap.FPPSecurityDeposit = Convert.ToInt32(txtSecurityDeposit.Text)
-        'ap.FPPDateOfRefund = dtpDateOfRefund.Value.Date
-        'ap.FPPFranchiseRemark = txtFranchiseRemark.Text
-        'ap.FPPPackageRemark = txtPackageRemark.Text
-        'ap.FPPDepositRemark = txtDepositRemark.Text
+        Dim ap As clsPackage = New clsPackage
+        ap.FPPPackageType = cbPackageType.Text
+        ap.FPPFranchiseFee = Convert.ToInt32(txtFranchiseeFee.Text)
+        ap.FPPPackageFee = Convert.ToInt32(txtPackageFee.Text)
+        ap.FPPSecurityDeposit = Convert.ToInt32(txtSecurityDeposit.Text)
+        ap.FPPDateOfRefund = dtpDateOfRefund.Value.Date
+        ap.FPPFranchiseRemark = txtFranchiseRemark.Text
+        ap.FPPPackageRemark = txtPackageRemark.Text
+        ap.FPPDepositRemark = txtDepositRemark.Text
 
-        'If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
-        '    MsgBox("Outlet added successfully")
-        '    Me.Close()
-        'End If
+        If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
+            MsgBox("Outlet added successfully")
+            Me.Close()
+        End If
 
         If ao.addOutlet() Then
             MsgBox("Outlet added successfully")

@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+Imports System.Data.SqlClient
 
 Public Class clsFranchisee
     Public idFranchisee As Integer
@@ -41,7 +41,7 @@ Public Class clsFranchisee
                                                         FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth ,FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                                         FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2)
 
-                                Values(((SELECT COUNT(*) FROM Franchisee)+ 10000001) ,@FPFName,@FPFLName,@FPFMName,@FPFStatus,@FPFOwnershipType,@FPFCorpAuthorizedName,@FPFYearStarted,
+                                Values(((SELECT COUNT(*) FROM Franchisee)+ 1000001) ,@FPFName,@FPFLName,@FPFMName,@FPFStatus,@FPFOwnershipType,@FPFCorpAuthorizedName,@FPFYearStarted,
                                         @FPFAddress1,@FPFAddress2,@FPFTinNumber,@FPFDateOfBirth,@FPFAge,@FPFGender,@FPFCivilStatus,@FPFNationality,@FPFReligion,@FPFOccupation,@FPFMobileNum1,
                                         @FPFMobileNum2,@FPFTelNum1,@FPFTelNum2,@FPFFaxNum,@FPFEmailAdd1,@FPFEmailAdd2)"
 
