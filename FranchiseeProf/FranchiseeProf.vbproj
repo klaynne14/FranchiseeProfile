@@ -80,10 +80,10 @@
     <Compile Include="Forms\frmAddContract.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddNewBranch.Designer.vb">
-      <DependentUpon>frmAddNewBranch.vb</DependentUpon>
+    <Compile Include="Forms\frmAddNewOutlet.Designer.vb">
+      <DependentUpon>frmAddNewOutlet.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAddNewBranch.vb">
+    <Compile Include="Forms\frmAddNewOutlet.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmCreateNewFranchisee.vb">
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="Forms\frmAddContract.resx">
       <DependentUpon>frmAddContract.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAddNewBranch.resx">
-      <DependentUpon>frmAddNewBranch.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmAddNewOutlet.resx">
+      <DependentUpon>frmAddNewOutlet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDisplayMain.resx">
       <DependentUpon>frmDisplayMain.vb</DependentUpon>

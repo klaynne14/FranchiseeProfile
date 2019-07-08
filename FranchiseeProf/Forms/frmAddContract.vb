@@ -24,35 +24,35 @@
     Dim lDateClosed As DateTime
     Dim lStatus As String = "Open"
 
-    Private Sub CbOutletStatus_CheckedChanged(sender As Object, e As EventArgs) Handles cbOutletStatus.CheckedChanged
-        If cbOutletStatus.Checked = True Then
-            lblOutletClosedDate.Visible = False
-            lblOutletClosedStatus.Visible = False
-            cbOutletClosedStatus.Visible = False
-            dtpDateClosed.Visible = False
-            txtRelocAddress.Visible = False
-            lblRelocAddress.Visible = False
+    Private Sub CbStatusOutlet_CheckedChanged(sender As Object, e As EventArgs) Handles cbStatusOutlet.CheckedChanged
+        If cbStatusOutlet.Checked = True Then
+            cbStatusClosed.Visible = False
+            lblStatusClosed.Visible = False
+            dtpCloseDate.Visible = False
+            lblCloseDate.Visible = False
+            txtRelocationAddress.Visible = False
+            lblRelocationAddress.Visible = False
 
             lStatus = "Open"
         Else
-            lblOutletClosedDate.Visible = True
-            lblOutletClosedStatus.Visible = True
-            cbOutletClosedStatus.Visible = True
-            dtpDateClosed.Visible = True
+            cbStatusClosed.Visible = True
+            lblStatusClosed.Visible = True
+            dtpCloseDate.Visible = True
+            lblCloseDate.Visible = True
 
             lStatus = "Close"
-            lDateClosed = dtpDateClosed.Value.Date
+            lDateClosed = dtpCloseDate.Value.Date
         End If
     End Sub
 
-    Private Sub CbOutletClosedStatus_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cbOutletClosedStatus.SelectedIndexChanged
-        Dim lStatusClosed As String = cbOutletClosedStatus.Text
+    Private Sub CbStatusClosed_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbStatusClosed.SelectedIndexChanged
+        Dim lStatusClosed As String = cbStatusClosed.Text
         If lStatusClosed = "Relocated" Then
-            lblRelocAddress.Visible = True
-            txtRelocAddress.Visible = True
+            txtRelocationAddress.Visible = True
+            lblRelocationAddress.Visible = True
         Else
-            lblRelocAddress.Visible = False
-            txtRelocAddress.Visible = False
+            txtRelocationAddress.Visible = False
+            lblRelocationAddress.Visible = False
         End If
     End Sub
 End Class
