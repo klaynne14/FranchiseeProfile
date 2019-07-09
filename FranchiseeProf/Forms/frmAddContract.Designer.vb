@@ -23,6 +23,7 @@ Partial Class frmAddContract
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnConfirmOutlet = New System.Windows.Forms.Button()
         Me.txtRelocationAddress = New System.Windows.Forms.TextBox()
         Me.lblRelocationAddress = New System.Windows.Forms.Label()
         Me.lblStatusClosed = New System.Windows.Forms.Label()
@@ -62,7 +63,6 @@ Partial Class frmAddContract
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnConfirmOutlet = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -105,12 +105,24 @@ Partial Class frmAddContract
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(8, 46)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(500, 477)
+        Me.Panel1.Size = New System.Drawing.Size(526, 501)
         Me.Panel1.TabIndex = 0
+        '
+        'btnConfirmOutlet
+        '
+        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirmOutlet.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnConfirmOutlet.Location = New System.Drawing.Point(404, 454)
+        Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
+        Me.btnConfirmOutlet.Size = New System.Drawing.Size(86, 30)
+        Me.btnConfirmOutlet.TabIndex = 39
+        Me.btnConfirmOutlet.Text = "Confirm"
+        Me.btnConfirmOutlet.UseVisualStyleBackColor = False
         '
         'txtRelocationAddress
         '
-        Me.txtRelocationAddress.Location = New System.Drawing.Point(271, 43)
+        Me.txtRelocationAddress.Location = New System.Drawing.Point(284, 69)
         Me.txtRelocationAddress.Name = "txtRelocationAddress"
         Me.txtRelocationAddress.Size = New System.Drawing.Size(209, 20)
         Me.txtRelocationAddress.TabIndex = 38
@@ -118,7 +130,7 @@ Partial Class frmAddContract
         'lblRelocationAddress
         '
         Me.lblRelocationAddress.AutoSize = True
-        Me.lblRelocationAddress.Location = New System.Drawing.Point(268, 66)
+        Me.lblRelocationAddress.Location = New System.Drawing.Point(281, 92)
         Me.lblRelocationAddress.Name = "lblRelocationAddress"
         Me.lblRelocationAddress.Size = New System.Drawing.Size(99, 13)
         Me.lblRelocationAddress.TabIndex = 37
@@ -127,7 +139,7 @@ Partial Class frmAddContract
         'lblStatusClosed
         '
         Me.lblStatusClosed.AutoSize = True
-        Me.lblStatusClosed.Location = New System.Drawing.Point(89, 67)
+        Me.lblStatusClosed.Location = New System.Drawing.Point(102, 93)
         Me.lblStatusClosed.Name = "lblStatusClosed"
         Me.lblStatusClosed.Size = New System.Drawing.Size(72, 13)
         Me.lblStatusClosed.TabIndex = 36
@@ -137,7 +149,7 @@ Partial Class frmAddContract
         '
         Me.cbStatusClosed.FormattingEnabled = True
         Me.cbStatusClosed.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated"})
-        Me.cbStatusClosed.Location = New System.Drawing.Point(92, 43)
+        Me.cbStatusClosed.Location = New System.Drawing.Point(105, 69)
         Me.cbStatusClosed.Name = "cbStatusClosed"
         Me.cbStatusClosed.Size = New System.Drawing.Size(83, 21)
         Me.cbStatusClosed.TabIndex = 35
@@ -145,7 +157,7 @@ Partial Class frmAddContract
         'dtpCloseDate
         '
         Me.dtpCloseDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpCloseDate.Location = New System.Drawing.Point(181, 43)
+        Me.dtpCloseDate.Location = New System.Drawing.Point(194, 69)
         Me.dtpCloseDate.Name = "dtpCloseDate"
         Me.dtpCloseDate.Size = New System.Drawing.Size(84, 20)
         Me.dtpCloseDate.TabIndex = 34
@@ -153,7 +165,7 @@ Partial Class frmAddContract
         'lblCloseDate
         '
         Me.lblCloseDate.AutoSize = True
-        Me.lblCloseDate.Location = New System.Drawing.Point(178, 66)
+        Me.lblCloseDate.Location = New System.Drawing.Point(191, 92)
         Me.lblCloseDate.Name = "lblCloseDate"
         Me.lblCloseDate.Size = New System.Drawing.Size(65, 13)
         Me.lblCloseDate.TabIndex = 33
@@ -164,7 +176,7 @@ Partial Class frmAddContract
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label15.Location = New System.Drawing.Point(15, 19)
+        Me.Label15.Location = New System.Drawing.Point(28, 45)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(48, 14)
         Me.Label15.TabIndex = 32
@@ -175,7 +187,7 @@ Partial Class frmAddContract
         Me.cbStatusOutlet.AutoSize = True
         Me.cbStatusOutlet.Checked = True
         Me.cbStatusOutlet.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbStatusOutlet.Location = New System.Drawing.Point(36, 46)
+        Me.cbStatusOutlet.Location = New System.Drawing.Point(49, 72)
         Me.cbStatusOutlet.Name = "cbStatusOutlet"
         Me.cbStatusOutlet.Size = New System.Drawing.Size(52, 17)
         Me.cbStatusOutlet.TabIndex = 31
@@ -185,7 +197,7 @@ Partial Class frmAddContract
         'lblOutletID
         '
         Me.lblOutletID.AutoSize = True
-        Me.lblOutletID.Location = New System.Drawing.Point(70, 244)
+        Me.lblOutletID.Location = New System.Drawing.Point(438, 23)
         Me.lblOutletID.Name = "lblOutletID"
         Me.lblOutletID.Size = New System.Drawing.Size(56, 13)
         Me.lblOutletID.TabIndex = 30
@@ -194,7 +206,7 @@ Partial Class frmAddContract
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(15, 244)
+        Me.Label14.Location = New System.Drawing.Point(383, 23)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(52, 13)
         Me.Label14.TabIndex = 29
@@ -202,7 +214,7 @@ Partial Class frmAddContract
         '
         'btnAddContract
         '
-        Me.btnAddContract.Location = New System.Drawing.Point(428, 266)
+        Me.btnAddContract.Location = New System.Drawing.Point(438, 285)
         Me.btnAddContract.Name = "btnAddContract"
         Me.btnAddContract.Size = New System.Drawing.Size(52, 23)
         Me.btnAddContract.TabIndex = 28
@@ -211,7 +223,7 @@ Partial Class frmAddContract
         '
         'txtRemarks
         '
-        Me.txtRemarks.Location = New System.Drawing.Point(220, 268)
+        Me.txtRemarks.Location = New System.Drawing.Point(233, 287)
         Me.txtRemarks.Name = "txtRemarks"
         Me.txtRemarks.Size = New System.Drawing.Size(202, 20)
         Me.txtRemarks.TabIndex = 27
@@ -219,7 +231,7 @@ Partial Class frmAddContract
         'lvContract
         '
         Me.lvContract.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idContract, Me.FPCStartTerm, Me.FPCEndTerm, Me.FPCRemark})
-        Me.lvContract.Location = New System.Drawing.Point(35, 318)
+        Me.lvContract.Location = New System.Drawing.Point(48, 337)
         Me.lvContract.Name = "lvContract"
         Me.lvContract.Size = New System.Drawing.Size(442, 97)
         Me.lvContract.TabIndex = 26
@@ -248,7 +260,7 @@ Partial Class frmAddContract
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(217, 291)
+        Me.Label11.Location = New System.Drawing.Point(230, 310)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 13)
         Me.Label11.TabIndex = 25
@@ -259,7 +271,7 @@ Partial Class frmAddContract
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(14, 221)
+        Me.Label8.Location = New System.Drawing.Point(28, 260)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(61, 14)
         Me.Label8.TabIndex = 23
@@ -268,7 +280,7 @@ Partial Class frmAddContract
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(122, 292)
+        Me.Label5.Location = New System.Drawing.Point(135, 311)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 18
@@ -277,7 +289,7 @@ Partial Class frmAddContract
         'dtpEndTerm
         '
         Me.dtpEndTerm.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpEndTerm.Location = New System.Drawing.Point(125, 269)
+        Me.dtpEndTerm.Location = New System.Drawing.Point(138, 288)
         Me.dtpEndTerm.Name = "dtpEndTerm"
         Me.dtpEndTerm.Size = New System.Drawing.Size(84, 20)
         Me.dtpEndTerm.TabIndex = 17
@@ -285,7 +297,7 @@ Partial Class frmAddContract
         'dtpStartTerm
         '
         Me.dtpStartTerm.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpStartTerm.Location = New System.Drawing.Point(35, 269)
+        Me.dtpStartTerm.Location = New System.Drawing.Point(48, 288)
         Me.dtpStartTerm.Name = "dtpStartTerm"
         Me.dtpStartTerm.Size = New System.Drawing.Size(84, 20)
         Me.dtpStartTerm.TabIndex = 16
@@ -293,7 +305,7 @@ Partial Class frmAddContract
         'lblDepositRemarks
         '
         Me.lblDepositRemarks.AutoSize = True
-        Me.lblDepositRemarks.Location = New System.Drawing.Point(306, 179)
+        Me.lblDepositRemarks.Location = New System.Drawing.Point(304, 212)
         Me.lblDepositRemarks.Name = "lblDepositRemarks"
         Me.lblDepositRemarks.Size = New System.Drawing.Size(95, 13)
         Me.lblDepositRemarks.TabIndex = 15
@@ -302,7 +314,7 @@ Partial Class frmAddContract
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(248, 179)
+        Me.Label6.Location = New System.Drawing.Point(246, 212)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 13)
         Me.Label6.TabIndex = 14
@@ -311,7 +323,7 @@ Partial Class frmAddContract
         'lblFranchiseRemarks
         '
         Me.lblFranchiseRemarks.AutoSize = True
-        Me.lblFranchiseRemarks.Location = New System.Drawing.Point(306, 156)
+        Me.lblFranchiseRemarks.Location = New System.Drawing.Point(304, 189)
         Me.lblFranchiseRemarks.Name = "lblFranchiseRemarks"
         Me.lblFranchiseRemarks.Size = New System.Drawing.Size(105, 13)
         Me.lblFranchiseRemarks.TabIndex = 13
@@ -320,7 +332,7 @@ Partial Class frmAddContract
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(248, 156)
+        Me.Label10.Location = New System.Drawing.Point(246, 189)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 13)
         Me.Label10.TabIndex = 12
@@ -329,7 +341,7 @@ Partial Class frmAddContract
         'lblPackageRemarks
         '
         Me.lblPackageRemarks.AutoSize = True
-        Me.lblPackageRemarks.Location = New System.Drawing.Point(306, 132)
+        Me.lblPackageRemarks.Location = New System.Drawing.Point(304, 165)
         Me.lblPackageRemarks.Name = "lblPackageRemarks"
         Me.lblPackageRemarks.Size = New System.Drawing.Size(102, 13)
         Me.lblPackageRemarks.TabIndex = 11
@@ -338,7 +350,7 @@ Partial Class frmAddContract
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(248, 132)
+        Me.Label12.Location = New System.Drawing.Point(246, 165)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(52, 13)
         Me.Label12.TabIndex = 10
@@ -347,7 +359,7 @@ Partial Class frmAddContract
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(32, 292)
+        Me.Label3.Location = New System.Drawing.Point(45, 311)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 13)
         Me.Label3.TabIndex = 9
@@ -356,7 +368,7 @@ Partial Class frmAddContract
         'lblSecurityDeposit
         '
         Me.lblSecurityDeposit.AutoSize = True
-        Me.lblSecurityDeposit.Location = New System.Drawing.Point(125, 179)
+        Me.lblSecurityDeposit.Location = New System.Drawing.Point(138, 212)
         Me.lblSecurityDeposit.Name = "lblSecurityDeposit"
         Me.lblSecurityDeposit.Size = New System.Drawing.Size(91, 13)
         Me.lblSecurityDeposit.TabIndex = 7
@@ -365,7 +377,7 @@ Partial Class frmAddContract
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(32, 179)
+        Me.Label9.Location = New System.Drawing.Point(45, 212)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(87, 13)
         Me.Label9.TabIndex = 6
@@ -374,7 +386,7 @@ Partial Class frmAddContract
         'lblFranchiseFee
         '
         Me.lblFranchiseFee.AutoSize = True
-        Me.lblFranchiseFee.Location = New System.Drawing.Point(125, 156)
+        Me.lblFranchiseFee.Location = New System.Drawing.Point(138, 189)
         Me.lblFranchiseFee.Name = "lblFranchiseFee"
         Me.lblFranchiseFee.Size = New System.Drawing.Size(81, 13)
         Me.lblFranchiseFee.TabIndex = 5
@@ -383,7 +395,7 @@ Partial Class frmAddContract
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(32, 156)
+        Me.Label7.Location = New System.Drawing.Point(45, 189)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(77, 13)
         Me.Label7.TabIndex = 4
@@ -392,7 +404,7 @@ Partial Class frmAddContract
         'lblPackageFee
         '
         Me.lblPackageFee.AutoSize = True
-        Me.lblPackageFee.Location = New System.Drawing.Point(125, 132)
+        Me.lblPackageFee.Location = New System.Drawing.Point(138, 165)
         Me.lblPackageFee.Name = "lblPackageFee"
         Me.lblPackageFee.Size = New System.Drawing.Size(78, 13)
         Me.lblPackageFee.TabIndex = 3
@@ -401,7 +413,7 @@ Partial Class frmAddContract
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(32, 132)
+        Me.Label4.Location = New System.Drawing.Point(45, 165)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(74, 13)
         Me.Label4.TabIndex = 2
@@ -410,7 +422,7 @@ Partial Class frmAddContract
         'lblPackageType
         '
         Me.lblPackageType.AutoSize = True
-        Me.lblPackageType.Location = New System.Drawing.Point(73, 101)
+        Me.lblPackageType.Location = New System.Drawing.Point(86, 134)
         Me.lblPackageType.Name = "lblPackageType"
         Me.lblPackageType.Size = New System.Drawing.Size(77, 13)
         Me.lblPackageType.TabIndex = 1
@@ -419,7 +431,7 @@ Partial Class frmAddContract
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 101)
+        Me.Label1.Location = New System.Drawing.Point(27, 134)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 13)
         Me.Label1.TabIndex = 0
@@ -432,7 +444,7 @@ Partial Class frmAddContract
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(483, 10)
+        Me.btnClose.Location = New System.Drawing.Point(509, 11)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 51
@@ -450,24 +462,12 @@ Partial Class frmAddContract
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Outlet Details"
         '
-        'btnConfirmOutlet
-        '
-        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfirmOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnConfirmOutlet.Location = New System.Drawing.Point(391, 422)
-        Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
-        Me.btnConfirmOutlet.Size = New System.Drawing.Size(86, 30)
-        Me.btnConfirmOutlet.TabIndex = 39
-        Me.btnConfirmOutlet.Text = "Confirm"
-        Me.btnConfirmOutlet.UseVisualStyleBackColor = False
-        '
         'frmAddContract
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(516, 533)
+        Me.ClientSize = New System.Drawing.Size(546, 559)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Panel1)
