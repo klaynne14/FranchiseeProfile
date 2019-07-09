@@ -57,6 +57,18 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.lblFaxNumber = New System.Windows.Forms.Label()
+        Me.lblTinNumber = New System.Windows.Forms.Label()
+        Me.lblOccupation = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.lblYearStarted = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.lblCorpAuthorizedName = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lblOwnershipType = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.btnSelectedOutlet = New System.Windows.Forms.Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
@@ -104,18 +116,6 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.lblOwnershipType = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.lblCorpAuthorizedName = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.lblYearStarted = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.lblFaxNumber = New System.Windows.Forms.Label()
-        Me.lblTinNumber = New System.Windows.Forms.Label()
-        Me.lblOccupation = New System.Windows.Forms.Label()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -295,13 +295,13 @@ Partial Class pnlMain
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'SignOutToolStripMenuItem
         '
         Me.SignOutToolStripMenuItem.Name = "SignOutToolStripMenuItem"
-        Me.SignOutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SignOutToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.SignOutToolStripMenuItem.Text = "Sign out"
         '
         'ToolStripSeparator2
@@ -518,6 +518,126 @@ Partial Class pnlMain
         Me.pnlInfo.Size = New System.Drawing.Size(1001, 668)
         Me.pnlInfo.TabIndex = 18
         Me.pnlInfo.Visible = False
+        '
+        'lblFaxNumber
+        '
+        Me.lblFaxNumber.AutoSize = True
+        Me.lblFaxNumber.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.lblFaxNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblFaxNumber.Location = New System.Drawing.Point(823, 290)
+        Me.lblFaxNumber.Name = "lblFaxNumber"
+        Me.lblFaxNumber.Size = New System.Drawing.Size(0, 13)
+        Me.lblFaxNumber.TabIndex = 89
+        '
+        'lblTinNumber
+        '
+        Me.lblTinNumber.AutoSize = True
+        Me.lblTinNumber.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.lblTinNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTinNumber.Location = New System.Drawing.Point(705, 290)
+        Me.lblTinNumber.Name = "lblTinNumber"
+        Me.lblTinNumber.Size = New System.Drawing.Size(0, 13)
+        Me.lblTinNumber.TabIndex = 88
+        '
+        'lblOccupation
+        '
+        Me.lblOccupation.AutoSize = True
+        Me.lblOccupation.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.lblOccupation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblOccupation.Location = New System.Drawing.Point(567, 290)
+        Me.lblOccupation.Name = "lblOccupation"
+        Me.lblOccupation.Size = New System.Drawing.Size(0, 13)
+        Me.lblOccupation.TabIndex = 87
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label21.Location = New System.Drawing.Point(706, 307)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(69, 12)
+        Me.Label21.TabIndex = 86
+        Me.Label21.Text = "Tin Number"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label23.Location = New System.Drawing.Point(568, 307)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(66, 12)
+        Me.Label23.TabIndex = 85
+        Me.Label23.Text = "Occupation"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label28.Location = New System.Drawing.Point(824, 307)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(72, 12)
+        Me.Label28.TabIndex = 84
+        Me.Label28.Text = "Fax Number"
+        '
+        'lblYearStarted
+        '
+        Me.lblYearStarted.AutoSize = True
+        Me.lblYearStarted.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.lblYearStarted.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblYearStarted.Location = New System.Drawing.Point(436, 290)
+        Me.lblYearStarted.Name = "lblYearStarted"
+        Me.lblYearStarted.Size = New System.Drawing.Size(0, 13)
+        Me.lblYearStarted.TabIndex = 83
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label19.Location = New System.Drawing.Point(437, 307)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(73, 12)
+        Me.Label19.TabIndex = 82
+        Me.Label19.Text = "Year Started"
+        '
+        'lblCorpAuthorizedName
+        '
+        Me.lblCorpAuthorizedName.AutoSize = True
+        Me.lblCorpAuthorizedName.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.lblCorpAuthorizedName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblCorpAuthorizedName.Location = New System.Drawing.Point(247, 290)
+        Me.lblCorpAuthorizedName.Name = "lblCorpAuthorizedName"
+        Me.lblCorpAuthorizedName.Size = New System.Drawing.Size(0, 13)
+        Me.lblCorpAuthorizedName.TabIndex = 81
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label17.Location = New System.Drawing.Point(248, 307)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(171, 12)
+        Me.Label17.TabIndex = 80
+        Me.Label17.Text = "Name of Authorized Signatory"
+        '
+        'lblOwnershipType
+        '
+        Me.lblOwnershipType.AutoSize = True
+        Me.lblOwnershipType.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.lblOwnershipType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblOwnershipType.Location = New System.Drawing.Point(135, 290)
+        Me.lblOwnershipType.Name = "lblOwnershipType"
+        Me.lblOwnershipType.Size = New System.Drawing.Size(0, 13)
+        Me.lblOwnershipType.TabIndex = 79
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label12.Location = New System.Drawing.Point(136, 307)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(92, 12)
+        Me.Label12.TabIndex = 78
+        Me.Label12.Text = "Ownership Type"
         '
         'btnSelectedOutlet
         '
@@ -933,9 +1053,8 @@ Partial Class pnlMain
         Me.lblIDFranchisee.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblIDFranchisee.Location = New System.Drawing.Point(134, 61)
         Me.lblIDFranchisee.Name = "lblIDFranchisee"
-        Me.lblIDFranchisee.Size = New System.Drawing.Size(14, 13)
+        Me.lblIDFranchisee.Size = New System.Drawing.Size(0, 13)
         Me.lblIDFranchisee.TabIndex = 37
-        Me.lblIDFranchisee.Text = "1"
         '
         'lblFullName
         '
@@ -1001,126 +1120,6 @@ Partial Class pnlMain
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label12.Location = New System.Drawing.Point(136, 307)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(92, 12)
-        Me.Label12.TabIndex = 78
-        Me.Label12.Text = "Ownership Type"
-        '
-        'lblOwnershipType
-        '
-        Me.lblOwnershipType.AutoSize = True
-        Me.lblOwnershipType.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblOwnershipType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblOwnershipType.Location = New System.Drawing.Point(135, 290)
-        Me.lblOwnershipType.Name = "lblOwnershipType"
-        Me.lblOwnershipType.Size = New System.Drawing.Size(0, 13)
-        Me.lblOwnershipType.TabIndex = 79
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label17.Location = New System.Drawing.Point(248, 307)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(171, 12)
-        Me.Label17.TabIndex = 80
-        Me.Label17.Text = "Name of Authorized Signatory"
-        '
-        'lblCorpAuthorizedName
-        '
-        Me.lblCorpAuthorizedName.AutoSize = True
-        Me.lblCorpAuthorizedName.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblCorpAuthorizedName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblCorpAuthorizedName.Location = New System.Drawing.Point(247, 290)
-        Me.lblCorpAuthorizedName.Name = "lblCorpAuthorizedName"
-        Me.lblCorpAuthorizedName.Size = New System.Drawing.Size(0, 13)
-        Me.lblCorpAuthorizedName.TabIndex = 81
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label19.Location = New System.Drawing.Point(437, 307)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(73, 12)
-        Me.Label19.TabIndex = 82
-        Me.Label19.Text = "Year Started"
-        '
-        'lblYearStarted
-        '
-        Me.lblYearStarted.AutoSize = True
-        Me.lblYearStarted.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblYearStarted.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblYearStarted.Location = New System.Drawing.Point(436, 290)
-        Me.lblYearStarted.Name = "lblYearStarted"
-        Me.lblYearStarted.Size = New System.Drawing.Size(0, 13)
-        Me.lblYearStarted.TabIndex = 83
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label21.Location = New System.Drawing.Point(706, 307)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(69, 12)
-        Me.Label21.TabIndex = 86
-        Me.Label21.Text = "Tin Number"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label23.Location = New System.Drawing.Point(568, 307)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(66, 12)
-        Me.Label23.TabIndex = 85
-        Me.Label23.Text = "Occupation"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label28.Location = New System.Drawing.Point(824, 307)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(72, 12)
-        Me.Label28.TabIndex = 84
-        Me.Label28.Text = "Fax Number"
-        '
-        'lblFaxNumber
-        '
-        Me.lblFaxNumber.AutoSize = True
-        Me.lblFaxNumber.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblFaxNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblFaxNumber.Location = New System.Drawing.Point(823, 290)
-        Me.lblFaxNumber.Name = "lblFaxNumber"
-        Me.lblFaxNumber.Size = New System.Drawing.Size(0, 13)
-        Me.lblFaxNumber.TabIndex = 89
-        '
-        'lblTinNumber
-        '
-        Me.lblTinNumber.AutoSize = True
-        Me.lblTinNumber.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblTinNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblTinNumber.Location = New System.Drawing.Point(705, 290)
-        Me.lblTinNumber.Name = "lblTinNumber"
-        Me.lblTinNumber.Size = New System.Drawing.Size(0, 13)
-        Me.lblTinNumber.TabIndex = 88
-        '
-        'lblOccupation
-        '
-        Me.lblOccupation.AutoSize = True
-        Me.lblOccupation.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblOccupation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblOccupation.Location = New System.Drawing.Point(567, 290)
-        Me.lblOccupation.Name = "lblOccupation"
-        Me.lblOccupation.Size = New System.Drawing.Size(0, 13)
-        Me.lblOccupation.TabIndex = 87
         '
         'pnlMain
         '
