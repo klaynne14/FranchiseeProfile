@@ -11,8 +11,8 @@ Public Class clsLocation
     Public FPLStatusClosed As String
 
     Public Function addLocation() As Boolean
-        Dim sQuery As String = "INSERT INTO Location (FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus, FPLStatusClosed)
-                                VALUES (@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus, @FPLStatusClosed)"
+        Dim sQuery As String = "INSERT INTO Location (FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus)
+                                VALUES (@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -23,9 +23,8 @@ Public Class clsLocation
                     oCommand.Parameters.AddWithValue("@FPLLocationName", Me.FPLLocationName)
                     oCommand.Parameters.AddWithValue("@FPLCurrentAddress", Me.FPLCurrentAddress)
                     oCommand.Parameters.AddWithValue("@FPLOldAddress", Me.FPLOldAddress)
-                    oCommand.Parameters.AddWithValue("@FPLDateOpened", Me.FPLDateOpened)             
+                    oCommand.Parameters.AddWithValue("@FPLDateOpened", Me.FPLDateOpened)
                     oCommand.Parameters.AddWithValue("@FPLStatus", Me.FPLStatus)
-                    oCommand.Parameters.AddWithValue("@FPLStatusClosed", Me.FPLStatusClosed)
 
                     oCommand.ExecuteNonQuery()
                     Return True

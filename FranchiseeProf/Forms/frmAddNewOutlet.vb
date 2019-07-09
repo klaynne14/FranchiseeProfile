@@ -1,6 +1,48 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmAddNewOutlet
+
+#Region "Package Type"
+    Public Enum PackageType
+        Customize
+        Standard
+        School
+        Counter
+        SchoolCounter
+    End Enum
+
+    Public Sub setPackageType(packageState As PackageType)
+        Select Case packageState
+            Case PackageType.Customize
+                txtPackageFee.Text = "50000"
+                txtFranchiseeFee.Text = "110000"
+                txtSecurityDeposit.Text = "50000"
+
+            Case PackageType.Standard
+                txtPackageFee.Text = "50000"
+                txtFranchiseeFee.Text = "200000"
+                txtSecurityDeposit.Text = "50000"
+
+
+            Case PackageType.School
+                txtPackageFee.Text = "20000"
+                txtFranchiseeFee.Text = "80000"
+                txtSecurityDeposit.Text = "20000"
+
+            Case PackageType.Counter
+                txtPackageFee.Text = "50000"
+                txtFranchiseeFee.Text = "0"
+                txtSecurityDeposit.Text = "0"
+
+            Case PackageType.SchoolCounter
+                txtPackageFee.Text = "20000"
+                txtFranchiseeFee.Text = "55000"
+                txtSecurityDeposit.Text = "20000"
+
+        End Select
+    End Sub
+#End Region
+
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
@@ -22,7 +64,7 @@ Public Class frmAddNewOutlet
         ao.idPackage = 1
         ao.idContract = 1
         ao.idLocation = 1
-        ao.idFranchisee = 0
+        ao.unFranchisee = lblOutletUn.Text
         'pass ids from forms
 
         Dim al As clsLocation = New clsLocation
@@ -31,7 +73,7 @@ Public Class frmAddNewOutlet
         al.FPLOldAddress = ""
         al.FPLDateOpened = dtpDateOpened.Value.Date
         'al.FPLDateClosed = lDateClosed
-        'al.FPLStatus = lStatus
+        al.FPLStatus = "Open"
         'al.FPLStatusClosed = cbOutletClosedStatus.Text
 
         Dim ap As clsPackage = New clsPackage
@@ -46,9 +88,35 @@ Public Class frmAddNewOutlet
 
         If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
+            Dim ufControl As Control
+            For Each ufControl In Panel1.Controls
+                If TypeName(ufControl) = "Label" Then
+                    ufControl.Text = ""
+                End If
+            Next ufControl
+
+            Dim unfControl As Control
+            For Each unfControl In Panel1.Controls
+                If TypeName(unfControl) = "TextBox" Then
+                    unfControl.Text = ""
+                End If
+            Next unfControl
             Me.Close()
         End If
 
     End Sub
 
+    Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged
+        If cbPackageType.Text = "School" Then
+            setPackageType(PackageType.School)
+        ElseIf cbPackageType.Text = "Customize" Then
+            setPackageType(PackageType.Customize)
+        ElseIf cbPackageType.Text = "Standard" Then
+            setPackageType(PackageType.Standard)
+        ElseIf cbPackageType.Text = "School-Counter" Then
+            setPackageType(PackageType.SchoolCounter)
+        ElseIf cbPackageType.Text = "Counter" Then
+            setPackageType(PackageType.Counter)
+        End If
+    End Sub
 End Class

@@ -14,6 +14,7 @@ Public Class pnlMain
     End Sub
 
     Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
+        frmAddNewOutlet.lblOutletUn.Text = lblIDFranchisee.Text
         frmAddNewOutlet.ShowDialog()
     End Sub
 
@@ -47,12 +48,17 @@ Public Class pnlMain
             End If
         Next
 
+
         If lblFPFStatus.Text = "-1" Then
             lblFPFStatus.Text = "Active"
             lblFPFStatus.ForeColor = Color.Green
+            btnAddNewOutletMain.Enabled = True
+            btnAddNewOutletMain.BackColor = Color.Teal
         Else
             lblFPFStatus.Text = "Inactive"
             lblFPFStatus.ForeColor = Color.Red
+            btnAddNewOutletMain.Enabled = False
+            btnAddNewOutletMain.BackColor = Color.LightGray
         End If
     End Sub
 

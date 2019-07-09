@@ -8,11 +8,11 @@ Public Class clsOutlet
     Public idPackage As Integer
     Public idContract As Integer
     Public idLocation As Integer
-    Public idFranchisee As String
+    Public unFranchisee As String
 
     Public Function addOutlet() As Boolean
-        Dim sQuery As String = "INSERT INTO Outlet (FPOBusinessUnit, idPackage, idContract, idLocation, idFranchisee)
-                                VALUES (@FPOBusinessUnit, @idPackage, @idContract, @idLocation, @idFranchisee)"
+        Dim sQuery As String = "INSERT INTO Outlet (FPOBusinessUnit, idPackage, idContract, idLocation, unFranchisee)
+                                VALUES (@FPOBusinessUnit, @idPackage, @idContract, @idLocation, @unFranchisee)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -24,7 +24,7 @@ Public Class clsOutlet
                     oCommand.Parameters.AddWithValue("@idPackage", Me.idPackage)
                     oCommand.Parameters.AddWithValue("@idContract", Me.idContract)
                     oCommand.Parameters.AddWithValue("@idLocation", Me.idLocation)
-                    oCommand.Parameters.AddWithValue("@idFranchisee", Me.idFranchisee)
+                    oCommand.Parameters.AddWithValue("@unFranchisee", Me.unFranchisee)
 
                     oCommand.ExecuteNonQuery()
                     Return True
