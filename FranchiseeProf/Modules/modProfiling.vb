@@ -136,11 +136,16 @@ Module modProfiling
                 unfControl.Text = ""
             End If
         Next unfControl
-        frmAddNewOutlet.cbBusinessUnit.Text = " "
-        frmAddNewOutlet.cbPackageType.Text = " "
-        Return clearText()
     End Function
 
+    Public Function clearText1()
+        Dim unfControl As Control
+        For Each unfControl In frmCreateNewFranchisee.Panel1.Controls
+            If TypeName(unfControl) = "TextBox" Then
+                unfControl.Text = ""
+            End If
+        Next unfControl
+    End Function
 
     Public Function getFranchisee() As List(Of clsFranchisee)
         Dim list As New List(Of clsFranchisee)
@@ -165,5 +170,48 @@ Module modProfiling
             End Try
         End Using
         Return list
+    End Function
+
+    Public Function displayInfo()
+        Dim i As Integer
+        i = pnlMain.lvUserProfile.FocusedItem.Index + 1
+        l = modProfiling.getFranchiseeList
+
+        For Each o In l
+            If o.idFranchisee = i Then
+                pnlMain.lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
+                pnlMain.lblIDFranchisee.Text = o.idFranchisee
+                pnlMain.lblFPFStatus.Text = o.Status
+                pnlMain.lblGender.Text = o.Gender
+                pnlMain.lblAddress1.Text = o.Address1
+                pnlMain.lblAddress2.Text = o.Address2
+                pnlMain.lblAge.Text = o.Age
+                pnlMain.lblCivilStatus.Text = o.CivilStatus
+                pnlMain.lblDateOfBirth.Text = o.DateOfBirth
+                pnlMain.lblNationality.Text = o.Nationality
+                pnlMain.lblReligion.Text = o.Religion
+                pnlMain.lblTelNum1.Text = o.TelNumber1
+                pnlMain.lblTelNum2.Text = o.TelNumber2
+                pnlMain.lblMobileNum1.Text = o.MobileNumber1
+                pnlMain.lblMobileNum2.Text = o.MobileNumber1
+                pnlMain.lblEmailAdd1.Text = o.EmailAdd1
+                pnlMain.lblEmailAdd2.Text = o.EmailAdd2
+            End If
+        Next
+
+        If pnlMain.lblFPFStatus.Text = "-1" Then
+            pnlMain.lblFPFStatus.Text = "Active"
+            pnlMain.lblFPFStatus.ForeColor = Color.Green
+            pnlMain.btnAddNewOutletMain.Enabled = True
+            pnlMain.btnAddNewOutletMain.BackColor = Color.CadetBlue
+        Else
+            pnlMain.lblFPFStatus.Text = "Inactive"
+            pnlMain.lblFPFStatus.ForeColor = Color.Red
+            pnlMain.btnAddNewOutletMain.Enabled = False
+            pnlMain.btnAddNewOutletMain.BackColor = Color.LightGray
+        End If
+
+        Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
+        modProfiling.displayOutlet(FranchiseeID)
     End Function
 End Module
