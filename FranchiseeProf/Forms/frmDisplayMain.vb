@@ -9,7 +9,6 @@ Public Class pnlMain
         Dim List As List(Of clsFranchisee) = modProfiling.getFranchisee
         Dim autoComp As AutoCompleteStringCollection = New AutoCompleteStringCollection
 
-
         For Each item As clsFranchisee In List
             autoComp.Add(item.FName + item.MName + item.LName)
         Next
@@ -18,7 +17,7 @@ Public Class pnlMain
 
     Private Sub BtnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
         frmCreateNewFranchisee.ShowDialog()
-        'modProfiling.loadFranchisee()
+        modProfiling.loadFranchisee()
     End Sub
 
     Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
@@ -30,6 +29,10 @@ Public Class pnlMain
     Dim l As List(Of clsFranchisee)
     Private Sub lvUserProfile_DoubleClick(sender As Object, e As EventArgs) Handles lvUserProfile.DoubleClick
         pnlInfo.Show()
+
+
+        Dim profListView As ListView = lvUserProfile
+        modProfiling.RecolorListView(profListView)
 
         Dim i As Integer
         i = lvUserProfile.FocusedItem.Index + 1
@@ -78,6 +81,13 @@ Public Class pnlMain
     End Sub
 
     Private Sub txtSearchBar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchBar.KeyDown
+
+    End Sub
+
+    Private Sub LvUserProfile_Click(sender As Object, e As EventArgs) Handles lvUserProfile.Click
+
+        Dim profListView As ListView = lvUserProfile
+        modProfiling.RecolorListView(profListView)
 
     End Sub
 End Class

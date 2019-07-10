@@ -166,4 +166,19 @@ Module modProfiling
         End Using
         Return list
     End Function
+
+    Public Sub RecolorListView(ByVal profListView As ListView)
+        'Scroll through each listview item
+        For Each item In profListView.Items
+
+            If profListView.SelectedItems.Contains(item) Then 'The item is selected
+                CType(item, ListViewItem).BackColor = Color.CadetBlue 'Color it green!
+            Else 'The item is not selected
+                CType(item, ListViewItem).BackColor = Color.White 'Color it white
+                
+            End If
+
+        Next
+    End Sub
+
 End Module

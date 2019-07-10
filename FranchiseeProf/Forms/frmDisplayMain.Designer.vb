@@ -73,6 +73,8 @@ Partial Class pnlMain
         Me.lvOutlet = New System.Windows.Forms.ListView()
         Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
         Me.lblTotalActive = New System.Windows.Forms.Label()
@@ -118,8 +120,6 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -679,6 +679,16 @@ Partial Class pnlMain
         Me.ColumnHeader1.Text = "Business Unit"
         Me.ColumnHeader1.Width = 385
         '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "ID Location"
+        Me.ColumnHeader2.Width = 105
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "ID Contract"
+        Me.ColumnHeader3.Width = 99
+        '
         'lblPermanentlyClosed
         '
         Me.lblPermanentlyClosed.AutoSize = True
@@ -1138,16 +1148,6 @@ Partial Class pnlMain
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "ID Location"
-        Me.ColumnHeader2.Width = 105
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "ID Contract"
-        Me.ColumnHeader3.Width = 99
         '
         'pnlMain
         '
