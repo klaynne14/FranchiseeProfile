@@ -9,7 +9,6 @@ Public Class pnlMain
         Dim List As List(Of clsFranchisee) = modProfiling.getFranchisee
         Dim autoComp As AutoCompleteStringCollection = New AutoCompleteStringCollection
 
-
         For Each item As clsFranchisee In List
             autoComp.Add(item.FName + item.MName + item.LName)
         Next

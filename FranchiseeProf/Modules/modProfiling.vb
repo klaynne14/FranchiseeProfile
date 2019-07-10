@@ -214,4 +214,19 @@ Module modProfiling
         Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
         modProfiling.displayOutlet(FranchiseeID)
     End Function
+
+    Public Sub RecolorListView(ByVal profListView As ListView)
+        'Scroll through each listview item
+        For Each item In profListView.Items
+
+            If profListView.SelectedItems.Contains(item) Then 'The item is selected
+                CType(item, ListViewItem).BackColor = Color.CadetBlue 'Color it green!
+            Else 'The item is not selected
+                CType(item, ListViewItem).BackColor = Color.White 'Color it white
+                
+            End If
+
+        Next
+    End Sub
+
 End Module
