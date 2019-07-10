@@ -51,13 +51,7 @@ Public Class frmAddNewOutlet
         Me.CenterToParent()
     End Sub
 
-    Dim idF As New pnlMain
-    Dim id As String = idF.lblIDFranchisee.Text
     Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
-
-        'If lStatusClosed = "Relocated" Then
-
-        'End If
 
         Dim ao As clsOutlet = New clsOutlet
         ao.FPOBusinessUnit = cbBusinessUnit.Text
@@ -88,22 +82,8 @@ Public Class frmAddNewOutlet
 
         If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
-            Dim ufControl As Control
-            For Each ufControl In Panel1.Controls
-                If TypeName(ufControl) = "Label" Then
-                    ufControl.Text = ""
-                End If
-            Next ufControl
-
-            Dim unfControl As Control
-            For Each unfControl In Panel1.Controls
-                If TypeName(unfControl) = "TextBox" Then
-                    unfControl.Text = ""
-                End If
-            Next unfControl
             Me.Close()
         End If
-
     End Sub
 
     Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged

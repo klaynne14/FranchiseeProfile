@@ -3,9 +3,7 @@ Imports System.Data.SqlClient
 Module modProfiling
     Public Function getFranchiseeList() As List(Of clsFranchisee)
         Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
-        Dim franchiseeOutlet As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim fs As New clsFranchisee
-        'Dim fsOutlet As New clsOutlet
         Dim fsQuery As String = "Select idFranchisee,FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                     FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                     FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
@@ -57,34 +55,6 @@ Module modProfiling
         Return franchiseeList
     End Function
 
-    'Public Function getIdFranchisee() As Boolean
-
-    '    Dim fs As New clsFranchisee
-    '    Dim fsQuery As String = "Select idFranchisee
-    '                            FROM Franchisee"
-    '    Dim unF As Integer
-    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-    '        Try
-    '            oConnection.Open()
-    '            Using oCommand As New SqlCommand(fsQuery, oConnection)
-    '                Dim oReader As SqlDataReader = oCommand.ExecuteReader
-
-    '                While oReader.Read
-    '                    fs = New clsFranchisee
-    '                    fs.idFranchisee = oReader("idFranchisee")
-
-    '                    Return True
-    '                End While
-    '            End Using
-
-
-    '        Catch ex As Exception
-    '            MessageBox.Show("Error @:getIdFranchisee " + ex.Message)
-    '        End Try
-    '    End Using
-    '    Return False
-    'End Function
-
     Dim l As List(Of clsFranchisee)
     Public Function loadFranchisee()
         pnlMain.lvUserProfile.Items.Clear()
@@ -92,20 +62,108 @@ Module modProfiling
         l = modProfiling.getFranchiseeList
 
         For Each item In listFs
-            Dim oItem As New ListViewItem()
-            oItem.Text = item.idFranchisee
-            oItem.SubItems.Add(item.FName + " " + item.MName + " " + item.LName)
-            oItem.Tag = item.idFranchisee
+            Dim lItem As New ListViewItem()
+            lItem.Text = item.idFranchisee
+            lItem.SubItems.Add(item.FName + " " + item.MName + " " + item.LName)
+            lItem.Tag = item.idFranchisee
 
-            pnlMain.lvUserProfile.Items.Add(oItem)
+            pnlMain.lvUserProfile.Items.Add(lItem)
             If item.Status = "0" Then
-                oItem.ForeColor = Color.Red
+                lItem.ForeColor = Color.Red
             End If
-
-
         Next
 
         Return listFs
     End Function
 
+    Public Function getOutletList(id As String) As List(Of clsOutlet)
+        Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
+        Dim getOutlet As New clsOutlet
+        Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit, Outlet.idLocation, Outlet.idContract
+                                FROM Outlet
+                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.idFranchisee where Outlet.unFranchisee = @unFranchisee"
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(oQuery, oConnection)
+
+                    oCom.Parameters.AddWithValue("unFranchisee", id)
+
+
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+
+                    While oRead.Read
+                        getOutlet = New clsOutlet
+                        getOutlet.idOutlet = oRead("idOutlet")
+                        getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        'getOutlet.unFranchisee = oRead("unFranchisee")
+                        getOutlet.idContract = oRead("idContract")
+                        getOutlet.idLocation = oRead("idLocation")
+
+                        outletList.Add(getOutlet)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getOutletList() " + ex.Message)
+            End Try
+        End Using
+        Return outletList
+    End Function
+
+    Public Function displayOutlet(id As String)
+        pnlMain.lvOutlet.Items.Clear()
+        Dim listOutlet As List(Of clsOutlet) = modProfiling.getOutletList(id)
+        'o = modProfiling.getOutletList
+
+        For Each item In listOutlet
+            Dim oItem As New ListViewItem()
+            oItem.Text = item.idOutlet
+            oItem.SubItems.Add(item.FPOBusinessUnit)
+            oItem.SubItems.Add(item.idLocation)
+            oItem.SubItems.Add(item.idContract)
+            oItem.Tag = item.idOutlet
+
+            pnlMain.lvOutlet.Items.Add(oItem)
+        Next
+        Return listOutlet
+    End Function
+
+    Public Function clearText()
+        Dim unfControl As Control
+        For Each unfControl In frmAddNewOutlet.Panel1.Controls
+            If TypeName(unfControl) = "TextBox" Then
+                unfControl.Text = ""
+            End If
+        Next unfControl
+        frmAddNewOutlet.cbBusinessUnit.Text = " "
+        frmAddNewOutlet.cbPackageType.Text = " "
+        Return clearText()
+    End Function
+
+
+    Public Function getFranchisee() As List(Of clsFranchisee)
+        Dim list As New List(Of clsFranchisee)
+        Dim franchiseelist As clsFranchisee
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand("SELECT FPFName,FPFLName,FPFMName FROM Franchisee", oConnection)
+                    Dim oReader As SqlDataReader = oCommand.ExecuteReader
+
+                    While oReader.Read()
+                        franchiseelist = New clsFranchisee
+                        franchiseelist.FName = oReader("FPFName")
+                        franchiseelist.MName = oReader("FPFMName")
+                        franchiseelist.LName = oReader("FPFLName")
+                        list.Add(franchiseelist)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("@getFranchisee()" + ex.Message)
+            End Try
+        End Using
+        Return list
+    End Function
 End Module

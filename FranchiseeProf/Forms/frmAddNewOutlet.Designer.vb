@@ -302,7 +302,7 @@ Partial Class frmAddNewOutlet
         '
         Me.cbPackageType.ForeColor = System.Drawing.Color.DimGray
         Me.cbPackageType.FormattingEnabled = True
-        Me.cbPackageType.Items.AddRange(New Object() {"Standard", "Customize", "School", "Counter", "School-Counter"})
+        Me.cbPackageType.Items.AddRange(New Object() {" ", "Customize", "School", "Counter", "School-Counter", "Standard"})
         Me.cbPackageType.Location = New System.Drawing.Point(32, 140)
         Me.cbPackageType.Name = "cbPackageType"
         Me.cbPackageType.Size = New System.Drawing.Size(125, 21)
@@ -383,7 +383,7 @@ Partial Class frmAddNewOutlet
         '
         Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
         Me.cbBusinessUnit.FormattingEnabled = True
-        Me.cbBusinessUnit.Items.AddRange(New Object() {"Coffeebreak", "Waffle Time"})
+        Me.cbBusinessUnit.Items.AddRange(New Object() {" ", "Waffle Time", "Coffeebreak"})
         Me.cbBusinessUnit.Location = New System.Drawing.Point(32, 43)
         Me.cbBusinessUnit.Name = "cbBusinessUnit"
         Me.cbBusinessUnit.Size = New System.Drawing.Size(125, 21)
