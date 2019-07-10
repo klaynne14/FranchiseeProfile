@@ -271,7 +271,7 @@ Partial Class pnlMain
         '
         'tsUserStatus
         '
-        Me.tsUserStatus.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.tsUserStatus.BackColor = System.Drawing.Color.CadetBlue
         Me.tsUserStatus.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.tsUserStatus.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.tsUserStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
@@ -386,7 +386,7 @@ Partial Class pnlMain
         '
         'pnlUPHeader
         '
-        Me.pnlUPHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.pnlUPHeader.BackColor = System.Drawing.Color.CadetBlue
         Me.pnlUPHeader.Controls.Add(Me.btnCreateNew)
         Me.pnlUPHeader.Controls.Add(Me.btnPrintSel)
         Me.pnlUPHeader.Controls.Add(Me.btnDownload)
@@ -399,7 +399,7 @@ Partial Class pnlMain
         '
         'btnCreateNew
         '
-        Me.btnCreateNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnCreateNew.BackColor = System.Drawing.Color.CadetBlue
         Me.btnCreateNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCreateNew.ForeColor = System.Drawing.SystemColors.Window
         Me.btnCreateNew.Location = New System.Drawing.Point(18, 15)
@@ -411,7 +411,7 @@ Partial Class pnlMain
         '
         'btnPrintSel
         '
-        Me.btnPrintSel.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnPrintSel.BackColor = System.Drawing.Color.CadetBlue
         Me.btnPrintSel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrintSel.ForeColor = System.Drawing.SystemColors.Window
         Me.btnPrintSel.Location = New System.Drawing.Point(234, 15)
@@ -423,7 +423,7 @@ Partial Class pnlMain
         '
         'btnDownload
         '
-        Me.btnDownload.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnDownload.BackColor = System.Drawing.Color.CadetBlue
         Me.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDownload.ForeColor = System.Drawing.SystemColors.Window
         Me.btnDownload.Location = New System.Drawing.Point(151, 15)
@@ -641,7 +641,7 @@ Partial Class pnlMain
         '
         'btnSelectedOutlet
         '
-        Me.btnSelectedOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnSelectedOutlet.BackColor = System.Drawing.Color.CadetBlue
         Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
         Me.btnSelectedOutlet.Location = New System.Drawing.Point(123, 405)
@@ -747,7 +747,7 @@ Partial Class pnlMain
         '
         'btnEditProfile
         '
-        Me.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnEditProfile.BackColor = System.Drawing.Color.CadetBlue
         Me.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditProfile.ForeColor = System.Drawing.SystemColors.Window
         Me.btnEditProfile.Location = New System.Drawing.Point(859, 612)
@@ -1068,7 +1068,7 @@ Partial Class pnlMain
         '
         'btnSaveChanges
         '
-        Me.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnSaveChanges.BackColor = System.Drawing.Color.CadetBlue
         Me.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSaveChanges.ForeColor = System.Drawing.SystemColors.Window
         Me.btnSaveChanges.Location = New System.Drawing.Point(749, 612)
@@ -1091,7 +1091,7 @@ Partial Class pnlMain
         '
         'btnAddNewOutletMain
         '
-        Me.btnAddNewOutletMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnAddNewOutletMain.BackColor = System.Drawing.Color.CadetBlue
         Me.btnAddNewOutletMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNewOutletMain.ForeColor = System.Drawing.SystemColors.Window
         Me.btnAddNewOutletMain.Location = New System.Drawing.Point(42, 405)

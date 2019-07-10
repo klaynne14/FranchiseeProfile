@@ -110,7 +110,7 @@ Partial Class frmAddContract
         '
         'btnConfirmOutlet
         '
-        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.CadetBlue
         Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfirmOutlet.ForeColor = System.Drawing.SystemColors.Window
         Me.btnConfirmOutlet.Location = New System.Drawing.Point(404, 454)
@@ -439,7 +439,7 @@ Partial Class frmAddContract
         '
         'btnClose
         '
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnClose.BackColor = System.Drawing.Color.CadetBlue
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -466,7 +466,7 @@ Partial Class frmAddContract
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.CadetBlue
         Me.ClientSize = New System.Drawing.Size(546, 559)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)

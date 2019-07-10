@@ -1,4 +1,4 @@
-﻿Public Class frmAddContract
+Public Class frmAddContract
     Private Sub BtnAddContract_Click(sender As Object, e As EventArgs) Handles btnAddContract.Click
         Dim ac As clsContract = New clsContract
 
