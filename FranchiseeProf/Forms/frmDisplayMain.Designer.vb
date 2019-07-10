@@ -70,7 +70,9 @@ Partial Class pnlMain
         Me.lblOwnershipType = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.btnSelectedOutlet = New System.Windows.Forms.Button()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.lvOutlet = New System.Windows.Forms.ListView()
+        Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
         Me.lblTotalActive = New System.Windows.Forms.Label()
@@ -116,6 +118,8 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -446,6 +450,8 @@ Partial Class pnlMain
         '
         'txtSearchBar
         '
+        Me.txtSearchBar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtSearchBar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txtSearchBar.Location = New System.Drawing.Point(68, 66)
         Me.txtSearchBar.Name = "txtSearchBar"
         Me.txtSearchBar.Size = New System.Drawing.Size(266, 21)
@@ -467,7 +473,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.lblOwnershipType)
         Me.pnlInfo.Controls.Add(Me.Label12)
         Me.pnlInfo.Controls.Add(Me.btnSelectedOutlet)
-        Me.pnlInfo.Controls.Add(Me.ListView1)
+        Me.pnlInfo.Controls.Add(Me.lvOutlet)
         Me.pnlInfo.Controls.Add(Me.lblPermanentlyClosed)
         Me.pnlInfo.Controls.Add(Me.lblTemporaryClosed)
         Me.pnlInfo.Controls.Add(Me.lblTotalActive)
@@ -651,15 +657,27 @@ Partial Class pnlMain
         Me.btnSelectedOutlet.Text = "Selected"
         Me.btnSelectedOutlet.UseVisualStyleBackColor = False
         '
-        'ListView1
+        'lvOutlet
         '
-        Me.ListView1.BackColor = System.Drawing.Color.White
-        Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListView1.Location = New System.Drawing.Point(42, 436)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(917, 146)
-        Me.ListView1.TabIndex = 76
-        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.lvOutlet.BackColor = System.Drawing.Color.White
+        Me.lvOutlet.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lvOutlet.Location = New System.Drawing.Point(42, 436)
+        Me.lvOutlet.Name = "lvOutlet"
+        Me.lvOutlet.Size = New System.Drawing.Size(917, 146)
+        Me.lvOutlet.TabIndex = 76
+        Me.lvOutlet.UseCompatibleStateImageBehavior = False
+        Me.lvOutlet.View = System.Windows.Forms.View.Details
+        '
+        'ID
+        '
+        Me.ID.Text = "ID"
+        Me.ID.Width = 100
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Business Unit"
+        Me.ColumnHeader1.Width = 385
         '
         'lblPermanentlyClosed
         '
@@ -1121,6 +1139,16 @@ Partial Class pnlMain
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
         '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "ID Location"
+        Me.ColumnHeader2.Width = 105
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "ID Contract"
+        Me.ColumnHeader3.Width = 99
+        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1237,7 +1265,7 @@ Partial Class pnlMain
     Friend WithEvents SignOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents lvOutlet As ListView
     Friend WithEvents btnSelectedOutlet As Button
     Friend WithEvents lblFaxNumber As Label
     Friend WithEvents lblTinNumber As Label
@@ -1251,4 +1279,8 @@ Partial Class pnlMain
     Friend WithEvents Label17 As Label
     Friend WithEvents lblOwnershipType As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents ID As ColumnHeader
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
 End Class
