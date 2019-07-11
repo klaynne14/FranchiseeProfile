@@ -1,4 +1,5 @@
 Imports System.Data.SqlClient
+Imports System.IO
 
 Module modProfiling
     Public Function getFranchiseeList() As List(Of clsFranchisee)
@@ -268,5 +269,31 @@ Module modProfiling
             End If
         Next
     End Sub
+
+    Public Function browseImage()
+
+        Using oConnection As New SqlConnection(getConnection("ImageTest"))
+            Try
+
+                Dim OFD As FileDialog = New OpenFileDialog()
+
+                OFD.Filter = “Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif”
+
+                If OFD.ShowDialog() = DialogResult.OK Then
+                    Dim imgpath As String = OFD.FileName
+                    frmCreateNewFranchisee.pbFranchisee.ImageLocation = imgpath
+
+                End If
+
+                OFD = Nothing
+
+
+
+            Catch ex As Exception
+                MsgBox(ex.Message.ToString())
+            End Try
+        End Using
+        Return False
+    End Function
 
 End Module

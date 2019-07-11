@@ -22,7 +22,9 @@ Partial Class frmCreateNewFranchisee
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCreateNewFranchisee))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pbFranchisee = New System.Windows.Forms.PictureBox()
         Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.lblYearStart = New System.Windows.Forms.Label()
         Me.txtYearStarted = New System.Windows.Forms.TextBox()
@@ -68,7 +70,6 @@ Partial Class frmCreateNewFranchisee
         Me.txtLName = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtMName = New System.Windows.Forms.TextBox()
-        Me.btnAddImage = New System.Windows.Forms.Button()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.lblFName = New System.Windows.Forms.Label()
         Me.txtFName = New System.Windows.Forms.TextBox()
@@ -76,11 +77,13 @@ Partial Class frmCreateNewFranchisee
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        CType(Me.pbFranchisee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.pbFranchisee)
         Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
         Me.Panel1.Controls.Add(Me.lblYearStart)
         Me.Panel1.Controls.Add(Me.txtYearStarted)
@@ -126,7 +129,6 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Controls.Add(Me.txtLName)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.txtMName)
-        Me.Panel1.Controls.Add(Me.btnAddImage)
         Me.Panel1.Controls.Add(Me.btnSubmit)
         Me.Panel1.Controls.Add(Me.lblFName)
         Me.Panel1.Controls.Add(Me.txtFName)
@@ -135,6 +137,18 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(958, 388)
         Me.Panel1.TabIndex = 0
+        '
+        'pbFranchisee
+        '
+        Me.pbFranchisee.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.pbFranchisee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pbFranchisee.Image = CType(resources.GetObject("pbFranchisee.Image"), System.Drawing.Image)
+        Me.pbFranchisee.InitialImage = Nothing
+        Me.pbFranchisee.Location = New System.Drawing.Point(31, 68)
+        Me.pbFranchisee.Name = "pbFranchisee"
+        Me.pbFranchisee.Size = New System.Drawing.Size(95, 95)
+        Me.pbFranchisee.TabIndex = 99
+        Me.pbFranchisee.TabStop = False
         '
         'dtpDateOfBirth
         '
@@ -267,7 +281,7 @@ Partial Class frmCreateNewFranchisee
         Me.cbFPFStatus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray
         Me.cbFPFStatus.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.cbFPFStatus.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cbFPFStatus.Location = New System.Drawing.Point(31, 180)
+        Me.cbFPFStatus.Location = New System.Drawing.Point(863, 29)
         Me.cbFPFStatus.Name = "cbFPFStatus"
         Me.cbFPFStatus.Size = New System.Drawing.Size(61, 17)
         Me.cbFPFStatus.TabIndex = 85
@@ -651,20 +665,9 @@ Partial Class frmCreateNewFranchisee
         Me.txtMName.Size = New System.Drawing.Size(115, 21)
         Me.txtMName.TabIndex = 50
         '
-        'btnAddImage
-        '
-        Me.btnAddImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddImage.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.btnAddImage.Location = New System.Drawing.Point(31, 68)
-        Me.btnAddImage.Name = "btnAddImage"
-        Me.btnAddImage.Size = New System.Drawing.Size(95, 95)
-        Me.btnAddImage.TabIndex = 49
-        Me.btnAddImage.Text = "+"
-        Me.btnAddImage.UseVisualStyleBackColor = True
-        '
         'btnSubmit
         '
-        Me.btnSubmit.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnSubmit.BackColor = System.Drawing.Color.CadetBlue
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmit.ForeColor = System.Drawing.SystemColors.Window
@@ -722,7 +725,7 @@ Partial Class frmCreateNewFranchisee
         '
         'btnClose
         '
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btnClose.BackColor = System.Drawing.Color.CadetBlue
         Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -738,7 +741,7 @@ Partial Class frmCreateNewFranchisee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.CadetBlue
         Me.ClientSize = New System.Drawing.Size(979, 448)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
@@ -749,6 +752,7 @@ Partial Class frmCreateNewFranchisee
         Me.Text = " "
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.pbFranchisee, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -760,7 +764,6 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents lblFName As Label
     Friend WithEvents txtFName As TextBox
     Friend WithEvents btnClose As Button
-    Friend WithEvents btnAddImage As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents txtAddress2 As TextBox
     Friend WithEvents Label5 As Label
@@ -807,4 +810,5 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents lblYearStart As Label
     Friend WithEvents txtYearStarted As TextBox
     Friend WithEvents dtpDateOfBirth As DateTimePicker
+    Friend WithEvents pbFranchisee As PictureBox
 End Class

@@ -69,4 +69,8 @@ Public Class frmCreateNewFranchisee
             lblYearStart.Visible = False
         End If
     End Sub
+
+    Private Sub PbFranchisee_Click(sender As Object, e As EventArgs) Handles pbFranchisee.Click
+        modProfiling.browseImage()
+    End Sub
 End Class

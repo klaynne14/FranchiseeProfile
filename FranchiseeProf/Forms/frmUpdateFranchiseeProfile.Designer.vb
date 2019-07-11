@@ -68,19 +68,23 @@ Partial Class frmUpdateFranchiseeProfile
         Me.txtLName = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtMName = New System.Windows.Forms.TextBox()
-        Me.btnAddImage = New System.Windows.Forms.Button()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.lblFName = New System.Windows.Forms.Label()
         Me.txtFName = New System.Windows.Forms.TextBox()
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
         Me.Panel1.Controls.Add(Me.lblYearStart)
         Me.Panel1.Controls.Add(Me.txtYearStarted)
@@ -126,7 +130,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Panel1.Controls.Add(Me.txtLName)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.txtMName)
-        Me.Panel1.Controls.Add(Me.btnAddImage)
         Me.Panel1.Controls.Add(Me.btnSubmit)
         Me.Panel1.Controls.Add(Me.lblFName)
         Me.Panel1.Controls.Add(Me.txtFName)
@@ -263,11 +266,13 @@ Partial Class frmUpdateFranchiseeProfile
         'cbFPFStatus
         '
         Me.cbFPFStatus.AutoSize = True
+        Me.cbFPFStatus.Checked = True
+        Me.cbFPFStatus.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbFPFStatus.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.cbFPFStatus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray
         Me.cbFPFStatus.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.cbFPFStatus.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cbFPFStatus.Location = New System.Drawing.Point(31, 180)
+        Me.cbFPFStatus.Location = New System.Drawing.Point(863, 29)
         Me.cbFPFStatus.Name = "cbFPFStatus"
         Me.cbFPFStatus.Size = New System.Drawing.Size(61, 17)
         Me.cbFPFStatus.TabIndex = 85
@@ -651,17 +656,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.txtMName.Size = New System.Drawing.Size(115, 21)
         Me.txtMName.TabIndex = 50
         '
-        'btnAddImage
-        '
-        Me.btnAddImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddImage.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.btnAddImage.Location = New System.Drawing.Point(31, 68)
-        Me.btnAddImage.Name = "btnAddImage"
-        Me.btnAddImage.Size = New System.Drawing.Size(95, 95)
-        Me.btnAddImage.TabIndex = 49
-        Me.btnAddImage.Text = "+"
-        Me.btnAddImage.UseVisualStyleBackColor = True
-        '
         'btnSubmit
         '
         Me.btnSubmit.BackColor = System.Drawing.Color.CadetBlue
@@ -734,6 +728,25 @@ Partial Class frmUpdateFranchiseeProfile
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.CadetBlue
+        Me.LinkLabel1.Location = New System.Drawing.Point(32, 171)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(95, 13)
+        Me.LinkLabel1.TabIndex = 97
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Change Picture"
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(34, 69)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(95, 95)
+        Me.PictureBox1.TabIndex = 98
+        Me.PictureBox1.TabStop = False
+        '
         'frmUpdateFranchiseeProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -749,6 +762,7 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Text = "frmUpdateFranchiseeProfile"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -800,11 +814,12 @@ Partial Class frmUpdateFranchiseeProfile
     Friend WithEvents txtLName As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtMName As TextBox
-    Friend WithEvents btnAddImage As Button
     Friend WithEvents btnSubmit As Button
     Friend WithEvents lblFName As Label
     Friend WithEvents txtFName As TextBox
     Friend WithEvents lblPersoInfo As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnClose As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class
