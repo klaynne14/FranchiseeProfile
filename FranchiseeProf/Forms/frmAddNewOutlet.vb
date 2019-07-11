@@ -52,6 +52,7 @@ Public Class frmAddNewOutlet
     End Sub
 
     Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
+        Dim idFLV As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
 
         Dim ao As clsOutlet = New clsOutlet
         ao.FPOBusinessUnit = cbBusinessUnit.Text
@@ -80,9 +81,10 @@ Public Class frmAddNewOutlet
         ap.FPPPackageRemark = txtPackageRemark.Text
         ap.FPPDepositRemark = txtDepositRemark.Text
 
+
         If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
-            modProfiling.displayInfo()
+            'modProfiling.displayInfo(idFLV)
             Me.Close()
         End If
     End Sub

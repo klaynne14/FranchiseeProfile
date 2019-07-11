@@ -18,6 +18,7 @@ Public Class frmAddContract
 
     Private Sub frmAddContract_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
+        modProfiling.getOId()
     End Sub
 
     'Dim lStatus As String

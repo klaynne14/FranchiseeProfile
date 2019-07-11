@@ -10,7 +10,7 @@ Public Class pnlMain
         Dim autoComp As AutoCompleteStringCollection = New AutoCompleteStringCollection
 
         For Each item As clsFranchisee In List
-            autoComp.Add(item.FName + item.MName + item.LName)
+            autoComp.Add(item.FName + " " + item.MName + " " + item.LName)
         Next
         txtSearchBar.AutoCompleteCustomSource = autoComp
     End Sub
@@ -31,12 +31,18 @@ Public Class pnlMain
 
     'Dim l As List(Of clsFranchisee)
     Private Sub lvUserProfile_DoubleClick(sender As Object, e As EventArgs) Handles lvUserProfile.DoubleClick
+        'Dim idFLV As Integer = lvUserProfile.FocusedItem.Index + 1
         pnlInfo.Show()
         modProfiling.displayInfo()
     End Sub
 
+
     Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
         frmAddContract.ShowDialog()
+        'modProfiling.getOId()
     End Sub
 
+    Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
+        frmAddContract.ShowDialog()
+    End Sub
 End Class
