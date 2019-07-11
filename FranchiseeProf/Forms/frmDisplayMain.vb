@@ -18,13 +18,13 @@ Public Class pnlMain
     Private Sub BtnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
         frmCreateNewFranchisee.ShowDialog()
         modProfiling.loadFranchisee()
-        modProfiling.clearText1()
+        modProfiling.clearTextFranchisee()
     End Sub
 
     Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
         frmAddNewOutlet.lblOutletUn.Text = lblIDFranchisee.Text
         frmAddNewOutlet.ShowDialog()
-        modProfiling.clearText()
+        modProfiling.clearTextOutlet()
         frmAddNewOutlet.cbBusinessUnit.Text = " "
         frmAddNewOutlet.cbPackageType.Text = " "
     End Sub
@@ -38,4 +38,5 @@ Public Class pnlMain
     Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
         frmAddContract.ShowDialog()
     End Sub
+
 End Class

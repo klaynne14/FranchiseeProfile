@@ -83,7 +83,6 @@ Partial Class pnlMain
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.btnEditProfile = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.lblTelNum2 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -115,24 +114,24 @@ Partial Class pnlMain
         Me.lblFPFStatus = New System.Windows.Forms.Label()
         Me.lblIDFranchisee = New System.Windows.Forms.Label()
         Me.lblFullName = New System.Windows.Forms.Label()
-        Me.btnSaveChanges = New System.Windows.Forms.Button()
         Me.lblBranch = New System.Windows.Forms.Label()
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlBackdrop.SuspendLayout()
-        Me.tcFranchisee.SuspendLayout()
-        Me.tcDMS.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.tcFranchiseProf.SuspendLayout()
-        Me.tsUserStatus.SuspendLayout()
-        Me.pnlUPDash.SuspendLayout()
-        Me.tsFrachiseeRowStatus.SuspendLayout()
-        Me.pnlUPHeader.SuspendLayout()
-        Me.pnlInfo.SuspendLayout()
+        Me.pnlBackdrop.SuspendLayout
+        Me.tcFranchisee.SuspendLayout
+        Me.tcDMS.SuspendLayout
+        Me.Panel3.SuspendLayout
+        Me.tcFranchiseProf.SuspendLayout
+        Me.tsUserStatus.SuspendLayout
+        Me.pnlUPDash.SuspendLayout
+        Me.tsFrachiseeRowStatus.SuspendLayout
+        Me.pnlUPHeader.SuspendLayout
+        Me.pnlInfo.SuspendLayout
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.SuspendLayout
         '
         'lblTitle
         '
@@ -460,6 +459,7 @@ Partial Class pnlMain
         'pnlInfo
         '
         Me.pnlInfo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pnlInfo.Controls.Add(Me.Button1)
         Me.pnlInfo.Controls.Add(Me.lblFaxNumber)
         Me.pnlInfo.Controls.Add(Me.lblTinNumber)
         Me.pnlInfo.Controls.Add(Me.lblOccupation)
@@ -482,7 +482,6 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.Label26)
         Me.pnlInfo.Controls.Add(Me.Label25)
         Me.pnlInfo.Controls.Add(Me.Label24)
-        Me.pnlInfo.Controls.Add(Me.btnEditProfile)
         Me.pnlInfo.Controls.Add(Me.Label22)
         Me.pnlInfo.Controls.Add(Me.lblTelNum2)
         Me.pnlInfo.Controls.Add(Me.Label20)
@@ -514,7 +513,6 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.lblFPFStatus)
         Me.pnlInfo.Controls.Add(Me.lblIDFranchisee)
         Me.pnlInfo.Controls.Add(Me.lblFullName)
-        Me.pnlInfo.Controls.Add(Me.btnSaveChanges)
         Me.pnlInfo.Controls.Add(Me.lblBranch)
         Me.pnlInfo.Controls.Add(Me.btnAddNewOutletMain)
         Me.pnlInfo.Controls.Add(Me.pbUserProfile)
@@ -532,8 +530,9 @@ Partial Class pnlMain
         Me.lblFaxNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblFaxNumber.Location = New System.Drawing.Point(823, 290)
         Me.lblFaxNumber.Name = "lblFaxNumber"
-        Me.lblFaxNumber.Size = New System.Drawing.Size(0, 13)
+        Me.lblFaxNumber.Size = New System.Drawing.Size(11, 13)
         Me.lblFaxNumber.TabIndex = 89
+        Me.lblFaxNumber.Text = " "
         '
         'lblTinNumber
         '
@@ -650,7 +649,7 @@ Partial Class pnlMain
         Me.btnSelectedOutlet.BackColor = System.Drawing.Color.CadetBlue
         Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSelectedOutlet.Location = New System.Drawing.Point(123, 405)
+        Me.btnSelectedOutlet.Location = New System.Drawing.Point(123, 412)
         Me.btnSelectedOutlet.Name = "btnSelectedOutlet"
         Me.btnSelectedOutlet.Size = New System.Drawing.Size(99, 25)
         Me.btnSelectedOutlet.TabIndex = 77
@@ -663,7 +662,7 @@ Partial Class pnlMain
         Me.lvOutlet.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.lvOutlet.FullRowSelect = True
-        Me.lvOutlet.Location = New System.Drawing.Point(42, 436)
+        Me.lvOutlet.Location = New System.Drawing.Point(42, 443)
         Me.lvOutlet.Name = "lvOutlet"
         Me.lvOutlet.Size = New System.Drawing.Size(917, 146)
         Me.lvOutlet.TabIndex = 76
@@ -773,18 +772,6 @@ Partial Class pnlMain
         Me.Label24.Size = New System.Drawing.Size(81, 12)
         Me.Label24.TabIndex = 68
         Me.Label24.Text = "Total Outlets:"
-        '
-        'btnEditProfile
-        '
-        Me.btnEditProfile.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEditProfile.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnEditProfile.Location = New System.Drawing.Point(859, 612)
-        Me.btnEditProfile.Name = "btnEditProfile"
-        Me.btnEditProfile.Size = New System.Drawing.Size(100, 30)
-        Me.btnEditProfile.TabIndex = 67
-        Me.btnEditProfile.Text = "Edit"
-        Me.btnEditProfile.UseVisualStyleBackColor = False
         '
         'Label22
         '
@@ -1095,24 +1082,12 @@ Partial Class pnlMain
         Me.lblFullName.Size = New System.Drawing.Size(0, 18)
         Me.lblFullName.TabIndex = 36
         '
-        'btnSaveChanges
-        '
-        Me.btnSaveChanges.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSaveChanges.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSaveChanges.Location = New System.Drawing.Point(749, 612)
-        Me.btnSaveChanges.Name = "btnSaveChanges"
-        Me.btnSaveChanges.Size = New System.Drawing.Size(100, 30)
-        Me.btnSaveChanges.TabIndex = 34
-        Me.btnSaveChanges.Text = "Update"
-        Me.btnSaveChanges.UseVisualStyleBackColor = False
-        '
         'lblBranch
         '
         Me.lblBranch.AutoSize = True
         Me.lblBranch.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBranch.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblBranch.Location = New System.Drawing.Point(39, 370)
+        Me.lblBranch.Location = New System.Drawing.Point(39, 377)
         Me.lblBranch.Name = "lblBranch"
         Me.lblBranch.Size = New System.Drawing.Size(62, 18)
         Me.lblBranch.TabIndex = 33
@@ -1123,7 +1098,7 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain.BackColor = System.Drawing.Color.CadetBlue
         Me.btnAddNewOutletMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNewOutletMain.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(42, 405)
+        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(42, 412)
         Me.btnAddNewOutletMain.Name = "btnAddNewOutletMain"
         Me.btnAddNewOutletMain.Size = New System.Drawing.Size(75, 25)
         Me.btnAddNewOutletMain.TabIndex = 16
@@ -1150,6 +1125,19 @@ Partial Class pnlMain
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(18, 129)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(95, 23)
+        Me.Button1.TabIndex = 90
+        Me.Button1.Text = "Edit Profile"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1169,22 +1157,22 @@ Partial Class pnlMain
         Me.tcFranchisee.ResumeLayout(False)
         Me.tcDMS.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.Panel3.PerformLayout
         Me.tcFranchiseProf.ResumeLayout(False)
-        Me.tcFranchiseProf.PerformLayout()
+        Me.tcFranchiseProf.PerformLayout
         Me.tsUserStatus.ResumeLayout(False)
-        Me.tsUserStatus.PerformLayout()
+        Me.tsUserStatus.PerformLayout
         Me.pnlUPDash.ResumeLayout(False)
-        Me.pnlUPDash.PerformLayout()
+        Me.pnlUPDash.PerformLayout
         Me.tsFrachiseeRowStatus.ResumeLayout(False)
-        Me.tsFrachiseeRowStatus.PerformLayout()
+        Me.tsFrachiseeRowStatus.PerformLayout
         Me.pnlUPHeader.ResumeLayout(False)
-        Me.pnlUPHeader.PerformLayout()
+        Me.pnlUPHeader.PerformLayout
         Me.pnlInfo.ResumeLayout(False)
-        Me.pnlInfo.PerformLayout()
+        Me.pnlInfo.PerformLayout
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.PerformLayout
 
     End Sub
     Friend WithEvents lblTitle As Label
@@ -1223,7 +1211,6 @@ Partial Class pnlMain
     Friend WithEvents Label26 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents btnEditProfile As Button
     Friend WithEvents Label22 As Label
     Friend WithEvents lblTelNum2 As Label
     Friend WithEvents Label20 As Label
@@ -1255,7 +1242,6 @@ Partial Class pnlMain
     Friend WithEvents lblFPFStatus As Label
     Friend WithEvents lblIDFranchisee As Label
     Friend WithEvents lblFullName As Label
-    Friend WithEvents btnSaveChanges As Button
     Friend WithEvents lblBranch As Label
     Friend WithEvents btnAddNewOutletMain As Button
     Friend WithEvents pbUserProfile As PictureBox
@@ -1284,4 +1270,5 @@ Partial Class pnlMain
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents Button1 As Button
 End Class
