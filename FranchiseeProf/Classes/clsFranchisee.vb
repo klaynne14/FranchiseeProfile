@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class clsFranchisee
     Public idFranchisee As Integer
@@ -30,9 +31,8 @@ Public Class clsFranchisee
     Public FaxNumber As String
     Public EmailAdd1 As String
     Public EmailAdd2 As String
-    'Public Image As Byte
+    Public Image As Byte
     Public idOutlet As Integer
-
 
 
     Public Function addFranchisee() As Boolean
@@ -95,5 +95,30 @@ Public Class clsFranchisee
         Return False
     End Function
 
+    'Public Function insertImage()
+    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+    '        Try
+    '            Dim OFD As FileDialog = New OpenFileDialog()
+
+    '            OFD.Filter = “Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif”
+
+    '            If OFD.ShowDialog() = DialogResult.OK Then
+    '                imgpath = OFD.FileName
+    '                Pic1.ImageLocation = imgpath
+
+    '            End If
+
+    '            OFD = Nothing
+
+
+
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message.ToString())
+    '        End Try
+    '    End Using
+    '    Return False
+
+
+    'End Function
 
 End Class
