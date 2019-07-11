@@ -57,6 +57,7 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblFaxNumber = New System.Windows.Forms.Label()
         Me.lblTinNumber = New System.Windows.Forms.Label()
         Me.lblOccupation = New System.Windows.Forms.Label()
@@ -118,20 +119,19 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlBackdrop.SuspendLayout
-        Me.tcFranchisee.SuspendLayout
-        Me.tcDMS.SuspendLayout
-        Me.Panel3.SuspendLayout
-        Me.tcFranchiseProf.SuspendLayout
-        Me.tsUserStatus.SuspendLayout
-        Me.pnlUPDash.SuspendLayout
-        Me.tsFrachiseeRowStatus.SuspendLayout
-        Me.pnlUPHeader.SuspendLayout
-        Me.pnlInfo.SuspendLayout
+        Me.pnlBackdrop.SuspendLayout()
+        Me.tcFranchisee.SuspendLayout()
+        Me.tcDMS.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.tcFranchiseProf.SuspendLayout()
+        Me.tsUserStatus.SuspendLayout()
+        Me.pnlUPDash.SuspendLayout()
+        Me.tsFrachiseeRowStatus.SuspendLayout()
+        Me.pnlUPHeader.SuspendLayout()
+        Me.pnlInfo.SuspendLayout()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout
+        Me.SuspendLayout()
         '
         'lblTitle
         '
@@ -522,6 +522,19 @@ Partial Class pnlMain
         Me.pnlInfo.Size = New System.Drawing.Size(1001, 668)
         Me.pnlInfo.TabIndex = 18
         Me.pnlInfo.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(18, 129)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(95, 23)
+        Me.Button1.TabIndex = 90
+        Me.Button1.Text = "Edit Profile"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'lblFaxNumber
         '
@@ -1125,19 +1138,6 @@ Partial Class pnlMain
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(18, 129)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 23)
-        Me.Button1.TabIndex = 90
-        Me.Button1.Text = "Edit Profile"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1157,22 +1157,22 @@ Partial Class pnlMain
         Me.tcFranchisee.ResumeLayout(False)
         Me.tcDMS.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout
+        Me.Panel3.PerformLayout()
         Me.tcFranchiseProf.ResumeLayout(False)
-        Me.tcFranchiseProf.PerformLayout
+        Me.tcFranchiseProf.PerformLayout()
         Me.tsUserStatus.ResumeLayout(False)
-        Me.tsUserStatus.PerformLayout
+        Me.tsUserStatus.PerformLayout()
         Me.pnlUPDash.ResumeLayout(False)
-        Me.pnlUPDash.PerformLayout
+        Me.pnlUPDash.PerformLayout()
         Me.tsFrachiseeRowStatus.ResumeLayout(False)
-        Me.tsFrachiseeRowStatus.PerformLayout
+        Me.tsFrachiseeRowStatus.PerformLayout()
         Me.pnlUPHeader.ResumeLayout(False)
-        Me.pnlUPHeader.PerformLayout
+        Me.pnlUPHeader.PerformLayout()
         Me.pnlInfo.ResumeLayout(False)
-        Me.pnlInfo.PerformLayout
+        Me.pnlInfo.PerformLayout()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblTitle As Label

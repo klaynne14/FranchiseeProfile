@@ -77,12 +77,50 @@ Module modProfiling
         Return listFs
     End Function
 
+    Public Function getIdOutlet() As List(Of clsOutlet)
+        Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
+        Dim getOutlet As New clsOutlet
+        Dim oQuery As String = "SELECT idOutlet, FPOBusinessUnit
+                                FROM Outlet"
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(oQuery, oConnection)
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+                    While oRead.Read
+                        getOutlet = New clsOutlet
+                        getOutlet.idOutlet = oRead("idOutlet")
+                        getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        outletList.Add(getOutlet)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getOutletList() " + ex.Message)
+            End Try
+        End Using
+        Return outletList
+    End Function
+
+    Public Function getOId() As List(Of clsOutlet)
+        Dim listOutlet As List(Of clsOutlet)
+        Dim getidOutlet As String
+        getidOutlet = pnlMain.lvOutlet.FocusedItem.Index + 1
+        listOutlet = modProfiling.getIdOutlet()
+
+        For Each o In listOutlet
+            If o.idOutlet = getidOutlet Then
+                frmAddContract.lblOutletID.Text = o.idOutlet
+            End If
+        Next
+        Return listOutlet
+    End Function
+
     Public Function getOutletList(id As String) As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
         Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit, Outlet.idLocation, Outlet.idContract
                                 FROM Outlet
-                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.idFranchisee where Outlet.unFranchisee = @unFranchisee"
+                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -90,7 +128,6 @@ Module modProfiling
                 Using oCom As New SqlCommand(oQuery, oConnection)
 
                     oCom.Parameters.AddWithValue("unFranchisee", id)
-
 
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
 
@@ -115,7 +152,6 @@ Module modProfiling
     Public Function displayOutlet(id As String)
         pnlMain.lvOutlet.Items.Clear()
         Dim listOutlet As List(Of clsOutlet) = modProfiling.getOutletList(id)
-        'o = modProfiling.getOutletList
 
         For Each item In listOutlet
             Dim oItem As New ListViewItem()
@@ -174,6 +210,8 @@ Module modProfiling
         Return list
     End Function
 
+
+    'Display info from listview
     Public Function displayInfo()
         Dim i As Integer
         i = pnlMain.lvUserProfile.FocusedItem.Index + 1
@@ -201,6 +239,7 @@ Module modProfiling
             End If
         Next
 
+
         If pnlMain.lblFPFStatus.Text = "-1" Then
             pnlMain.lblFPFStatus.Text = "Active"
             pnlMain.lblFPFStatus.ForeColor = Color.Green
@@ -213,6 +252,7 @@ Module modProfiling
             pnlMain.btnAddNewOutletMain.BackColor = Color.LightGray
         End If
 
+        'Display Outlet to Outlet Listview under franchisee's ID
         Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
         modProfiling.displayOutlet(FranchiseeID)
     End Function
@@ -225,9 +265,7 @@ Module modProfiling
                 CType(item, ListViewItem).BackColor = Color.CadetBlue 'Color it green!
             Else 'The item is not selected
                 CType(item, ListViewItem).BackColor = Color.White 'Color it white
-
             End If
-
         Next
     End Sub
 

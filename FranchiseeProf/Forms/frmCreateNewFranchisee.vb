@@ -1,6 +1,5 @@
 ﻿Imports System.Data.SqlClient
 
-
 Public Class frmCreateNewFranchisee
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -11,8 +10,8 @@ Public Class frmCreateNewFranchisee
         Me.CenterToParent()
     End Sub
 
-
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+
         Dim afs As clsFranchisee = New clsFranchisee
 
         afs.FName = txtFName.Text
