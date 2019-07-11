@@ -4,7 +4,7 @@ Module modProfiling
     Public Function getFranchiseeList() As List(Of clsFranchisee)
         Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
         Dim fs As New clsFranchisee
-        Dim fsQuery As String = "Select idFranchisee,FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
+        Dim fsQuery As String = "Select idFranchisee, unFranchisee, FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                     FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                     FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
                                 FROM Franchisee Order by idFranchisee"
@@ -18,6 +18,7 @@ Module modProfiling
                         fs = New clsFranchisee
                         'fsOutlet = New clsOutlet
                         fs.idFranchisee = oReader("idFranchisee")
+                        fs.unFranchisee = oReader("unFranchisee")
                         fs.FName = oReader("FPFName")
                         fs.LName = oReader("FPFLName")
                         fs.MName = oReader("FPFMName")
@@ -63,9 +64,9 @@ Module modProfiling
 
         For Each item In listFs
             Dim lItem As New ListViewItem()
-            lItem.Text = item.idFranchisee
+            lItem.Text = item.unFranchisee
             lItem.SubItems.Add(item.FName + " " + item.MName + " " + item.LName)
-            lItem.Tag = item.idFranchisee
+            lItem.Tag = item.unFranchisee
 
             pnlMain.lvUserProfile.Items.Add(lItem)
             If item.Status = "0" Then
@@ -129,7 +130,7 @@ Module modProfiling
         Return listOutlet
     End Function
 
-    Public Function clearText()
+    Public Function clearTextOutlet()
         Dim unfControl As Control
         For Each unfControl In frmAddNewOutlet.Panel1.Controls
             If TypeName(unfControl) = "TextBox" Then
@@ -138,7 +139,7 @@ Module modProfiling
         Next unfControl
     End Function
 
-    Public Function clearText1()
+    Public Function clearTextFranchisee()
         Dim unfControl As Control
         For Each unfControl In frmCreateNewFranchisee.Panel1.Controls
             If TypeName(unfControl) = "TextBox" Then
@@ -154,11 +155,12 @@ Module modProfiling
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
-                Using oCommand As New SqlCommand("SELECT FPFName,FPFLName,FPFMName FROM Franchisee", oConnection)
+                Using oCommand As New SqlCommand("SELECT unFranchisee, FPFName,FPFLName,FPFMName FROM Franchisee", oConnection)
                     Dim oReader As SqlDataReader = oCommand.ExecuteReader
 
                     While oReader.Read()
                         franchiseelist = New clsFranchisee
+                        franchiseelist.unFranchisee = oReader("unFranchisee")
                         franchiseelist.FName = oReader("FPFName")
                         franchiseelist.MName = oReader("FPFMName")
                         franchiseelist.LName = oReader("FPFLName")
@@ -180,7 +182,7 @@ Module modProfiling
         For Each o In l
             If o.idFranchisee = i Then
                 pnlMain.lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
-                pnlMain.lblIDFranchisee.Text = o.idFranchisee
+                pnlMain.lblIDFranchisee.Text = o.unFranchisee
                 pnlMain.lblFPFStatus.Text = o.Status
                 pnlMain.lblGender.Text = o.Gender
                 pnlMain.lblAddress1.Text = o.Address1
@@ -223,7 +225,7 @@ Module modProfiling
                 CType(item, ListViewItem).BackColor = Color.CadetBlue 'Color it green!
             Else 'The item is not selected
                 CType(item, ListViewItem).BackColor = Color.White 'Color it white
-                
+
             End If
 
         Next
