@@ -36,13 +36,12 @@ Public Class pnlMain
         modProfiling.displayInfo()
     End Sub
 
-
     Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
         frmOutletDetails.ShowDialog()
         'modProfiling.getOId()
     End Sub
 
     Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
-        frmOutletDetails.ShowDialog()
+        frmUpdateOutletDetails.ShowDialog()
     End Sub
 End Class

@@ -84,7 +84,7 @@ Public Class frmAddNewOutlet
 
         If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
-            'modProfiling.displayInfo(idFLV)
+            modProfiling.displayInfo()
             Me.Close()
         End If
     End Sub
