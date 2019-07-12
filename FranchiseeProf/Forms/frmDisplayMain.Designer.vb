@@ -120,18 +120,18 @@ Partial Class pnlMain
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlBackdrop.SuspendLayout()
-        Me.tcFranchisee.SuspendLayout()
-        Me.tcDMS.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.tcFranchiseProf.SuspendLayout()
-        Me.tsUserStatus.SuspendLayout()
-        Me.pnlUPDash.SuspendLayout()
-        Me.tsFrachiseeRowStatus.SuspendLayout()
-        Me.pnlUPHeader.SuspendLayout()
-        Me.pnlInfo.SuspendLayout()
+        Me.pnlBackdrop.SuspendLayout
+        Me.tcFranchisee.SuspendLayout
+        Me.tcDMS.SuspendLayout
+        Me.Panel3.SuspendLayout
+        Me.tcFranchiseProf.SuspendLayout
+        Me.tsUserStatus.SuspendLayout
+        Me.pnlUPDash.SuspendLayout
+        Me.tsFrachiseeRowStatus.SuspendLayout
+        Me.pnlUPHeader.SuspendLayout
+        Me.pnlInfo.SuspendLayout
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.SuspendLayout
         '
         'lblTitle
         '
@@ -423,6 +423,7 @@ Partial Class pnlMain
         Me.btnPrintSel.TabIndex = 18
         Me.btnPrintSel.Text = "Print Selected"
         Me.btnPrintSel.UseVisualStyleBackColor = False
+        Me.btnPrintSel.Visible = False
         '
         'btnDownload
         '
@@ -435,6 +436,7 @@ Partial Class pnlMain
         Me.btnDownload.TabIndex = 17
         Me.btnDownload.Text = "Download"
         Me.btnDownload.UseVisualStyleBackColor = False
+        Me.btnDownload.Visible = False
         '
         'lblSearch
         '
@@ -1157,22 +1159,22 @@ Partial Class pnlMain
         Me.tcFranchisee.ResumeLayout(False)
         Me.tcDMS.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.Panel3.PerformLayout
         Me.tcFranchiseProf.ResumeLayout(False)
-        Me.tcFranchiseProf.PerformLayout()
+        Me.tcFranchiseProf.PerformLayout
         Me.tsUserStatus.ResumeLayout(False)
-        Me.tsUserStatus.PerformLayout()
+        Me.tsUserStatus.PerformLayout
         Me.pnlUPDash.ResumeLayout(False)
-        Me.pnlUPDash.PerformLayout()
+        Me.pnlUPDash.PerformLayout
         Me.tsFrachiseeRowStatus.ResumeLayout(False)
-        Me.tsFrachiseeRowStatus.PerformLayout()
+        Me.tsFrachiseeRowStatus.PerformLayout
         Me.pnlUPHeader.ResumeLayout(False)
-        Me.pnlUPHeader.PerformLayout()
+        Me.pnlUPHeader.PerformLayout
         Me.pnlInfo.ResumeLayout(False)
-        Me.pnlInfo.PerformLayout()
+        Me.pnlInfo.PerformLayout
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.PerformLayout
 
     End Sub
     Friend WithEvents lblTitle As Label

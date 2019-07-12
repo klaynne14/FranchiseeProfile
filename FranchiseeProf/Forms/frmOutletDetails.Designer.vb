@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmAddContract
+Partial Class frmOutletDetails
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -63,12 +63,16 @@ Partial Class frmAddContract
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Label17)
         Me.Panel1.Controls.Add(Me.btnConfirmOutlet)
         Me.Panel1.Controls.Add(Me.txtRelocationAddress)
         Me.Panel1.Controls.Add(Me.lblRelocationAddress)
@@ -368,7 +372,7 @@ Partial Class frmAddContract
         'lblSecurityDeposit
         '
         Me.lblSecurityDeposit.AutoSize = True
-        Me.lblSecurityDeposit.Location = New System.Drawing.Point(138, 212)
+        Me.lblSecurityDeposit.Location = New System.Drawing.Point(136, 212)
         Me.lblSecurityDeposit.Name = "lblSecurityDeposit"
         Me.lblSecurityDeposit.Size = New System.Drawing.Size(91, 13)
         Me.lblSecurityDeposit.TabIndex = 7
@@ -377,7 +381,7 @@ Partial Class frmAddContract
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(45, 212)
+        Me.Label9.Location = New System.Drawing.Point(43, 212)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(87, 13)
         Me.Label9.TabIndex = 6
@@ -386,7 +390,7 @@ Partial Class frmAddContract
         'lblFranchiseFee
         '
         Me.lblFranchiseFee.AutoSize = True
-        Me.lblFranchiseFee.Location = New System.Drawing.Point(138, 189)
+        Me.lblFranchiseFee.Location = New System.Drawing.Point(137, 189)
         Me.lblFranchiseFee.Name = "lblFranchiseFee"
         Me.lblFranchiseFee.Size = New System.Drawing.Size(81, 13)
         Me.lblFranchiseFee.TabIndex = 5
@@ -395,7 +399,7 @@ Partial Class frmAddContract
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(45, 189)
+        Me.Label7.Location = New System.Drawing.Point(44, 189)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(77, 13)
         Me.Label7.TabIndex = 4
@@ -462,7 +466,25 @@ Partial Class frmAddContract
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Outlet Details"
         '
-        'frmAddContract
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(335, 234)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(86, 13)
+        Me.Label16.TabIndex = 41
+        Me.Label16.Text = "lblDateOfRefund"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(246, 234)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(83, 13)
+        Me.Label17.TabIndex = 40
+        Me.Label17.Text = "Date of Refund:"
+        '
+        'frmOutletDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -472,7 +494,7 @@ Partial Class frmAddContract
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmAddContract"
+        Me.Name = "frmOutletDetails"
         Me.Text = "frmAddContract"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -531,4 +553,6 @@ Partial Class frmAddContract
     Friend WithEvents Label15 As Label
     Friend WithEvents cbStatusOutlet As CheckBox
     Friend WithEvents btnConfirmOutlet As Button
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
 End Class
