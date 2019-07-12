@@ -1076,8 +1076,9 @@ Partial Class pnlMain
         Me.lblFPFStatus.ForeColor = System.Drawing.Color.ForestGreen
         Me.lblFPFStatus.Location = New System.Drawing.Point(134, 93)
         Me.lblFPFStatus.Name = "lblFPFStatus"
-        Me.lblFPFStatus.Size = New System.Drawing.Size(0, 13)
+        Me.lblFPFStatus.Size = New System.Drawing.Size(48, 13)
         Me.lblFPFStatus.TabIndex = 38
+        Me.lblFPFStatus.Text = "Status"
         '
         'lblIDFranchisee
         '
@@ -1085,8 +1086,9 @@ Partial Class pnlMain
         Me.lblIDFranchisee.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblIDFranchisee.Location = New System.Drawing.Point(134, 61)
         Me.lblIDFranchisee.Name = "lblIDFranchisee"
-        Me.lblIDFranchisee.Size = New System.Drawing.Size(0, 13)
+        Me.lblIDFranchisee.Size = New System.Drawing.Size(82, 13)
         Me.lblIDFranchisee.TabIndex = 37
+        Me.lblIDFranchisee.Text = "unFranchisee"
         '
         'lblFullName
         '
@@ -1095,8 +1097,9 @@ Partial Class pnlMain
         Me.lblFullName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblFullName.Location = New System.Drawing.Point(133, 41)
         Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(0, 18)
+        Me.lblFullName.Size = New System.Drawing.Size(93, 18)
         Me.lblFullName.TabIndex = 36
+        Me.lblFullName.Text = "Full Name"
         '
         'lblBranch
         '

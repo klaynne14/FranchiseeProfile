@@ -81,7 +81,7 @@ Module modProfiling
     Public Function getIdOutlet() As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
-        Dim oQuery As String = "SELECT idOutlet, FPOBusinessUnit
+        Dim oQuery As String = "SELECT unOutlet, FPOBusinessUnit
                                 FROM Outlet"
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -90,7 +90,7 @@ Module modProfiling
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
                     While oRead.Read
                         getOutlet = New clsOutlet
-                        getOutlet.idOutlet = oRead("idOutlet")
+                        getOutlet.unOutlet = oRead("unOutlet")
                         getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
                         outletList.Add(getOutlet)
                     End While
@@ -110,7 +110,7 @@ Module modProfiling
 
         For Each o In listOutlet
             If o.idOutlet = getidOutlet Then
-                frmOutletDetails.lblOutletID.Text = o.idOutlet
+                frmOutletDetails.lblOutletID.Text = o.unOutlet
             End If
         Next
         Return listOutlet
@@ -237,7 +237,12 @@ Module modProfiling
                 pnlMain.lblMobileNum2.Text = o.MobileNumber1
                 pnlMain.lblEmailAdd1.Text = o.EmailAdd1
                 pnlMain.lblEmailAdd2.Text = o.EmailAdd2
-                'pnlMain.pbUserProfile.Image = Bitmap
+                pnlMain.lblOwnershipType.Text = o.OwnershipType
+                pnlMain.lblCorpAuthorizedName.Text = o.CorpAuthorizedName
+                pnlMain.lblYearStarted.Text = o.YearStarted
+                pnlMain.lblTinNumber.Text = o.TinNumber
+                pnlMain.lblFaxNumber.Text = o.FaxNumber
+                pnlMain.lblOccupation.Text = o.Occupation
             End If
         Next
 
@@ -280,7 +285,7 @@ Module modProfiling
             Try
                 Dim OFD As FileDialog = New OpenFileDialog()
 
-                OFD.Filter = “Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif”
+                OFD.Filter = ï¿½Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gifï¿½
 
                 If OFD.ShowDialog() = DialogResult.OK Then
                     Dim imgpath As String = OFD.FileName
