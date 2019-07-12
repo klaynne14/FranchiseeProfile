@@ -38,11 +38,11 @@ Public Class pnlMain
 
 
     Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
-        frmAddContract.ShowDialog()
+        frmOutletDetails.ShowDialog()
         'modProfiling.getOId()
     End Sub
 
     Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
-        frmAddContract.ShowDialog()
+        frmOutletDetails.ShowDialog()
     End Sub
 End Class

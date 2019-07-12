@@ -110,7 +110,7 @@ Module modProfiling
 
         For Each o In listOutlet
             If o.idOutlet = getidOutlet Then
-                frmAddContract.lblOutletID.Text = o.idOutlet
+                frmOutletDetails.lblOutletID.Text = o.idOutlet
             End If
         Next
         Return listOutlet

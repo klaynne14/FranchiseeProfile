@@ -74,10 +74,10 @@
     <Compile Include="Classes\clsLocation.vb" />
     <Compile Include="Classes\clsOutlet.vb" />
     <Compile Include="Classes\clsPackage.vb" />
-    <Compile Include="Forms\frmAddContract.Designer.vb">
-      <DependentUpon>frmAddContract.vb</DependentUpon>
+    <Compile Include="Forms\frmOutletDetails.Designer.vb">
+      <DependentUpon>frmOutletDetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAddContract.vb">
+    <Compile Include="Forms\frmOutletDetails.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmAddNewOutlet.Designer.vb">
@@ -124,8 +124,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmAddContract.resx">
-      <DependentUpon>frmAddContract.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmOutletDetails.resx">
+      <DependentUpon>frmOutletDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAddNewOutlet.resx">
       <DependentUpon>frmAddNewOutlet.vb</DependentUpon>
