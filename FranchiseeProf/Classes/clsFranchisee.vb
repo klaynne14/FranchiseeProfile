@@ -31,23 +31,29 @@ Public Class clsFranchisee
     Public FaxNumber As String
     Public EmailAdd1 As String
     Public EmailAdd2 As String
-    Public Image As Byte
+    Public arrImage() As Byte
     Public idOutlet As Integer
 
 
     Public Function addFranchisee() As Boolean
 
+        Dim mstream As New System.IO.MemoryStream()
+        frmCreateNewFranchisee.pbFranchisee.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+        Dim arrImage As Byte() = mstream.GetBuffer()
+        Dim FileSize As UInt32
+        FileSize = mstream.Length
+
+        mstream.Close()
+
         Dim sQuery As String = "INSERT INTO Franchisee(unFranchisee ,FPFName ,FPFLName, FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                                         FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth ,FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
-                                                        FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2)
+                                                        FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2, FPFImage)
 
                                 Values(((SELECT COUNT(*) FROM Franchisee)+ 1000001) ,@FPFName,@FPFLName,@FPFMName,@FPFStatus,@FPFOwnershipType,@FPFCorpAuthorizedName,@FPFYearStarted,
                                         @FPFAddress1,@FPFAddress2,@FPFTinNumber,@FPFDateOfBirth,@FPFAge,@FPFGender,@FPFCivilStatus,@FPFNationality,@FPFReligion,@FPFOccupation,@FPFMobileNum1,
-                                        @FPFMobileNum2,@FPFTelNum1,@FPFTelNum2,@FPFFaxNum,@FPFEmailAdd1,@FPFEmailAdd2)"
+                                        @FPFMobileNum2,@FPFTelNum1,@FPFTelNum2,@FPFFaxNum,@FPFEmailAdd1,@FPFEmailAdd2, @FPFImage)"
 
-        ',FPFImage,FPFTotalActive,FPFTotalTempClosed,FPFTotalPermClosed,idOutlet
-
-
+        ',FPFTotalActive,FPFTotalTempClosed,FPFTotalPermClosed
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -82,8 +88,7 @@ Public Class clsFranchisee
                     oCommand.Parameters.AddWithValue("@FPFFaxNum", Me.FaxNumber)
                     oCommand.Parameters.AddWithValue("@FPFEmailAdd1", Me.EmailAdd1)
                     oCommand.Parameters.AddWithValue("@FPFEmailAdd2", Me.EmailAdd2)
-                    'oCommand.Parameters.AddWithValue("@FPFImage", Me.Image)
-                    'oCommand.Parameters.AddWithValue("@idOutlet", )
+                    oCommand.Parameters.AddWithValue("@FPFImage", arrImage)
 
                     oCommand.ExecuteNonQuery()
                     Return True

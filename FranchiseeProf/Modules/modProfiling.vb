@@ -14,7 +14,6 @@ Module modProfiling
                 oConnection.Open()
                 Using oCommand As New SqlCommand(fsQuery, oConnection)
                     Dim oReader As SqlDataReader = oCommand.ExecuteReader
-
                     While oReader.Read
                         fs = New clsFranchisee
                         'fsOutlet = New clsOutlet
@@ -44,6 +43,7 @@ Module modProfiling
                         fs.FaxNumber = oReader("FPFFaxNum")
                         fs.EmailAdd1 = oReader("FPFEmailAdd1")
                         fs.EmailAdd2 = oReader("FPFEmailAdd2")
+
                         'fsOutlet.idOutlet = oReader("idOutlet")
 
                         'franchiseeOutlet.Add(fsOutlet)
@@ -237,6 +237,7 @@ Module modProfiling
                 pnlMain.lblMobileNum2.Text = o.MobileNumber1
                 pnlMain.lblEmailAdd1.Text = o.EmailAdd1
                 pnlMain.lblEmailAdd2.Text = o.EmailAdd2
+                'pnlMain.pbUserProfile.Image = Bitmap
             End If
         Next
 
@@ -256,6 +257,8 @@ Module modProfiling
         'Display Outlet to Outlet Listview under franchisee's ID
         Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
         modProfiling.displayOutlet(FranchiseeID)
+
+        modProfiling.displayImage(i)
     End Function
 
     Public Sub RecolorListView(ByVal profListView As ListView)
@@ -270,11 +273,11 @@ Module modProfiling
         Next
     End Sub
 
+
     Public Function browseImage()
 
-        Using oConnection As New SqlConnection(getConnection("ImageTest"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
-
                 Dim OFD As FileDialog = New OpenFileDialog()
 
                 OFD.Filter = “Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif”
@@ -287,13 +290,32 @@ Module modProfiling
 
                 OFD = Nothing
 
-
-
             Catch ex As Exception
                 MsgBox(ex.Message.ToString())
             End Try
         End Using
         Return False
+    End Function
+
+    Public Function displayImage(ByVal selectedID As Integer)
+        Dim sQuery As String = "Select testImage from Image where idImage=" & Val(selectedID)
+
+        Using oConnection As New SqlConnection(getConnection("ImageTest"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+
+                    Dim arrImage As Byte() = DirectCast(oCommand.ExecuteScalar(), Byte())
+                    Dim mstream As New System.IO.MemoryStream(arrImage)
+                    mstream.Write(arrImage, 0, arrImage.Length)
+
+                    Dim bitmap As New Bitmap(mstream)
+                    pnlMain.pbUserProfile.Image = bitmap
+                End Using
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End Using
     End Function
 
 End Module
