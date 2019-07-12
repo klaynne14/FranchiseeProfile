@@ -277,6 +277,8 @@ Partial Class frmCreateNewFranchisee
         'cbFPFStatus
         '
         Me.cbFPFStatus.AutoSize = True
+        Me.cbFPFStatus.Checked = True
+        Me.cbFPFStatus.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbFPFStatus.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.cbFPFStatus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray
         Me.cbFPFStatus.Font = New System.Drawing.Font("Verdana", 8.0!)
@@ -717,7 +719,7 @@ Partial Class frmCreateNewFranchisee
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label2.Location = New System.Drawing.Point(18, 17)
+        Me.Label2.Location = New System.Drawing.Point(16, 17)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(167, 17)
         Me.Label2.TabIndex = 5

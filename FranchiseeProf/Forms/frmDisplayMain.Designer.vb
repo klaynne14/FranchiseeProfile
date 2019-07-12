@@ -120,18 +120,18 @@ Partial Class pnlMain
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlBackdrop.SuspendLayout
-        Me.tcFranchisee.SuspendLayout
-        Me.tcDMS.SuspendLayout
-        Me.Panel3.SuspendLayout
-        Me.tcFranchiseProf.SuspendLayout
-        Me.tsUserStatus.SuspendLayout
-        Me.pnlUPDash.SuspendLayout
-        Me.tsFrachiseeRowStatus.SuspendLayout
-        Me.pnlUPHeader.SuspendLayout
-        Me.pnlInfo.SuspendLayout
+        Me.pnlBackdrop.SuspendLayout()
+        Me.tcFranchisee.SuspendLayout()
+        Me.tcDMS.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.tcFranchiseProf.SuspendLayout()
+        Me.tsUserStatus.SuspendLayout()
+        Me.pnlUPDash.SuspendLayout()
+        Me.tsFrachiseeRowStatus.SuspendLayout()
+        Me.pnlUPHeader.SuspendLayout()
+        Me.pnlInfo.SuspendLayout()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout
+        Me.SuspendLayout()
         '
         'lblTitle
         '
@@ -646,8 +646,9 @@ Partial Class pnlMain
         Me.lblOwnershipType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblOwnershipType.Location = New System.Drawing.Point(135, 290)
         Me.lblOwnershipType.Name = "lblOwnershipType"
-        Me.lblOwnershipType.Size = New System.Drawing.Size(0, 13)
+        Me.lblOwnershipType.Size = New System.Drawing.Size(11, 13)
         Me.lblOwnershipType.TabIndex = 79
+        Me.lblOwnershipType.Text = " "
         '
         'Label12
         '
@@ -1159,22 +1160,22 @@ Partial Class pnlMain
         Me.tcFranchisee.ResumeLayout(False)
         Me.tcDMS.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout
+        Me.Panel3.PerformLayout()
         Me.tcFranchiseProf.ResumeLayout(False)
-        Me.tcFranchiseProf.PerformLayout
+        Me.tcFranchiseProf.PerformLayout()
         Me.tsUserStatus.ResumeLayout(False)
-        Me.tsUserStatus.PerformLayout
+        Me.tsUserStatus.PerformLayout()
         Me.pnlUPDash.ResumeLayout(False)
-        Me.pnlUPDash.PerformLayout
+        Me.pnlUPDash.PerformLayout()
         Me.tsFrachiseeRowStatus.ResumeLayout(False)
-        Me.tsFrachiseeRowStatus.PerformLayout
+        Me.tsFrachiseeRowStatus.PerformLayout()
         Me.pnlUPHeader.ResumeLayout(False)
-        Me.pnlUPHeader.PerformLayout
+        Me.pnlUPHeader.PerformLayout()
         Me.pnlInfo.ResumeLayout(False)
-        Me.pnlInfo.PerformLayout
+        Me.pnlInfo.PerformLayout()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblTitle As Label
