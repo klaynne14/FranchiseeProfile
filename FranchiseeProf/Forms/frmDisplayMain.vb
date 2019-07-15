@@ -30,6 +30,7 @@ Public Class pnlMain
         'Dim idFLV As Integer = lvUserProfile.FocusedItem.Index + 1
         pnlInfo.Show()
         modProfiling.displayInfo()
+        modProfiling.getInfo()
         modProfiling.recolorListView(lvUserProfile)
     End Sub
 

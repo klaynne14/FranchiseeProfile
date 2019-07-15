@@ -110,12 +110,14 @@ Module modProfiling
         Return listFs
     End Function
 
+
     'Display info from listview to panel
     Public Function displayInfo()
         Dim focItem As Integer
         focItem = pnlMain.lvUserProfile.FocusedItem.Index + 1
         l = modProfiling.getFranchiseeList
 
+        'Dim pm As New pnlMain
         For Each o In l
             If o.idFranchisee = focItem Then
                 pnlMain.lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
@@ -163,6 +165,41 @@ Module modProfiling
         modProfiling.displayImage(focItem)
     End Function
 
+    Public Function getInfo()
+        Dim focItem As Integer
+        focItem = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
+        l = modProfiling.getFranchiseeList
+
+        For Each o In l
+            If o.unFranchisee = focItem Then
+                frmUpdateFranchiseeProfile.txtFName.Text = o.FName
+                frmUpdateFranchiseeProfile.txtMName.Text = o.MName
+                frmUpdateFranchiseeProfile.txtLName.Text = o.LName
+                '    ufp.lblIDFranchisee.Text = o.unFranchisee
+                '    ufp.lblFPFStatus.Text = o.Status
+                '    ufp.lblGender.Text = o.Gender
+                '    ufp.lblAddress1.Text = o.Address1
+                '    ufp.lblAddress2.Text = o.Address2
+                '    ufp.lblAge.Text = o.Age
+                '    ufp.lblCivilStatus.Text = o.CivilStatus
+                '    ufp.lblDateOfBirth.Text = o.DateOfBirth
+                '    ufp.lblNationality.Text = o.Nationality
+                '    ufp.lblReligion.Text = o.Religion
+                '    ufp.lblTelNum1.Text = o.TelNumber1
+                '    ufp.lblTelNum2.Text = o.TelNumber2
+                '    ufp.lblMobileNum1.Text = o.MobileNumber1
+                '    ufp.lblMobileNum2.Text = o.MobileNumber1
+                '    ufp.lblEmailAdd1.Text = o.EmailAdd1
+                '    ufp.lblEmailAdd2.Text = o.EmailAdd2
+                '    ufp.lblOwnershipType.Text = o.OwnershipType
+                '    ufp.lblCorpAuthorizedName.Text = o.CorpAuthorizedName
+                '    ufp.lblYearStarted.Text = o.YearStarted
+                '    ufp.lblTinNumber.Text = o.TinNumber
+                '    ufp.lblFaxNumber.Text = o.FaxNumber
+                '    ufp.lblOccupation.Text = o.Occupation
+            End If
+        Next
+    End Function
 #End Region
 
 #Region "Outlet Methods"
@@ -173,8 +210,7 @@ Module modProfiling
         'Dim oQuery As String = "SELECT unOutlet, FPOBusinessUnit
         '                        FROM Outlet"
 
-        Dim oQuery As String = "SELECT idOutlet
-                                FROM Outlet"
+        Dim oQuery As String = "SELECT idOutlet FROM Outlet"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -316,8 +352,8 @@ Module modProfiling
         Return False
     End Function
 
-    Public Function displayImage(ByVal selectedID As Integer)
-        Dim sQuery As String = "Select testImage from Image where idImage=" & Val(selectedID)
+    Public Function displayImage(ByVal focItem As Integer)
+        Dim sQuery As String = "Select testImage from Image where idImage=" & Val(focItem)
 
         Using oConnection As New SqlConnection(getConnection("ImageTest"))
             Try
@@ -335,33 +371,6 @@ Module modProfiling
                 MsgBox(ex.Message)
             End Try
         End Using
-    End Function
-
-    Public Function getFranchiseeInfoText()
-        Dim franchiseeUpdate As New frmUpdateFranchiseeProfile
-        Dim frInfo As List(Of clsFranchisee) = New List(Of clsFranchisee)
-        Dim fs As New clsFranchisee
-        Dim sQuery As String = "Select idFranchisee, unFranchisee, FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
-                                    FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
-                                    FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
-                                FROM Franchisee Where unFranchisee = @unFranchisee" '& Val(pnlMain.lblIDFranchisee.Text)
-
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseeProfiling"))
-            Try
-                oConnection.Open()
-                Using oCommand As New SqlCommand(sQuery, oConnection)
-                    Dim oRead As SqlDataReader = oCommand.ExecuteReader
-                    While oRead.Read
-                        fs = New clsFranchisee
-                        franchiseeUpdate.txtFName.Text = fs.FName
-                        frInfo.Add(fs)
-                    End While
-                End Using
-            Catch ex As Exception
-                MsgBox("@getFranchiseeInfoText()" + ex.Message)
-            End Try
-        End Using
-        Return frInfo
     End Function
 
 End Module
