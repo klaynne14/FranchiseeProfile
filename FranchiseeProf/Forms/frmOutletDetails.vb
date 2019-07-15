@@ -19,6 +19,7 @@ Public Class frmOutletDetails
     Private Sub frmAddContract_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         modProfiling.getOId()
+
     End Sub
 
 End Class
