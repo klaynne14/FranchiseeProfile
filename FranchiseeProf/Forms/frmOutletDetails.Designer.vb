@@ -135,7 +135,7 @@ Partial Class frmOutletDetails
         Me.btnConfirmOutlet.ForeColor = System.Drawing.SystemColors.Window
         Me.btnConfirmOutlet.Location = New System.Drawing.Point(403, 396)
         Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
-        Me.btnConfirmOutlet.Size = New System.Drawing.Size(86, 30)
+        Me.btnConfirmOutlet.Size = New System.Drawing.Size(85, 30)
         Me.btnConfirmOutlet.TabIndex = 39
         Me.btnConfirmOutlet.Text = "Confirm"
         Me.btnConfirmOutlet.UseVisualStyleBackColor = False

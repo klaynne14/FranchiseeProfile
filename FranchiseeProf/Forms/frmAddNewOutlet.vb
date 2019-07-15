@@ -54,13 +54,6 @@ Public Class frmAddNewOutlet
     Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
         Dim idFLV As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
 
-        Dim ao As clsOutlet = New clsOutlet
-        ao.FPOBusinessUnit = cbBusinessUnit.Text
-        ao.idPackage = 1
-        ao.idContract = 1
-        ao.idLocation = 1
-        ao.unFranchisee = lblOutletUn.Text
-        'pass ids from forms
 
         Dim al As clsLocation = New clsLocation
         al.FPLLocationName = txtLocationName.Text
@@ -82,7 +75,7 @@ Public Class frmAddNewOutlet
         ap.FPPDepositRemark = txtDepositRemark.Text
 
 
-        If ao.addOutlet() And al.addLocation() And ap.addPackage() Then
+        If al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
             modProfiling.displayInfo()
             Me.Close()

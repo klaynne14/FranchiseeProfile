@@ -21,12 +21,8 @@ Public Class pnlMain
         modProfiling.clearTextFranchisee()
     End Sub
 
-    Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
-        frmAddNewOutlet.lblOutletUn.Text = lblIDFranchisee.Text
-        frmAddNewOutlet.ShowDialog()
-        modProfiling.clearTextOutlet()
-        frmAddNewOutlet.cbBusinessUnit.Text = " "
-        frmAddNewOutlet.cbPackageType.Text = " "
+    Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     'Dim l As List(Of clsFranchisee)
@@ -46,7 +42,29 @@ Public Class pnlMain
         frmUpdateOutletDetails.ShowDialog()
     End Sub
 
-    Private Sub btnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
+    Private Sub BtnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
         frmUpdateFranchiseeProfile.ShowDialog()
+    End Sub
+
+    Private Sub BtnAddNewOutletMain_Click_1(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
+
+        Dim ao As clsOutlet = New clsOutlet
+        ao.FPOBusinessUnit = cbBusinessUnit.Text
+        ao.idPackage = 1
+        ao.idContract = 1
+        ao.idLocation = 1
+        'pass ids from forms
+        ao.unFranchisee = lblIDFranchisee.Text
+
+        If ao.addOutlet() Then
+            modProfiling.displayInfo()
+            cbBusinessUnit.Text = " "
+        End If
+
+        frmAddNewOutlet.lblOutletUn.Text = lblIDFranchisee.Text
+        frmAddNewOutlet.ShowDialog()
+        modProfiling.clearTextOutlet()
+        'cbBusinessUnit.Text = " "
+        frmAddNewOutlet.cbPackageType.Text = " "
     End Sub
 End Class
