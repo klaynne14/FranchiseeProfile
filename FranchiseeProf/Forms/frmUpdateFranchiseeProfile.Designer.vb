@@ -23,6 +23,8 @@ Partial Class frmUpdateFranchiseeProfile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.lblYearStart = New System.Windows.Forms.Label()
         Me.txtYearStarted = New System.Windows.Forms.TextBox()
@@ -74,8 +76,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -139,8 +139,29 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Panel1.Size = New System.Drawing.Size(958, 388)
         Me.Panel1.TabIndex = 1
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(34, 69)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(95, 95)
+        Me.PictureBox1.TabIndex = 98
+        Me.PictureBox1.TabStop = False
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.CadetBlue
+        Me.LinkLabel1.Location = New System.Drawing.Point(32, 171)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(95, 13)
+        Me.LinkLabel1.TabIndex = 97
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Change Picture"
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'dtpDateOfBirth
         '
+        Me.dtpDateOfBirth.CustomFormat = "MM/dd/yyyy"
+        Me.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtpDateOfBirth.Location = New System.Drawing.Point(537, 68)
         Me.dtpDateOfBirth.Name = "dtpDateOfBirth"
         Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 21)
@@ -728,25 +749,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.CadetBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(32, 171)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(95, 13)
-        Me.LinkLabel1.TabIndex = 97
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Change Picture"
-        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(34, 69)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(95, 95)
-        Me.PictureBox1.TabIndex = 98
-        Me.PictureBox1.TabStop = False
-        '
         'frmUpdateFranchiseeProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -769,7 +771,6 @@ Partial Class frmUpdateFranchiseeProfile
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents dtpDateOfBirth As DateTimePicker
     Friend WithEvents lblYearStart As Label
     Friend WithEvents txtYearStarted As TextBox
     Friend WithEvents lblIfCorp As Label
@@ -822,4 +823,5 @@ Partial Class frmUpdateFranchiseeProfile
     Friend WithEvents btnClose As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LinkLabel1 As LinkLabel
+    Private WithEvents dtpDateOfBirth As DateTimePicker
 End Class
