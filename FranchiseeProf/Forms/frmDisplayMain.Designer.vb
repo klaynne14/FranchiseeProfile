@@ -73,9 +73,9 @@ Partial Class pnlMain
         Me.btnSelectedOutlet = New System.Windows.Forms.Button()
         Me.lvOutlet = New System.Windows.Forms.ListView()
         Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.BusinessUnit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Location = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Address = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
         Me.lblTotalActive = New System.Windows.Forms.Label()
@@ -119,6 +119,11 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.StatusClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DateOpened = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DateClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout
         Me.tcFranchisee.SuspendLayout
@@ -461,6 +466,7 @@ Partial Class pnlMain
         'pnlInfo
         '
         Me.pnlInfo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pnlInfo.Controls.Add(Me.Button1)
         Me.pnlInfo.Controls.Add(Me.btnEditProfile)
         Me.pnlInfo.Controls.Add(Me.lblFaxNumber)
         Me.pnlInfo.Controls.Add(Me.lblTinNumber)
@@ -665,18 +671,18 @@ Partial Class pnlMain
         Me.btnSelectedOutlet.BackColor = System.Drawing.Color.CadetBlue
         Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSelectedOutlet.Location = New System.Drawing.Point(123, 412)
+        Me.btnSelectedOutlet.Location = New System.Drawing.Point(41, 595)
         Me.btnSelectedOutlet.Name = "btnSelectedOutlet"
-        Me.btnSelectedOutlet.Size = New System.Drawing.Size(99, 25)
+        Me.btnSelectedOutlet.Size = New System.Drawing.Size(60, 25)
         Me.btnSelectedOutlet.TabIndex = 77
-        Me.btnSelectedOutlet.Text = "Selected"
+        Me.btnSelectedOutlet.Text = "Edit"
         Me.btnSelectedOutlet.UseVisualStyleBackColor = False
         '
         'lvOutlet
         '
         Me.lvOutlet.BackColor = System.Drawing.Color.White
         Me.lvOutlet.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.BusinessUnit, Me.Location, Me.Address, Me.Status, Me.StatusClosed, Me.DateOpened, Me.DateClosed})
         Me.lvOutlet.FullRowSelect = True
         Me.lvOutlet.Location = New System.Drawing.Point(42, 443)
         Me.lvOutlet.Name = "lvOutlet"
@@ -688,22 +694,22 @@ Partial Class pnlMain
         'ID
         '
         Me.ID.Text = "ID"
-        Me.ID.Width = 100
+        Me.ID.Width = 44
         '
-        'ColumnHeader1
+        'BusinessUnit
         '
-        Me.ColumnHeader1.Text = "Business Unit"
-        Me.ColumnHeader1.Width = 385
+        Me.BusinessUnit.Text = "Business Unit"
+        Me.BusinessUnit.Width = 90
         '
-        'ColumnHeader2
+        'Location
         '
-        Me.ColumnHeader2.Text = "ID Location"
-        Me.ColumnHeader2.Width = 105
+        Me.Location.Text = "Location"
+        Me.Location.Width = 133
         '
-        'ColumnHeader3
+        'Address
         '
-        Me.ColumnHeader3.Text = "ID Contract"
-        Me.ColumnHeader3.Width = 99
+        Me.Address.Text = "Address"
+        Me.Address.Width = 299
         '
         'lblPermanentlyClosed
         '
@@ -1119,7 +1125,7 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain.ForeColor = System.Drawing.SystemColors.Window
         Me.btnAddNewOutletMain.Location = New System.Drawing.Point(42, 412)
         Me.btnAddNewOutletMain.Name = "btnAddNewOutletMain"
-        Me.btnAddNewOutletMain.Size = New System.Drawing.Size(75, 25)
+        Me.btnAddNewOutletMain.Size = New System.Drawing.Size(125, 25)
         Me.btnAddNewOutletMain.TabIndex = 16
         Me.btnAddNewOutletMain.Text = "Add New"
         Me.btnAddNewOutletMain.UseVisualStyleBackColor = False
@@ -1143,6 +1149,38 @@ Partial Class pnlMain
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Window
+        Me.Button1.Location = New System.Drawing.Point(107, 595)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(60, 25)
+        Me.Button1.TabIndex = 91
+        Me.Button1.Text = "View"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Status
+        '
+        Me.Status.Text = "Status"
+        Me.Status.Width = 66
+        '
+        'StatusClosed
+        '
+        Me.StatusClosed.Text = "Status (if close)"
+        Me.StatusClosed.Width = 103
+        '
+        'DateOpened
+        '
+        Me.DateOpened.Text = "Date Opened"
+        Me.DateOpened.Width = 95
+        '
+        'DateClosed
+        '
+        Me.DateClosed.Text = "Date Closed"
+        Me.DateClosed.Width = 86
         '
         'pnlMain
         '
@@ -1273,8 +1311,13 @@ Partial Class pnlMain
     Friend WithEvents lblOwnershipType As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents ID As ColumnHeader
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents BusinessUnit As ColumnHeader
+    Friend WithEvents Location As ColumnHeader
+    Friend WithEvents Address As ColumnHeader
     Friend WithEvents btnEditProfile As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Status As ColumnHeader
+    Friend WithEvents StatusClosed As ColumnHeader
+    Friend WithEvents DateOpened As ColumnHeader
+    Friend WithEvents DateClosed As ColumnHeader
 End Class
