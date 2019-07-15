@@ -568,6 +568,7 @@ Partial Class pnlMain
         Me.cbBusinessUnit.Name = "cbBusinessUnit"
         Me.cbBusinessUnit.Size = New System.Drawing.Size(125, 21)
         Me.cbBusinessUnit.TabIndex = 92
+        Me.cbBusinessUnit.Text = " "
         '
         'btnViewOutlet
         '

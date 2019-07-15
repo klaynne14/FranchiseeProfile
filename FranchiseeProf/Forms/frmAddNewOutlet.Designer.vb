@@ -121,14 +121,14 @@ Partial Class frmAddNewOutlet
         Me.Panel1.Controls.Add(Me.btnAddNew)
         Me.Panel1.Location = New System.Drawing.Point(6, 44)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(463, 456)
+        Me.Panel1.Size = New System.Drawing.Size(367, 456)
         Me.Panel1.TabIndex = 3
         '
         'lblOutletID
         '
         Me.lblOutletID.AutoSize = True
         Me.lblOutletID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutletID.Location = New System.Drawing.Point(88, 23)
+        Me.lblOutletID.Location = New System.Drawing.Point(119, 23)
         Me.lblOutletID.Name = "lblOutletID"
         Me.lblOutletID.Size = New System.Drawing.Size(0, 13)
         Me.lblOutletID.TabIndex = 55
@@ -137,11 +137,11 @@ Partial Class frmAddNewOutlet
         '
         Me.lblOutlet.AutoSize = True
         Me.lblOutlet.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutlet.Location = New System.Drawing.Point(14, 23)
+        Me.lblOutlet.Location = New System.Drawing.Point(18, 23)
         Me.lblOutlet.Name = "lblOutlet"
-        Me.lblOutlet.Size = New System.Drawing.Size(68, 13)
+        Me.lblOutlet.Size = New System.Drawing.Size(95, 13)
         Me.lblOutlet.TabIndex = 54
-        Me.lblOutlet.Text = "Outlet ID: "
+        Me.lblOutlet.Text = "Franchisee ID: "
         '
         'Label6
         '
@@ -360,7 +360,7 @@ Partial Class frmAddNewOutlet
         Me.btnAddNew.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue
         Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNew.Location = New System.Drawing.Point(289, 396)
+        Me.btnAddNew.Location = New System.Drawing.Point(252, 407)
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(85, 30)
         Me.btnAddNew.TabIndex = 17
@@ -385,7 +385,7 @@ Partial Class frmAddNewOutlet
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(444, 10)
+        Me.btnClose.Location = New System.Drawing.Point(348, 10)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 50
@@ -397,7 +397,7 @@ Partial Class frmAddNewOutlet
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientSize = New System.Drawing.Size(476, 507)
+        Me.ClientSize = New System.Drawing.Size(379, 507)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
