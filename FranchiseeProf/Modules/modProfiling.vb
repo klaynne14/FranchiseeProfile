@@ -281,7 +281,6 @@ Module modProfiling
         Next unfControl
     End Function
 
-
     Public Sub recolorListView(ByVal profListView As ListView)
         'Scroll through each listview item
         For Each item In profListView.Items
@@ -293,7 +292,6 @@ Module modProfiling
             End If
         Next
     End Sub
-
 
     Public Function browseImage()
 
@@ -337,6 +335,33 @@ Module modProfiling
                 MsgBox(ex.Message)
             End Try
         End Using
+    End Function
+
+    Public Function getFranchiseeInfoText()
+        Dim franchiseeUpdate As New frmUpdateFranchiseeProfile
+        Dim frInfo As List(Of clsFranchisee) = New List(Of clsFranchisee)
+        Dim fs As New clsFranchisee
+        Dim sQuery As String = "Select idFranchisee, unFranchisee, FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
+                                    FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
+                                    FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
+                                FROM Franchisee Where unFranchisee = @unFranchisee" '& Val(pnlMain.lblIDFranchisee.Text)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseeProfiling"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+                    Dim oRead As SqlDataReader = oCommand.ExecuteReader
+                    While oRead.Read
+                        fs = New clsFranchisee
+                        franchiseeUpdate.txtFName.Text = fs.FName
+                        frInfo.Add(fs)
+                    End While
+                End Using
+            Catch ex As Exception
+                MsgBox("@getFranchiseeInfoText()" + ex.Message)
+            End Try
+        End Using
+        Return frInfo
     End Function
 
 End Module
