@@ -57,7 +57,7 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnEditProfile = New System.Windows.Forms.Button()
         Me.lblFaxNumber = New System.Windows.Forms.Label()
         Me.lblTinNumber = New System.Windows.Forms.Label()
         Me.lblOccupation = New System.Windows.Forms.Label()
@@ -461,7 +461,7 @@ Partial Class pnlMain
         'pnlInfo
         '
         Me.pnlInfo.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.pnlInfo.Controls.Add(Me.Button1)
+        Me.pnlInfo.Controls.Add(Me.btnEditProfile)
         Me.pnlInfo.Controls.Add(Me.lblFaxNumber)
         Me.pnlInfo.Controls.Add(Me.lblTinNumber)
         Me.pnlInfo.Controls.Add(Me.lblOccupation)
@@ -525,18 +525,18 @@ Partial Class pnlMain
         Me.pnlInfo.TabIndex = 18
         Me.pnlInfo.Visible = False
         '
-        'Button1
+        'btnEditProfile
         '
-        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(18, 129)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 23)
-        Me.Button1.TabIndex = 90
-        Me.Button1.Text = "Edit Profile"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnEditProfile.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnEditProfile.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditProfile.ForeColor = System.Drawing.Color.White
+        Me.btnEditProfile.Location = New System.Drawing.Point(18, 129)
+        Me.btnEditProfile.Name = "btnEditProfile"
+        Me.btnEditProfile.Size = New System.Drawing.Size(95, 23)
+        Me.btnEditProfile.TabIndex = 90
+        Me.btnEditProfile.Text = "Edit Profile"
+        Me.btnEditProfile.UseVisualStyleBackColor = False
         '
         'lblFaxNumber
         '
@@ -1276,5 +1276,5 @@ Partial Class pnlMain
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnEditProfile As Button
 End Class

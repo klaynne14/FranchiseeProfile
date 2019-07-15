@@ -44,4 +44,8 @@ Public Class pnlMain
     Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
         frmUpdateOutletDetails.ShowDialog()
     End Sub
+
+    Private Sub btnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
+        frmUpdateFranchiseeProfile.ShowDialog()
+    End Sub
 End Class
