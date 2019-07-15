@@ -1,5 +1,9 @@
 ﻿Public Class frmUpdateOutletDetails
 
+    Private Sub frmUpdateOutletDetails_Load(sender As Object, e As EventArgs) Handles Me.Load
+        modProfiling.getOId(lblOutletUn)
+    End Sub
+
     Dim lDateClosed As DateTime
     Dim lStatus As String = "Open"
     Private Sub CbStatusOutlet_CheckedChanged(sender As Object, e As EventArgs) Handles cbStatusOutlet.CheckedChanged
@@ -37,4 +41,6 @@
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+
 End Class

@@ -49,6 +49,7 @@ Public Class frmAddNewOutlet
 
     Private Sub frmAddNewOutlet_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
+        'modProfiling.getOId(lblOutletID)
     End Sub
 
     Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click

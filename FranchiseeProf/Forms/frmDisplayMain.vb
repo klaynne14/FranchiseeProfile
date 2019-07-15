@@ -33,9 +33,8 @@ Public Class pnlMain
         modProfiling.recolorListView(lvUserProfile)
     End Sub
 
-    Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
-        frmOutletDetails.ShowDialog()
-        'modProfiling.getOId()
+    Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
@@ -62,10 +61,19 @@ Public Class pnlMain
             cbBusinessUnit.Text = " "
         End If
 
-        frmAddNewOutlet.lblOutletUn.Text = lblIDFranchisee.Text
+        frmAddNewOutlet.lblOutletID.Text = lblIDFranchisee.Text
         frmAddNewOutlet.ShowDialog()
         modProfiling.clearTextOutlet()
         'cbBusinessUnit.Text = " "
         frmAddNewOutlet.cbPackageType.Text = " "
+    End Sub
+
+    Private Sub BtnEditOutlet_Click(sender As Object, e As EventArgs) Handles btnEditOutlet.Click
+        frmUpdateOutletDetails.ShowDialog()
+    End Sub
+
+    Private Sub BtnViewOutlet_Click(sender As Object, e As EventArgs) Handles btnViewOutlet.Click
+        frmOutletDetails.ShowDialog()
+        'modProfiling.getOId()
     End Sub
 End Class

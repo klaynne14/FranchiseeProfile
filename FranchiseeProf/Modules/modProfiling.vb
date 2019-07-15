@@ -196,7 +196,7 @@ Module modProfiling
         Return outletList
     End Function
 
-    Public Function getOId() As List(Of clsOutlet)
+    Public Function getOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
         Dim listOutlet As List(Of clsOutlet)
         Dim getidOutlet As String
         getidOutlet = pnlMain.lvOutlet.FocusedItem.Tag
@@ -204,7 +204,7 @@ Module modProfiling
 
         For Each o In listOutlet
             If o.idOutlet = getidOutlet Then
-                frmOutletDetails.lblOutletID.Text = o.idOutlet
+                lblOutletID.Text = o.idOutlet
             End If
         Next
         Return listOutlet
