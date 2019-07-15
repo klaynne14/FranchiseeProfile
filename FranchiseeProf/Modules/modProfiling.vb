@@ -285,7 +285,7 @@ Module modProfiling
             Try
                 Dim OFD As FileDialog = New OpenFileDialog()
 
-                OFD.Filter = �Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif�
+                OFD.Filter = "Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif"
 
                 If OFD.ShowDialog() = DialogResult.OK Then
                     Dim imgpath As String = OFD.FileName
