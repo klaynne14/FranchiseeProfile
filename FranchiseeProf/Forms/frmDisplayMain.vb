@@ -34,6 +34,7 @@ Public Class pnlMain
         'Dim idFLV As Integer = lvUserProfile.FocusedItem.Index + 1
         pnlInfo.Show()
         modProfiling.displayInfo()
+        modProfiling.recolorListView(lvUserProfile)
     End Sub
 
     Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
@@ -43,5 +44,9 @@ Public Class pnlMain
 
     Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
         frmUpdateOutletDetails.ShowDialog()
+    End Sub
+
+    Private Sub BtnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
+        frmUpdateFranchiseeProfile.ShowDialog()
     End Sub
 End Class

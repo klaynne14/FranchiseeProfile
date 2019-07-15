@@ -57,7 +57,7 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnEditProfile = New System.Windows.Forms.Button()
         Me.lblFaxNumber = New System.Windows.Forms.Label()
         Me.lblTinNumber = New System.Windows.Forms.Label()
         Me.lblOccupation = New System.Windows.Forms.Label()
@@ -120,27 +120,27 @@ Partial Class pnlMain
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlBackdrop.SuspendLayout()
-        Me.tcFranchisee.SuspendLayout()
-        Me.tcDMS.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.tcFranchiseProf.SuspendLayout()
-        Me.tsUserStatus.SuspendLayout()
-        Me.pnlUPDash.SuspendLayout()
-        Me.tsFrachiseeRowStatus.SuspendLayout()
-        Me.pnlUPHeader.SuspendLayout()
-        Me.pnlInfo.SuspendLayout()
+        Me.pnlBackdrop.SuspendLayout
+        Me.tcFranchisee.SuspendLayout
+        Me.tcDMS.SuspendLayout
+        Me.Panel3.SuspendLayout
+        Me.tcFranchiseProf.SuspendLayout
+        Me.tsUserStatus.SuspendLayout
+        Me.pnlUPDash.SuspendLayout
+        Me.tsFrachiseeRowStatus.SuspendLayout
+        Me.pnlUPHeader.SuspendLayout
+        Me.pnlInfo.SuspendLayout
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.SuspendLayout
         '
         'lblTitle
         '
         Me.lblTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTitle.Font = New System.Drawing.Font("Verdana", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.White
-        Me.lblTitle.Location = New System.Drawing.Point(0, 1)
+        Me.lblTitle.Location = New System.Drawing.Point(0, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(1366, 53)
+        Me.lblTitle.Size = New System.Drawing.Size(1366, 54)
         Me.lblTitle.TabIndex = 9
         Me.lblTitle.Text = "  "
         '
@@ -380,7 +380,7 @@ Partial Class pnlMain
         'idFranchisee
         '
         Me.idFranchisee.Text = "ID"
-        Me.idFranchisee.Width = 52
+        Me.idFranchisee.Width = 95
         '
         'chName
         '
@@ -461,7 +461,7 @@ Partial Class pnlMain
         'pnlInfo
         '
         Me.pnlInfo.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.pnlInfo.Controls.Add(Me.Button1)
+        Me.pnlInfo.Controls.Add(Me.btnEditProfile)
         Me.pnlInfo.Controls.Add(Me.lblFaxNumber)
         Me.pnlInfo.Controls.Add(Me.lblTinNumber)
         Me.pnlInfo.Controls.Add(Me.lblOccupation)
@@ -525,18 +525,18 @@ Partial Class pnlMain
         Me.pnlInfo.TabIndex = 18
         Me.pnlInfo.Visible = False
         '
-        'Button1
+        'btnEditProfile
         '
-        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(18, 129)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 23)
-        Me.Button1.TabIndex = 90
-        Me.Button1.Text = "Edit Profile"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnEditProfile.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnEditProfile.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditProfile.ForeColor = System.Drawing.Color.White
+        Me.btnEditProfile.Location = New System.Drawing.Point(18, 129)
+        Me.btnEditProfile.Name = "btnEditProfile"
+        Me.btnEditProfile.Size = New System.Drawing.Size(95, 23)
+        Me.btnEditProfile.TabIndex = 90
+        Me.btnEditProfile.Text = "Edit Profile"
+        Me.btnEditProfile.UseVisualStyleBackColor = False
         '
         'lblFaxNumber
         '
@@ -1163,22 +1163,22 @@ Partial Class pnlMain
         Me.tcFranchisee.ResumeLayout(False)
         Me.tcDMS.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.Panel3.PerformLayout
         Me.tcFranchiseProf.ResumeLayout(False)
-        Me.tcFranchiseProf.PerformLayout()
+        Me.tcFranchiseProf.PerformLayout
         Me.tsUserStatus.ResumeLayout(False)
-        Me.tsUserStatus.PerformLayout()
+        Me.tsUserStatus.PerformLayout
         Me.pnlUPDash.ResumeLayout(False)
-        Me.pnlUPDash.PerformLayout()
+        Me.pnlUPDash.PerformLayout
         Me.tsFrachiseeRowStatus.ResumeLayout(False)
-        Me.tsFrachiseeRowStatus.PerformLayout()
+        Me.tsFrachiseeRowStatus.PerformLayout
         Me.pnlUPHeader.ResumeLayout(False)
-        Me.pnlUPHeader.PerformLayout()
+        Me.pnlUPHeader.PerformLayout
         Me.pnlInfo.ResumeLayout(False)
-        Me.pnlInfo.PerformLayout()
+        Me.pnlInfo.PerformLayout
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.PerformLayout
 
     End Sub
     Friend WithEvents lblTitle As Label
@@ -1276,5 +1276,5 @@ Partial Class pnlMain
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnEditProfile As Button
 End Class

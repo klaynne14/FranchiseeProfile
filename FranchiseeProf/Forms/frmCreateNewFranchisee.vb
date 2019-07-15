@@ -27,7 +27,7 @@ Public Class frmCreateNewFranchisee
         afs.DateOfBirth = dtpDateOfBirth.Value.Date
         afs.Age = txtAge.Text
         afs.Gender = cbGender.Text
-        afs.CivilStatus = txtCivilStatus.Text
+        afs.CivilStatus = cbCivilStatus.Text
         afs.Nationality = txtNationality.Text
         afs.Religion = txtReligion.Text
         afs.Occupation = txtOccupation.Text

@@ -61,7 +61,6 @@ Partial Class frmCreateNewFranchisee
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtNationality = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtCivilStatus = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtAddress2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -76,6 +75,7 @@ Partial Class frmCreateNewFranchisee
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.cbCivilStatus = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.pbFranchisee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,6 +83,7 @@ Partial Class frmCreateNewFranchisee
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.cbCivilStatus)
         Me.Panel1.Controls.Add(Me.pbFranchisee)
         Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
         Me.Panel1.Controls.Add(Me.lblYearStart)
@@ -120,7 +121,6 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.txtNationality)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.txtCivilStatus)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtAddress2)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -563,18 +563,6 @@ Partial Class frmCreateNewFranchisee
         Me.Label8.TabIndex = 59
         Me.Label8.Text = "Civil Status"
         '
-        'txtCivilStatus
-        '
-        Me.txtCivilStatus.BackColor = System.Drawing.SystemColors.Window
-        Me.txtCivilStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCivilStatus.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.txtCivilStatus.ForeColor = System.Drawing.Color.Black
-        Me.txtCivilStatus.Location = New System.Drawing.Point(150, 206)
-        Me.txtCivilStatus.MaxLength = 32
-        Me.txtCivilStatus.Name = "txtCivilStatus"
-        Me.txtCivilStatus.Size = New System.Drawing.Size(115, 21)
-        Me.txtCivilStatus.TabIndex = 58
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -673,7 +661,7 @@ Partial Class frmCreateNewFranchisee
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmit.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSubmit.Location = New System.Drawing.Point(838, 319)
+        Me.btnSubmit.Location = New System.Drawing.Point(838, 326)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(86, 30)
         Me.btnSubmit.TabIndex = 48
@@ -739,6 +727,16 @@ Partial Class frmCreateNewFranchisee
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'cbCivilStatus
+        '
+        Me.cbCivilStatus.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCivilStatus.FormattingEnabled = True
+        Me.cbCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Divorced", "Separated", "Widowed"})
+        Me.cbCivilStatus.Location = New System.Drawing.Point(150, 205)
+        Me.cbCivilStatus.Name = "cbCivilStatus"
+        Me.cbCivilStatus.Size = New System.Drawing.Size(115, 21)
+        Me.cbCivilStatus.TabIndex = 100
+        '
         'frmCreateNewFranchisee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -785,7 +783,6 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents Label7 As Label
     Friend WithEvents txtNationality As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtCivilStatus As TextBox
     Friend WithEvents txtEmailAddress1 As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label16 As Label
@@ -813,4 +810,5 @@ Partial Class frmCreateNewFranchisee
     Friend WithEvents txtYearStarted As TextBox
     Friend WithEvents dtpDateOfBirth As DateTimePicker
     Friend WithEvents pbFranchisee As PictureBox
+    Friend WithEvents cbCivilStatus As ComboBox
 End Class

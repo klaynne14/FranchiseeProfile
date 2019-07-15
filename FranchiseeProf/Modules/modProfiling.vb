@@ -2,6 +2,37 @@ Imports System.Data.SqlClient
 Imports System.IO
 
 Module modProfiling
+
+#Region "Franchisee Methods"
+
+    'Get franchisee list details to display in list view
+    Public Function getFranchisee() As List(Of clsFranchisee)
+        Dim list As New List(Of clsFranchisee)
+        Dim franchiseelist As clsFranchisee
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand("SELECT unFranchisee, FPFName,FPFLName,FPFMName FROM Franchisee", oConnection)
+                    Dim oReader As SqlDataReader = oCommand.ExecuteReader
+
+                    While oReader.Read()
+                        franchiseelist = New clsFranchisee
+                        franchiseelist.unFranchisee = oReader("unFranchisee")
+                        franchiseelist.FName = oReader("FPFName")
+                        franchiseelist.MName = oReader("FPFMName")
+                        franchiseelist.LName = oReader("FPFLName")
+                        list.Add(franchiseelist)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("@getFranchisee()" + ex.Message)
+            End Try
+        End Using
+        Return list
+    End Function
+
+    'Get Franchisee details for user profile
     Public Function getFranchiseeList() As List(Of clsFranchisee)
         Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
         Dim fs As New clsFranchisee
@@ -57,6 +88,7 @@ Module modProfiling
         Return franchiseeList
     End Function
 
+    'Load existing Franchisee from db to listview 
     Dim l As List(Of clsFranchisee)
     Public Function loadFranchisee()
         pnlMain.lvUserProfile.Items.Clear()
@@ -77,6 +109,63 @@ Module modProfiling
 
         Return listFs
     End Function
+
+    'Display info from listview to panel
+    Public Function displayInfo()
+        Dim focItem As Integer
+        focItem = pnlMain.lvUserProfile.FocusedItem.Index + 1
+        l = modProfiling.getFranchiseeList
+
+        For Each o In l
+            If o.idFranchisee = focItem Then
+                pnlMain.lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
+                pnlMain.lblIDFranchisee.Text = o.unFranchisee
+                pnlMain.lblFPFStatus.Text = o.Status
+                pnlMain.lblGender.Text = o.Gender
+                pnlMain.lblAddress1.Text = o.Address1
+                pnlMain.lblAddress2.Text = o.Address2
+                pnlMain.lblAge.Text = o.Age
+                pnlMain.lblCivilStatus.Text = o.CivilStatus
+                pnlMain.lblDateOfBirth.Text = o.DateOfBirth
+                pnlMain.lblNationality.Text = o.Nationality
+                pnlMain.lblReligion.Text = o.Religion
+                pnlMain.lblTelNum1.Text = o.TelNumber1
+                pnlMain.lblTelNum2.Text = o.TelNumber2
+                pnlMain.lblMobileNum1.Text = o.MobileNumber1
+                pnlMain.lblMobileNum2.Text = o.MobileNumber1
+                pnlMain.lblEmailAdd1.Text = o.EmailAdd1
+                pnlMain.lblEmailAdd2.Text = o.EmailAdd2
+                pnlMain.lblOwnershipType.Text = o.OwnershipType
+                pnlMain.lblCorpAuthorizedName.Text = o.CorpAuthorizedName
+                pnlMain.lblYearStarted.Text = o.YearStarted
+                pnlMain.lblTinNumber.Text = o.TinNumber
+                pnlMain.lblFaxNumber.Text = o.FaxNumber
+                pnlMain.lblOccupation.Text = o.Occupation
+            End If
+        Next
+
+        If pnlMain.lblFPFStatus.Text = "-1" Then
+            pnlMain.lblFPFStatus.Text = "Active"
+            pnlMain.lblFPFStatus.ForeColor = Color.Green
+            pnlMain.btnAddNewOutletMain.Enabled = True
+            pnlMain.btnAddNewOutletMain.BackColor = Color.CadetBlue
+        Else
+            pnlMain.lblFPFStatus.Text = "Inactive"
+            pnlMain.lblFPFStatus.ForeColor = Color.Red
+            pnlMain.btnAddNewOutletMain.Enabled = False
+            pnlMain.btnAddNewOutletMain.BackColor = Color.LightGray
+        End If
+
+        'Display Outlet to Outlet Listview under franchisee's ID
+        Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
+        modProfiling.displayOutlet(FranchiseeID)
+
+        modProfiling.displayImage(focItem)
+    End Function
+
+#End Region
+
+#Region "Outlet Methods"
 
     Public Function getIdOutlet() As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
@@ -167,6 +256,8 @@ Module modProfiling
         Return listOutlet
     End Function
 
+#End Region
+
     Public Function clearTextOutlet()
         Dim unfControl As Control
         For Each unfControl In frmAddNewOutlet.Panel1.Controls
@@ -185,88 +276,8 @@ Module modProfiling
         Next unfControl
     End Function
 
-    Public Function getFranchisee() As List(Of clsFranchisee)
-        Dim list As New List(Of clsFranchisee)
-        Dim franchiseelist As clsFranchisee
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-            Try
-                oConnection.Open()
-                Using oCommand As New SqlCommand("SELECT unFranchisee, FPFName,FPFLName,FPFMName FROM Franchisee", oConnection)
-                    Dim oReader As SqlDataReader = oCommand.ExecuteReader
-
-                    While oReader.Read()
-                        franchiseelist = New clsFranchisee
-                        franchiseelist.unFranchisee = oReader("unFranchisee")
-                        franchiseelist.FName = oReader("FPFName")
-                        franchiseelist.MName = oReader("FPFMName")
-                        franchiseelist.LName = oReader("FPFLName")
-                        list.Add(franchiseelist)
-                    End While
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("@getFranchisee()" + ex.Message)
-            End Try
-        End Using
-        Return list
-    End Function
-
-
-    'Display info from listview
-    Public Function displayInfo()
-        Dim i As Integer
-        i = pnlMain.lvUserProfile.FocusedItem.Index + 1
-        l = modProfiling.getFranchiseeList
-
-        For Each o In l
-            If o.idFranchisee = i Then
-                pnlMain.lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
-                pnlMain.lblIDFranchisee.Text = o.unFranchisee
-                pnlMain.lblFPFStatus.Text = o.Status
-                pnlMain.lblGender.Text = o.Gender
-                pnlMain.lblAddress1.Text = o.Address1
-                pnlMain.lblAddress2.Text = o.Address2
-                pnlMain.lblAge.Text = o.Age
-                pnlMain.lblCivilStatus.Text = o.CivilStatus
-                pnlMain.lblDateOfBirth.Text = o.DateOfBirth
-                pnlMain.lblNationality.Text = o.Nationality
-                pnlMain.lblReligion.Text = o.Religion
-                pnlMain.lblTelNum1.Text = o.TelNumber1
-                pnlMain.lblTelNum2.Text = o.TelNumber2
-                pnlMain.lblMobileNum1.Text = o.MobileNumber1
-                pnlMain.lblMobileNum2.Text = o.MobileNumber1
-                pnlMain.lblEmailAdd1.Text = o.EmailAdd1
-                pnlMain.lblEmailAdd2.Text = o.EmailAdd2
-                pnlMain.lblOwnershipType.Text = o.OwnershipType
-                pnlMain.lblCorpAuthorizedName.Text = o.CorpAuthorizedName
-                pnlMain.lblYearStarted.Text = o.YearStarted
-                pnlMain.lblTinNumber.Text = o.TinNumber
-                pnlMain.lblFaxNumber.Text = o.FaxNumber
-                pnlMain.lblOccupation.Text = o.Occupation
-            End If
-        Next
-
-
-        If pnlMain.lblFPFStatus.Text = "-1" Then
-            pnlMain.lblFPFStatus.Text = "Active"
-            pnlMain.lblFPFStatus.ForeColor = Color.Green
-            pnlMain.btnAddNewOutletMain.Enabled = True
-            pnlMain.btnAddNewOutletMain.BackColor = Color.CadetBlue
-        Else
-            pnlMain.lblFPFStatus.Text = "Inactive"
-            pnlMain.lblFPFStatus.ForeColor = Color.Red
-            pnlMain.btnAddNewOutletMain.Enabled = False
-            pnlMain.btnAddNewOutletMain.BackColor = Color.LightGray
-        End If
-
-        'Display Outlet to Outlet Listview under franchisee's ID
-        Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
-        modProfiling.displayOutlet(FranchiseeID)
-
-        modProfiling.displayImage(i)
-    End Function
-
-    Public Sub RecolorListView(ByVal profListView As ListView)
+    Public Sub recolorListView(ByVal profListView As ListView)
         'Scroll through each listview item
         For Each item In profListView.Items
 
