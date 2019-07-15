@@ -170,8 +170,12 @@ Module modProfiling
     Public Function getIdOutlet() As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
-        Dim oQuery As String = "SELECT unOutlet, FPOBusinessUnit
+        'Dim oQuery As String = "SELECT unOutlet, FPOBusinessUnit
+        '                        FROM Outlet"
+
+        Dim oQuery As String = "SELECT idOutlet
                                 FROM Outlet"
+
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
@@ -179,13 +183,14 @@ Module modProfiling
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
                     While oRead.Read
                         getOutlet = New clsOutlet
-                        getOutlet.unOutlet = oRead("unOutlet")
-                        getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        'getOutlet.unOutlet = oRead("unOutlet")
+                        'getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        getOutlet.idOutlet = oRead("idOutlet")
                         outletList.Add(getOutlet)
                     End While
                 End Using
             Catch ex As Exception
-                MessageBox.Show("Error @:getOutletList() " + ex.Message)
+                MessageBox.Show("Error @:getIdOutlet() " + ex.Message)
             End Try
         End Using
         Return outletList
@@ -194,12 +199,12 @@ Module modProfiling
     Public Function getOId() As List(Of clsOutlet)
         Dim listOutlet As List(Of clsOutlet)
         Dim getidOutlet As String
-        getidOutlet = pnlMain.lvOutlet.FocusedItem.Index + 1
+        getidOutlet = pnlMain.lvOutlet.FocusedItem.Tag
         listOutlet = modProfiling.getIdOutlet()
 
         For Each o In listOutlet
             If o.idOutlet = getidOutlet Then
-                frmOutletDetails.lblOutletID.Text = o.unOutlet
+                frmOutletDetails.lblOutletID.Text = o.idOutlet
             End If
         Next
         Return listOutlet
