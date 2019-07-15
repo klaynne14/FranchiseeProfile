@@ -27,7 +27,7 @@ Partial Class frmAddNewOutlet
         Me.pnlBorderRight = New System.Windows.Forms.Panel()
         Me.pnlBorderLeft = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblOutletUn = New System.Windows.Forms.Label()
+        Me.lblOutletID = New System.Windows.Forms.Label()
         Me.lblOutlet = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtpDateOfRefund = New System.Windows.Forms.DateTimePicker()
@@ -51,9 +51,9 @@ Partial Class frmAddNewOutlet
         Me.txtOutletAddress = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnAddNew = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.btnAddNew = New System.Windows.Forms.Button()
         Me.pnlBorderLeft.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -94,7 +94,7 @@ Partial Class frmAddNewOutlet
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.lblOutletUn)
+        Me.Panel1.Controls.Add(Me.lblOutletID)
         Me.Panel1.Controls.Add(Me.lblOutlet)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.dtpDateOfRefund)
@@ -121,23 +121,24 @@ Partial Class frmAddNewOutlet
         Me.Panel1.Controls.Add(Me.btnAddNew)
         Me.Panel1.Location = New System.Drawing.Point(6, 44)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(463, 456)
+        Me.Panel1.Size = New System.Drawing.Size(367, 456)
         Me.Panel1.TabIndex = 3
         '
-        'lblOutletUn
+        'lblOutletID
         '
-        Me.lblOutletUn.AutoSize = True
-        Me.lblOutletUn.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutletUn.Location = New System.Drawing.Point(85, 23)
-        Me.lblOutletUn.Name = "lblOutletUn"
-        Me.lblOutletUn.Size = New System.Drawing.Size(0, 13)
-        Me.lblOutletUn.TabIndex = 55
+        Me.lblOutletID.AutoSize = True
+        Me.lblOutletID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOutletID.Location = New System.Drawing.Point(92, 23)
+        Me.lblOutletID.Name = "lblOutletID"
+        Me.lblOutletID.Size = New System.Drawing.Size(70, 13)
+        Me.lblOutletID.TabIndex = 55
+        Me.lblOutletID.Text = "111111111"
         '
         'lblOutlet
         '
         Me.lblOutlet.AutoSize = True
         Me.lblOutlet.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutlet.Location = New System.Drawing.Point(17, 23)
+        Me.lblOutlet.Location = New System.Drawing.Point(18, 23)
         Me.lblOutlet.Name = "lblOutlet"
         Me.lblOutlet.Size = New System.Drawing.Size(68, 13)
         Me.lblOutlet.TabIndex = 54
@@ -354,6 +355,19 @@ Partial Class frmAddNewOutlet
         Me.Label5.TabIndex = 23
         Me.Label5.Text = "Location"
         '
+        'btnAddNew
+        '
+        Me.btnAddNew.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnAddNew.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue
+        Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnAddNew.Location = New System.Drawing.Point(252, 406)
+        Me.btnAddNew.Name = "btnAddNew"
+        Me.btnAddNew.Size = New System.Drawing.Size(85, 30)
+        Me.btnAddNew.TabIndex = 17
+        Me.btnAddNew.Text = "Add"
+        Me.btnAddNew.UseVisualStyleBackColor = False
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -372,32 +386,19 @@ Partial Class frmAddNewOutlet
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(444, 10)
+        Me.btnClose.Location = New System.Drawing.Point(348, 10)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(25, 25)
         Me.btnClose.TabIndex = 50
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'btnAddNew
-        '
-        Me.btnAddNew.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnAddNew.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue
-        Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNew.Location = New System.Drawing.Point(289, 396)
-        Me.btnAddNew.Name = "btnAddNew"
-        Me.btnAddNew.Size = New System.Drawing.Size(85, 30)
-        Me.btnAddNew.TabIndex = 17
-        Me.btnAddNew.Text = "Add"
-        Me.btnAddNew.UseVisualStyleBackColor = False
-        '
         'frmAddNewOutlet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientSize = New System.Drawing.Size(476, 507)
+        Me.ClientSize = New System.Drawing.Size(379, 507)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -444,7 +445,7 @@ Partial Class frmAddNewOutlet
     Friend WithEvents txtLocationName As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpDateOfRefund As DateTimePicker
-    Friend WithEvents lblOutletUn As Label
+    Friend WithEvents lblOutletID As Label
     Friend WithEvents lblOutlet As Label
     Friend WithEvents btnAddNew As Button
 End Class

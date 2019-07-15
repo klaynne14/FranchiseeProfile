@@ -49,10 +49,11 @@ Public Class frmAddNewOutlet
 
     Private Sub frmAddNewOutlet_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
+        'modProfiling.getOId(lblOutletID)
     End Sub
 
     Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
-        Dim idFLV As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
+        'Dim idFLV As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
 
 
         Dim al As clsLocation = New clsLocation
@@ -76,9 +77,10 @@ Public Class frmAddNewOutlet
 
 
         If al.addLocation() And ap.addPackage() Then
-            MsgBox("Outlet added successfully")
-            modProfiling.displayInfo()
+            MsgBox("Added to outlet successfully")
             Me.Close()
+            pnlMain.btnAddNewOutletMain.Visible = False
+            pnlMain.btnConfirmOutlet.Visible = True
         End If
     End Sub
 

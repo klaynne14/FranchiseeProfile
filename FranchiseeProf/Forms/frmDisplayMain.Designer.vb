@@ -57,6 +57,10 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
+        Me.btnViewOutlet = New System.Windows.Forms.Button()
         Me.btnEditProfile = New System.Windows.Forms.Button()
         Me.lblFaxNumber = New System.Windows.Forms.Label()
         Me.lblTinNumber = New System.Windows.Forms.Label()
@@ -70,12 +74,16 @@ Partial Class pnlMain
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblOwnershipType = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.btnSelectedOutlet = New System.Windows.Forms.Button()
+        Me.btnEditOutlet = New System.Windows.Forms.Button()
         Me.lvOutlet = New System.Windows.Forms.ListView()
         Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BusinessUnit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Location = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Address = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.StatusClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DateOpened = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DateClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
         Me.lblTotalActive = New System.Windows.Forms.Label()
@@ -118,27 +126,20 @@ Partial Class pnlMain
         Me.lblBranch = New System.Windows.Forms.Label()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.StatusClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.DateOpened = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.DateClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
-        Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
+        Me.btnConfirmOutlet = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlBackdrop.SuspendLayout
-        Me.tcFranchisee.SuspendLayout
-        Me.tcDMS.SuspendLayout
-        Me.Panel3.SuspendLayout
-        Me.tcFranchiseProf.SuspendLayout
-        Me.tsUserStatus.SuspendLayout
-        Me.pnlUPDash.SuspendLayout
-        Me.tsFrachiseeRowStatus.SuspendLayout
-        Me.pnlUPHeader.SuspendLayout
-        Me.pnlInfo.SuspendLayout
+        Me.pnlBackdrop.SuspendLayout()
+        Me.tcFranchisee.SuspendLayout()
+        Me.tcDMS.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.tcFranchiseProf.SuspendLayout()
+        Me.tsUserStatus.SuspendLayout()
+        Me.pnlUPDash.SuspendLayout()
+        Me.tsFrachiseeRowStatus.SuspendLayout()
+        Me.pnlUPHeader.SuspendLayout()
+        Me.pnlInfo.SuspendLayout()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout
+        Me.SuspendLayout()
         '
         'lblTitle
         '
@@ -468,10 +469,11 @@ Partial Class pnlMain
         'pnlInfo
         '
         Me.pnlInfo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pnlInfo.Controls.Add(Me.btnConfirmOutlet)
         Me.pnlInfo.Controls.Add(Me.btnAddNewOutletMain)
         Me.pnlInfo.Controls.Add(Me.Label15)
         Me.pnlInfo.Controls.Add(Me.cbBusinessUnit)
-        Me.pnlInfo.Controls.Add(Me.Button1)
+        Me.pnlInfo.Controls.Add(Me.btnViewOutlet)
         Me.pnlInfo.Controls.Add(Me.btnEditProfile)
         Me.pnlInfo.Controls.Add(Me.lblFaxNumber)
         Me.pnlInfo.Controls.Add(Me.lblTinNumber)
@@ -485,7 +487,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.Label17)
         Me.pnlInfo.Controls.Add(Me.lblOwnershipType)
         Me.pnlInfo.Controls.Add(Me.Label12)
-        Me.pnlInfo.Controls.Add(Me.btnSelectedOutlet)
+        Me.pnlInfo.Controls.Add(Me.btnEditOutlet)
         Me.pnlInfo.Controls.Add(Me.lvOutlet)
         Me.pnlInfo.Controls.Add(Me.lblPermanentlyClosed)
         Me.pnlInfo.Controls.Add(Me.lblTemporaryClosed)
@@ -534,6 +536,53 @@ Partial Class pnlMain
         Me.pnlInfo.Size = New System.Drawing.Size(1001, 668)
         Me.pnlInfo.TabIndex = 18
         Me.pnlInfo.Visible = False
+        '
+        'btnAddNewOutletMain
+        '
+        Me.btnAddNewOutletMain.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnAddNewOutletMain.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddNewOutletMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNewOutletMain.ForeColor = System.Drawing.Color.White
+        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(259, 414)
+        Me.btnAddNewOutletMain.Name = "btnAddNewOutletMain"
+        Me.btnAddNewOutletMain.Size = New System.Drawing.Size(69, 23)
+        Me.btnAddNewOutletMain.TabIndex = 94
+        Me.btnAddNewOutletMain.Text = "Add New"
+        Me.btnAddNewOutletMain.UseVisualStyleBackColor = False
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label15.Location = New System.Drawing.Point(42, 420)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(83, 13)
+        Me.Label15.TabIndex = 93
+        Me.Label15.Text = "Business Unit"
+        '
+        'cbBusinessUnit
+        '
+        Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
+        Me.cbBusinessUnit.FormattingEnabled = True
+        Me.cbBusinessUnit.Items.AddRange(New Object() {" ", "Waffle Time", "Coffeebreak"})
+        Me.cbBusinessUnit.Location = New System.Drawing.Point(128, 416)
+        Me.cbBusinessUnit.Name = "cbBusinessUnit"
+        Me.cbBusinessUnit.Size = New System.Drawing.Size(125, 21)
+        Me.cbBusinessUnit.TabIndex = 92
+        Me.cbBusinessUnit.Text = " "
+        '
+        'btnViewOutlet
+        '
+        Me.btnViewOutlet.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnViewOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnViewOutlet.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnViewOutlet.Location = New System.Drawing.Point(108, 600)
+        Me.btnViewOutlet.Name = "btnViewOutlet"
+        Me.btnViewOutlet.Size = New System.Drawing.Size(60, 25)
+        Me.btnViewOutlet.TabIndex = 91
+        Me.btnViewOutlet.Text = "View"
+        Me.btnViewOutlet.UseVisualStyleBackColor = False
         '
         'btnEditProfile
         '
@@ -670,17 +719,17 @@ Partial Class pnlMain
         Me.Label12.TabIndex = 78
         Me.Label12.Text = "Ownership Type"
         '
-        'btnSelectedOutlet
+        'btnEditOutlet
         '
-        Me.btnSelectedOutlet.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnSelectedOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSelectedOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnSelectedOutlet.Location = New System.Drawing.Point(42, 600)
-        Me.btnSelectedOutlet.Name = "btnSelectedOutlet"
-        Me.btnSelectedOutlet.Size = New System.Drawing.Size(60, 25)
-        Me.btnSelectedOutlet.TabIndex = 77
-        Me.btnSelectedOutlet.Text = "Edit"
-        Me.btnSelectedOutlet.UseVisualStyleBackColor = False
+        Me.btnEditOutlet.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnEditOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditOutlet.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnEditOutlet.Location = New System.Drawing.Point(42, 600)
+        Me.btnEditOutlet.Name = "btnEditOutlet"
+        Me.btnEditOutlet.Size = New System.Drawing.Size(60, 25)
+        Me.btnEditOutlet.TabIndex = 77
+        Me.btnEditOutlet.Text = "Edit"
+        Me.btnEditOutlet.UseVisualStyleBackColor = False
         '
         'lvOutlet
         '
@@ -714,6 +763,26 @@ Partial Class pnlMain
         '
         Me.Address.Text = "Address"
         Me.Address.Width = 274
+        '
+        'Status
+        '
+        Me.Status.Text = "Status"
+        Me.Status.Width = 66
+        '
+        'StatusClosed
+        '
+        Me.StatusClosed.Text = "Status (if close)"
+        Me.StatusClosed.Width = 103
+        '
+        'DateOpened
+        '
+        Me.DateOpened.Text = "Date Opened"
+        Me.DateOpened.Width = 95
+        '
+        'DateClosed
+        '
+        Me.DateClosed.Text = "Date Closed"
+        Me.DateClosed.Width = 92
         '
         'lblPermanentlyClosed
         '
@@ -1142,71 +1211,19 @@ Partial Class pnlMain
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnConfirmOutlet
         '
-        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ForeColor = System.Drawing.SystemColors.Window
-        Me.Button1.Location = New System.Drawing.Point(108, 600)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(60, 25)
-        Me.Button1.TabIndex = 91
-        Me.Button1.Text = "View"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Status
-        '
-        Me.Status.Text = "Status"
-        Me.Status.Width = 66
-        '
-        'StatusClosed
-        '
-        Me.StatusClosed.Text = "Status (if close)"
-        Me.StatusClosed.Width = 103
-        '
-        'DateOpened
-        '
-        Me.DateOpened.Text = "Date Opened"
-        Me.DateOpened.Width = 95
-        '
-        'DateClosed
-        '
-        Me.DateClosed.Text = "Date Closed"
-        Me.DateClosed.Width = 92
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label15.Location = New System.Drawing.Point(42, 420)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(83, 13)
-        Me.Label15.TabIndex = 93
-        Me.Label15.Text = "Business Unit"
-        '
-        'cbBusinessUnit
-        '
-        Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
-        Me.cbBusinessUnit.FormattingEnabled = True
-        Me.cbBusinessUnit.Items.AddRange(New Object() {" ", "Waffle Time", "Coffeebreak"})
-        Me.cbBusinessUnit.Location = New System.Drawing.Point(128, 416)
-        Me.cbBusinessUnit.Name = "cbBusinessUnit"
-        Me.cbBusinessUnit.Size = New System.Drawing.Size(125, 21)
-        Me.cbBusinessUnit.TabIndex = 92
-        '
-        'btnAddNewOutletMain
-        '
-        Me.btnAddNewOutletMain.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnAddNewOutletMain.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddNewOutletMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNewOutletMain.ForeColor = System.Drawing.Color.White
-        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(259, 414)
-        Me.btnAddNewOutletMain.Name = "btnAddNewOutletMain"
-        Me.btnAddNewOutletMain.Size = New System.Drawing.Size(69, 23)
-        Me.btnAddNewOutletMain.TabIndex = 94
-        Me.btnAddNewOutletMain.Text = "Add New"
-        Me.btnAddNewOutletMain.UseVisualStyleBackColor = False
+        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnConfirmOutlet.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirmOutlet.ForeColor = System.Drawing.Color.White
+        Me.btnConfirmOutlet.Location = New System.Drawing.Point(334, 414)
+        Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
+        Me.btnConfirmOutlet.Size = New System.Drawing.Size(69, 23)
+        Me.btnConfirmOutlet.TabIndex = 95
+        Me.btnConfirmOutlet.Text = "Confirm"
+        Me.btnConfirmOutlet.UseVisualStyleBackColor = False
+        Me.btnConfirmOutlet.Visible = False
         '
         'pnlMain
         '
@@ -1227,22 +1244,22 @@ Partial Class pnlMain
         Me.tcFranchisee.ResumeLayout(False)
         Me.tcDMS.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout
+        Me.Panel3.PerformLayout()
         Me.tcFranchiseProf.ResumeLayout(False)
-        Me.tcFranchiseProf.PerformLayout
+        Me.tcFranchiseProf.PerformLayout()
         Me.tsUserStatus.ResumeLayout(False)
-        Me.tsUserStatus.PerformLayout
+        Me.tsUserStatus.PerformLayout()
         Me.pnlUPDash.ResumeLayout(False)
-        Me.pnlUPDash.PerformLayout
+        Me.pnlUPDash.PerformLayout()
         Me.tsFrachiseeRowStatus.ResumeLayout(False)
-        Me.tsFrachiseeRowStatus.PerformLayout
+        Me.tsFrachiseeRowStatus.PerformLayout()
         Me.pnlUPHeader.ResumeLayout(False)
-        Me.pnlUPHeader.PerformLayout
+        Me.pnlUPHeader.PerformLayout()
         Me.pnlInfo.ResumeLayout(False)
-        Me.pnlInfo.PerformLayout
+        Me.pnlInfo.PerformLayout()
         CType(Me.pbUserProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblTitle As Label
@@ -1322,7 +1339,7 @@ Partial Class pnlMain
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents lvOutlet As ListView
-    Friend WithEvents btnSelectedOutlet As Button
+    Friend WithEvents btnEditOutlet As Button
     Friend WithEvents lblFaxNumber As Label
     Friend WithEvents lblTinNumber As Label
     Friend WithEvents lblOccupation As Label
@@ -1340,7 +1357,7 @@ Partial Class pnlMain
     Friend WithEvents Location As ColumnHeader
     Friend WithEvents Address As ColumnHeader
     Friend WithEvents btnEditProfile As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnViewOutlet As Button
     Friend WithEvents Status As ColumnHeader
     Friend WithEvents StatusClosed As ColumnHeader
     Friend WithEvents DateOpened As ColumnHeader
@@ -1348,4 +1365,5 @@ Partial Class pnlMain
     Friend WithEvents Label15 As Label
     Friend WithEvents cbBusinessUnit As ComboBox
     Friend WithEvents btnAddNewOutletMain As Button
+    Friend WithEvents btnConfirmOutlet As Button
 End Class

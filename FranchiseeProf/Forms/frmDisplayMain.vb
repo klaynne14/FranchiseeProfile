@@ -34,9 +34,8 @@ Public Class pnlMain
         modProfiling.recolorListView(lvUserProfile)
     End Sub
 
-    Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs) Handles btnSelectedOutlet.Click
-        frmOutletDetails.ShowDialog()
-        'modProfiling.getOId()
+    Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
@@ -50,23 +49,43 @@ Public Class pnlMain
 
     Private Sub BtnAddNewOutletMain_Click_1(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
 
+        If cbBusinessUnit.Text = " " Then
+            MsgBox("Business unit cannot be empty!")
+        Else
+            frmAddNewOutlet.ShowDialog()
+
+        End If
+
+
+        frmAddNewOutlet.lblOutletID.Text = lblIDFranchisee.Text
+
+        modProfiling.clearTextOutlet()
+        frmAddNewOutlet.cbPackageType.Text = " "
+    End Sub
+
+    Private Sub BtnEditOutlet_Click(sender As Object, e As EventArgs) Handles btnEditOutlet.Click
+        frmUpdateOutletDetails.ShowDialog()
+    End Sub
+
+    Private Sub BtnViewOutlet_Click(sender As Object, e As EventArgs) Handles btnViewOutlet.Click
+        frmOutletDetails.ShowDialog()
+        'modProfiling.getOId()
+    End Sub
+
+    Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
+
         Dim ao As clsOutlet = New clsOutlet
         ao.FPOBusinessUnit = cbBusinessUnit.Text
         ao.idPackage = 1
         ao.idContract = 1
-        ao.idLocation = 1
+        ao.idLocation = 2
         'pass ids from forms
         ao.unFranchisee = lblIDFranchisee.Text
-
         If ao.addOutlet() Then
-            modProfiling.displayInfo()
+            MsgBox("Outlet added successfully")
             cbBusinessUnit.Text = " "
+            modProfiling.displayInfo()
         End If
 
-        frmAddNewOutlet.lblOutletUn.Text = lblIDFranchisee.Text
-        frmAddNewOutlet.ShowDialog()
-        modProfiling.clearTextOutlet()
-        'cbBusinessUnit.Text = " "
-        frmAddNewOutlet.cbPackageType.Text = " "
     End Sub
 End Class
