@@ -48,5 +48,6 @@ Public Class pnlMain
 
     Private Sub btnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
         frmUpdateFranchiseeProfile.ShowDialog()
+        'modProfiling.getFranchiseeInfoText()
     End Sub
 End Class
