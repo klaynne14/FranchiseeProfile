@@ -128,10 +128,11 @@ Partial Class frmAddNewOutlet
         '
         Me.lblOutletID.AutoSize = True
         Me.lblOutletID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutletID.Location = New System.Drawing.Point(119, 23)
+        Me.lblOutletID.Location = New System.Drawing.Point(92, 23)
         Me.lblOutletID.Name = "lblOutletID"
-        Me.lblOutletID.Size = New System.Drawing.Size(0, 13)
+        Me.lblOutletID.Size = New System.Drawing.Size(70, 13)
         Me.lblOutletID.TabIndex = 55
+        Me.lblOutletID.Text = "111111111"
         '
         'lblOutlet
         '
@@ -139,9 +140,9 @@ Partial Class frmAddNewOutlet
         Me.lblOutlet.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOutlet.Location = New System.Drawing.Point(18, 23)
         Me.lblOutlet.Name = "lblOutlet"
-        Me.lblOutlet.Size = New System.Drawing.Size(95, 13)
+        Me.lblOutlet.Size = New System.Drawing.Size(68, 13)
         Me.lblOutlet.TabIndex = 54
-        Me.lblOutlet.Text = "Franchisee ID: "
+        Me.lblOutlet.Text = "Outlet ID: "
         '
         'Label6
         '
@@ -360,7 +361,7 @@ Partial Class frmAddNewOutlet
         Me.btnAddNew.FlatAppearance.BorderColor = System.Drawing.Color.CadetBlue
         Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNew.Location = New System.Drawing.Point(252, 407)
+        Me.btnAddNew.Location = New System.Drawing.Point(252, 406)
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(85, 30)
         Me.btnAddNew.TabIndex = 17

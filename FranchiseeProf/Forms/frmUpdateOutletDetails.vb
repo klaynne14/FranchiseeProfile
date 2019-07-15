@@ -1,7 +1,7 @@
 ﻿Public Class frmUpdateOutletDetails
 
     Private Sub frmUpdateOutletDetails_Load(sender As Object, e As EventArgs) Handles Me.Load
-        modProfiling.getOId(lblOutletUn)
+        modProfiling.getfocusedOId(lblOutletUn)
     End Sub
 
     Dim lDateClosed As DateTime

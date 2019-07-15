@@ -159,8 +159,10 @@ Module modProfiling
         'Display Outlet to Outlet Listview under franchisee's ID
         Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
         modProfiling.displayOutlet(FranchiseeID)
-
         modProfiling.displayImage(focItem)
+
+        pnlMain.btnAddNewOutletMain.Visible = True
+        pnlMain.btnConfirmOutlet.Visible = False
     End Function
 
 #End Region
@@ -196,7 +198,7 @@ Module modProfiling
         Return outletList
     End Function
 
-    Public Function getOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
+    Public Function getfocusedOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
         Dim listOutlet As List(Of clsOutlet)
         Dim getidOutlet As String
         getidOutlet = pnlMain.lvOutlet.FocusedItem.Tag
@@ -209,6 +211,20 @@ Module modProfiling
         Next
         Return listOutlet
     End Function
+
+    'Public Function getOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
+    '    Dim listOutlet As List(Of clsOutlet)
+    '    Dim getidOutlet As String
+    '    getidOutlet = pnlMain.cbBusinessUnit
+    '    listOutlet = modProfiling.getIdOutlet()
+
+    '    For Each o In listOutlet
+    '        If o.idOutlet = getidOutlet Then
+    '            lblOutletID.Text = o.idOutlet
+    '        End If
+    '    Next
+    '    Return listOutlet
+    'End Function
 
     Public Function getOutletList(id As String) As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
