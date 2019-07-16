@@ -61,9 +61,9 @@ Public Class pnlMain
             ao.unFranchisee = lblIDFranchisee.Text
             If ao.addOutlet() Then
 
-                frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
+                'frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
                 modProfiling.displayInfo()
-                frmAddNewOutlet.ShowDialog()
+                'frmAddNewOutlet.ShowDialog()
                 'MsgBox("Outlet added successfully")
             End If
 
@@ -88,7 +88,7 @@ Public Class pnlMain
     Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
 
         cbBusinessUnit.Text = " "
-        modProfiling.displayInfo()
+        'modProfiling.displayInfo()
 
     End Sub
 End Class
