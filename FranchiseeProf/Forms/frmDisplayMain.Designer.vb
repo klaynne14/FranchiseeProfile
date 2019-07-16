@@ -57,6 +57,7 @@ Partial Class pnlMain
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
+        Me.btnConfirmOutlet = New System.Windows.Forms.Button()
         Me.btnAddNewOutletMain = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
@@ -126,7 +127,6 @@ Partial Class pnlMain
         Me.lblBranch = New System.Windows.Forms.Label()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
-        Me.btnConfirmOutlet = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -536,6 +536,20 @@ Partial Class pnlMain
         Me.pnlInfo.Size = New System.Drawing.Size(1001, 668)
         Me.pnlInfo.TabIndex = 18
         Me.pnlInfo.Visible = False
+        '
+        'btnConfirmOutlet
+        '
+        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnConfirmOutlet.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirmOutlet.ForeColor = System.Drawing.Color.White
+        Me.btnConfirmOutlet.Location = New System.Drawing.Point(259, 414)
+        Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
+        Me.btnConfirmOutlet.Size = New System.Drawing.Size(69, 23)
+        Me.btnConfirmOutlet.TabIndex = 95
+        Me.btnConfirmOutlet.Text = "Confirm"
+        Me.btnConfirmOutlet.UseVisualStyleBackColor = False
+        Me.btnConfirmOutlet.Visible = False
         '
         'btnAddNewOutletMain
         '
@@ -1210,20 +1224,6 @@ Partial Class pnlMain
         Me.tcProd.TabIndex = 2
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
-        '
-        'btnConfirmOutlet
-        '
-        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnConfirmOutlet.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfirmOutlet.ForeColor = System.Drawing.Color.White
-        Me.btnConfirmOutlet.Location = New System.Drawing.Point(334, 414)
-        Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
-        Me.btnConfirmOutlet.Size = New System.Drawing.Size(69, 23)
-        Me.btnConfirmOutlet.TabIndex = 95
-        Me.btnConfirmOutlet.Text = "Confirm"
-        Me.btnConfirmOutlet.UseVisualStyleBackColor = False
-        Me.btnConfirmOutlet.Visible = False
         '
         'pnlMain
         '
