@@ -60,6 +60,9 @@ Public Class pnlMain
             'pass ids from forms
             ao.unFranchisee = lblIDFranchisee.Text
             If ao.addOutlet() Then
+
+                frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
+                modProfiling.displayInfo()
                 frmAddNewOutlet.ShowDialog()
                 'MsgBox("Outlet added successfully")
             End If
@@ -67,7 +70,7 @@ Public Class pnlMain
         End If
 
 
-        frmAddNewOutlet.lblOutletID.Text = lblIDFranchisee.Text
+
 
         modProfiling.clearTextOutlet()
         frmAddNewOutlet.cbPackageType.Text = " "

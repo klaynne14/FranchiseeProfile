@@ -128,11 +128,11 @@ Partial Class frmAddNewOutlet
         '
         Me.lblOutletID.AutoSize = True
         Me.lblOutletID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutletID.Location = New System.Drawing.Point(92, 23)
+        Me.lblOutletID.Location = New System.Drawing.Point(82, 23)
         Me.lblOutletID.Name = "lblOutletID"
-        Me.lblOutletID.Size = New System.Drawing.Size(70, 13)
+        Me.lblOutletID.Size = New System.Drawing.Size(42, 13)
         Me.lblOutletID.TabIndex = 55
-        Me.lblOutletID.Text = "111111111"
+        Me.lblOutletID.Text = "11111"
         '
         'lblOutlet
         '

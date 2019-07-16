@@ -58,8 +58,8 @@ Partial Class frmOutletDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout
-        Me.SuspendLayout
+        Me.Panel1.SuspendLayout()
+        Me.SuspendLayout()
         '
         'Panel1
         '
@@ -187,6 +187,7 @@ Partial Class frmOutletDetails
         'idContract
         '
         Me.idContract.Text = "ID"
+        Me.idContract.Width = 39
         '
         'FPCStartTerm
         '
@@ -423,9 +424,9 @@ Partial Class frmOutletDetails
         Me.Name = "frmOutletDetails"
         Me.Text = "frmAddContract"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
 

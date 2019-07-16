@@ -253,7 +253,7 @@ Module modProfiling
         Dim getOutlet As New clsOutlet
         'Dim listOutlet As List(Of clsOutlet)
         Dim latestOId As Integer
-        Dim oQuery As String = "SELECT TOP 1 idOutlet FROM Outlet ORDER BY idOutlet DESC"
+        Dim oQuery As String = "SELECT TOP 1 unOutlet FROM Outlet ORDER BY unOutlet DESC"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -262,11 +262,9 @@ Module modProfiling
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
                     While oRead.Read
                         getOutlet = New clsOutlet
-                        'getOutlet.unOutlet = oRead("unOutlet")
-                        'getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
-                        getOutlet.idOutlet = oRead("idOutlet")
-                        latestOId = getOutlet.idOutlet
+                        getOutlet.unOutlet = oRead("unOutlet")
                     End While
+                    latestOId = getOutlet.unOutlet
                 End Using
             Catch ex As Exception
                 MessageBox.Show("Error @:getLatestOId() " + ex.Message)
@@ -327,7 +325,39 @@ Module modProfiling
         Return listOutlet
     End Function
 
+    Public Function insertContract()
+        Dim oQuery As String = "SELECT TOP 1 unOutlet FROM Outlet ORDER BY unOutlet DESC"
+
+
+    End Function
+
 #End Region
+
+
+    Public Function getLatestCId() As Integer
+        Dim getContract As New clsContract
+        'Dim listOutlet As List(Of clsOutlet)
+        Dim latestCId As Integer
+        Dim oQuery As String = "SELECT TOP 1 unContract FROM Contract ORDER BY unContract DESC"
+        'Dim oQuery As String = "SELECT Count(idContract) FROM Contract"
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(oQuery, oConnection)
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+                    While oRead.Read
+                        getContract = New clsContract
+                        getContract.unContract = oRead("unContract")
+                    End While
+                    latestCId = getContract.unContract
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getLatestCId() " + ex.Message)
+            End Try
+        End Using
+        Return latestCId
+    End Function
 
     Public Function clearTextOutlet()
         Dim unfControl As Control

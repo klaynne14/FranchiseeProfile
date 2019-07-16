@@ -11,8 +11,8 @@ Public Class clsOutlet
     Public unFranchisee As String
 
     Public Function addOutlet() As Boolean
-        Dim sQuery As String = "INSERT INTO Outlet (unOutlet, FPOBusinessUnit, idPackage, idContract, idLocation, unFranchisee)
-                                VALUES (((SELECT COUNT(*) FROM Outlet)+ 110000001), @FPOBusinessUnit, @idPackage, @idContract, @idLocation, @unFranchisee)"
+        Dim sQuery As String = "INSERT INTO Outlet (unOutlet, FPOBusinessUnit, unFranchisee)
+                                VALUES (((SELECT COUNT(*) FROM Outlet)+ 110000001), @FPOBusinessUnit, @unFranchisee)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -21,9 +21,9 @@ Public Class clsOutlet
                 Using oCommand As New SqlCommand(sQuery, oConnection)
 
                     oCommand.Parameters.AddWithValue("@FPOBusinessUnit", Me.FPOBusinessUnit)
-                    oCommand.Parameters.AddWithValue("@idPackage", Me.idPackage)
-                    oCommand.Parameters.AddWithValue("@idContract", Me.idContract)
-                    oCommand.Parameters.AddWithValue("@idLocation", Me.idLocation)
+                    'oCommand.Parameters.AddWithValue("@idPackage", Me.idPackage)
+                    'oCommand.Parameters.AddWithValue("@idContract", Me.idContract)
+                    'oCommand.Parameters.AddWithValue("@idLocation", Me.idLocation)
                     oCommand.Parameters.AddWithValue("@unFranchisee", Me.unFranchisee)
 
                     oCommand.ExecuteNonQuery()
