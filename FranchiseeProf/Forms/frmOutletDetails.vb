@@ -7,7 +7,9 @@ Public Class frmOutletDetails
         ac.FPCRemark = txtRemarks.Text
 
         If ac.addContract() Then
-            MsgBox("Contract added successfully")
+            modProfiling.getLatestCId()
+
+            MessageBox.Show(modProfiling.getLatestCId().ToString)
             Me.Close()
         End If
     End Sub

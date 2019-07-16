@@ -13,10 +13,10 @@ Public Class clsPackage
     Public FPPDepositRemark As String
 
     Public Function addPackage() As Boolean
-        Dim sQuery As String = "INSERT INTO Package(FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit, FPPDateOfRefund, 
+        Dim sQuery As String = "INSERT INTO Package(unPackage, FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit, FPPDateOfRefund, 
                                 FPPFranchiseRemark, FPPPackageRemark, FPPDepositRemark)
 
-                                VALUES (@FPPPackageType, @FPPFranchiseFee, @FPPPackageFee, @FPPSecurityDeposit, @FPPDateOfRefund, 
+                                VALUES (((SELECT COUNT(*) FROM Package)+ 1), @FPPPackageType, @FPPFranchiseFee, @FPPPackageFee, @FPPSecurityDeposit, @FPPDateOfRefund, 
                                 @FPPFranchiseRemark, @FPPPackageRemark, @FPPDepositRemark)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))

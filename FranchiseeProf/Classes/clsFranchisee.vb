@@ -100,30 +100,4 @@ Public Class clsFranchisee
         Return False
     End Function
 
-    'Public Function insertImage()
-    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-    '        Try
-    '            Dim OFD As FileDialog = New OpenFileDialog()
-
-    '            OFD.Filter = “Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif”
-
-    '            If OFD.ShowDialog() = DialogResult.OK Then
-    '                imgpath = OFD.FileName
-    '                Pic1.ImageLocation = imgpath
-
-    '            End If
-
-    '            OFD = Nothing
-
-
-
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message.ToString())
-    '        End Try
-    '    End Using
-    '    Return False
-
-
-    'End Function
-
 End Class

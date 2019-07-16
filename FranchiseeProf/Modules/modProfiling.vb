@@ -113,9 +113,9 @@ Module modProfiling
 
     'Display info from listview to panel
     Public Function displayInfo()
-        Dim focItem As Integer
-        focItem = pnlMain.lvUserProfile.FocusedItem.Index + 1
+        Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
         l = modProfiling.getFranchiseeList
+        Dim pb = pnlMain.pbUserProfile
 
         'Dim pm As New pnlMain
         For Each o In l
@@ -161,45 +161,46 @@ Module modProfiling
         'Display Outlet to Outlet Listview under franchisee's ID
         Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
         modProfiling.displayOutlet(FranchiseeID)
-        modProfiling.displayImage(focItem)
 
+        modProfiling.displayImage(focItem, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
         pnlMain.btnConfirmOutlet.Visible = False
     End Function
 
     Public Function getInfo()
-        Dim focItem As Integer
-        focItem = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
-        l = modProfiling.getFranchiseeList
 
+        Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
+        Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
+        l = modProfiling.getFranchiseeList
+        Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
         For Each o In l
-            If o.unFranchisee = focItem Then
+            If o.unFranchisee = unF Then
                 frmUpdateFranchiseeProfile.txtFName.Text = o.FName
                 frmUpdateFranchiseeProfile.txtMName.Text = o.MName
                 frmUpdateFranchiseeProfile.txtLName.Text = o.LName
-                '    ufp.lblIDFranchisee.Text = o.unFranchisee
-                '    ufp.lblFPFStatus.Text = o.Status
-                '    ufp.lblGender.Text = o.Gender
-                '    ufp.lblAddress1.Text = o.Address1
-                '    ufp.lblAddress2.Text = o.Address2
-                '    ufp.lblAge.Text = o.Age
-                '    ufp.lblCivilStatus.Text = o.CivilStatus
-                '    ufp.lblDateOfBirth.Text = o.DateOfBirth
-                '    ufp.lblNationality.Text = o.Nationality
-                '    ufp.lblReligion.Text = o.Religion
-                '    ufp.lblTelNum1.Text = o.TelNumber1
-                '    ufp.lblTelNum2.Text = o.TelNumber2
-                '    ufp.lblMobileNum1.Text = o.MobileNumber1
-                '    ufp.lblMobileNum2.Text = o.MobileNumber1
-                '    ufp.lblEmailAdd1.Text = o.EmailAdd1
-                '    ufp.lblEmailAdd2.Text = o.EmailAdd2
-                '    ufp.lblOwnershipType.Text = o.OwnershipType
-                '    ufp.lblCorpAuthorizedName.Text = o.CorpAuthorizedName
-                '    ufp.lblYearStarted.Text = o.YearStarted
-                '    ufp.lblTinNumber.Text = o.TinNumber
-                '    ufp.lblFaxNumber.Text = o.FaxNumber
-                '    ufp.lblOccupation.Text = o.Occupation
+                frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
+                frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
+                frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
+                frmUpdateFranchiseeProfile.txtAge.Text = o.Age
+                frmUpdateFranchiseeProfile.txtCivilStatus.Text = o.CivilStatus
+                'frmUpdateFranchiseeProfile.dtpDateOfBirth.Value.Date = o.DateOfBirth
+                frmUpdateFranchiseeProfile.txtNationality.Text = o.Nationality
+                frmUpdateFranchiseeProfile.txtReligion.Text = o.Religion
+                frmUpdateFranchiseeProfile.txtTelNum1.Text = o.TelNumber1
+                frmUpdateFranchiseeProfile.txtTelNum2.Text = o.TelNumber2
+                frmUpdateFranchiseeProfile.txtMobileNum1.Text = o.MobileNumber1
+                frmUpdateFranchiseeProfile.txtMobileNum2.Text = o.MobileNumber1
+                frmUpdateFranchiseeProfile.txtEmailAddress1.Text = o.EmailAdd1
+                frmUpdateFranchiseeProfile.txtEmailAddress2.Text = o.EmailAdd2
+                frmUpdateFranchiseeProfile.cbOwnershipType.Text = o.OwnershipType
+                frmUpdateFranchiseeProfile.txtCorpAuthorizedName.Text = o.CorpAuthorizedName
+                frmUpdateFranchiseeProfile.txtYearStarted.Text = o.YearStarted
+                frmUpdateFranchiseeProfile.txtTinNumber.Text = o.TinNumber
+                frmUpdateFranchiseeProfile.txtFaxNumber.Text = o.FaxNumber
+                frmUpdateFranchiseeProfile.txtOccupation.Text = o.Occupation
             End If
+
+            modProfiling.displayImage(focItem, pb)
         Next
     End Function
 #End Region
@@ -248,26 +249,37 @@ Module modProfiling
         Return listOutlet
     End Function
 
-    'Public Function getOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
-    '    Dim listOutlet As List(Of clsOutlet)
-    '    Dim getidOutlet As String
-    '    getidOutlet = pnlMain.cbBusinessUnit
-    '    listOutlet = modProfiling.getIdOutlet()
+    Public Function getLatestOId() As Integer
+        Dim getOutlet As New clsOutlet
+        'Dim listOutlet As List(Of clsOutlet)
+        Dim latestOId As Integer
+        Dim oQuery As String = "SELECT TOP 1 unOutlet FROM Outlet ORDER BY unOutlet DESC"
 
-    '    For Each o In listOutlet
-    '        If o.idOutlet = getidOutlet Then
-    '            lblOutletID.Text = o.idOutlet
-    '        End If
-    '    Next
-    '    Return listOutlet
-    'End Function
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(oQuery, oConnection)
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+                    While oRead.Read
+                        getOutlet = New clsOutlet
+                        getOutlet.unOutlet = oRead("unOutlet")
+                    End While
+                    latestOId = getOutlet.unOutlet
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getLatestOId() " + ex.Message)
+            End Try
+        End Using
+        Return latestOId
+    End Function
 
     Public Function getOutletList(id As String) As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
         Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit, Outlet.unLocation, Outlet.unContract
                                 FROM Outlet
-                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee"
+                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee
+                                ORDER BY idOutlet desc"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -313,7 +325,39 @@ Module modProfiling
         Return listOutlet
     End Function
 
+    Public Function insertContract()
+        Dim oQuery As String = "SELECT TOP 1 unOutlet FROM Outlet ORDER BY unOutlet DESC"
+
+
+    End Function
+
 #End Region
+
+
+    Public Function getLatestCId() As Integer
+        Dim getContract As New clsContract
+        'Dim listOutlet As List(Of clsOutlet)
+        Dim latestCId As Integer
+        Dim oQuery As String = "SELECT TOP 1 unContract FROM Contract ORDER BY unContract DESC"
+        'Dim oQuery As String = "SELECT Count(idContract) FROM Contract"
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(oQuery, oConnection)
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+                    While oRead.Read
+                        getContract = New clsContract
+                        getContract.unContract = oRead("unContract")
+                    End While
+                    latestCId = getContract.unContract
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getLatestCId() " + ex.Message)
+            End Try
+        End Using
+        Return latestCId
+    End Function
 
     Public Function clearTextOutlet()
         Dim unfControl As Control
@@ -368,10 +412,10 @@ Module modProfiling
         Return False
     End Function
 
-    Public Function displayImage(ByVal focItem As Integer)
-        Dim sQuery As String = "Select testImage from Image where idImage=" & Val(focItem)
+    Public Function displayImage(ByVal focItem As Integer, ByVal pb As PictureBox)
+        Dim sQuery As String = "Select FPFImage from Franchisee where idFranchisee=" & Val(focItem)
 
-        Using oConnection As New SqlConnection(getConnection("ImageTest"))
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(sQuery, oConnection)
@@ -381,10 +425,10 @@ Module modProfiling
                     mstream.Write(arrImage, 0, arrImage.Length)
 
                     Dim bitmap As New Bitmap(mstream)
-                    pnlMain.pbUserProfile.Image = bitmap
+                    pb.Image = bitmap
                 End Using
             Catch ex As Exception
-                MsgBox(ex.Message)
+                MsgBox("@displayImage " + ex.Message)
             End Try
         End Using
     End Function

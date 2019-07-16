@@ -24,6 +24,7 @@ Partial Class frmCreateNewFranchisee
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCreateNewFranchisee))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cbCivilStatus = New System.Windows.Forms.ComboBox()
         Me.pbFranchisee = New System.Windows.Forms.PictureBox()
         Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.lblYearStart = New System.Windows.Forms.Label()
@@ -75,7 +76,6 @@ Partial Class frmCreateNewFranchisee
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.cbCivilStatus = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.pbFranchisee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -137,6 +137,16 @@ Partial Class frmCreateNewFranchisee
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(958, 388)
         Me.Panel1.TabIndex = 0
+        '
+        'cbCivilStatus
+        '
+        Me.cbCivilStatus.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCivilStatus.FormattingEnabled = True
+        Me.cbCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Divorced", "Separated", "Widowed"})
+        Me.cbCivilStatus.Location = New System.Drawing.Point(150, 205)
+        Me.cbCivilStatus.Name = "cbCivilStatus"
+        Me.cbCivilStatus.Size = New System.Drawing.Size(115, 21)
+        Me.cbCivilStatus.TabIndex = 100
         '
         'pbFranchisee
         '
@@ -473,6 +483,7 @@ Partial Class frmCreateNewFranchisee
         Me.txtAge.Name = "txtAge"
         Me.txtAge.Size = New System.Drawing.Size(50, 21)
         Me.txtAge.TabIndex = 68
+        Me.txtAge.Text = " "
         '
         'Label10
         '
@@ -726,16 +737,6 @@ Partial Class frmCreateNewFranchisee
         Me.btnClose.TabIndex = 49
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
-        '
-        'cbCivilStatus
-        '
-        Me.cbCivilStatus.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbCivilStatus.FormattingEnabled = True
-        Me.cbCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Divorced", "Separated", "Widowed"})
-        Me.cbCivilStatus.Location = New System.Drawing.Point(150, 205)
-        Me.cbCivilStatus.Name = "cbCivilStatus"
-        Me.cbCivilStatus.Size = New System.Drawing.Size(115, 21)
-        Me.cbCivilStatus.TabIndex = 100
         '
         'frmCreateNewFranchisee
         '

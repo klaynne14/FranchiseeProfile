@@ -7,8 +7,8 @@ Public Class clsContract
     Public FPCRemark As String
 
     Public Function addContract() As Boolean
-        Dim sQuery As String = "INSERT INTO Contract(FPCStartTerm, FPCEndTerm, FPCRemark)
-                                VALUES (@FPCStartTerm, @FPCEndTerm, @FPCRemark)"
+        Dim sQuery As String = "INSERT INTO Contract(unContract, FPCStartTerm, FPCEndTerm, FPCRemark)
+                                VALUES (((SELECT COUNT(*) FROM contract)+ 1), @FPCStartTerm, @FPCEndTerm, @FPCRemark)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try

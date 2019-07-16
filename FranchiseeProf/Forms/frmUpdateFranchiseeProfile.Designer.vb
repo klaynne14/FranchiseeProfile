@@ -23,7 +23,7 @@ Partial Class frmUpdateFranchiseeProfile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pbUserPhoto = New System.Windows.Forms.PictureBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.lblYearStart = New System.Windows.Forms.Label()
@@ -77,13 +77,13 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbUserPhoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.pbUserPhoto)
         Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
         Me.Panel1.Controls.Add(Me.lblYearStart)
@@ -139,13 +139,14 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Panel1.Size = New System.Drawing.Size(958, 388)
         Me.Panel1.TabIndex = 1
         '
-        'PictureBox1
+        'pbUserPhoto
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(34, 69)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(95, 95)
-        Me.PictureBox1.TabIndex = 98
-        Me.PictureBox1.TabStop = False
+        Me.pbUserPhoto.BackColor = System.Drawing.Color.LightGray
+        Me.pbUserPhoto.Location = New System.Drawing.Point(34, 69)
+        Me.pbUserPhoto.Name = "pbUserPhoto"
+        Me.pbUserPhoto.Size = New System.Drawing.Size(95, 95)
+        Me.pbUserPhoto.TabIndex = 98
+        Me.pbUserPhoto.TabStop = False
         '
         'LinkLabel1
         '
@@ -166,6 +167,7 @@ Partial Class frmUpdateFranchiseeProfile
         Me.dtpDateOfBirth.Name = "dtpDateOfBirth"
         Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 21)
         Me.dtpDateOfBirth.TabIndex = 96
+        Me.dtpDateOfBirth.Value = New Date(2019, 7, 15, 0, 0, 0, 0)
         '
         'lblYearStart
         '
@@ -177,7 +179,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.lblYearStart.Size = New System.Drawing.Size(78, 13)
         Me.lblYearStart.TabIndex = 95
         Me.lblYearStart.Text = "Year Started"
-        Me.lblYearStart.Visible = False
         '
         'txtYearStarted
         '
@@ -190,7 +191,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.txtYearStarted.Name = "txtYearStarted"
         Me.txtYearStarted.Size = New System.Drawing.Size(80, 21)
         Me.txtYearStarted.TabIndex = 94
-        Me.txtYearStarted.Visible = False
         '
         'lblIfCorp
         '
@@ -202,7 +202,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.lblIfCorp.Size = New System.Drawing.Size(265, 13)
         Me.lblIfCorp.TabIndex = 93
         Me.lblIfCorp.Text = "If corporation, Name of Authorized Signatory"
-        Me.lblIfCorp.Visible = False
         '
         'txtCorpAuthorizedName
         '
@@ -215,7 +214,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.txtCorpAuthorizedName.Name = "txtCorpAuthorizedName"
         Me.txtCorpAuthorizedName.Size = New System.Drawing.Size(262, 21)
         Me.txtCorpAuthorizedName.TabIndex = 92
-        Me.txtCorpAuthorizedName.Visible = False
         '
         'Label21
         '
@@ -764,7 +762,7 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Text = "frmUpdateFranchiseeProfile"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbUserPhoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -821,7 +819,7 @@ Partial Class frmUpdateFranchiseeProfile
     Friend WithEvents lblPersoInfo As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnClose As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pbUserPhoto As PictureBox
     Friend WithEvents LinkLabel1 As LinkLabel
     Private WithEvents dtpDateOfBirth As DateTimePicker
 End Class
