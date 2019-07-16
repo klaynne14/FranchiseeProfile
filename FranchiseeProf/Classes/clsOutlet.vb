@@ -5,14 +5,14 @@ Public Class clsOutlet
     Public idOutlet As Integer
     Public unOutlet As Integer
     Public FPOBusinessUnit As String
-    Public idPackage As Integer
-    Public idContract As Integer
-    Public idLocation As Integer
+    Public unPackage As Integer
+    Public unContract As Integer
+    Public unLocation As Integer
     Public unFranchisee As String
 
     Public Function addOutlet() As Boolean
-        Dim sQuery As String = "INSERT INTO Outlet (FPOBusinessUnit, idPackage, idContract, idLocation, unFranchisee)
-                                VALUES (@FPOBusinessUnit, @idPackage, @idContract, @idLocation, @unFranchisee)"
+        Dim sQuery As String = "INSERT INTO Outlet (FPOBusinessUnit, unPackage, unContract, unLocation, unFranchisee)
+                                VALUES (@FPOBusinessUnit, (Select count(idPackage) from Package), (Select count(idContract) from [Contract]), (Select count(idLocation) from Location), @unFranchisee)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -21,9 +21,6 @@ Public Class clsOutlet
                 Using oCommand As New SqlCommand(sQuery, oConnection)
 
                     oCommand.Parameters.AddWithValue("@FPOBusinessUnit", Me.FPOBusinessUnit)
-                    oCommand.Parameters.AddWithValue("@idPackage", Me.idPackage)
-                    oCommand.Parameters.AddWithValue("@idContract", Me.idContract)
-                    oCommand.Parameters.AddWithValue("@idLocation", Me.idLocation)
                     oCommand.Parameters.AddWithValue("@unFranchisee", Me.unFranchisee)
 
                     oCommand.ExecuteNonQuery()

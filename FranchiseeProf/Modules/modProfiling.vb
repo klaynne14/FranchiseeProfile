@@ -265,7 +265,7 @@ Module modProfiling
     Public Function getOutletList(id As String) As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
-        Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit, Outlet.idLocation, Outlet.idContract
+        Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit, Outlet.unLocation, Outlet.unContract
                                 FROM Outlet
                                 INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee"
 
@@ -283,8 +283,8 @@ Module modProfiling
                         getOutlet.idOutlet = oRead("idOutlet")
                         getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
                         'getOutlet.unFranchisee = oRead("unFranchisee")
-                        getOutlet.idContract = oRead("idContract")
-                        getOutlet.idLocation = oRead("idLocation")
+                        getOutlet.unContract = oRead("unContract")
+                        getOutlet.unLocation = oRead("unLocation")
 
                         outletList.Add(getOutlet)
                     End While
@@ -304,8 +304,8 @@ Module modProfiling
             Dim oItem As New ListViewItem()
             oItem.Text = item.idOutlet
             oItem.SubItems.Add(item.FPOBusinessUnit)
-            oItem.SubItems.Add(item.idLocation)
-            oItem.SubItems.Add(item.idContract)
+            oItem.SubItems.Add(item.unLocation)
+            oItem.SubItems.Add(item.unContract)
             oItem.Tag = item.idOutlet
 
             pnlMain.lvOutlet.Items.Add(oItem)
