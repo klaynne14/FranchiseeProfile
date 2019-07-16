@@ -11,8 +11,8 @@ Public Class clsLocation
     Public FPLStatusClosed As String
 
     Public Function addLocation() As Boolean
-        Dim sQuery As String = "INSERT INTO Location (FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus)
-                                VALUES (@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus)"
+        Dim sQuery As String = "INSERT INTO Location (unLocation, FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus)
+                                VALUES (((SELECT COUNT(*) FROM Location)+ 1),@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try

@@ -52,7 +52,17 @@ Public Class pnlMain
         If cbBusinessUnit.Text = " " Then
             MsgBox("Business unit cannot be empty!")
         Else
-            frmAddNewOutlet.ShowDialog()
+            Dim ao As clsOutlet = New clsOutlet
+            ao.FPOBusinessUnit = cbBusinessUnit.Text
+            'ao.idPackage = 1
+            'ao.idContract = 1
+            'ao.idLocation = 2
+            'pass ids from forms
+            ao.unFranchisee = lblIDFranchisee.Text
+            If ao.addOutlet() Then
+                frmAddNewOutlet.ShowDialog()
+                'MsgBox("Outlet added successfully")
+            End If
 
         End If
 
@@ -74,18 +84,8 @@ Public Class pnlMain
 
     Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
 
-        Dim ao As clsOutlet = New clsOutlet
-        ao.FPOBusinessUnit = cbBusinessUnit.Text
-        ao.idPackage = 1
-        ao.idContract = 1
-        ao.idLocation = 2
-        'pass ids from forms
-        ao.unFranchisee = lblIDFranchisee.Text
-        If ao.addOutlet() Then
-            MsgBox("Outlet added successfully")
-            cbBusinessUnit.Text = " "
-            modProfiling.displayInfo()
-        End If
+        cbBusinessUnit.Text = " "
+        modProfiling.displayInfo()
 
     End Sub
 End Class

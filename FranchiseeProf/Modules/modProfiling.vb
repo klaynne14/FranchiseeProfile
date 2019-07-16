@@ -161,8 +161,8 @@ Module modProfiling
         'Display Outlet to Outlet Listview under franchisee's ID
         Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
         modProfiling.displayOutlet(FranchiseeID)
-        modProfiling.displayImage(focItem, pb)
 
+        modProfiling.displayImage(focItem, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
         pnlMain.btnConfirmOutlet.Visible = False
     End Function
@@ -249,26 +249,39 @@ Module modProfiling
         Return listOutlet
     End Function
 
-    'Public Function getOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
-    '    Dim listOutlet As List(Of clsOutlet)
-    '    Dim getidOutlet As String
-    '    getidOutlet = pnlMain.cbBusinessUnit
-    '    listOutlet = modProfiling.getIdOutlet()
+    Public Function getLatestOId() As Integer
+        Dim getOutlet As New clsOutlet
+        'Dim listOutlet As List(Of clsOutlet)
+        Dim latestOId As Integer
+        Dim oQuery As String = "SELECT TOP 1 idOutlet FROM Outlet ORDER BY idOutlet DESC"
 
-    '    For Each o In listOutlet
-    '        If o.idOutlet = getidOutlet Then
-    '            lblOutletID.Text = o.idOutlet
-    '        End If
-    '    Next
-    '    Return listOutlet
-    'End Function
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(oQuery, oConnection)
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+                    While oRead.Read
+                        getOutlet = New clsOutlet
+                        'getOutlet.unOutlet = oRead("unOutlet")
+                        'getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        getOutlet.idOutlet = oRead("idOutlet")
+                        latestOId = getOutlet.idOutlet
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getLatestOId() " + ex.Message)
+            End Try
+        End Using
+        Return latestOId
+    End Function
 
     Public Function getOutletList(id As String) As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
-        Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit, Outlet.idLocation, Outlet.idContract
+        Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit
                                 FROM Outlet
-                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee"
+                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee
+                                ORDER BY idOutlet desc"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -284,8 +297,8 @@ Module modProfiling
                         getOutlet.idOutlet = oRead("idOutlet")
                         getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
                         'getOutlet.unFranchisee = oRead("unFranchisee")
-                        getOutlet.idContract = oRead("idContract")
-                        getOutlet.idLocation = oRead("idLocation")
+                        'getOutlet.idContract = oRead("idContract")
+                        'getOutlet.idLocation = oRead("idLocation")
 
                         outletList.Add(getOutlet)
                     End While
@@ -369,10 +382,10 @@ Module modProfiling
         Return False
     End Function
 
-    Public Function displayImage(ByVal focItem As Integer, ByVal picbox As PictureBox)
-        Dim sQuery As String = "Select testImage from Image where idImage=" & Val(focItem)
+    Public Function displayImage(ByVal focItem As Integer, ByVal pb As PictureBox)
+        Dim sQuery As String = "Select FPFImage from Franchisee where idFranchisee=" & Val(focItem)
 
-        Using oConnection As New SqlConnection(getConnection("ImageTest"))
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(sQuery, oConnection)
@@ -382,10 +395,10 @@ Module modProfiling
                     mstream.Write(arrImage, 0, arrImage.Length)
 
                     Dim bitmap As New Bitmap(mstream)
-                    picbox.Image = bitmap
+                    pb.Image = bitmap
                 End Using
             Catch ex As Exception
-                MsgBox(ex.Message)
+                MsgBox("@displayImage " + ex.Message)
             End Try
         End Using
     End Function

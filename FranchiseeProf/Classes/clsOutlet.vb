@@ -11,8 +11,8 @@ Public Class clsOutlet
     Public unFranchisee As String
 
     Public Function addOutlet() As Boolean
-        Dim sQuery As String = "INSERT INTO Outlet (FPOBusinessUnit, idPackage, idContract, idLocation, unFranchisee)
-                                VALUES (@FPOBusinessUnit, @idPackage, @idContract, @idLocation, @unFranchisee)"
+        Dim sQuery As String = "INSERT INTO Outlet (unOutlet, FPOBusinessUnit, idPackage, idContract, idLocation, unFranchisee)
+                                VALUES (((SELECT COUNT(*) FROM Outlet)+ 110000001), @FPOBusinessUnit, @idPackage, @idContract, @idLocation, @unFranchisee)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
