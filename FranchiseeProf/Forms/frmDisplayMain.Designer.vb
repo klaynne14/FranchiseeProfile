@@ -127,6 +127,7 @@ Partial Class pnlMain
         Me.lblBranch = New System.Windows.Forms.Label()
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -1225,12 +1226,22 @@ Partial Class pnlMain
         Me.tcProd.Text = "Production (Dry)"
         Me.tcProd.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(802, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1366, 768)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.pnlBackdrop)
         Me.Controls.Add(Me.lblMainHeader2)
         Me.Controls.Add(Me.lblMainHeader1)
@@ -1366,4 +1377,5 @@ Partial Class pnlMain
     Friend WithEvents cbBusinessUnit As ComboBox
     Friend WithEvents btnAddNewOutletMain As Button
     Friend WithEvents btnConfirmOutlet As Button
+    Friend WithEvents Button1 As Button
 End Class
