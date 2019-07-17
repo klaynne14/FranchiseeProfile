@@ -5,8 +5,8 @@ Public Class clsLocation
     Public FPLLocationName As String
     Public FPLCurrentAddress As String
     Public FPLOldAddress As String
-    Public FPLDateOpened As DateTime
-    Public FPLDateClosed As DateTime
+    Public FPLDateOpened As Date
+    Public FPLDateClosed As Date
     Public FPLStatus As String
     Public FPLStatusClosed As String
     Public unOutlet As Integer

@@ -7,7 +7,7 @@ Public Class clsPackage
     Public FPPFranchiseFee As Integer
     Public FPPPackageFee As Integer
     Public FPPSecurityDeposit As Integer
-    Public FPPDateOfRefund As DateTime
+    Public FPPDateOfRefund As Date
     Public FPPFranchiseRemark As String
     Public FPPPackageRemark As String
     Public FPPDepositRemark As String

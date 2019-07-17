@@ -24,7 +24,7 @@ Partial Class frmOutletDetails
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.lblDateOfRefund = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btnConfirmOutlet = New System.Windows.Forms.Button()
         Me.lblOutletID = New System.Windows.Forms.Label()
@@ -65,7 +65,7 @@ Partial Class frmOutletDetails
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.Controls.Add(Me.LinkLabel1)
-        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.lblDateOfRefund)
         Me.Panel1.Controls.Add(Me.Label17)
         Me.Panel1.Controls.Add(Me.btnConfirmOutlet)
         Me.Panel1.Controls.Add(Me.lblOutletID)
@@ -110,14 +110,14 @@ Partial Class frmOutletDetails
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Edit Package"
         '
-        'Label16
+        'lblDateOfRefund
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(343, 174)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(86, 13)
-        Me.Label16.TabIndex = 41
-        Me.Label16.Text = "lblDateOfRefund"
+        Me.lblDateOfRefund.AutoSize = True
+        Me.lblDateOfRefund.Location = New System.Drawing.Point(343, 174)
+        Me.lblDateOfRefund.Name = "lblDateOfRefund"
+        Me.lblDateOfRefund.Size = New System.Drawing.Size(86, 13)
+        Me.lblDateOfRefund.TabIndex = 41
+        Me.lblDateOfRefund.Text = "lblDateOfRefund"
         '
         'Label17
         '
@@ -472,7 +472,7 @@ Partial Class frmOutletDetails
     Friend WithEvents dtpDateClosed As DateTimePicker
     Friend WithEvents btnSubmit As Button
     Friend WithEvents btnConfirmOutlet As Button
-    Friend WithEvents Label16 As Label
+    Friend WithEvents lblDateOfRefund As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
 End Class
