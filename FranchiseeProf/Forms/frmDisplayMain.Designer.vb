@@ -754,7 +754,7 @@ Partial Class pnlMain
         Me.lvOutlet.FullRowSelect = True
         Me.lvOutlet.Location = New System.Drawing.Point(42, 448)
         Me.lvOutlet.Name = "lvOutlet"
-        Me.lvOutlet.Size = New System.Drawing.Size(917, 146)
+        Me.lvOutlet.Size = New System.Drawing.Size(926, 146)
         Me.lvOutlet.TabIndex = 76
         Me.lvOutlet.UseCompatibleStateImageBehavior = False
         Me.lvOutlet.View = System.Windows.Forms.View.Details
@@ -767,7 +767,7 @@ Partial Class pnlMain
         'BusinessUnit
         '
         Me.BusinessUnit.Text = "Business Unit"
-        Me.BusinessUnit.Width = 100
+        Me.BusinessUnit.Width = 111
         '
         'Location
         '

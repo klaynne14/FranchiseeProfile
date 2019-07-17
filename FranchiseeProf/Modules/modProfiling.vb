@@ -39,7 +39,7 @@ Module modProfiling
         Dim fsQuery As String = "Select idFranchisee, unFranchisee, FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                     FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                     FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
-                                FROM Franchisee Order by idFranchisee"
+                                    FROM Franchisee Order by idFranchisee"
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
@@ -117,7 +117,7 @@ Module modProfiling
         Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
         l = modProfiling.getFranchiseeList
         Dim pb = pnlMain.pbUserProfile
-        Dim FranchiseeID As Integer        'Dim pm As New pnlMain
+        Dim FranchiseeID As Integer
         For Each o In l
             If o.unFranchisee = focItemUn Then
                 pnlMain.lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
@@ -414,7 +414,7 @@ Module modProfiling
     Public Function getPackageList(unO As Integer) As List(Of clsPackage)
         Dim packageList As List(Of clsPackage) = New List(Of clsPackage)
         Dim getPackage As New clsPackage
-        Dim sQuery As String = "SELECT FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit, FPPDateOfRefund, FPPFranchiseRemark, FPPDepositRemark
+        Dim sQuery As String = "SELECT Package.unOutlet, FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit, FPPDateOfRefund, FPPFranchiseRemark, FPPPackageRemark, FPPDepositRemark
                                 FROM Package
                                 INNER JOIN Outlet On Package.unOutlet = Outlet.unOutlet where Outlet.unOutlet = @unOutlet"
 
@@ -423,13 +423,13 @@ Module modProfiling
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
 
-                    oCom.Parameters.AddWithValue("unOutlet", unO)
+                    oCom.Parameters.AddWithValue("@unOutlet", unO)
 
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
 
                     While oRead.Read
                         getPackage = New clsPackage
-                        getPackage.unPackage = oRead("unPackage")
+                        getPackage.unOutlet = oRead("unOutlet")
                         getPackage.FPPPackageType = oRead("FPPPackageType")
                         getPackage.FPPFranchiseFee = oRead("FPPFranchiseFee")
                         getPackage.FPPPackageFee = oRead("FPPPackageFee")
@@ -443,28 +443,30 @@ Module modProfiling
                     End While
                 End Using
             Catch ex As Exception
-                MessageBox.Show("Error @:getContractList() " + ex.Message)
+                MessageBox.Show("Error @:getPackageList() " + ex.Message)
             End Try
         End Using
         Return packageList
 
     End Function
 
-    Public Function displayInfoPackage(unO As Integer)
-        Dim unOutlet As Integer = frmOutletDetails.lblOutletID.Text
+    Public Function displayInfoPackage(unO As Integer) As List(Of clsPackage)
+        Dim focItemUn As Integer = frmOutletDetails.lblOutletID.Text
         Dim listPackage As List(Of clsPackage) = modProfiling.getPackageList(unO)
 
         For Each o In listPackage
-            Dim frm = New frmOutletDetails
-            frm.lblFranchiseFee.Text = o.FPPFranchiseFee
-            frm.lblFranchiseRemarks.Text = o.FPPFranchiseFee
-            frm.lblPackageFee.Text = o.FPPFranchiseFee
-            frm.lblPackageRemarks.Text = o.FPPFranchiseFee
-            frm.lblSecurityDeposit.Text = o.FPPFranchiseFee
-            frm.lblDepositRemarks.Text = o.FPPFranchiseFee
-            frm.lblDateOfRefund.Text = o.FPPFranchiseFee
+            If o.unOutlet = focItemUn Then
+                frmOutletDetails.lblPackageType.Text = o.FPPPackageType
+                frmOutletDetails.lblFranchiseFee.Text = o.FPPFranchiseFee
+                frmOutletDetails.lblFranchiseRemarks.Text = o.FPPFranchiseRemark
+                frmOutletDetails.lblPackageFee.Text = o.FPPPackageFee
+                frmOutletDetails.lblPackageRemarks.Text = o.FPPPackageRemark
+                frmOutletDetails.lblSecurityDeposit.Text = o.FPPSecurityDeposit
+                frmOutletDetails.lblDepositRemarks.Text = o.FPPDepositRemark
+                frmOutletDetails.lblDateOfRefund.Text = o.FPPDateOfRefund
+            End If
         Next
-
+        Return listPackage
     End Function
 
 #End Region
