@@ -17,7 +17,7 @@ Public Class clsFranchisee
     Public Address1 As String
     Public Address2 As String
     Public TinNumber As String
-    Public DateOfBirth As DateTime
+    Public DateOfBirth As Date
     Public Age As Integer
     Public Gender As String
     Public CivilStatus As String

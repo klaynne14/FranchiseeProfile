@@ -112,7 +112,7 @@ Module modProfiling
 
 
     'Display info from listview to panel
-    Public Function displayInfo()
+    Public Function displayInfoFranchisee()
         Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
         Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
         l = modProfiling.getFranchiseeList
@@ -327,6 +327,8 @@ Module modProfiling
     End Function
 
 #End Region
+
+#Region "Contract"
     Public Function getContractList(unO As Integer) As List(Of clsContract)
         Dim contractList As List(Of clsContract) = New List(Of clsContract)
         Dim getContract As New clsContract
@@ -404,6 +406,68 @@ Module modProfiling
     '    End Using
     '    Return latestCId
     'End Function
+
+#End Region
+
+#Region "Package"
+
+    Public Function getPackageList(unO As Integer) As List(Of clsPackage)
+        Dim packageList As List(Of clsPackage) = New List(Of clsPackage)
+        Dim getPackage As New clsPackage
+        Dim sQuery As String = "SELECT FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit, FPPDateOfRefund, FPPFranchiseRemark, FPPDepositRemark
+                                FROM Package
+                                INNER JOIN Outlet On Package.unOutlet = Outlet.unOutlet where Outlet.unOutlet = @unOutlet"
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    oCom.Parameters.AddWithValue("unOutlet", unO)
+
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+
+                    While oRead.Read
+                        getPackage = New clsPackage
+                        getPackage.unPackage = oRead("unPackage")
+                        getPackage.FPPPackageType = oRead("FPPPackageType")
+                        getPackage.FPPFranchiseFee = oRead("FPPFranchiseFee")
+                        getPackage.FPPPackageFee = oRead("FPPPackageFee")
+                        getPackage.FPPSecurityDeposit = oRead("FPPSecurityDeposit")
+                        getPackage.FPPFranchiseRemark = oRead("FPPFranchiseRemark")
+                        getPackage.FPPPackageRemark = oRead("FPPPackageRemark")
+                        getPackage.FPPDepositRemark = oRead("FPPDepositRemark")
+                        getPackage.FPPDateOfRefund = oRead("FPPDateOfRefund")
+
+                        packageList.Add(getPackage)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getContractList() " + ex.Message)
+            End Try
+        End Using
+        Return packageList
+
+    End Function
+
+    Public Function displayInfoPackage(unO As Integer)
+        Dim unOutlet As Integer = frmOutletDetails.lblOutletID.Text
+        Dim listPackage As List(Of clsPackage) = modProfiling.getPackageList(unO)
+
+        For Each o In listPackage
+            Dim frm = New frmOutletDetails
+            frm.lblFranchiseFee.Text = o.FPPFranchiseFee
+            frm.lblFranchiseRemarks.Text = o.FPPFranchiseFee
+            frm.lblPackageFee.Text = o.FPPFranchiseFee
+            frm.lblPackageRemarks.Text = o.FPPFranchiseFee
+            frm.lblSecurityDeposit.Text = o.FPPFranchiseFee
+            frm.lblDepositRemarks.Text = o.FPPFranchiseFee
+            frm.lblDateOfRefund.Text = o.FPPFranchiseFee
+        Next
+
+    End Function
+
+#End Region
 
     Public Function clearTextOutlet()
         Dim unfControl As Control

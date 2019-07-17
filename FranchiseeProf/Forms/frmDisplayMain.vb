@@ -29,7 +29,7 @@ Public Class pnlMain
     Private Sub lvUserProfile_DoubleClick(sender As Object, e As EventArgs) Handles lvUserProfile.DoubleClick
         'Dim idFLV As Integer = lvUserProfile.FocusedItem.Index + 1
         pnlInfo.Show()
-        modProfiling.displayInfo()
+        modProfiling.displayInfoFranchisee()
         modProfiling.getInfo()
         modProfiling.recolorListView(lvUserProfile)
     End Sub
@@ -54,22 +54,15 @@ Public Class pnlMain
         Else
             Dim ao As clsOutlet = New clsOutlet
             ao.FPOBusinessUnit = cbBusinessUnit.Text
-            'ao.idPackage = 1
-            'ao.idLocation = 2
-            'pass ids from forms
             ao.unFranchisee = lblIDFranchisee.Text
             If ao.addOutlet() Then
+                frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
+                'modProfiling.displayInfo()
+                frmAddNewOutlet.ShowDialog()
 
-                'frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
-                modProfiling.displayInfo()
-                'frmAddNewOutlet.ShowDialog()
-                'MsgBox("Outlet added successfully")
             End If
 
         End If
-
-
-
 
         modProfiling.clearTextOutlet()
         frmAddNewOutlet.cbPackageType.Text = " "
@@ -87,7 +80,8 @@ Public Class pnlMain
     Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
 
         cbBusinessUnit.Text = " "
-        'modProfiling.displayInfo()
+        modProfiling.displayInfoFranchisee()
+        'MsgBox("Outlet added successfully")
 
     End Sub
 End Class
