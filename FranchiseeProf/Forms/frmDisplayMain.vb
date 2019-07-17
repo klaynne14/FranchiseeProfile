@@ -74,6 +74,7 @@ Public Class pnlMain
 
     Private Sub BtnViewOutlet_Click(sender As Object, e As EventArgs) Handles btnViewOutlet.Click
         frmOutletDetails.ShowDialog()
+
         'modProfiling.getOId()
     End Sub
 

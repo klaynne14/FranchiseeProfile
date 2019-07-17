@@ -5,6 +5,7 @@ Public Class frmOutletDetails
 
         Dim unO As Integer = lblOutletID.Text
         modProfiling.displayContract(unO)
+        modProfiling.displayInfoPackage(unO)
 
     End Sub
     Private Sub BtnAddContract_Click(sender As Object, e As EventArgs) Handles btnAddContract.Click
@@ -19,6 +20,7 @@ Public Class frmOutletDetails
             'MessageBox.Show(modProfiling.getLatestCId().ToString)
             Dim unO As Integer = ac.unOutlet
             modProfiling.displayContract(unO)
+
             clearText()
         End If
     End Sub
