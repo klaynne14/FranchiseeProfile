@@ -13,7 +13,7 @@ Public Class clsOutlet
     Public Function addOutlet() As Boolean
         Dim sQuery As String = "INSERT INTO Outlet (unOutlet, FPOBusinessUnit, unFranchisee)
                                 VALUES (((SELECT COUNT(*) FROM Outlet)+ 110000001), @FPOBusinessUnit, @unFranchisee)"
-
+        Dim ol As New clsOutletLoc
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
@@ -24,6 +24,7 @@ Public Class clsOutlet
                     oCommand.Parameters.AddWithValue("@unFranchisee", Me.unFranchisee)
 
                     oCommand.ExecuteNonQuery()
+                    ol.mergeList()
                     Return True
                 End Using
             Catch ex As Exception

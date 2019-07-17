@@ -750,7 +750,7 @@ Partial Class pnlMain
         '
         Me.lvOutlet.BackColor = System.Drawing.Color.White
         Me.lvOutlet.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.BusinessUnit, Me.Location, Me.Address, Me.Status, Me.StatusClosed, Me.DateOpened, Me.DateClosed})
+        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.BusinessUnit, Me.Location, Me.Address, Me.DateOpened, Me.Status, Me.StatusClosed, Me.DateClosed})
         Me.lvOutlet.FullRowSelect = True
         Me.lvOutlet.Location = New System.Drawing.Point(42, 448)
         Me.lvOutlet.Name = "lvOutlet"

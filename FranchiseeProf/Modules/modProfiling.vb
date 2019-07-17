@@ -2,7 +2,47 @@ Imports System.Data.SqlClient
 Imports System.IO
 
 Module modProfiling
+    Public Class clsOutletLoc
 
+        'Public idOutlet As Integer
+        Public FPOBusinessUnit As String
+        Public unFranchisee As String
+
+        Public unOutlet As Integer
+
+        'Public idLocation As Integer
+        'Public unLocation As Integer
+        Public FPLLocationName As String
+        Public FPLCurrentAddress As String
+        Public FPLDateOpened As Date
+        Public FPLDateClosed As Date
+        Public FPLStatus As String
+        Public FPLStatusClosed As String
+
+        Public Function mergeList() As Boolean
+            Dim olList As New List(Of clsOutletLoc)
+            Dim ol As clsOutletLoc
+            Dim o As New clsOutlet
+            Dim l As New clsLocation
+            Try
+                ol = New clsOutletLoc
+                ol.unOutlet = o.unOutlet
+                ol.FPOBusinessUnit = o.FPOBusinessUnit
+                ol.FPLLocationName = l.FPLLocationName
+                ol.FPLCurrentAddress = l.FPLCurrentAddress
+                ol.FPLDateOpened = l.FPLDateOpened
+                ol.FPLDateClosed = l.FPLDateClosed
+                ol.FPLStatus = l.FPLStatus
+                ol.FPLStatusClosed = l.FPLStatus
+                Return True
+
+            Catch ex As Exception
+                MsgBox("@mergeList: " + ex.Message)
+            End Try
+
+            Return False
+        End Function
+    End Class
 #Region "Franchisee Methods"
 
     'Get franchisee list details to display in list view
@@ -88,68 +128,71 @@ Module modProfiling
         Return franchiseeList
     End Function
 
-    'Public Function getOutletLocList(ByVal unF As Integer) As List(Of clsOutletLocation)
-    '    Dim outletLocList As List(Of clsOutletLocation) = New List(Of clsOutletLocation)
-    '    Dim ol As New clsOutletLocation
-    '    Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit, Location.FPLLocationName, Location.FPLCurrentAddress, 
-    '                             Location.FPLDateOpened, Location.FPLStatus, Location.FPLStatusClosed, Location.FPLDateClosed
-    '                             FROM Outlet 
-    '                             JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
-    '                             JOIN Location On Location.unOutlet = Outlet.unOutlet
-    '                             Where Outlet.unFranchisee = @unFranchisee"
-    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-    '        Try
-    '            oConnection.Open()
-    '            Using oCom As New SqlCommand(sQuery, oConnection)
+    Public Function getOutletLocList(ByVal unF As Integer) As List(Of clsOutletLocation)
+        Dim outletLocList As List(Of clsOutletLocation) = New List(Of clsOutletLocation)
+        Dim ol As New clsOutletLocation
+        Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit, Location.FPLLocationName, Location.FPLCurrentAddress, 
+                                 Location.FPLDateOpened, Location.FPLStatus, Location.FPLStatusClosed, Location.FPLDateClosed
+                                 FROM Outlet 
+                                 JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                 Where Outlet.unFranchisee = @unFranchisee
+                                 ORDER BY unOutlet DESC"
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
 
-    '                oCom.Parameters.AddWithValue("unFranchisee", unF)
+                    oCom.Parameters.AddWithValue("unFranchisee", unF)
 
-    '                Dim oRead As SqlDataReader = oCom.ExecuteReader
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
 
-    '                While oRead.Read
-    '                    ol = New clsOutletLocation
-    '                    ol.unOutlet = oRead("unOutlet")
-    '                    ol.FPOBusinessUnit = oRead("FPOBusinessUnit")
-    '                    ol.FPLLocationName = oRead("FPLLocationName")
-    '                    ol.FPLCurrentAddress = oRead("FPLCurrentAddress")
-    '                    ol.FPLDateOpened = oRead("FPLDateOpened")
-    '                    ol.FPLStatus = oRead("FPLStatus")
-    '                    ol.FPLStatusClosed = oRead("FPLStatusClosed")
-    '                    ol.FPLDateClosed = oRead("FPLDateClosed")
+                    While oRead.Read
+                        ol = New clsOutletLocation
+                        ol.unOutlet = oRead("unOutlet")
+                        ol.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        ol.FPLLocationName = oRead("FPLLocationName")
+                        ol.FPLCurrentAddress = oRead("FPLCurrentAddress")
+                        ol.FPLDateOpened = oRead("FPLDateOpened")
+                        ol.FPLStatus = oRead("FPLStatus")
+                        ol.FPLStatusClosed = oRead("FPLStatusClosed")
+                        ol.FPLDateClosed = oRead("FPLDateClosed")
 
-    '                    OutletLocList.Add(ol)
-    '                End While
-    '            End Using
-    '        Catch ex As Exception
-    '            MessageBox.Show("Error @:getOutletLocList() " + ex.Message)
-    '        End Try
-    '    End Using
-    '    Return outletLocList
-    'End Function
+                        outletLocList.Add(ol)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getOutletLocList() " + ex.Message)
+            End Try
+        End Using
+        Return outletLocList
+    End Function
 
-    'Public Function loadOutletLocation(ByVal unF As Integer)
-    '    pnlMain.lvOutlet.Items.Clear()
-    '    Dim listOL As List(Of clsOutletLocation) = modProfiling.getOutletLocList(unF)
-    '    'l = modProfiling.getFranchiseeList
+    Public Function loadOutletLocation(ByVal unF As Integer)
+        pnlMain.lvOutlet.Items.Clear()
+        Dim listOL As List(Of clsOutletLocation) = modProfiling.getOutletLocList(unF)
+        'l = modProfiling.getFranchiseeList
 
-    '    For Each item In listOL
-    '        Dim lItem As New ListViewItem()
-    '        lItem.Text = item.unOutlet
-    '        lItem.SubItems.Add(item.FPOBusinessUnit)
-    '        lItem.SubItems.Add(item.FPLLocationName)
-    '        lItem.SubItems.Add(item.FPLCurrentAddress)
-    '        lItem.SubItems.Add(item.FPLDateOpened)
-    '        lItem.SubItems.Add(item.FPLStatus)
-    '        lItem.SubItems.Add(item.FPLStatusClosed)
-    '        lItem.SubItems.Add(item.FPLDateClosed)
-    '        lItem.Tag = item.unOutlet
+        For Each item In listOL
+            Dim lItem As New ListViewItem()
+            lItem.Text = item.unOutlet
+            lItem.SubItems.Add(item.FPOBusinessUnit)
+            lItem.SubItems.Add(item.FPLLocationName)
+            lItem.SubItems.Add(item.FPLCurrentAddress)
+            lItem.SubItems.Add(item.FPLDateOpened)
+            lItem.SubItems.Add(item.FPLStatus)
+            lItem.SubItems.Add(item.FPLStatusClosed)
+            If item.FPLStatus = "Close" Then
+                lItem.SubItems.Add(item.FPLDateClosed)
+            End If
+            lItem.Tag = item.unOutlet
 
-    '        pnlMain.lvOutlet.Items.Add(lItem)
+            pnlMain.lvOutlet.Items.Add(lItem)
 
-    '    Next
+        Next
 
-    '    Return listOL
-    'End Function
+        Return listOL
+    End Function
 
     'Load existing Franchisee from db to listview 
 
@@ -226,8 +269,8 @@ Module modProfiling
 
         'Display Outlet to Outlet Listview under franchisee's ID
         'Dim FranchiseeID As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
-        modProfiling.displayOutlet(unF)
-        'modProfiling.loadOutletLocation(unF)
+        'modProfiling.displayOutlet(unF)
+        modProfiling.loadOutletLocation(unF)
 
         modProfiling.displayImage(focItem, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
