@@ -23,7 +23,7 @@ Partial Class frmOutletDetails
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.lnkEditPackage = New System.Windows.Forms.LinkLabel()
         Me.lblDateOfRefund = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btnConfirmOutlet = New System.Windows.Forms.Button()
@@ -64,7 +64,7 @@ Partial Class frmOutletDetails
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.LinkLabel1)
+        Me.Panel1.Controls.Add(Me.lnkEditPackage)
         Me.Panel1.Controls.Add(Me.lblDateOfRefund)
         Me.Panel1.Controls.Add(Me.Label17)
         Me.Panel1.Controls.Add(Me.btnConfirmOutlet)
@@ -98,17 +98,17 @@ Partial Class frmOutletDetails
         Me.Panel1.Size = New System.Drawing.Size(526, 448)
         Me.Panel1.TabIndex = 0
         '
-        'LinkLabel1
+        'lnkEditPackage
         '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.Teal
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.CadetBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(424, 63)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(71, 13)
-        Me.LinkLabel1.TabIndex = 42
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Edit Package"
+        Me.lnkEditPackage.ActiveLinkColor = System.Drawing.Color.Teal
+        Me.lnkEditPackage.AutoSize = True
+        Me.lnkEditPackage.LinkColor = System.Drawing.Color.CadetBlue
+        Me.lnkEditPackage.Location = New System.Drawing.Point(424, 63)
+        Me.lnkEditPackage.Name = "lnkEditPackage"
+        Me.lnkEditPackage.Size = New System.Drawing.Size(71, 13)
+        Me.lnkEditPackage.TabIndex = 42
+        Me.lnkEditPackage.TabStop = True
+        Me.lnkEditPackage.Text = "Edit Package"
         '
         'lblDateOfRefund
         '
@@ -474,5 +474,5 @@ Partial Class frmOutletDetails
     Friend WithEvents btnConfirmOutlet As Button
     Friend WithEvents lblDateOfRefund As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents lnkEditPackage As LinkLabel
 End Class

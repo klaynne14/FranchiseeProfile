@@ -516,11 +516,11 @@ Module modProfiling
     End Function
 
     Public Function displayInfoPackage(unO As Integer) As List(Of clsPackage)
-        Dim focItemUn As Integer = frmOutletDetails.lblOutletID.Text
+        'Dim focItemUn As Integer = frmOutletDetails.lblOutletID.Text
         Dim listPackage As List(Of clsPackage) = modProfiling.getPackageList(unO)
 
         For Each o In listPackage
-            If o.unOutlet = focItemUn Then
+            If o.unOutlet = unO Then
                 frmOutletDetails.lblPackageType.Text = o.FPPPackageType
                 frmOutletDetails.lblFranchiseFee.Text = o.FPPFranchiseFee
                 frmOutletDetails.lblFranchiseRemarks.Text = o.FPPFranchiseRemark
@@ -531,6 +531,26 @@ Module modProfiling
                 frmOutletDetails.lblDateOfRefund.Text = o.FPPDateOfRefund
             End If
         Next
+        Return listPackage
+    End Function
+
+    Public Function getInfoPackage(unO As Integer) As List(Of clsPackage)
+        Dim listPackage As List(Of clsPackage) = modProfiling.getPackageList(unO)
+
+        For Each o In listPackage
+            If o.unOutlet = unO Then
+                frmUpdatePackage.lblOutletID.Text = o.unOutlet
+                frmUpdatePackage.cbPackageType.Text = o.FPPPackageType
+                frmUpdatePackage.txtFranchiseeFee.Text = o.FPPFranchiseFee
+                frmUpdatePackage.txtFranchiseRemark.Text = o.FPPFranchiseRemark
+                frmUpdatePackage.txtPackageFee.Text = o.FPPPackageFee
+                frmUpdatePackage.txtPackageRemark.Text = o.FPPPackageRemark
+                frmUpdatePackage.txtSecurityDeposit.Text = o.FPPSecurityDeposit
+                frmUpdatePackage.txtDepositRemark.Text = o.FPPDepositRemark
+                'frmUpdatePackage.txtDateOfRefund.Text = o.FPPDateOfRefund
+            End If
+        Next
+
         Return listPackage
     End Function
 
