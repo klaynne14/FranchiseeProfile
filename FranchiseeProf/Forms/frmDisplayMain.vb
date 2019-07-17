@@ -60,10 +60,10 @@ Public Class pnlMain
             ao.unFranchisee = lblIDFranchisee.Text
             If ao.addOutlet() Then
 
-                'frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
+                frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
                 modProfiling.displayInfo()
-                'frmAddNewOutlet.ShowDialog()
-                'MsgBox("Outlet added successfully")
+                frmAddNewOutlet.ShowDialog()
+                MsgBox("Outlet added successfully")
             End If
 
         End If

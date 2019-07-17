@@ -2,8 +2,8 @@
 Public Class clsContract
     Public idContract As Integer
     Public unContract As Integer
-    Public FPCStartTerm As DateTime
-    Public FPCEndTerm As DateTime
+    Public FPCStartTerm As Date
+    Public FPCEndTerm As Date
     Public FPCRemark As String
     Public unOutlet As Integer
 
