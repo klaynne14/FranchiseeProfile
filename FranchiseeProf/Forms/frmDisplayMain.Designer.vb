@@ -761,12 +761,12 @@ Partial Class pnlMain
         'ID
         '
         Me.ID.Text = "ID"
-        Me.ID.Width = 44
+        Me.ID.Width = 86
         '
         'BusinessUnit
         '
         Me.BusinessUnit.Text = "Business Unit"
-        Me.BusinessUnit.Width = 110
+        Me.BusinessUnit.Width = 100
         '
         'Location
         '
@@ -776,7 +776,7 @@ Partial Class pnlMain
         'Address
         '
         Me.Address.Text = "Address"
-        Me.Address.Width = 274
+        Me.Address.Width = 240
         '
         'Status
         '

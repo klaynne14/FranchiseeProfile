@@ -55,7 +55,6 @@ Public Class pnlMain
             Dim ao As clsOutlet = New clsOutlet
             ao.FPOBusinessUnit = cbBusinessUnit.Text
             'ao.idPackage = 1
-            'ao.idContract = 1
             'ao.idLocation = 2
             'pass ids from forms
             ao.unFranchisee = lblIDFranchisee.Text

@@ -278,7 +278,7 @@ Module modProfiling
     Public Function getOutletList(unF As Integer) As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
-        Dim oQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit
+        Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit
                                 FROM Outlet
                                 INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee
                                 ORDER BY unOutlet desc"
@@ -286,7 +286,7 @@ Module modProfiling
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
-                Using oCom As New SqlCommand(oQuery, oConnection)
+                Using oCom As New SqlCommand(sQuery, oConnection)
 
                     oCom.Parameters.AddWithValue("unFranchisee", unF)
 
@@ -326,14 +326,59 @@ Module modProfiling
         Return listOutlet
     End Function
 
-    Public Function insertContract()
-        Dim oQuery As String = "SELECT TOP 1 unOutlet FROM Outlet ORDER BY unOutlet DESC"
+#End Region
+    Public Function getContractList(unO As Integer) As List(Of clsContract)
+        Dim contractList As List(Of clsContract) = New List(Of clsContract)
+        Dim getContract As New clsContract
+        Dim sQuery As String = "SELECT Contract.unContract, FPCStartTerm, FPCEndTerm, FPCRemark 
+                                FROM Contract
+                                INNER JOIN Outlet On Contract.unOutlet = Outlet.unOutlet where Outlet.unOutlet = @unOutlet
+                                ORDER BY unContract desc"
 
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    oCom.Parameters.AddWithValue("unOutlet", unO)
+
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+
+                    While oRead.Read
+                        getContract = New clsContract
+                        getContract.unContract = oRead("unContract")
+                        getContract.FPCStartTerm = oRead("FPCStartTerm")
+                        getContract.FPCEndTerm = oRead("FPCEndTerm")
+                        getContract.FPCRemark = oRead("FPCRemark")
+
+                        contractList.Add(getContract)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getContractList() " + ex.Message)
+            End Try
+        End Using
+        Return contractList
 
     End Function
 
-#End Region
+    Public Function displayContract(unO As Integer)
+        frmOutletDetails.lvContract.Items.Clear()
+        Dim listContract As List(Of clsContract) = modProfiling.getContractList(unO)
 
+        For Each item In listContract
+            Dim oItem As New ListViewItem()
+            oItem.Text = item.unContract
+            oItem.SubItems.Add(item.FPCStartTerm)
+            oItem.SubItems.Add(item.FPCEndTerm)
+            oItem.SubItems.Add(item.FPCRemark)
+            oItem.SubItems.Add(item.unOutlet)
+            oItem.Tag = item.unContract
+
+            frmOutletDetails.lvContract.Items.Add(oItem)
+        Next
+        Return listContract
+    End Function
 
     Public Function getLatestCId() As Integer
         Dim getContract As New clsContract
@@ -377,6 +422,8 @@ Module modProfiling
             End If
         Next unfControl
     End Function
+
+
 
     Public Sub recolorListView(ByVal profListView As ListView)
         'Scroll through each listview item
