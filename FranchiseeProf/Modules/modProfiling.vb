@@ -170,13 +170,13 @@ Module modProfiling
     End Function
 
     Public Function getInfo()
-
         Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
+        Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
         Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
         l = modProfiling.getFranchiseeList
         Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
         For Each o In l
-            If o.idFranchisee = unF Then
+            If o.unFranchisee = focItemUn Then
                 frmUpdateFranchiseeProfile.txtFName.Text = o.FName
                 frmUpdateFranchiseeProfile.txtMName.Text = o.MName
                 frmUpdateFranchiseeProfile.txtLName.Text = o.LName
