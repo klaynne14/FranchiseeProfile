@@ -9,10 +9,11 @@ Public Class clsLocation
     Public FPLDateClosed As DateTime
     Public FPLStatus As String
     Public FPLStatusClosed As String
+    Public unOutlet As Integer
 
     Public Function addLocation() As Boolean
-        Dim sQuery As String = "INSERT INTO Location (unLocation, FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus)
-                                VALUES (((SELECT COUNT(*) FROM Location)+ 1),@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus)"
+        Dim sQuery As String = "INSERT INTO Location (unLocation, FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus, unOutlet)
+                                VALUES (((SELECT COUNT(*) FROM Location)+ 1),@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus, @unOutlet)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -25,6 +26,7 @@ Public Class clsLocation
                     oCommand.Parameters.AddWithValue("@FPLOldAddress", Me.FPLOldAddress)
                     oCommand.Parameters.AddWithValue("@FPLDateOpened", Me.FPLDateOpened)
                     oCommand.Parameters.AddWithValue("@FPLStatus", Me.FPLStatus)
+                    oCommand.Parameters.AddWithValue("@unOutlet", Me.unOutlet)
 
                     oCommand.ExecuteNonQuery()
                     Return True

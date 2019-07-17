@@ -380,30 +380,30 @@ Module modProfiling
         Return listContract
     End Function
 
-    Public Function getLatestCId() As Integer
-        Dim getContract As New clsContract
-        'Dim listOutlet As List(Of clsOutlet)
-        Dim latestCId As Integer
-        Dim oQuery As String = "SELECT TOP 1 unContract FROM Contract ORDER BY unContract DESC"
-        'Dim oQuery As String = "SELECT Count(idContract) FROM Contract"
+    'Public Function getLatestCId() As Integer
+    '    Dim getContract As New clsContract
+    '    'Dim listOutlet As List(Of clsOutlet)
+    '    Dim latestCId As Integer
+    '    Dim oQuery As String = "SELECT TOP 1 unContract FROM Contract ORDER BY unContract DESC"
+    '    'Dim oQuery As String = "SELECT Count(idContract) FROM Contract"
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-            Try
-                oConnection.Open()
-                Using oCom As New SqlCommand(oQuery, oConnection)
-                    Dim oRead As SqlDataReader = oCom.ExecuteReader
-                    While oRead.Read
-                        getContract = New clsContract
-                        getContract.unContract = oRead("unContract")
-                    End While
-                    latestCId = getContract.unContract
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Error @:getLatestCId() " + ex.Message)
-            End Try
-        End Using
-        Return latestCId
-    End Function
+    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+    '        Try
+    '            oConnection.Open()
+    '            Using oCom As New SqlCommand(oQuery, oConnection)
+    '                Dim oRead As SqlDataReader = oCom.ExecuteReader
+    '                While oRead.Read
+    '                    getContract = New clsContract
+    '                    getContract.unContract = oRead("unContract")
+    '                End While
+    '                latestCId = getContract.unContract
+    '            End Using
+    '        Catch ex As Exception
+    '            MessageBox.Show("Error @:getLatestCId() " + ex.Message)
+    '        End Try
+    '    End Using
+    '    Return latestCId
+    'End Function
 
     Public Function clearTextOutlet()
         Dim unfControl As Control

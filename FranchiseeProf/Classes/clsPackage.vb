@@ -11,13 +11,14 @@ Public Class clsPackage
     Public FPPFranchiseRemark As String
     Public FPPPackageRemark As String
     Public FPPDepositRemark As String
+    Public unOutlet As Integer
 
     Public Function addPackage() As Boolean
         Dim sQuery As String = "INSERT INTO Package(unPackage, FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit, FPPDateOfRefund, 
-                                FPPFranchiseRemark, FPPPackageRemark, FPPDepositRemark)
+                                FPPFranchiseRemark, FPPPackageRemark, FPPDepositRemark, unOutlet)
 
                                 VALUES (((SELECT COUNT(*) FROM Package)+ 1), @FPPPackageType, @FPPFranchiseFee, @FPPPackageFee, @FPPSecurityDeposit, @FPPDateOfRefund, 
-                                @FPPFranchiseRemark, @FPPPackageRemark, @FPPDepositRemark)"
+                                @FPPFranchiseRemark, @FPPPackageRemark, @FPPDepositRemark, @unOutlet)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -33,6 +34,7 @@ Public Class clsPackage
                     oCommand.Parameters.AddWithValue("@FPPFranchiseRemark", Me.FPPFranchiseRemark)
                     oCommand.Parameters.AddWithValue("@FPPPackageRemark", Me.FPPPackageRemark)
                     oCommand.Parameters.AddWithValue("@FPPDepositRemark", Me.FPPDepositRemark)
+                    oCommand.Parameters.AddWithValue("@unOutlet", Me.unOutlet)
 
                     oCommand.ExecuteNonQuery()
                     Return True
