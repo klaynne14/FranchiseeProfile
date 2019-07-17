@@ -1228,11 +1228,11 @@ Partial Class pnlMain
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(802, 12)
+        Me.Button1.Location = New System.Drawing.Point(1148, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Exit"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'pnlMain

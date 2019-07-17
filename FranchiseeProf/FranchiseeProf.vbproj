@@ -73,6 +73,7 @@
     <Compile Include="Classes\clsFranchisee.vb" />
     <Compile Include="Classes\clsLocation.vb" />
     <Compile Include="Classes\clsOutlet.vb" />
+    <Compile Include="Classes\clsOutletLocation.vb" />
     <Compile Include="Classes\clsPackage.vb" />
     <Compile Include="Forms\frmOutletDetails.Designer.vb">
       <DependentUpon>frmOutletDetails.vb</DependentUpon>
