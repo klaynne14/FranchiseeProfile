@@ -55,15 +55,14 @@ Public Class pnlMain
             Dim ao As clsOutlet = New clsOutlet
             ao.FPOBusinessUnit = cbBusinessUnit.Text
             'ao.idPackage = 1
-            'ao.idContract = 1
             'ao.idLocation = 2
             'pass ids from forms
             ao.unFranchisee = lblIDFranchisee.Text
             If ao.addOutlet() Then
 
-                frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
+                'frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
                 modProfiling.displayInfo()
-                frmAddNewOutlet.ShowDialog()
+                'frmAddNewOutlet.ShowDialog()
                 'MsgBox("Outlet added successfully")
             End If
 
@@ -88,7 +87,7 @@ Public Class pnlMain
     Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
 
         cbBusinessUnit.Text = " "
-        modProfiling.displayInfo()
+        'modProfiling.displayInfo()
 
     End Sub
 End Class

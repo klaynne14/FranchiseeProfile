@@ -114,12 +114,12 @@ Module modProfiling
     'Display info from listview to panel
     Public Function displayInfo()
         Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
+        Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
         l = modProfiling.getFranchiseeList
         Dim pb = pnlMain.pbUserProfile
-
-        'Dim pm As New pnlMain
+        Dim FranchiseeID As Integer        'Dim pm As New pnlMain
         For Each o In l
-            If o.idFranchisee = focItem Then
+            If o.unFranchisee = focItemUn Then
                 pnlMain.lblFullName.Text = o.FName + " " + o.MName + " " + o.LName
                 pnlMain.lblIDFranchisee.Text = o.unFranchisee
                 pnlMain.lblFPFStatus.Text = o.Status
@@ -143,6 +143,8 @@ Module modProfiling
                 pnlMain.lblTinNumber.Text = o.TinNumber
                 pnlMain.lblFaxNumber.Text = o.FaxNumber
                 pnlMain.lblOccupation.Text = o.Occupation
+
+                FranchiseeID = o.unFranchisee
             End If
         Next
 
@@ -159,7 +161,7 @@ Module modProfiling
         End If
 
         'Display Outlet to Outlet Listview under franchisee's ID
-        Dim FranchiseeID As String = pnlMain.lblIDFranchisee.Text
+        'Dim FranchiseeID As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
         modProfiling.displayOutlet(FranchiseeID)
 
         modProfiling.displayImage(focItem, pb)
@@ -174,7 +176,7 @@ Module modProfiling
         l = modProfiling.getFranchiseeList
         Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
         For Each o In l
-            If o.unFranchisee = unF Then
+            If o.idFranchisee = unF Then
                 frmUpdateFranchiseeProfile.txtFName.Text = o.FName
                 frmUpdateFranchiseeProfile.txtMName.Text = o.MName
                 frmUpdateFranchiseeProfile.txtLName.Text = o.LName
@@ -207,13 +209,13 @@ Module modProfiling
 
 #Region "Outlet Methods"
 
-    Public Function getIdOutlet() As List(Of clsOutlet)
+    Public Function getUnOutlet() As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
         'Dim oQuery As String = "SELECT unOutlet, FPOBusinessUnit
         '                        FROM Outlet"
 
-        Dim oQuery As String = "SELECT idOutlet FROM Outlet"
+        Dim oQuery As String = "SELECT unOutlet FROM Outlet"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -224,12 +226,12 @@ Module modProfiling
                         getOutlet = New clsOutlet
                         'getOutlet.unOutlet = oRead("unOutlet")
                         'getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
-                        getOutlet.idOutlet = oRead("idOutlet")
+                        getOutlet.unOutlet = oRead("unOutlet")
                         outletList.Add(getOutlet)
                     End While
                 End Using
             Catch ex As Exception
-                MessageBox.Show("Error @:getIdOutlet() " + ex.Message)
+                MessageBox.Show("Error @:getUnOutlet() " + ex.Message)
             End Try
         End Using
         Return outletList
@@ -237,13 +239,13 @@ Module modProfiling
 
     Public Function getfocusedOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
         Dim listOutlet As List(Of clsOutlet)
-        Dim getidOutlet As String
-        getidOutlet = pnlMain.lvOutlet.FocusedItem.Tag
-        listOutlet = modProfiling.getIdOutlet()
+        Dim getUnOutlet As String
+        getUnOutlet = pnlMain.lvOutlet.FocusedItem.Tag
+        listOutlet = modProfiling.getUnOutlet()
 
         For Each o In listOutlet
-            If o.idOutlet = getidOutlet Then
-                lblOutletID.Text = o.idOutlet
+            If o.unOutlet = getUnOutlet Then
+                lblOutletID.Text = o.unOutlet
             End If
         Next
         Return listOutlet
@@ -273,30 +275,29 @@ Module modProfiling
         Return latestOId
     End Function
 
-    Public Function getOutletList(id As String) As List(Of clsOutlet)
+    Public Function getOutletList(unF As Integer) As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
-        Dim oQuery As String = "SELECT Outlet.idOutlet, Outlet.FPOBusinessUnit, Outlet.unLocation, Outlet.unContract
+        Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit
                                 FROM Outlet
                                 INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee
-                                ORDER BY idOutlet desc"
+                                ORDER BY unOutlet desc"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
-                Using oCom As New SqlCommand(oQuery, oConnection)
+                Using oCom As New SqlCommand(sQuery, oConnection)
 
-                    oCom.Parameters.AddWithValue("unFranchisee", id)
+                    oCom.Parameters.AddWithValue("unFranchisee", unF)
 
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
 
                     While oRead.Read
                         getOutlet = New clsOutlet
-                        getOutlet.idOutlet = oRead("idOutlet")
+                        getOutlet.unOutlet = oRead("unOutlet")
                         getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
-                        'getOutlet.unFranchisee = oRead("unFranchisee")
-                        getOutlet.unContract = oRead("unContract")
-                        getOutlet.unLocation = oRead("unLocation")
+                        'getOutlet.unContract = oRead("unContract")
+                        'getOutlet.unLocation = oRead("unLocation")
 
                         outletList.Add(getOutlet)
                     End While
@@ -308,56 +309,101 @@ Module modProfiling
         Return outletList
     End Function
 
-    Public Function displayOutlet(id As String)
+    Public Function displayOutlet(unF As Integer)
         pnlMain.lvOutlet.Items.Clear()
-        Dim listOutlet As List(Of clsOutlet) = modProfiling.getOutletList(id)
+        Dim listOutlet As List(Of clsOutlet) = modProfiling.getOutletList(unF)
 
         For Each item In listOutlet
             Dim oItem As New ListViewItem()
-            oItem.Text = item.idOutlet
+            oItem.Text = item.unOutlet
             oItem.SubItems.Add(item.FPOBusinessUnit)
-            oItem.SubItems.Add(item.unLocation)
-            oItem.SubItems.Add(item.unContract)
-            oItem.Tag = item.idOutlet
+            'oItem.SubItems.Add(item.unLocation)
+            'oItem.SubItems.Add(item.unContract)
+            oItem.Tag = item.unOutlet
 
             pnlMain.lvOutlet.Items.Add(oItem)
         Next
         Return listOutlet
     End Function
 
-    Public Function insertContract()
-        Dim oQuery As String = "SELECT TOP 1 unOutlet FROM Outlet ORDER BY unOutlet DESC"
-
-
-    End Function
-
 #End Region
-
-
-    Public Function getLatestCId() As Integer
+    Public Function getContractList(unO As Integer) As List(Of clsContract)
+        Dim contractList As List(Of clsContract) = New List(Of clsContract)
         Dim getContract As New clsContract
-        'Dim listOutlet As List(Of clsOutlet)
-        Dim latestCId As Integer
-        Dim oQuery As String = "SELECT TOP 1 unContract FROM Contract ORDER BY unContract DESC"
-        'Dim oQuery As String = "SELECT Count(idContract) FROM Contract"
+        Dim sQuery As String = "SELECT Contract.unContract, FPCStartTerm, FPCEndTerm, FPCRemark 
+                                FROM Contract
+                                INNER JOIN Outlet On Contract.unOutlet = Outlet.unOutlet where Outlet.unOutlet = @unOutlet
+                                ORDER BY unContract desc"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
-                Using oCom As New SqlCommand(oQuery, oConnection)
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    oCom.Parameters.AddWithValue("unOutlet", unO)
+
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
+
                     While oRead.Read
                         getContract = New clsContract
                         getContract.unContract = oRead("unContract")
+                        getContract.FPCStartTerm = oRead("FPCStartTerm")
+                        getContract.FPCEndTerm = oRead("FPCEndTerm")
+                        getContract.FPCRemark = oRead("FPCRemark")
+
+                        contractList.Add(getContract)
                     End While
-                    latestCId = getContract.unContract
                 End Using
             Catch ex As Exception
-                MessageBox.Show("Error @:getLatestCId() " + ex.Message)
+                MessageBox.Show("Error @:getContractList() " + ex.Message)
             End Try
         End Using
-        Return latestCId
+        Return contractList
+
     End Function
+
+    Public Function displayContract(unO As Integer)
+        frmOutletDetails.lvContract.Items.Clear()
+        Dim listContract As List(Of clsContract) = modProfiling.getContractList(unO)
+
+        For Each item In listContract
+            Dim oItem As New ListViewItem()
+            oItem.Text = item.unContract
+            oItem.SubItems.Add(item.FPCStartTerm)
+            oItem.SubItems.Add(item.FPCEndTerm)
+            oItem.SubItems.Add(item.FPCRemark)
+            oItem.SubItems.Add(item.unOutlet)
+            oItem.Tag = item.unContract
+
+            frmOutletDetails.lvContract.Items.Add(oItem)
+        Next
+        Return listContract
+    End Function
+
+    'Public Function getLatestCId() As Integer
+    '    Dim getContract As New clsContract
+    '    'Dim listOutlet As List(Of clsOutlet)
+    '    Dim latestCId As Integer
+    '    Dim oQuery As String = "SELECT TOP 1 unContract FROM Contract ORDER BY unContract DESC"
+    '    'Dim oQuery As String = "SELECT Count(idContract) FROM Contract"
+
+    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+    '        Try
+    '            oConnection.Open()
+    '            Using oCom As New SqlCommand(oQuery, oConnection)
+    '                Dim oRead As SqlDataReader = oCom.ExecuteReader
+    '                While oRead.Read
+    '                    getContract = New clsContract
+    '                    getContract.unContract = oRead("unContract")
+    '                End While
+    '                latestCId = getContract.unContract
+    '            End Using
+    '        Catch ex As Exception
+    '            MessageBox.Show("Error @:getLatestCId() " + ex.Message)
+    '        End Try
+    '    End Using
+    '    Return latestCId
+    'End Function
 
     Public Function clearTextOutlet()
         Dim unfControl As Control
@@ -376,6 +422,8 @@ Module modProfiling
             End If
         Next unfControl
     End Function
+
+
 
     Public Sub recolorListView(ByVal profListView As ListView)
         'Scroll through each listview item

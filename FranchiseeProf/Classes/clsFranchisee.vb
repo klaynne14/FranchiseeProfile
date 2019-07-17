@@ -32,7 +32,6 @@ Public Class clsFranchisee
     Public EmailAdd1 As String
     Public EmailAdd2 As String
     Public arrImage() As Byte
-    Public idOutlet As Integer
 
 
     Public Function addFranchisee() As Boolean

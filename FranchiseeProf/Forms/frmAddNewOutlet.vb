@@ -53,17 +53,15 @@ Public Class frmAddNewOutlet
     End Sub
 
     Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
-        'Dim idFLV As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
-
+        Dim unO As Integer = lblOutletID.Text
 
         Dim al As clsLocation = New clsLocation
         al.FPLLocationName = txtLocationName.Text
         al.FPLCurrentAddress = txtOutletAddress.Text
         al.FPLOldAddress = ""
         al.FPLDateOpened = dtpDateOpened.Value.Date
-        'al.FPLDateClosed = lDateClosed
         al.FPLStatus = "Open"
-        'al.FPLStatusClosed = cbOutletClosedStatus.Text
+        al.unOutlet = unO
 
         Dim ap As clsPackage = New clsPackage
         ap.FPPPackageType = cbPackageType.Text
@@ -74,7 +72,7 @@ Public Class frmAddNewOutlet
         ap.FPPFranchiseRemark = txtFranchiseRemark.Text
         ap.FPPPackageRemark = txtPackageRemark.Text
         ap.FPPDepositRemark = txtDepositRemark.Text
-
+        ap.unOutlet = unO
 
         If al.addLocation() And ap.addPackage() Then
             MsgBox("Added to outlet successfully")
