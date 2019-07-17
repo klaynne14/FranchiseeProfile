@@ -41,4 +41,8 @@ Public Class frmOutletDetails
         modProfiling.getInfoPackage(unO)
         frmUpdatePackage.ShowDialog()
     End Sub
+
+    Private Sub BtnApply_click(sender As Object, e As EventArgs) Handles btnApply.Click
+        Me.Close()
+    End Sub
 End Class

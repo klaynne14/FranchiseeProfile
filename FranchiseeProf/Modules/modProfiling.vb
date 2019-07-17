@@ -550,8 +550,40 @@ Module modProfiling
                 'frmUpdatePackage.txtDateOfRefund.Text = o.FPPDateOfRefund
             End If
         Next
-
         Return listPackage
+    End Function
+
+    Public Function updateInfoPackage(ByVal unO As Integer) As Boolean
+        Dim sQuery As String = "Update Package
+                                Set FPPPackageType = @FPPPackageType, FPPFranchiseFee = @FPPFranchiseFee, FPPPackageFee = @FPPPackageFee, 
+                                FPPSecurityDeposit = @FPPSecurityDeposit, FPPDateOfRefund = @FPPDateOfRefund, FPPFranchiseRemark = @FPPFranchiseRemark, 
+                                FPPPackageRemark = @FPPPackageRemark, FPPDepositRemark = @FPPDepositRemark
+                                where unOutlet = " & Val(unO)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+
+                    oCommand.Parameters.AddWithValue("@FPPPackageType", frmUpdatePackage.cbPackageType.Text)
+                    oCommand.Parameters.AddWithValue("@FPPFranchiseFee", frmUpdatePackage.txtFranchiseeFee.Text)
+                    oCommand.Parameters.AddWithValue("@FPPPackageFee", frmUpdatePackage.txtPackageFee.Text)
+                    oCommand.Parameters.AddWithValue("@FPPSecurityDeposit", frmUpdatePackage.txtSecurityDeposit.Text)
+                    oCommand.Parameters.AddWithValue("@FPPDateOfRefund", frmUpdatePackage.dtpDateOfRefund.Value.Date)
+                    oCommand.Parameters.AddWithValue("@FPPFranchiseRemark", frmUpdatePackage.txtFranchiseRemark.Text)
+                    oCommand.Parameters.AddWithValue("@FPPPackageRemark", frmUpdatePackage.txtPackageRemark.Text)
+                    oCommand.Parameters.AddWithValue("@FPPDepositRemark", frmUpdatePackage.txtDepositRemark.Text)
+
+
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+        Return False
     End Function
 
 #End Region

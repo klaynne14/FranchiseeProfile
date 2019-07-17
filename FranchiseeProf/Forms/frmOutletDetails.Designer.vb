@@ -26,7 +26,7 @@ Partial Class frmOutletDetails
         Me.lnkEditPackage = New System.Windows.Forms.LinkLabel()
         Me.lblDateOfRefund = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.btnConfirmOutlet = New System.Windows.Forms.Button()
+        Me.btnApply = New System.Windows.Forms.Button()
         Me.lblOutletID = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnAddContract = New System.Windows.Forms.Button()
@@ -67,7 +67,7 @@ Partial Class frmOutletDetails
         Me.Panel1.Controls.Add(Me.lnkEditPackage)
         Me.Panel1.Controls.Add(Me.lblDateOfRefund)
         Me.Panel1.Controls.Add(Me.Label17)
-        Me.Panel1.Controls.Add(Me.btnConfirmOutlet)
+        Me.Panel1.Controls.Add(Me.btnApply)
         Me.Panel1.Controls.Add(Me.lblOutletID)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.btnAddContract)
@@ -128,17 +128,17 @@ Partial Class frmOutletDetails
         Me.Label17.TabIndex = 40
         Me.Label17.Text = "Date of Refund:"
         '
-        'btnConfirmOutlet
+        'btnApply
         '
-        Me.btnConfirmOutlet.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfirmOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnConfirmOutlet.Location = New System.Drawing.Point(403, 396)
-        Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
-        Me.btnConfirmOutlet.Size = New System.Drawing.Size(85, 30)
-        Me.btnConfirmOutlet.TabIndex = 39
-        Me.btnConfirmOutlet.Text = "Confirm"
-        Me.btnConfirmOutlet.UseVisualStyleBackColor = False
+        Me.btnApply.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApply.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnApply.Location = New System.Drawing.Point(403, 396)
+        Me.btnApply.Name = "btnApply"
+        Me.btnApply.Size = New System.Drawing.Size(85, 30)
+        Me.btnApply.TabIndex = 39
+        Me.btnApply.Text = "Apply"
+        Me.btnApply.UseVisualStyleBackColor = False
         '
         'lblOutletID
         '
@@ -471,7 +471,7 @@ Partial Class frmOutletDetails
     Friend WithEvents lblOutletClosedDate As Label
     Friend WithEvents dtpDateClosed As DateTimePicker
     Friend WithEvents btnSubmit As Button
-    Friend WithEvents btnConfirmOutlet As Button
+    Friend WithEvents btnApply As Button
     Friend WithEvents lblDateOfRefund As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents lnkEditPackage As LinkLabel
