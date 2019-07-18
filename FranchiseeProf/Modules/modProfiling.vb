@@ -210,44 +210,45 @@ Module modProfiling
     End Function
 
     Public Function getInfo()
-        Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
-        Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
-        Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
-        l = modProfiling.getFranchiseeList
-        Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
-        Dim checkState As Boolean
-        For Each o In l
-            If o.unFranchisee = focItemUn Then
-                If o.Status = 1 Then
-                    checkState = True
-                ElseIf o.Status = 0 Then
-                    checkState = False
+        Try
+            Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
+            Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
+            Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
+            l = modProfiling.getFranchiseeList
+            Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
+            Dim checkState As Boolean
+            For Each o In l
+                If o.unFranchisee = focItemUn Then
+                    If o.Status = 1 Then
+                        checkState = True
+                    ElseIf o.Status = 0 Then
+                        checkState = False
+                    End If
+                    frmUpdateFranchiseeProfile.cbFPFStatus.Checked = checkState
+                    frmUpdateFranchiseeProfile.txtFName.Text = o.FName
+                    frmUpdateFranchiseeProfile.txtMName.Text = o.MName
+                    frmUpdateFranchiseeProfile.txtLName.Text = o.LName
+                    frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
+                    frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
+                    frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
+                    frmUpdateFranchiseeProfile.txtAge.Text = o.Age
+                    frmUpdateFranchiseeProfile.cbCivilStatus.Text = o.CivilStatus
+                    frmUpdateFranchiseeProfile.dtpDateBirth.Value = o.DateOfBirth
+                    frmUpdateFranchiseeProfile.txtNationality.Text = o.Nationality
+                    frmUpdateFranchiseeProfile.txtReligion.Text = o.Religion
+                    frmUpdateFranchiseeProfile.txtTelNum1.Text = o.TelNumber1
+                    frmUpdateFranchiseeProfile.txtTelNum2.Text = o.TelNumber2
+                    frmUpdateFranchiseeProfile.txtMobileNum1.Text = o.MobileNumber1
+                    frmUpdateFranchiseeProfile.txtMobileNum2.Text = o.MobileNumber1
+                    frmUpdateFranchiseeProfile.txtEmailAddress1.Text = o.EmailAdd1
+                    frmUpdateFranchiseeProfile.txtEmailAddress2.Text = o.EmailAdd2
+                    frmUpdateFranchiseeProfile.cbOwnershipType.Text = o.OwnershipType
+                    frmUpdateFranchiseeProfile.txtCorpAuthorizedName.Text = o.CorpAuthorizedName
+                    frmUpdateFranchiseeProfile.txtYearStarted.Text = o.YearStarted
+                    frmUpdateFranchiseeProfile.txtTinNumber.Text = o.TinNumber
+                    frmUpdateFranchiseeProfile.txtFaxNumber.Text = o.FaxNumber
+                    frmUpdateFranchiseeProfile.txtOccupation.Text = o.Occupation
                 End If
-                frmUpdateFranchiseeProfile.cbFPFStatus.Checked = checkState
-                frmUpdateFranchiseeProfile.txtFName.Text = o.FName
-                frmUpdateFranchiseeProfile.txtMName.Text = o.MName
-                frmUpdateFranchiseeProfile.txtLName.Text = o.LName
-                frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
-                frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
-                frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
-                frmUpdateFranchiseeProfile.txtAge.Text = o.Age
-                frmUpdateFranchiseeProfile.cbCivilStatus.Text = o.CivilStatus
-                frmUpdateFranchiseeProfile.dtpDateOfBirth.Value = o.DateOfBirth
-                frmUpdateFranchiseeProfile.txtNationality.Text = o.Nationality
-                frmUpdateFranchiseeProfile.txtReligion.Text = o.Religion
-                frmUpdateFranchiseeProfile.txtTelNum1.Text = o.TelNumber1
-                frmUpdateFranchiseeProfile.txtTelNum2.Text = o.TelNumber2
-                frmUpdateFranchiseeProfile.txtMobileNum1.Text = o.MobileNumber1
-                frmUpdateFranchiseeProfile.txtMobileNum2.Text = o.MobileNumber1
-                frmUpdateFranchiseeProfile.txtEmailAddress1.Text = o.EmailAdd1
-                frmUpdateFranchiseeProfile.txtEmailAddress2.Text = o.EmailAdd2
-                frmUpdateFranchiseeProfile.cbOwnershipType.Text = o.OwnershipType
-                frmUpdateFranchiseeProfile.txtCorpAuthorizedName.Text = o.CorpAuthorizedName
-                frmUpdateFranchiseeProfile.txtYearStarted.Text = o.YearStarted
-                frmUpdateFranchiseeProfile.txtTinNumber.Text = o.TinNumber
-                frmUpdateFranchiseeProfile.txtFaxNumber.Text = o.FaxNumber
-                frmUpdateFranchiseeProfile.txtOccupation.Text = o.Occupation
-            End If
 
                 modProfiling.displayImage(focItemUn, pb)
             Next
@@ -294,7 +295,7 @@ Module modProfiling
                     oCommand.Parameters.AddWithValue("@FPFAddress1", frmUpdateFranchiseeProfile.txtAddress1.Text)
                     oCommand.Parameters.AddWithValue("@FPFAddress2", frmUpdateFranchiseeProfile.txtAddress2.Text)
                     oCommand.Parameters.AddWithValue("@FPFTinNumber", frmUpdateFranchiseeProfile.txtTinNumber.Text)
-                    oCommand.Parameters.AddWithValue("@FPFDateOfBirth", frmUpdateFranchiseeProfile.dtpDateOfBirth.Value)
+                    oCommand.Parameters.AddWithValue("@FPFDateOfBirth", frmUpdateFranchiseeProfile.dtpDateBirth.Value)
                     oCommand.Parameters.AddWithValue("@FPFAge", frmUpdateFranchiseeProfile.txtAge.Text)
                     oCommand.Parameters.AddWithValue("@FPFGender", frmUpdateFranchiseeProfile.cbGender.Text)
                     oCommand.Parameters.AddWithValue("@FPFCivilStatus", frmUpdateFranchiseeProfile.cbCivilStatus.Text)
