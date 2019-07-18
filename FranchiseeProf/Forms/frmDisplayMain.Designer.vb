@@ -82,6 +82,7 @@ Partial Class pnlMain
         Me.DateOpened = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StatusClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.OldAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DateClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
@@ -126,7 +127,6 @@ Partial Class pnlMain
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.OldAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -725,7 +725,7 @@ Partial Class pnlMain
         Me.lvOutlet.FullRowSelect = True
         Me.lvOutlet.Location = New System.Drawing.Point(18, 448)
         Me.lvOutlet.Name = "lvOutlet"
-        Me.lvOutlet.Size = New System.Drawing.Size(1001, 146)
+        Me.lvOutlet.Size = New System.Drawing.Size(1012, 146)
         Me.lvOutlet.TabIndex = 76
         Me.lvOutlet.UseCompatibleStateImageBehavior = False
         Me.lvOutlet.View = System.Windows.Forms.View.Details
@@ -748,7 +748,7 @@ Partial Class pnlMain
         'Address
         '
         Me.Address.Text = "Current Address"
-        Me.Address.Width = 256
+        Me.Address.Width = 183
         '
         'DateOpened
         '
@@ -765,6 +765,11 @@ Partial Class pnlMain
         Me.StatusClosed.Text = "Closed Status"
         Me.StatusClosed.Width = 94
         '
+        'OldAddress
+        '
+        Me.OldAddress.Text = "Old Address"
+        Me.OldAddress.Width = 197
+        '
         'DateClosed
         '
         Me.DateClosed.Text = "Date Closed"
@@ -775,7 +780,7 @@ Partial Class pnlMain
         Me.lblPermanentlyClosed.AutoSize = True
         Me.lblPermanentlyClosed.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblPermanentlyClosed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblPermanentlyClosed.Location = New System.Drawing.Point(903, 94)
+        Me.lblPermanentlyClosed.Location = New System.Drawing.Point(1000, 85)
         Me.lblPermanentlyClosed.Name = "lblPermanentlyClosed"
         Me.lblPermanentlyClosed.Size = New System.Drawing.Size(14, 13)
         Me.lblPermanentlyClosed.TabIndex = 75
@@ -786,7 +791,7 @@ Partial Class pnlMain
         Me.lblTemporaryClosed.AutoSize = True
         Me.lblTemporaryClosed.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblTemporaryClosed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblTemporaryClosed.Location = New System.Drawing.Point(903, 76)
+        Me.lblTemporaryClosed.Location = New System.Drawing.Point(1000, 67)
         Me.lblTemporaryClosed.Name = "lblTemporaryClosed"
         Me.lblTemporaryClosed.Size = New System.Drawing.Size(14, 13)
         Me.lblTemporaryClosed.TabIndex = 74
@@ -797,7 +802,7 @@ Partial Class pnlMain
         Me.lblTotalActive.AutoSize = True
         Me.lblTotalActive.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblTotalActive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblTotalActive.Location = New System.Drawing.Point(903, 59)
+        Me.lblTotalActive.Location = New System.Drawing.Point(1000, 50)
         Me.lblTotalActive.Name = "lblTotalActive"
         Me.lblTotalActive.Size = New System.Drawing.Size(14, 13)
         Me.lblTotalActive.TabIndex = 73
@@ -808,7 +813,7 @@ Partial Class pnlMain
         Me.lblTotalOutlets.AutoSize = True
         Me.lblTotalOutlets.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.lblTotalOutlets.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblTotalOutlets.Location = New System.Drawing.Point(903, 41)
+        Me.lblTotalOutlets.Location = New System.Drawing.Point(1000, 32)
         Me.lblTotalOutlets.Name = "lblTotalOutlets"
         Me.lblTotalOutlets.Size = New System.Drawing.Size(14, 13)
         Me.lblTotalOutlets.TabIndex = 72
@@ -818,7 +823,7 @@ Partial Class pnlMain
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label27.Location = New System.Drawing.Point(718, 94)
+        Me.Label27.Location = New System.Drawing.Point(815, 85)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(153, 12)
         Me.Label27.TabIndex = 71
@@ -828,7 +833,7 @@ Partial Class pnlMain
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label26.Location = New System.Drawing.Point(718, 76)
+        Me.Label26.Location = New System.Drawing.Point(815, 67)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(142, 12)
         Me.Label26.TabIndex = 70
@@ -838,7 +843,7 @@ Partial Class pnlMain
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label25.Location = New System.Drawing.Point(718, 59)
+        Me.Label25.Location = New System.Drawing.Point(815, 50)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(73, 12)
         Me.Label25.TabIndex = 69
@@ -848,7 +853,7 @@ Partial Class pnlMain
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Verdana", 7.0!)
-        Me.Label24.Location = New System.Drawing.Point(718, 42)
+        Me.Label24.Location = New System.Drawing.Point(815, 33)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(81, 12)
         Me.Label24.TabIndex = 68
@@ -1184,7 +1189,7 @@ Partial Class pnlMain
         Me.pbUserProfile.Location = New System.Drawing.Point(18, 23)
         Me.pbUserProfile.Name = "pbUserProfile"
         Me.pbUserProfile.Size = New System.Drawing.Size(95, 95)
-        Me.pbUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbUserProfile.TabIndex = 0
         Me.pbUserProfile.TabStop = False
         '
@@ -1205,11 +1210,6 @@ Partial Class pnlMain
         Me.Button1.TabIndex = 14
         Me.Button1.Text = "Exit"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'OldAddress
-        '
-        Me.OldAddress.Text = "Old Address"
-        Me.OldAddress.Width = 243
         '
         'pnlMain
         '

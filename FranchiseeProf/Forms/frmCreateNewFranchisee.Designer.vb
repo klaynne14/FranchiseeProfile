@@ -157,6 +157,7 @@ Partial Class frmCreateNewFranchisee
         Me.pbFranchisee.Location = New System.Drawing.Point(31, 68)
         Me.pbFranchisee.Name = "pbFranchisee"
         Me.pbFranchisee.Size = New System.Drawing.Size(95, 95)
+        Me.pbFranchisee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbFranchisee.TabIndex = 99
         Me.pbFranchisee.TabStop = False
         '

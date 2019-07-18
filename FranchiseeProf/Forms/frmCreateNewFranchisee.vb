@@ -1,7 +1,28 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class frmCreateNewFranchisee
+    Public Function browseImage()
 
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                Dim OFD As FileDialog = New OpenFileDialog()
+
+                OFD.Filter = "Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif"
+
+                If OFD.ShowDialog() = DialogResult.OK Then
+                    Dim imgpath As String = OFD.FileName
+                    pbFranchisee.ImageLocation = imgpath
+
+                End If
+
+                OFD = Nothing
+
+            Catch ex As Exception
+                MsgBox(ex.Message.ToString())
+            End Try
+        End Using
+        Return False
+    End Function
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
@@ -74,6 +95,6 @@ Public Class frmCreateNewFranchisee
     End Sub
 
     Private Sub PbFranchisee_Click(sender As Object, e As EventArgs) Handles pbFranchisee.Click
-        modProfiling.browseImage()
+        browseImage()
     End Sub
 End Class
