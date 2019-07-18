@@ -208,7 +208,8 @@ Module modProfiling
 
         'Display Outlet to Outlet Listview under franchisee's ID (unFranchisee)
         modProfiling.loadOutletLocation(unF)
-
+        modProfiling.countOutlet(unF)
+        modProfiling.countOutletActive(unF)
         modProfiling.displayImage(focItemUn, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
         pnlMain.btnConfirmOutlet.Visible = False
@@ -465,9 +466,9 @@ Module modProfiling
             lItem.Tag = item.unOutlet
 
             pnlMain.lvOutlet.Items.Add(lItem)
-
+            modProfiling.countOutlet(unF)
+            modProfiling.countOutletActive(unF)
         Next
-
         Return listOL
     End Function
 
@@ -893,4 +894,53 @@ Module modProfiling
         End Using
     End Function
 
+    Public Function countOutlet(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Outlet.unFranchisee = " & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblTotalOutlets.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+
+    'Put in Updates
+    Public Function countOutletActive(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Location.FPLStatus = 'Open' AND Outlet.unFranchisee =" & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblTotalActive.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
 End Module

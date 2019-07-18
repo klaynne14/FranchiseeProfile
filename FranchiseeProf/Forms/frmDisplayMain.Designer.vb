@@ -515,7 +515,7 @@ Partial Class pnlMain
         Me.btnConfirmOutlet.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfirmOutlet.ForeColor = System.Drawing.Color.White
-        Me.btnConfirmOutlet.Location = New System.Drawing.Point(310, 411)
+        Me.btnConfirmOutlet.Location = New System.Drawing.Point(235, 411)
         Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
         Me.btnConfirmOutlet.Size = New System.Drawing.Size(69, 23)
         Me.btnConfirmOutlet.TabIndex = 95
