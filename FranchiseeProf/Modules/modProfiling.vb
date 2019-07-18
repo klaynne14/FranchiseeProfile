@@ -248,19 +248,54 @@ Module modProfiling
 
     Public Function updateFranchisee(unF As Integer) As Boolean
 
-        'Dim uQuery As String = "UPDATE Franchisee
-        '                        SET FPFName=@FPFName,FPFLName=@FPFLName,FPFMName=@FPFMName, FPFStatus=asdsd, FPFOwnershipType=dssds, FPFCorpAuthorizedName=dsds, FPFYearStarted=,
-        '                            FPFAddress1=, FPFAddress2=, FPFTinNumber=, FPFDateOfBirth=, FPFAge=, FPFGender=, FPFCivilStatus=, FPFNationality=, FPFReligion=,
-        '                            FPFOccupation=, FPFMobileNum1=, FPFMobileNum2=, FPFTelNum1=, FPFTelNum2=, FPFFaxNum=, FPFEmailAdd1=, FPFEmailAdd2=
-        '                        WHERE idFranchisee = @idFranchisee"
+        Dim mstream As New System.IO.MemoryStream()
+        frmCreateNewFranchisee.pbFranchisee.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+        Dim arrImage As Byte() = mstream.GetBuffer()
+        Dim FileSize As UInt32
+        FileSize = mstream.Length
+
+        mstream.Close()
+
         Dim uQuery As String = "UPDATE Franchisee
-                                SET FPFName=@FPFName
-                                WHERE unFranchisee = " & Val(unF)
+                                SET FPFName=@FPFName,FPFLName=@FPFLName,FPFMName=@FPFMName, FPFStatus=@FPFStatus, FPFOwnershipType=@FPFOwnershipType, 
+                                    FPFCorpAuthorizedName = @FPFCorpAuthorizedName, FPFYearStarted=@FPFYearStarted, FPFAddress1=, 
+                                    FPFAddress2=@FPFAddress2, FPFTinNumber=@FPFTinNumber, FPFDateOfBirth=@FPFDateOfBirth, FPFAge=@FPFAge, 
+                                    FPFGender=@FPFGender, FPFCivilStatus=@FPFCivilStatus, FPFNationality=@FPFNationality, FPFReligion=@FPFReligion,
+                                    FPFOccupation=@FPFOccupation, FPFMobileNum1=@FPFMobileNum1, FPFMobileNum2=@FPFMobileNum2, FPFTelNum1=@FPFTelNum1, 
+                                    FPFTelNum2=@FPFTelNum2, FPFFaxNum=@FPFFaxNum, FPFEmailAdd1=@FPFEmailAdd1, FPFEmailAdd2=@FPFEmailAdd2, FPFImage=@FPFImage
+                                    WHERE unFranchisee = " & Val(unF)
+        'Dim uQuery As String = "UPDATE Franchisee
+        '                        SET FPFName=@FPFName
+        '                        WHERE unFranchisee = " & Val(unF)
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(uQuery, oConnection)
                     oCommand.Parameters.AddWithValue("@FPFName", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFLName", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFMName", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFStatus", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFOwnershipType", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFCorpAuthorizedName", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFYearStarted", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFAddress1", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFAddress2", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFTinNumber", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFDateOfBirth", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFAge", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFGender", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFCivilStatus", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFNationality", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFReligion", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFOccupation", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFMobileNum1", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFMobileNum2", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFTelNum1", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFTelNum2", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFFaxNum", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFEmailAdd1", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFEmailAdd2", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.Parameters.AddWithValue("@FPFImage", arrImage)
                     oCommand.ExecuteNonQuery()
                     Return True
                 End Using
@@ -582,16 +617,46 @@ Module modProfiling
         Return listContract
     End Function
 
-    Public Function displayCon(unO As Integer) As Boolean
-        Dim frm As New frmOutletDetails
-        Dim cl As List(Of clsContract) = modProfiling.getContractList(unO)
-        Dim focItem As Integer = frmOutletDetails.lvContract.FocusedItem.Index + 1
+    Public Function getConList(unC As Integer) As List(Of clsContract)
+        Dim contractList As List(Of clsContract) = New List(Of clsContract)
+        Dim getContract As New clsContract
+        Dim sQuery As String = "SELECT FPCStartTerm, FPCEndTerm, FPCRemark 
+                                FROM Contract  
+                                WHERE idContract =" & Val(unC)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+
+                    While oRead.Read
+                        getContract = New clsContract
+                        'getContract.unContract = oRead("unContract")
+                        getContract.FPCStartTerm = oRead("FPCStartTerm")
+                        getContract.FPCEndTerm = oRead("FPCEndTerm")
+                        getContract.FPCRemark = oRead("FPCRemark")
+
+                        contractList.Add(getContract)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getConList() " + ex.Message)
+            End Try
+        End Using
+        Return contractList
+    End Function
+
+    Public Function displayCon(unC As Integer) As Boolean
         Dim focItemUn As Integer = frmOutletDetails.lvContract.Tag
+        Dim cl As List(Of clsContract) = modProfiling.getConList(unC)
+        'Dim frm As frmOutletDetails... d gid ni pag gamita gina gago yaka
         For Each o In cl
             If o.idContract = focItemUn Then
-                frm.dtpStartTerm.Value = o.FPCStartTerm
-                frm.dtpEndTerm.Value = o.FPCEndTerm
-                frm.txtRemarks.Text = o.FPCRemark
+                frmOutletDetails.dtpStartTerm.Value = o.FPCStartTerm
+                frmOutletDetails.dtpEndTerm.Value = o.FPCEndTerm
+                frmOutletDetails.txtRemarks.Text = o.FPCRemark
                 Return True
             End If
         Next

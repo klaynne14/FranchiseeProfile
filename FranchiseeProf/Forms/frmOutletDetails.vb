@@ -43,7 +43,7 @@ Public Class frmOutletDetails
     End Sub
 
     Private Sub lvContract_DoubleClick(sender As Object, e As EventArgs) Handles lvContract.DoubleClick
-        Dim unO As Integer = lvContract.Tag
-        modProfiling.displayCon(unO)
+        Dim unC As Integer = Me.lvContract.FocusedItem.Tag
+        modProfiling.displayCon(unC)
     End Sub
 End Class
