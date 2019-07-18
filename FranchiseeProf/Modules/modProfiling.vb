@@ -2,30 +2,28 @@ Imports System.Data.SqlClient
 Imports System.IO
 
 Module modProfiling
-    Public Class clsOutletLoc
+    Public Class clsOutletLocation
 
-        'Public idOutlet As Integer
         Public FPOBusinessUnit As String
         Public unFranchisee As String
 
         Public unOutlet As Integer
 
-        'Public idLocation As Integer
-        'Public unLocation As Integer
         Public FPLLocationName As String
         Public FPLCurrentAddress As String
+        Public FPLOldAddress As String
         Public FPLDateOpened As Date
         Public FPLDateClosed As Date
         Public FPLStatus As String
         Public FPLStatusClosed As String
 
         Public Function mergeList() As Boolean
-            Dim olList As New List(Of clsOutletLoc)
-            Dim ol As clsOutletLoc
+            Dim olList As New List(Of clsOutletLocation)
+            Dim ol As clsOutletLocation
             Dim o As New clsOutlet
             Dim l As New clsLocation
             Try
-                ol = New clsOutletLoc
+                ol = New clsOutletLocation
                 ol.unOutlet = o.unOutlet
                 ol.FPOBusinessUnit = o.FPOBusinessUnit
                 ol.FPLLocationName = l.FPLLocationName
@@ -34,6 +32,7 @@ Module modProfiling
                 ol.FPLDateClosed = l.FPLDateClosed
                 ol.FPLStatus = l.FPLStatus
                 ol.FPLStatusClosed = l.FPLStatus
+                ol.FPLOldAddress = l.FPLOldAddress
                 Return True
 
             Catch ex As Exception
@@ -129,72 +128,6 @@ Module modProfiling
         Return franchiseeList
     End Function
 
-    Public Function getOutletLocList(ByVal unF As Integer) As List(Of clsOutletLocation)
-        Dim outletLocList As List(Of clsOutletLocation) = New List(Of clsOutletLocation)
-        Dim ol As New clsOutletLocation
-        Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit, Location.FPLLocationName, Location.FPLCurrentAddress, 
-                                 Location.FPLDateOpened, Location.FPLStatus, Location.FPLStatusClosed, Location.FPLDateClosed
-                                 FROM Outlet 
-                                 JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
-                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
-                                 Where Outlet.unFranchisee = @unFranchisee
-                                 ORDER BY unOutlet DESC"
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-            Try
-                oConnection.Open()
-                Using oCom As New SqlCommand(sQuery, oConnection)
-
-                    oCom.Parameters.AddWithValue("unFranchisee", unF)
-
-                    Dim oRead As SqlDataReader = oCom.ExecuteReader
-
-                    While oRead.Read
-                        ol = New clsOutletLocation
-                        ol.unOutlet = oRead("unOutlet")
-                        ol.FPOBusinessUnit = oRead("FPOBusinessUnit")
-                        ol.FPLLocationName = oRead("FPLLocationName")
-                        ol.FPLCurrentAddress = oRead("FPLCurrentAddress")
-                        ol.FPLDateOpened = oRead("FPLDateOpened")
-                        ol.FPLStatus = oRead("FPLStatus")
-                        ol.FPLStatusClosed = oRead("FPLStatusClosed")
-                        ol.FPLDateClosed = oRead("FPLDateClosed")
-
-                        outletLocList.Add(ol)
-                    End While
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Error @:getOutletLocList() " + ex.Message)
-            End Try
-        End Using
-        Return outletLocList
-    End Function
-
-    Public Function loadOutletLocation(ByVal unF As Integer)
-        pnlMain.lvOutlet.Items.Clear()
-        Dim listOL As List(Of clsOutletLocation) = modProfiling.getOutletLocList(unF)
-        'l = modProfiling.getFranchiseeList
-
-        For Each item In listOL
-            Dim lItem As New ListViewItem()
-            lItem.Text = item.unOutlet
-            lItem.SubItems.Add(item.FPOBusinessUnit)
-            lItem.SubItems.Add(item.FPLLocationName)
-            lItem.SubItems.Add(item.FPLCurrentAddress)
-            lItem.SubItems.Add(item.FPLDateOpened)
-            lItem.SubItems.Add(item.FPLStatus)
-            lItem.SubItems.Add(item.FPLStatusClosed)
-            If item.FPLStatus = "Close" Then
-                lItem.SubItems.Add(item.FPLDateClosed)
-            End If
-            lItem.Tag = item.unOutlet
-
-            pnlMain.lvOutlet.Items.Add(lItem)
-
-        Next
-
-        Return listOL
-    End Function
-
     'Load existing Franchisee from db to listview 
 
     Dim l As List(Of clsFranchisee)
@@ -268,9 +201,7 @@ Module modProfiling
             pnlMain.btnAddNewOutletMain.BackColor = Color.LightGray
         End If
 
-        'Display Outlet to Outlet Listview under franchisee's ID
-        'Dim FranchiseeID As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
-        'modProfiling.displayOutlet(unF)
+        'Display Outlet to Outlet Listview under franchisee's ID (unFranchisee)
         modProfiling.loadOutletLocation(unF)
 
         modProfiling.displayImage(focItem, pb)
@@ -384,14 +315,16 @@ Module modProfiling
         Return latestOId
     End Function
 
-    Public Function getOutletList(unF As Integer) As List(Of clsOutlet)
-        Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
-        Dim getOutlet As New clsOutlet
-        Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit
-                                FROM Outlet
-                                INNER JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee where Outlet.unFranchisee = @unFranchisee
-                                ORDER BY unOutlet desc"
-
+    Public Function getOutletLocList(ByVal unF As Integer) As List(Of clsOutletLocation)
+        Dim outletLocList As List(Of clsOutletLocation) = New List(Of clsOutletLocation)
+        Dim ol As New clsOutletLocation
+        Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit, Location.FPLLocationName, Location.FPLCurrentAddress, 
+                                 Location.FPLDateOpened, Location.FPLStatus, Location.FPLStatusClosed, Location.FPLDateClosed, Location.FPLOldAddress
+                                 FROM Outlet 
+                                 JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                 Where Outlet.unFranchisee = @unFranchisee
+                                 ORDER BY unOutlet DESC"
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
@@ -402,39 +335,173 @@ Module modProfiling
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
 
                     While oRead.Read
-                        getOutlet = New clsOutlet
-                        getOutlet.unOutlet = oRead("unOutlet")
-                        getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
-                        'getOutlet.unContract = oRead("unContract")
-                        'getOutlet.unLocation = oRead("unLocation")
+                        ol = New clsOutletLocation
+                        ol.unOutlet = oRead("unOutlet")
+                        ol.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        ol.FPLLocationName = oRead("FPLLocationName")
+                        ol.FPLCurrentAddress = oRead("FPLCurrentAddress")
+                        ol.FPLDateOpened = oRead("FPLDateOpened")
+                        ol.FPLStatus = oRead("FPLStatus")
+                        ol.FPLStatusClosed = oRead("FPLStatusClosed")
+                        ol.FPLDateClosed = oRead("FPLDateClosed")
+                        ol.FPLOldAddress = oRead("FPLOldAddress")
 
-                        outletList.Add(getOutlet)
+                        outletLocList.Add(ol)
                     End While
                 End Using
             Catch ex As Exception
-                MessageBox.Show("Error @:getOutletList() " + ex.Message)
+                MessageBox.Show("Error @:getOutletLocList() " + ex.Message)
             End Try
         End Using
-        Return outletList
+        Return outletLocList
     End Function
 
-    Public Function displayOutlet(unF As Integer)
+    Public Function loadOutletLocation(ByVal unF As Integer)
         pnlMain.lvOutlet.Items.Clear()
-        Dim listOutlet As List(Of clsOutlet) = modProfiling.getOutletList(unF)
+        Dim listOL As List(Of clsOutletLocation) = modProfiling.getOutletLocList(unF)
+        'l = modProfiling.getFranchiseeList
 
-        For Each item In listOutlet
-            Dim oItem As New ListViewItem()
-            oItem.Text = item.unOutlet
-            oItem.SubItems.Add(item.FPOBusinessUnit)
-            'oItem.SubItems.Add(item.unLocation)
-            'oItem.SubItems.Add(item.unContract)
-            oItem.Tag = item.unOutlet
+        For Each item In listOL
+            Dim lItem As New ListViewItem()
+            lItem.Text = item.unOutlet
+            lItem.SubItems.Add(item.FPOBusinessUnit)
+            lItem.SubItems.Add(item.FPLLocationName)
+            lItem.SubItems.Add(item.FPLCurrentAddress)
+            lItem.SubItems.Add(item.FPLDateOpened)
+            lItem.SubItems.Add(item.FPLStatus)
+            lItem.SubItems.Add(item.FPLStatusClosed)
+            lItem.SubItems.Add(item.FPLOldAddress)
+            If item.FPLStatus = "Close" Then
+                lItem.SubItems.Add(item.FPLDateClosed)
+            End If
+            lItem.Tag = item.unOutlet
 
-            pnlMain.lvOutlet.Items.Add(oItem)
+            pnlMain.lvOutlet.Items.Add(lItem)
+
         Next
-        Return listOutlet
+
+        Return listOL
     End Function
 
+    Public Function getInfoOutletLocation(ByVal unO As Integer)
+        Dim outletLocList As List(Of clsOutletLocation) = New List(Of clsOutletLocation)
+        Dim ol As New clsOutletLocation
+        Dim sQuery As String = "SELECT Outlet.unOutlet, Outlet.FPOBusinessUnit, Location.FPLLocationName, Location.FPLCurrentAddress, 
+                                 Location.FPLDateOpened, Location.FPLStatus, Location.FPLStatusClosed, Location.FPLDateClosed, FPLOldAddress
+                                 FROM Outlet 
+                                 JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                 Where Outlet.unOutlet=" & Val(unO)
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    'oCom.Parameters.AddWithValue("unFranchisee", unO)
+
+                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+
+                    While oRead.Read
+                        ol = New clsOutletLocation
+                        ol.unOutlet = oRead("unOutlet")
+                        ol.FPOBusinessUnit = oRead("FPOBusinessUnit")
+                        ol.FPLLocationName = oRead("FPLLocationName")
+                        ol.FPLCurrentAddress = oRead("FPLCurrentAddress")
+                        ol.FPLDateOpened = oRead("FPLDateOpened")
+                        ol.FPLStatus = oRead("FPLStatus")
+                        ol.FPLStatusClosed = oRead("FPLStatusClosed")
+                        ol.FPLDateClosed = oRead("FPLDateClosed")
+                        ol.FPLOldAddress = oRead("FPLOldAddress")
+
+                        outletLocList.Add(ol)
+                    End While
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:getOutletLocList() " + ex.Message)
+            End Try
+        End Using
+        Return outletLocList
+    End Function
+
+    Public Function updateInfoOutlet(ByVal unO As Integer) As Boolean
+        Dim sQuery As String = "Update Outlet
+                                Set FPOBusinessUnit = @FPOBusinessUnit
+                                where unOutlet = " & Val(unO)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+
+                    oCommand.Parameters.AddWithValue("@FPOBusinessUnit", frmUpdateOutletDetails.cbBusinessUnit.Text)
+
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+    Public Function updateInfoLocation(ByVal unO As Integer, ByVal status As String) As Boolean
+        Dim sQuery As String = "Update Location
+                                Set FPLLocationName = @FPLLocationName, FPLCurrentAddress = @FPLCurrentAddress, 
+                                FPLDateOpened = @FPLDateOpened,FPLStatus = @FPLStatus, FPLStatusClosed = @FPLStatusClosed, 
+                                FPLDateClosed = @FPLDateClosed, FPLOldAddress = @FPLOldAddress
+                                where unOutlet = " & Val(unO)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+
+                    oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.cbBusinessUnit.Text)
+                    oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
+                    oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
+                    oCommand.Parameters.AddWithValue("@FPLStatus", status)
+                    oCommand.Parameters.AddWithValue("@FPLStatusClosed", frmUpdateOutletDetails.cbStatusClosed.Text)
+                    oCommand.Parameters.AddWithValue("@FPLOldAddress", frmUpdateOutletDetails.txtRelocationAddress.Text)
+                    oCommand.Parameters.AddWithValue("@FPLDateClosed", frmUpdateOutletDetails.dtpCloseDate.Value.Date)
+
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+    Public Function displayInfoOutletLocation()
+        Dim focOutletUn As Integer = pnlMain.lvOutlet.FocusedItem.Tag
+        Dim ol As List(Of clsOutletLocation)
+        ol = modProfiling.getInfoOutletLocation(focOutletUn)
+        For Each o In ol
+            Dim state As Boolean
+            If o.unOutlet = focOutletUn Then
+                frmUpdateOutletDetails.cbBusinessUnit.Text = o.FPOBusinessUnit
+                frmUpdateOutletDetails.txtLocationName.Text = o.FPLLocationName
+                frmUpdateOutletDetails.txtOutletAddress.Text = o.FPLCurrentAddress
+                frmUpdateOutletDetails.dtpDateOpened.Value = o.FPLDateOpened
+                If o.FPLStatus = "Open" Then
+                    state = True
+                Else
+                    state = False
+                End If
+                frmUpdateOutletDetails.cbStatusOutlet.Checked = state
+                frmUpdateOutletDetails.cbStatusClosed.Text = o.FPLStatusClosed
+                frmUpdateOutletDetails.dtpCloseDate.Value = o.FPLDateClosed
+                frmUpdateOutletDetails.txtRelocationAddress.Text = o.FPLOldAddress
+            End If
+        Next
+    End Function
 #End Region
 
 #Region "Contract"
@@ -591,7 +658,7 @@ Module modProfiling
                 frmUpdatePackage.txtPackageRemark.Text = o.FPPPackageRemark
                 frmUpdatePackage.txtSecurityDeposit.Text = o.FPPSecurityDeposit
                 frmUpdatePackage.txtDepositRemark.Text = o.FPPDepositRemark
-                'frmUpdatePackage.txtDateOfRefund.Text = o.FPPDateOfRefund
+                frmUpdatePackage.dtpDateOfRefund.Value = o.FPPDateOfRefund
             End If
         Next
         Return listPackage

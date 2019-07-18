@@ -13,6 +13,8 @@ Public Class pnlMain
             autoComp.Add(item.FName + " " + item.MName + " " + item.LName)
         Next
         txtSearchBar.AutoCompleteCustomSource = autoComp
+
+
     End Sub
 
     Private Sub BtnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
@@ -69,6 +71,7 @@ Public Class pnlMain
     End Sub
 
     Private Sub BtnEditOutlet_Click(sender As Object, e As EventArgs) Handles btnEditOutlet.Click
+        displayInfoOutletLocation()
         frmUpdateOutletDetails.ShowDialog()
     End Sub
 
