@@ -314,6 +314,31 @@ Module modProfiling
             modProfiling.displayImage(focItem, pb)
         Next
     End Function
+
+    Public Function updateFranchisee(unF As Integer) As Boolean
+
+        'Dim uQuery As String = "UPDATE Franchisee
+        '                        SET FPFName=@FPFName,FPFLName=@FPFLName,FPFMName=@FPFMName, FPFStatus=asdsd, FPFOwnershipType=dssds, FPFCorpAuthorizedName=dsds, FPFYearStarted=,
+        '                            FPFAddress1=, FPFAddress2=, FPFTinNumber=, FPFDateOfBirth=, FPFAge=, FPFGender=, FPFCivilStatus=, FPFNationality=, FPFReligion=,
+        '                            FPFOccupation=, FPFMobileNum1=, FPFMobileNum2=, FPFTelNum1=, FPFTelNum2=, FPFFaxNum=, FPFEmailAdd1=, FPFEmailAdd2=
+        '                        WHERE idFranchisee = @idFranchisee"
+        Dim uQuery As String = "UPDATE Franchisee
+                                SET FPFName=@FPFName
+                                WHERE unFranchisee = " & Val(unF)
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(uQuery, oConnection)
+                    oCommand.Parameters.AddWithValue("@FPFName", frmUpdateFranchiseeProfile.txtFName.Text)
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@updateFranchisee:" + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
 #End Region
 
 #Region "Outlet Methods"
@@ -470,7 +495,6 @@ Module modProfiling
             End Try
         End Using
         Return contractList
-
     End Function
 
     Public Function displayContract(unO As Integer)
@@ -489,6 +513,22 @@ Module modProfiling
             frmOutletDetails.lvContract.Items.Add(oItem)
         Next
         Return listContract
+    End Function
+
+    Public Function displayCon(unO As Integer) As Boolean
+        Dim frm As New frmOutletDetails
+        Dim cl As List(Of clsContract) = modProfiling.getContractList(unO)
+        Dim focItem As Integer = frmOutletDetails.lvContract.FocusedItem.Index + 1
+        Dim focItemUn As Integer = frmOutletDetails.lvContract.Tag
+        For Each o In cl
+            If o.idContract = focItemUn Then
+                frm.dtpStartTerm.Value = o.FPCStartTerm
+                frm.dtpEndTerm.Value = o.FPCEndTerm
+                frm.txtRemarks.Text = o.FPCRemark
+                Return True
+            End If
+        Next
+        Return False
     End Function
 
     'Public Function getLatestCId() As Integer

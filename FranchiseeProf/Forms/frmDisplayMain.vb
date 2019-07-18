@@ -2,7 +2,7 @@ Imports System.Data.SqlClient
 
 Public Class pnlMain
 
-    Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         modProfiling.loadFranchisee()
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
 
@@ -20,11 +20,6 @@ Public Class pnlMain
         modProfiling.loadFranchisee()
         modProfiling.clearTextFranchisee()
     End Sub
-
-    Private Sub BtnAddNewOutletMain_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     'Dim l As List(Of clsFranchisee)
     Private Sub lvUserProfile_DoubleClick(sender As Object, e As EventArgs) Handles lvUserProfile.DoubleClick
         'Dim idFLV As Integer = lvUserProfile.FocusedItem.Index + 1
@@ -48,7 +43,6 @@ Public Class pnlMain
     End Sub
 
     Private Sub BtnAddNewOutletMain_Click_1(sender As Object, e As EventArgs) Handles btnAddNewOutletMain.Click
-
         If cbBusinessUnit.Text = " " Then
             MsgBox("Business unit cannot be empty!")
         Else
@@ -59,11 +53,8 @@ Public Class pnlMain
                 frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
                 'modProfiling.displayInfo()
                 frmAddNewOutlet.ShowDialog()
-
             End If
-
         End If
-
         modProfiling.clearTextOutlet()
         frmAddNewOutlet.cbPackageType.Text = " "
     End Sub
@@ -74,16 +65,13 @@ Public Class pnlMain
 
     Private Sub BtnViewOutlet_Click(sender As Object, e As EventArgs) Handles btnViewOutlet.Click
         frmOutletDetails.ShowDialog()
-
         'modProfiling.getOId()
     End Sub
 
     Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
-
         cbBusinessUnit.Text = " "
         modProfiling.displayInfoFranchisee()
         'MsgBox("Outlet added successfully")
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

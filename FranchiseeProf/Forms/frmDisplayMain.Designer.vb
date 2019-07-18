@@ -81,9 +81,9 @@ Partial Class pnlMain
         Me.BusinessUnit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Location = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Address = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DateOpened = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StatusClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.DateOpened = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DateClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
@@ -779,6 +779,11 @@ Partial Class pnlMain
         Me.Address.Text = "Address"
         Me.Address.Width = 240
         '
+        'DateOpened
+        '
+        Me.DateOpened.Text = "Date Opened"
+        Me.DateOpened.Width = 95
+        '
         'Status
         '
         Me.Status.Text = "Status"
@@ -788,11 +793,6 @@ Partial Class pnlMain
         '
         Me.StatusClosed.Text = "Status (if close)"
         Me.StatusClosed.Width = 103
-        '
-        'DateOpened
-        '
-        Me.DateOpened.Text = "Date Opened"
-        Me.DateOpened.Width = 95
         '
         'DateClosed
         '
