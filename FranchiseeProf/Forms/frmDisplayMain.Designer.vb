@@ -1189,7 +1189,7 @@ Partial Class pnlMain
         Me.pbUserProfile.Location = New System.Drawing.Point(18, 23)
         Me.pbUserProfile.Name = "pbUserProfile"
         Me.pbUserProfile.Size = New System.Drawing.Size(95, 95)
-        Me.pbUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbUserProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbUserProfile.TabIndex = 0
         Me.pbUserProfile.TabStop = False
         '
