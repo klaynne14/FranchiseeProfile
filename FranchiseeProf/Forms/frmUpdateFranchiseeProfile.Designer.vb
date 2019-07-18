@@ -27,6 +27,7 @@ Partial Class frmUpdateFranchiseeProfile
         Me.lblUnFranchiseeLabel = New System.Windows.Forms.Label()
         Me.pbUserPhoto = New System.Windows.Forms.PictureBox()
         Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.lblYearStart = New System.Windows.Forms.Label()
         Me.txtYearStarted = New System.Windows.Forms.TextBox()
         Me.lblIfCorp = New System.Windows.Forms.Label()
@@ -62,7 +63,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtNationality = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtCivilStatus = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtAddress2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -78,6 +78,8 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.lnkChangePicture = New System.Windows.Forms.LinkLabel()
+        Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
+        Me.cbCivilStatus = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.pbUserPhoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -86,10 +88,13 @@ Partial Class frmUpdateFranchiseeProfile
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.Controls.Add(Me.lnkChangePicture)
+        Me.Panel1.Controls.Add(Me.cbCivilStatus)
+        Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
         Me.Panel1.Controls.Add(Me.lblUnFranchisee)
         Me.Panel1.Controls.Add(Me.lblUnFranchiseeLabel)
         Me.Panel1.Controls.Add(Me.pbUserPhoto)
         Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.lblYearStart)
         Me.Panel1.Controls.Add(Me.txtYearStarted)
         Me.Panel1.Controls.Add(Me.lblIfCorp)
@@ -125,7 +130,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.txtNationality)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.txtCivilStatus)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtAddress2)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -146,7 +150,7 @@ Partial Class frmUpdateFranchiseeProfile
         'lblUnFranchisee
         '
         Me.lblUnFranchisee.AutoSize = True
-        Me.lblUnFranchisee.Location = New System.Drawing.Point(774, 29)
+        Me.lblUnFranchisee.Location = New System.Drawing.Point(743, 29)
         Me.lblUnFranchisee.Name = "lblUnFranchisee"
         Me.lblUnFranchisee.Size = New System.Drawing.Size(82, 13)
         Me.lblUnFranchisee.TabIndex = 100
@@ -155,7 +159,7 @@ Partial Class frmUpdateFranchiseeProfile
         'lblUnFranchiseeLabel
         '
         Me.lblUnFranchiseeLabel.AutoSize = True
-        Me.lblUnFranchiseeLabel.Location = New System.Drawing.Point(677, 29)
+        Me.lblUnFranchiseeLabel.Location = New System.Drawing.Point(646, 29)
         Me.lblUnFranchiseeLabel.Name = "lblUnFranchiseeLabel"
         Me.lblUnFranchiseeLabel.Size = New System.Drawing.Size(91, 13)
         Me.lblUnFranchiseeLabel.TabIndex = 99
@@ -180,6 +184,17 @@ Partial Class frmUpdateFranchiseeProfile
         Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 21)
         Me.dtpDateOfBirth.TabIndex = 96
         Me.dtpDateOfBirth.Value = New Date(2019, 7, 15, 0, 0, 0, 0)
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.CadetBlue
+        Me.LinkLabel1.Location = New System.Drawing.Point(32, 171)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(95, 13)
+        Me.LinkLabel1.TabIndex = 97
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Change Picture"
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lblYearStart
         '
@@ -303,11 +318,11 @@ Partial Class frmUpdateFranchiseeProfile
         Me.cbFPFStatus.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray
         Me.cbFPFStatus.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.cbFPFStatus.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cbFPFStatus.Location = New System.Drawing.Point(863, 29)
+        Me.cbFPFStatus.Location = New System.Drawing.Point(852, 29)
         Me.cbFPFStatus.Name = "cbFPFStatus"
-        Me.cbFPFStatus.Size = New System.Drawing.Size(61, 17)
+        Me.cbFPFStatus.Size = New System.Drawing.Size(72, 17)
         Me.cbFPFStatus.TabIndex = 85
-        Me.cbFPFStatus.Text = "Active"
+        Me.cbFPFStatus.Text = "Inactive"
         Me.cbFPFStatus.UseVisualStyleBackColor = True
         '
         'txtFaxNumber
@@ -583,18 +598,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Label8.TabIndex = 59
         Me.Label8.Text = "Civil Status"
         '
-        'txtCivilStatus
-        '
-        Me.txtCivilStatus.BackColor = System.Drawing.SystemColors.Window
-        Me.txtCivilStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCivilStatus.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.txtCivilStatus.ForeColor = System.Drawing.Color.Black
-        Me.txtCivilStatus.Location = New System.Drawing.Point(150, 206)
-        Me.txtCivilStatus.MaxLength = 32
-        Me.txtCivilStatus.Name = "txtCivilStatus"
-        Me.txtCivilStatus.Size = New System.Drawing.Size(115, 21)
-        Me.txtCivilStatus.TabIndex = 58
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -772,6 +775,25 @@ Partial Class frmUpdateFranchiseeProfile
         Me.lnkChangePicture.Text = "Change Picture"
         Me.lnkChangePicture.VisitedLinkColor = System.Drawing.Color.Teal
         '
+        'dtpDateOfBirth
+        '
+        Me.dtpDateOfBirth.CustomFormat = "MM/dd/yyyy"
+        Me.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpDateOfBirth.Location = New System.Drawing.Point(537, 69)
+        Me.dtpDateOfBirth.Name = "dtpDateOfBirth"
+        Me.dtpDateOfBirth.Size = New System.Drawing.Size(180, 21)
+        Me.dtpDateOfBirth.TabIndex = 101
+        '
+        'cbCivilStatus
+        '
+        Me.cbCivilStatus.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCivilStatus.FormattingEnabled = True
+        Me.cbCivilStatus.Items.AddRange(New Object() {"Single", "Married", "Divorced", "Separated", "Widowed"})
+        Me.cbCivilStatus.Location = New System.Drawing.Point(150, 206)
+        Me.cbCivilStatus.Name = "cbCivilStatus"
+        Me.cbCivilStatus.Size = New System.Drawing.Size(115, 21)
+        Me.cbCivilStatus.TabIndex = 102
+        '
         'frmUpdateFranchiseeProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -829,7 +851,6 @@ Partial Class frmUpdateFranchiseeProfile
     Friend WithEvents Label7 As Label
     Friend WithEvents txtNationality As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtCivilStatus As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtAddress2 As TextBox
     Friend WithEvents Label5 As Label
@@ -846,7 +867,10 @@ Partial Class frmUpdateFranchiseeProfile
     Friend WithEvents btnClose As Button
     Friend WithEvents pbUserPhoto As PictureBox
     Private WithEvents dtpDateOfBirth As DateTimePicker
+    Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents lblUnFranchisee As Label
     Friend WithEvents lblUnFranchiseeLabel As Label
     Friend WithEvents lnkChangePicture As LinkLabel
+    Friend WithEvents dtpDateOfBirth As DateTimePicker
+    Friend WithEvents cbCivilStatus As ComboBox
 End Class
