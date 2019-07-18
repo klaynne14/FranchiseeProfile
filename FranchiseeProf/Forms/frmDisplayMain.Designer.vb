@@ -52,8 +52,6 @@ Partial Class pnlMain
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlUPHeader = New System.Windows.Forms.Panel()
         Me.btnCreateNew = New System.Windows.Forms.Button()
-        Me.btnPrintSel = New System.Windows.Forms.Button()
-        Me.btnDownload = New System.Windows.Forms.Button()
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.txtSearchBar = New System.Windows.Forms.TextBox()
         Me.pnlInfo = New System.Windows.Forms.Panel()
@@ -128,6 +126,7 @@ Partial Class pnlMain
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.OldAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -334,7 +333,7 @@ Partial Class pnlMain
         Me.pnlUPDash.Controls.Add(Me.pnlUPHeader)
         Me.pnlUPDash.Location = New System.Drawing.Point(4, 5)
         Me.pnlUPDash.Name = "pnlUPDash"
-        Me.pnlUPDash.Size = New System.Drawing.Size(350, 658)
+        Me.pnlUPDash.Size = New System.Drawing.Size(302, 658)
         Me.pnlUPDash.TabIndex = 20
         '
         'tsFrachiseeRowStatus
@@ -346,7 +345,7 @@ Partial Class pnlMain
         Me.tsFrachiseeRowStatus.Location = New System.Drawing.Point(0, 633)
         Me.tsFrachiseeRowStatus.Name = "tsFrachiseeRowStatus"
         Me.tsFrachiseeRowStatus.Padding = New System.Windows.Forms.Padding(0)
-        Me.tsFrachiseeRowStatus.Size = New System.Drawing.Size(350, 25)
+        Me.tsFrachiseeRowStatus.Size = New System.Drawing.Size(302, 25)
         Me.tsFrachiseeRowStatus.TabIndex = 22
         Me.tsFrachiseeRowStatus.Text = "ToolStrip1"
         '
@@ -381,7 +380,7 @@ Partial Class pnlMain
         Me.lvUserProfile.FullRowSelect = True
         Me.lvUserProfile.Location = New System.Drawing.Point(1, 99)
         Me.lvUserProfile.Name = "lvUserProfile"
-        Me.lvUserProfile.Size = New System.Drawing.Size(349, 531)
+        Me.lvUserProfile.Size = New System.Drawing.Size(300, 531)
         Me.lvUserProfile.TabIndex = 21
         Me.lvUserProfile.UseCompatibleStateImageBehavior = False
         Me.lvUserProfile.View = System.Windows.Forms.View.Details
@@ -400,13 +399,11 @@ Partial Class pnlMain
         '
         Me.pnlUPHeader.BackColor = System.Drawing.Color.CadetBlue
         Me.pnlUPHeader.Controls.Add(Me.btnCreateNew)
-        Me.pnlUPHeader.Controls.Add(Me.btnPrintSel)
-        Me.pnlUPHeader.Controls.Add(Me.btnDownload)
         Me.pnlUPHeader.Controls.Add(Me.lblSearch)
         Me.pnlUPHeader.Controls.Add(Me.txtSearchBar)
         Me.pnlUPHeader.Location = New System.Drawing.Point(1, 1)
         Me.pnlUPHeader.Name = "pnlUPHeader"
-        Me.pnlUPHeader.Size = New System.Drawing.Size(349, 100)
+        Me.pnlUPHeader.Size = New System.Drawing.Size(300, 100)
         Me.pnlUPHeader.TabIndex = 20
         '
         'btnCreateNew
@@ -420,32 +417,6 @@ Partial Class pnlMain
         Me.btnCreateNew.TabIndex = 19
         Me.btnCreateNew.Text = "Create New"
         Me.btnCreateNew.UseVisualStyleBackColor = False
-        '
-        'btnPrintSel
-        '
-        Me.btnPrintSel.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnPrintSel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrintSel.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnPrintSel.Location = New System.Drawing.Point(234, 15)
-        Me.btnPrintSel.Name = "btnPrintSel"
-        Me.btnPrintSel.Size = New System.Drawing.Size(99, 24)
-        Me.btnPrintSel.TabIndex = 18
-        Me.btnPrintSel.Text = "Print Selected"
-        Me.btnPrintSel.UseVisualStyleBackColor = False
-        Me.btnPrintSel.Visible = False
-        '
-        'btnDownload
-        '
-        Me.btnDownload.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDownload.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnDownload.Location = New System.Drawing.Point(151, 15)
-        Me.btnDownload.Name = "btnDownload"
-        Me.btnDownload.Size = New System.Drawing.Size(77, 24)
-        Me.btnDownload.TabIndex = 17
-        Me.btnDownload.Text = "Download"
-        Me.btnDownload.UseVisualStyleBackColor = False
-        Me.btnDownload.Visible = False
         '
         'lblSearch
         '
@@ -464,7 +435,7 @@ Partial Class pnlMain
         Me.txtSearchBar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txtSearchBar.Location = New System.Drawing.Point(68, 66)
         Me.txtSearchBar.Name = "txtSearchBar"
-        Me.txtSearchBar.Size = New System.Drawing.Size(266, 21)
+        Me.txtSearchBar.Size = New System.Drawing.Size(218, 21)
         Me.txtSearchBar.TabIndex = 0
         '
         'pnlInfo
@@ -532,9 +503,9 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.lblBranch)
         Me.pnlInfo.Controls.Add(Me.pbUserProfile)
         Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.pnlInfo.Location = New System.Drawing.Point(357, 0)
+        Me.pnlInfo.Location = New System.Drawing.Point(309, 0)
         Me.pnlInfo.Name = "pnlInfo"
-        Me.pnlInfo.Size = New System.Drawing.Size(1001, 668)
+        Me.pnlInfo.Size = New System.Drawing.Size(1049, 668)
         Me.pnlInfo.TabIndex = 18
         Me.pnlInfo.Visible = False
         '
@@ -544,7 +515,7 @@ Partial Class pnlMain
         Me.btnConfirmOutlet.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnConfirmOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfirmOutlet.ForeColor = System.Drawing.Color.White
-        Me.btnConfirmOutlet.Location = New System.Drawing.Point(334, 414)
+        Me.btnConfirmOutlet.Location = New System.Drawing.Point(310, 411)
         Me.btnConfirmOutlet.Name = "btnConfirmOutlet"
         Me.btnConfirmOutlet.Size = New System.Drawing.Size(69, 23)
         Me.btnConfirmOutlet.TabIndex = 95
@@ -558,7 +529,7 @@ Partial Class pnlMain
         Me.btnAddNewOutletMain.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAddNewOutletMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNewOutletMain.ForeColor = System.Drawing.Color.White
-        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(259, 414)
+        Me.btnAddNewOutletMain.Location = New System.Drawing.Point(235, 411)
         Me.btnAddNewOutletMain.Name = "btnAddNewOutletMain"
         Me.btnAddNewOutletMain.Size = New System.Drawing.Size(69, 23)
         Me.btnAddNewOutletMain.TabIndex = 94
@@ -570,7 +541,7 @@ Partial Class pnlMain
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Verdana", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label15.Location = New System.Drawing.Point(42, 420)
+        Me.Label15.Location = New System.Drawing.Point(18, 417)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(83, 13)
         Me.Label15.TabIndex = 93
@@ -581,7 +552,7 @@ Partial Class pnlMain
         Me.cbBusinessUnit.ForeColor = System.Drawing.Color.DimGray
         Me.cbBusinessUnit.FormattingEnabled = True
         Me.cbBusinessUnit.Items.AddRange(New Object() {" ", "Waffle Time", "Coffeebreak"})
-        Me.cbBusinessUnit.Location = New System.Drawing.Point(128, 416)
+        Me.cbBusinessUnit.Location = New System.Drawing.Point(104, 413)
         Me.cbBusinessUnit.Name = "cbBusinessUnit"
         Me.cbBusinessUnit.Size = New System.Drawing.Size(125, 21)
         Me.cbBusinessUnit.TabIndex = 92
@@ -592,7 +563,7 @@ Partial Class pnlMain
         Me.btnViewOutlet.BackColor = System.Drawing.Color.CadetBlue
         Me.btnViewOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnViewOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnViewOutlet.Location = New System.Drawing.Point(108, 600)
+        Me.btnViewOutlet.Location = New System.Drawing.Point(83, 600)
         Me.btnViewOutlet.Name = "btnViewOutlet"
         Me.btnViewOutlet.Size = New System.Drawing.Size(60, 25)
         Me.btnViewOutlet.TabIndex = 91
@@ -739,7 +710,7 @@ Partial Class pnlMain
         Me.btnEditOutlet.BackColor = System.Drawing.Color.CadetBlue
         Me.btnEditOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditOutlet.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnEditOutlet.Location = New System.Drawing.Point(42, 600)
+        Me.btnEditOutlet.Location = New System.Drawing.Point(17, 600)
         Me.btnEditOutlet.Name = "btnEditOutlet"
         Me.btnEditOutlet.Size = New System.Drawing.Size(60, 25)
         Me.btnEditOutlet.TabIndex = 77
@@ -750,11 +721,11 @@ Partial Class pnlMain
         '
         Me.lvOutlet.BackColor = System.Drawing.Color.White
         Me.lvOutlet.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.BusinessUnit, Me.Location, Me.Address, Me.DateOpened, Me.Status, Me.StatusClosed, Me.DateClosed})
+        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.BusinessUnit, Me.Location, Me.Address, Me.DateOpened, Me.Status, Me.StatusClosed, Me.OldAddress, Me.DateClosed})
         Me.lvOutlet.FullRowSelect = True
-        Me.lvOutlet.Location = New System.Drawing.Point(42, 448)
+        Me.lvOutlet.Location = New System.Drawing.Point(18, 448)
         Me.lvOutlet.Name = "lvOutlet"
-        Me.lvOutlet.Size = New System.Drawing.Size(926, 146)
+        Me.lvOutlet.Size = New System.Drawing.Size(1001, 146)
         Me.lvOutlet.TabIndex = 76
         Me.lvOutlet.UseCompatibleStateImageBehavior = False
         Me.lvOutlet.View = System.Windows.Forms.View.Details
@@ -762,27 +733,27 @@ Partial Class pnlMain
         'ID
         '
         Me.ID.Text = "ID"
-        Me.ID.Width = 86
+        Me.ID.Width = 82
         '
         'BusinessUnit
         '
         Me.BusinessUnit.Text = "Business Unit"
-        Me.BusinessUnit.Width = 111
+        Me.BusinessUnit.Width = 97
         '
         'Location
         '
         Me.Location.Text = "Location"
-        Me.Location.Width = 133
+        Me.Location.Width = 121
         '
         'Address
         '
-        Me.Address.Text = "Address"
-        Me.Address.Width = 240
+        Me.Address.Text = "Current Address"
+        Me.Address.Width = 256
         '
         'DateOpened
         '
         Me.DateOpened.Text = "Date Opened"
-        Me.DateOpened.Width = 95
+        Me.DateOpened.Width = 88
         '
         'Status
         '
@@ -791,13 +762,13 @@ Partial Class pnlMain
         '
         'StatusClosed
         '
-        Me.StatusClosed.Text = "Status (if close)"
-        Me.StatusClosed.Width = 103
+        Me.StatusClosed.Text = "Closed Status"
+        Me.StatusClosed.Width = 94
         '
         'DateClosed
         '
         Me.DateClosed.Text = "Date Closed"
-        Me.DateClosed.Width = 92
+        Me.DateClosed.Width = 82
         '
         'lblPermanentlyClosed
         '
@@ -1200,7 +1171,7 @@ Partial Class pnlMain
         Me.lblBranch.AutoSize = True
         Me.lblBranch.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBranch.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblBranch.Location = New System.Drawing.Point(39, 377)
+        Me.lblBranch.Location = New System.Drawing.Point(15, 374)
         Me.lblBranch.Name = "lblBranch"
         Me.lblBranch.Size = New System.Drawing.Size(62, 18)
         Me.lblBranch.TabIndex = 33
@@ -1234,6 +1205,11 @@ Partial Class pnlMain
         Me.Button1.TabIndex = 14
         Me.Button1.Text = "Exit"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'OldAddress
+        '
+        Me.OldAddress.Text = "Old Address"
+        Me.OldAddress.Width = 243
         '
         'pnlMain
         '
@@ -1296,8 +1272,6 @@ Partial Class pnlMain
     Friend WithEvents lvUserProfile As ListView
     Friend WithEvents pnlUPHeader As Panel
     Friend WithEvents btnCreateNew As Button
-    Friend WithEvents btnPrintSel As Button
-    Friend WithEvents btnDownload As Button
     Friend WithEvents lblSearch As Label
     Friend WithEvents txtSearchBar As TextBox
     Friend WithEvents pnlInfo As Panel
@@ -1378,4 +1352,5 @@ Partial Class pnlMain
     Friend WithEvents btnAddNewOutletMain As Button
     Friend WithEvents btnConfirmOutlet As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents OldAddress As ColumnHeader
 End Class

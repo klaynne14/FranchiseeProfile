@@ -5,7 +5,7 @@
     End Sub
 
     Dim lDateClosed As DateTime
-    Dim lStatus As String = "Open"
+    Dim lStatus As String
     Private Sub CbStatusOutlet_CheckedChanged(sender As Object, e As EventArgs) Handles cbStatusOutlet.CheckedChanged
         If cbStatusOutlet.Checked = True Then
             cbStatusClosed.Visible = False
@@ -42,5 +42,11 @@
         Me.Close()
     End Sub
 
-
+    Private Sub BtnUpdateOutletDetails_Click(sender As Object, e As EventArgs) Handles btnUpdateOutletDetails.Click
+        Dim unO As Integer = lblOutletUn.Text
+        Dim unF As Integer = pnlMain.lblIDFranchisee.Text
+        modProfiling.updateInfoLocation(unO, lStatus)
+        modProfiling.loadOutletLocation(unF)
+        Me.Close()
+    End Sub
 End Class

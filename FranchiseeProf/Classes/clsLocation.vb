@@ -14,7 +14,7 @@ Public Class clsLocation
     Public Function addLocation() As Boolean
         Dim sQuery As String = "INSERT INTO Location (unLocation, FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus, unOutlet)
                                 VALUES (((SELECT COUNT(*) FROM Location)+ 1),@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus, @unOutlet)"
-        Dim ol As New clsOutletLoc
+        Dim ol As New clsOutletLocation
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()

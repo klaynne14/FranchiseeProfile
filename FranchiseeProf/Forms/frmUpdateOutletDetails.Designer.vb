@@ -23,6 +23,13 @@ Partial Class frmUpdateOutletDetails
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtRelocationAddress = New System.Windows.Forms.TextBox()
+        Me.lblRelocationAddress = New System.Windows.Forms.Label()
+        Me.lblStatusClosed = New System.Windows.Forms.Label()
+        Me.cbStatusClosed = New System.Windows.Forms.ComboBox()
+        Me.dtpCloseDate = New System.Windows.Forms.DateTimePicker()
+        Me.lblCloseDate = New System.Windows.Forms.Label()
+        Me.cbStatusOutlet = New System.Windows.Forms.CheckBox()
         Me.lblOutletUn = New System.Windows.Forms.Label()
         Me.lblOutlet = New System.Windows.Forms.Label()
         Me.txtLocationName = New System.Windows.Forms.TextBox()
@@ -32,16 +39,9 @@ Partial Class frmUpdateOutletDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnAddNew = New System.Windows.Forms.Button()
+        Me.btnUpdateOutletDetails = New System.Windows.Forms.Button()
         Me.cbBusinessUnit = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtRelocationAddress = New System.Windows.Forms.TextBox()
-        Me.lblRelocationAddress = New System.Windows.Forms.Label()
-        Me.lblStatusClosed = New System.Windows.Forms.Label()
-        Me.cbStatusClosed = New System.Windows.Forms.ComboBox()
-        Me.dtpCloseDate = New System.Windows.Forms.DateTimePicker()
-        Me.lblCloseDate = New System.Windows.Forms.Label()
-        Me.cbStatusOutlet = New System.Windows.Forms.CheckBox()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -65,12 +65,79 @@ Partial Class frmUpdateOutletDetails
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.btnAddNew)
+        Me.Panel1.Controls.Add(Me.btnUpdateOutletDetails)
         Me.Panel1.Controls.Add(Me.cbBusinessUnit)
         Me.Panel1.Location = New System.Drawing.Point(6, 43)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(463, 242)
         Me.Panel1.TabIndex = 4
+        '
+        'txtRelocationAddress
+        '
+        Me.txtRelocationAddress.Location = New System.Drawing.Point(212, 147)
+        Me.txtRelocationAddress.Name = "txtRelocationAddress"
+        Me.txtRelocationAddress.Size = New System.Drawing.Size(218, 20)
+        Me.txtRelocationAddress.TabIndex = 62
+        '
+        'lblRelocationAddress
+        '
+        Me.lblRelocationAddress.AutoSize = True
+        Me.lblRelocationAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblRelocationAddress.Location = New System.Drawing.Point(209, 170)
+        Me.lblRelocationAddress.Name = "lblRelocationAddress"
+        Me.lblRelocationAddress.Size = New System.Drawing.Size(99, 13)
+        Me.lblRelocationAddress.TabIndex = 61
+        Me.lblRelocationAddress.Text = "Relocation Address"
+        '
+        'lblStatusClosed
+        '
+        Me.lblStatusClosed.AutoSize = True
+        Me.lblStatusClosed.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblStatusClosed.Location = New System.Drawing.Point(29, 170)
+        Me.lblStatusClosed.Name = "lblStatusClosed"
+        Me.lblStatusClosed.Size = New System.Drawing.Size(72, 13)
+        Me.lblStatusClosed.TabIndex = 60
+        Me.lblStatusClosed.Text = "Closed Status"
+        '
+        'cbStatusClosed
+        '
+        Me.cbStatusClosed.FormattingEnabled = True
+        Me.cbStatusClosed.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated"})
+        Me.cbStatusClosed.Location = New System.Drawing.Point(32, 146)
+        Me.cbStatusClosed.Name = "cbStatusClosed"
+        Me.cbStatusClosed.Size = New System.Drawing.Size(83, 21)
+        Me.cbStatusClosed.TabIndex = 59
+        '
+        'dtpCloseDate
+        '
+        Me.dtpCloseDate.CustomFormat = "MM/dd/yyyy"
+        Me.dtpCloseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpCloseDate.Location = New System.Drawing.Point(121, 147)
+        Me.dtpCloseDate.Name = "dtpCloseDate"
+        Me.dtpCloseDate.Size = New System.Drawing.Size(84, 20)
+        Me.dtpCloseDate.TabIndex = 58
+        '
+        'lblCloseDate
+        '
+        Me.lblCloseDate.AutoSize = True
+        Me.lblCloseDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lblCloseDate.Location = New System.Drawing.Point(118, 170)
+        Me.lblCloseDate.Name = "lblCloseDate"
+        Me.lblCloseDate.Size = New System.Drawing.Size(65, 13)
+        Me.lblCloseDate.TabIndex = 57
+        Me.lblCloseDate.Text = "Date Closed"
+        '
+        'cbStatusOutlet
+        '
+        Me.cbStatusOutlet.AutoSize = True
+        Me.cbStatusOutlet.Checked = True
+        Me.cbStatusOutlet.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbStatusOutlet.Location = New System.Drawing.Point(378, 20)
+        Me.cbStatusOutlet.Name = "cbStatusOutlet"
+        Me.cbStatusOutlet.Size = New System.Drawing.Size(52, 17)
+        Me.cbStatusOutlet.TabIndex = 56
+        Me.cbStatusOutlet.Text = "Open"
+        Me.cbStatusOutlet.UseVisualStyleBackColor = True
         '
         'lblOutletUn
         '
@@ -159,17 +226,17 @@ Partial Class frmUpdateOutletDetails
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "Business Unit"
         '
-        'btnAddNew
+        'btnUpdateOutletDetails
         '
-        Me.btnAddNew.BackColor = System.Drawing.Color.CadetBlue
-        Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnAddNew.Location = New System.Drawing.Point(344, 197)
-        Me.btnAddNew.Name = "btnAddNew"
-        Me.btnAddNew.Size = New System.Drawing.Size(86, 24)
-        Me.btnAddNew.TabIndex = 17
-        Me.btnAddNew.Text = "Update"
-        Me.btnAddNew.UseVisualStyleBackColor = False
+        Me.btnUpdateOutletDetails.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnUpdateOutletDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdateOutletDetails.ForeColor = System.Drawing.SystemColors.Window
+        Me.btnUpdateOutletDetails.Location = New System.Drawing.Point(344, 197)
+        Me.btnUpdateOutletDetails.Name = "btnUpdateOutletDetails"
+        Me.btnUpdateOutletDetails.Size = New System.Drawing.Size(86, 24)
+        Me.btnUpdateOutletDetails.TabIndex = 17
+        Me.btnUpdateOutletDetails.Text = "Update"
+        Me.btnUpdateOutletDetails.UseVisualStyleBackColor = False
         '
         'cbBusinessUnit
         '
@@ -191,73 +258,6 @@ Partial Class frmUpdateOutletDetails
         Me.Label2.Size = New System.Drawing.Size(158, 17)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Update Outlet Details"
-        '
-        'txtRelocationAddress
-        '
-        Me.txtRelocationAddress.Location = New System.Drawing.Point(212, 147)
-        Me.txtRelocationAddress.Name = "txtRelocationAddress"
-        Me.txtRelocationAddress.Size = New System.Drawing.Size(218, 20)
-        Me.txtRelocationAddress.TabIndex = 62
-        '
-        'lblRelocationAddress
-        '
-        Me.lblRelocationAddress.AutoSize = True
-        Me.lblRelocationAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblRelocationAddress.Location = New System.Drawing.Point(209, 170)
-        Me.lblRelocationAddress.Name = "lblRelocationAddress"
-        Me.lblRelocationAddress.Size = New System.Drawing.Size(99, 13)
-        Me.lblRelocationAddress.TabIndex = 61
-        Me.lblRelocationAddress.Text = "Relocation Address"
-        '
-        'lblStatusClosed
-        '
-        Me.lblStatusClosed.AutoSize = True
-        Me.lblStatusClosed.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblStatusClosed.Location = New System.Drawing.Point(29, 170)
-        Me.lblStatusClosed.Name = "lblStatusClosed"
-        Me.lblStatusClosed.Size = New System.Drawing.Size(72, 13)
-        Me.lblStatusClosed.TabIndex = 60
-        Me.lblStatusClosed.Text = "Closed Status"
-        '
-        'cbStatusClosed
-        '
-        Me.cbStatusClosed.FormattingEnabled = True
-        Me.cbStatusClosed.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated"})
-        Me.cbStatusClosed.Location = New System.Drawing.Point(32, 146)
-        Me.cbStatusClosed.Name = "cbStatusClosed"
-        Me.cbStatusClosed.Size = New System.Drawing.Size(83, 21)
-        Me.cbStatusClosed.TabIndex = 59
-        '
-        'dtpCloseDate
-        '
-        Me.dtpCloseDate.CustomFormat = "MM/dd/yyyy"
-        Me.dtpCloseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpCloseDate.Location = New System.Drawing.Point(121, 147)
-        Me.dtpCloseDate.Name = "dtpCloseDate"
-        Me.dtpCloseDate.Size = New System.Drawing.Size(84, 20)
-        Me.dtpCloseDate.TabIndex = 58
-        '
-        'lblCloseDate
-        '
-        Me.lblCloseDate.AutoSize = True
-        Me.lblCloseDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblCloseDate.Location = New System.Drawing.Point(118, 170)
-        Me.lblCloseDate.Name = "lblCloseDate"
-        Me.lblCloseDate.Size = New System.Drawing.Size(65, 13)
-        Me.lblCloseDate.TabIndex = 57
-        Me.lblCloseDate.Text = "Date Closed"
-        '
-        'cbStatusOutlet
-        '
-        Me.cbStatusOutlet.AutoSize = True
-        Me.cbStatusOutlet.Checked = True
-        Me.cbStatusOutlet.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbStatusOutlet.Location = New System.Drawing.Point(378, 20)
-        Me.cbStatusOutlet.Name = "cbStatusOutlet"
-        Me.cbStatusOutlet.Size = New System.Drawing.Size(52, 17)
-        Me.cbStatusOutlet.TabIndex = 56
-        Me.cbStatusOutlet.Text = "Open"
-        Me.cbStatusOutlet.UseVisualStyleBackColor = True
         '
         'btnClose
         '
@@ -302,7 +302,7 @@ Partial Class frmUpdateOutletDetails
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnAddNew As Button
+    Friend WithEvents btnUpdateOutletDetails As Button
     Friend WithEvents cbBusinessUnit As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtRelocationAddress As TextBox
