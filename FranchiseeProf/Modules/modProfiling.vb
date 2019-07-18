@@ -254,7 +254,7 @@ Module modProfiling
     Public Function updateFranchisee(unF As Integer) As Boolean
 
         Dim mstream As New System.IO.MemoryStream()
-        frmCreateNewFranchisee.pbFranchisee.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+        frmUpdateFranchiseeProfile.pbUserPhoto.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
         Dim arrImage As Byte() = mstream.GetBuffer()
         Dim FileSize As UInt32
         FileSize = mstream.Length
