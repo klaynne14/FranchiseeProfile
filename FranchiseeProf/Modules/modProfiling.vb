@@ -43,6 +43,7 @@ Module modProfiling
             Return False
         End Function
     End Class
+
 #Region "Franchisee Methods"
 
     'Get franchisee list details to display in list view
