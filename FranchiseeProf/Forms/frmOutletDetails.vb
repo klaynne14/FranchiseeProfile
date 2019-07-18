@@ -1,4 +1,6 @@
 Public Class frmOutletDetails
+
+
     Private Sub frmAddContract_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         modProfiling.getfocusedOId(lblOutletID)
@@ -33,6 +35,14 @@ Public Class frmOutletDetails
         Me.Close()
     End Sub
 
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkEditPackage.LinkClicked
 
+        Dim unO As Integer = lblOutletID.Text
+        modProfiling.getInfoPackage(unO)
+        frmUpdatePackage.ShowDialog()
+    End Sub
 
+    Private Sub BtnApply_click(sender As Object, e As EventArgs) Handles btnApply.Click
+        Me.Close()
+    End Sub
 End Class

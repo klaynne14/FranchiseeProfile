@@ -14,7 +14,7 @@ Public Class clsLocation
     Public Function addLocation() As Boolean
         Dim sQuery As String = "INSERT INTO Location (unLocation, FPLLocationName, FPLCurrentAddress, FPLOldAddress, FPLDateOpened, FPLStatus, unOutlet)
                                 VALUES (((SELECT COUNT(*) FROM Location)+ 1),@FPLLocationName, @FPLCurrentAddress, @FPLOldAddress, @FPLDateOpened, @FPLStatus, @unOutlet)"
-
+        Dim ol As New clsOutletLoc
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
@@ -29,6 +29,7 @@ Public Class clsLocation
                     oCommand.Parameters.AddWithValue("@unOutlet", Me.unOutlet)
 
                     oCommand.ExecuteNonQuery()
+                    ol.mergeList()
                     Return True
                 End Using
             Catch ex As Exception

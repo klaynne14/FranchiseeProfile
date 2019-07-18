@@ -2,6 +2,47 @@ Imports System.Data.SqlClient
 Imports System.IO
 
 Module modProfiling
+    Public Class clsOutletLoc
+
+        'Public idOutlet As Integer
+        Public FPOBusinessUnit As String
+        Public unFranchisee As String
+
+        Public unOutlet As Integer
+
+        'Public idLocation As Integer
+        'Public unLocation As Integer
+        Public FPLLocationName As String
+        Public FPLCurrentAddress As String
+        Public FPLDateOpened As Date
+        Public FPLDateClosed As Date
+        Public FPLStatus As String
+        Public FPLStatusClosed As String
+
+        Public Function mergeList() As Boolean
+            Dim olList As New List(Of clsOutletLoc)
+            Dim ol As clsOutletLoc
+            Dim o As New clsOutlet
+            Dim l As New clsLocation
+            Try
+                ol = New clsOutletLoc
+                ol.unOutlet = o.unOutlet
+                ol.FPOBusinessUnit = o.FPOBusinessUnit
+                ol.FPLLocationName = l.FPLLocationName
+                ol.FPLCurrentAddress = l.FPLCurrentAddress
+                ol.FPLDateOpened = l.FPLDateOpened
+                ol.FPLDateClosed = l.FPLDateClosed
+                ol.FPLStatus = l.FPLStatus
+                ol.FPLStatusClosed = l.FPLStatus
+                Return True
+
+            Catch ex As Exception
+                MsgBox("@mergeList: " + ex.Message)
+            End Try
+
+            Return False
+        End Function
+    End Class
 
 #Region "Franchisee Methods"
 
@@ -96,7 +137,8 @@ Module modProfiling
                                  FROM Outlet 
                                  JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
                                  JOIN Location On Location.unOutlet = Outlet.unOutlet
-                                 Where Outlet.unFranchisee = @unFranchisee"
+                                 Where Outlet.unFranchisee = @unFranchisee
+                                 ORDER BY unOutlet DESC"
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
@@ -117,7 +159,7 @@ Module modProfiling
                         ol.FPLStatusClosed = oRead("FPLStatusClosed")
                         ol.FPLDateClosed = oRead("FPLDateClosed")
 
-                        OutletLocList.Add(ol)
+                        outletLocList.Add(ol)
                     End While
                 End Using
             Catch ex As Exception
@@ -141,7 +183,9 @@ Module modProfiling
             lItem.SubItems.Add(item.FPLDateOpened)
             lItem.SubItems.Add(item.FPLStatus)
             lItem.SubItems.Add(item.FPLStatusClosed)
-            lItem.SubItems.Add(item.FPLDateClosed)
+            If item.FPLStatus = "Close" Then
+                lItem.SubItems.Add(item.FPLDateClosed)
+            End If
             lItem.Tag = item.unOutlet
 
             pnlMain.lvOutlet.Items.Add(lItem)
@@ -152,6 +196,7 @@ Module modProfiling
     End Function
 
     'Load existing Franchisee from db to listview 
+
     Dim l As List(Of clsFranchisee)
     Public Function loadFranchisee()
         pnlMain.lvUserProfile.Items.Clear()
@@ -515,11 +560,11 @@ Module modProfiling
     End Function
 
     Public Function displayInfoPackage(unO As Integer) As List(Of clsPackage)
-        Dim focItemUn As Integer = frmOutletDetails.lblOutletID.Text
+        'Dim focItemUn As Integer = frmOutletDetails.lblOutletID.Text
         Dim listPackage As List(Of clsPackage) = modProfiling.getPackageList(unO)
 
         For Each o In listPackage
-            If o.unOutlet = focItemUn Then
+            If o.unOutlet = unO Then
                 frmOutletDetails.lblPackageType.Text = o.FPPPackageType
                 frmOutletDetails.lblFranchiseFee.Text = o.FPPFranchiseFee
                 frmOutletDetails.lblFranchiseRemarks.Text = o.FPPFranchiseRemark
@@ -531,6 +576,58 @@ Module modProfiling
             End If
         Next
         Return listPackage
+    End Function
+
+    Public Function getInfoPackage(unO As Integer) As List(Of clsPackage)
+        Dim listPackage As List(Of clsPackage) = modProfiling.getPackageList(unO)
+
+        For Each o In listPackage
+            If o.unOutlet = unO Then
+                frmUpdatePackage.lblOutletID.Text = o.unOutlet
+                frmUpdatePackage.cbPackageType.Text = o.FPPPackageType
+                frmUpdatePackage.txtFranchiseeFee.Text = o.FPPFranchiseFee
+                frmUpdatePackage.txtFranchiseRemark.Text = o.FPPFranchiseRemark
+                frmUpdatePackage.txtPackageFee.Text = o.FPPPackageFee
+                frmUpdatePackage.txtPackageRemark.Text = o.FPPPackageRemark
+                frmUpdatePackage.txtSecurityDeposit.Text = o.FPPSecurityDeposit
+                frmUpdatePackage.txtDepositRemark.Text = o.FPPDepositRemark
+                'frmUpdatePackage.txtDateOfRefund.Text = o.FPPDateOfRefund
+            End If
+        Next
+        Return listPackage
+    End Function
+
+    Public Function updateInfoPackage(ByVal unO As Integer) As Boolean
+        Dim sQuery As String = "Update Package
+                                Set FPPPackageType = @FPPPackageType, FPPFranchiseFee = @FPPFranchiseFee, FPPPackageFee = @FPPPackageFee, 
+                                FPPSecurityDeposit = @FPPSecurityDeposit, FPPDateOfRefund = @FPPDateOfRefund, FPPFranchiseRemark = @FPPFranchiseRemark, 
+                                FPPPackageRemark = @FPPPackageRemark, FPPDepositRemark = @FPPDepositRemark
+                                where unOutlet = " & Val(unO)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+
+                    oCommand.Parameters.AddWithValue("@FPPPackageType", frmUpdatePackage.cbPackageType.Text)
+                    oCommand.Parameters.AddWithValue("@FPPFranchiseFee", frmUpdatePackage.txtFranchiseeFee.Text)
+                    oCommand.Parameters.AddWithValue("@FPPPackageFee", frmUpdatePackage.txtPackageFee.Text)
+                    oCommand.Parameters.AddWithValue("@FPPSecurityDeposit", frmUpdatePackage.txtSecurityDeposit.Text)
+                    oCommand.Parameters.AddWithValue("@FPPDateOfRefund", frmUpdatePackage.dtpDateOfRefund.Value.Date)
+                    oCommand.Parameters.AddWithValue("@FPPFranchiseRemark", frmUpdatePackage.txtFranchiseRemark.Text)
+                    oCommand.Parameters.AddWithValue("@FPPPackageRemark", frmUpdatePackage.txtPackageRemark.Text)
+                    oCommand.Parameters.AddWithValue("@FPPDepositRemark", frmUpdatePackage.txtDepositRemark.Text)
+
+
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+        Return False
     End Function
 
 #End Region
