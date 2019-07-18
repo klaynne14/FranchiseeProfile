@@ -63,7 +63,7 @@ Public Class pnlMain
 
     Private Sub BtnEditOutlet_Click(sender As Object, e As EventArgs) Handles btnEditOutlet.Click
         displayInfoOutletLocation()
-        frmUpdateOutletDetails.ShowDialog()
+
     End Sub
 
     Private Sub BtnViewOutlet_Click(sender As Object, e As EventArgs) Handles btnViewOutlet.Click
@@ -73,7 +73,8 @@ Public Class pnlMain
 
     Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
         cbBusinessUnit.Text = " "
-        modProfiling.displayInfoFranchisee()
+        Dim unF As Integer = lblIDFranchisee.Text
+        modProfiling.loadOutletLocation(unF)
         'MsgBox("Outlet added successfully")
     End Sub
 

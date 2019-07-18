@@ -3,10 +3,14 @@ Public Class frmOutletDetails
     Private Sub frmAddContract_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         modProfiling.getfocusedOId(lblOutletID)
+        Try
+            Dim unO As Integer = lblOutletID.Text
+            modProfiling.displayContract(unO)
+            modProfiling.displayInfoPackage(unO)
+        Catch ex As Exception
+            Me.Close()
+        End Try
 
-        Dim unO As Integer = lblOutletID.Text
-        modProfiling.displayContract(unO)
-        modProfiling.displayInfoPackage(unO)
     End Sub
     Private Sub BtnAddContract_Click(sender As Object, e As EventArgs) Handles btnAddContract.Click
         Dim ac As clsContract = New clsContract

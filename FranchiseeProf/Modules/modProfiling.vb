@@ -204,46 +204,51 @@ Module modProfiling
         'Display Outlet to Outlet Listview under franchisee's ID (unFranchisee)
         modProfiling.loadOutletLocation(unF)
 
-        modProfiling.displayImage(focItem, pb)
+        modProfiling.displayImage(focItemUn, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
         pnlMain.btnConfirmOutlet.Visible = False
     End Function
 
     Public Function getInfo()
-        Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
-        Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
-        Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
-        l = modProfiling.getFranchiseeList
-        Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
-        For Each o In l
-            If o.unFranchisee = focItemUn Then
-                frmUpdateFranchiseeProfile.txtFName.Text = o.FName
-                frmUpdateFranchiseeProfile.txtMName.Text = o.MName
-                frmUpdateFranchiseeProfile.txtLName.Text = o.LName
-                frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
-                frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
-                frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
-                frmUpdateFranchiseeProfile.txtAge.Text = o.Age
-                frmUpdateFranchiseeProfile.txtCivilStatus.Text = o.CivilStatus
-                'frmUpdateFranchiseeProfile.dtpDateOfBirth.Value.Date = o.DateOfBirth
-                frmUpdateFranchiseeProfile.txtNationality.Text = o.Nationality
-                frmUpdateFranchiseeProfile.txtReligion.Text = o.Religion
-                frmUpdateFranchiseeProfile.txtTelNum1.Text = o.TelNumber1
-                frmUpdateFranchiseeProfile.txtTelNum2.Text = o.TelNumber2
-                frmUpdateFranchiseeProfile.txtMobileNum1.Text = o.MobileNumber1
-                frmUpdateFranchiseeProfile.txtMobileNum2.Text = o.MobileNumber1
-                frmUpdateFranchiseeProfile.txtEmailAddress1.Text = o.EmailAdd1
-                frmUpdateFranchiseeProfile.txtEmailAddress2.Text = o.EmailAdd2
-                frmUpdateFranchiseeProfile.cbOwnershipType.Text = o.OwnershipType
-                frmUpdateFranchiseeProfile.txtCorpAuthorizedName.Text = o.CorpAuthorizedName
-                frmUpdateFranchiseeProfile.txtYearStarted.Text = o.YearStarted
-                frmUpdateFranchiseeProfile.txtTinNumber.Text = o.TinNumber
-                frmUpdateFranchiseeProfile.txtFaxNumber.Text = o.FaxNumber
-                frmUpdateFranchiseeProfile.txtOccupation.Text = o.Occupation
-            End If
+        Try
+            'Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
+            Dim focItemUn As String = pnlMain.lblIDFranchisee.Text
+            Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
+            l = modProfiling.getFranchiseeList
+            Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
+            For Each o In l
+                If o.unFranchisee = focItemUn Then
+                    frmUpdateFranchiseeProfile.txtFName.Text = o.FName
+                    frmUpdateFranchiseeProfile.txtMName.Text = o.MName
+                    frmUpdateFranchiseeProfile.txtLName.Text = o.LName
+                    frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
+                    frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
+                    frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
+                    frmUpdateFranchiseeProfile.txtAge.Text = o.Age
+                    frmUpdateFranchiseeProfile.txtCivilStatus.Text = o.CivilStatus
+                    'frmUpdateFranchiseeProfile.dtpDateOfBirth.Value.Date = o.DateOfBirth
+                    frmUpdateFranchiseeProfile.txtNationality.Text = o.Nationality
+                    frmUpdateFranchiseeProfile.txtReligion.Text = o.Religion
+                    frmUpdateFranchiseeProfile.txtTelNum1.Text = o.TelNumber1
+                    frmUpdateFranchiseeProfile.txtTelNum2.Text = o.TelNumber2
+                    frmUpdateFranchiseeProfile.txtMobileNum1.Text = o.MobileNumber1
+                    frmUpdateFranchiseeProfile.txtMobileNum2.Text = o.MobileNumber1
+                    frmUpdateFranchiseeProfile.txtEmailAddress1.Text = o.EmailAdd1
+                    frmUpdateFranchiseeProfile.txtEmailAddress2.Text = o.EmailAdd2
+                    frmUpdateFranchiseeProfile.cbOwnershipType.Text = o.OwnershipType
+                    frmUpdateFranchiseeProfile.txtCorpAuthorizedName.Text = o.CorpAuthorizedName
+                    frmUpdateFranchiseeProfile.txtYearStarted.Text = o.YearStarted
+                    frmUpdateFranchiseeProfile.txtTinNumber.Text = o.TinNumber
+                    frmUpdateFranchiseeProfile.txtFaxNumber.Text = o.FaxNumber
+                    frmUpdateFranchiseeProfile.txtOccupation.Text = o.Occupation
+                End If
 
-            modProfiling.displayImage(focItem, pb)
-        Next
+                modProfiling.displayImage(focItemUn, pb)
+            Next
+        Catch ex As Exception
+            'MsgBox("No selected item!")
+        End Try
+
     End Function
 
     Public Function updateFranchisee(unF As Integer) As Boolean
@@ -305,14 +310,19 @@ Module modProfiling
     Public Function getfocusedOId(ByVal lblOutletID As Label) As List(Of clsOutlet)
         Dim listOutlet As List(Of clsOutlet)
         Dim getUnOutlet As String
-        getUnOutlet = pnlMain.lvOutlet.FocusedItem.Tag
         listOutlet = modProfiling.getUnOutlet()
+        Try
+            getUnOutlet = pnlMain.lvOutlet.FocusedItem.Tag
+            For Each o In listOutlet
+                If o.unOutlet = getUnOutlet Then
+                    lblOutletID.Text = o.unOutlet
+                End If
+            Next
+        Catch ex As Exception
+            MsgBox("No selected item!")
+            frmOutletDetails.Close()
+        End Try
 
-        For Each o In listOutlet
-            If o.unOutlet = getUnOutlet Then
-                lblOutletID.Text = o.unOutlet
-            End If
-        Next
         Return listOutlet
     End Function
 
@@ -505,27 +515,35 @@ Module modProfiling
     End Function
 
     Public Function displayInfoOutletLocation()
-        Dim focOutletUn As Integer = pnlMain.lvOutlet.FocusedItem.Tag
-        Dim ol As List(Of clsOutletLocation)
-        ol = modProfiling.getInfoOutletLocation(focOutletUn)
-        For Each o In ol
-            Dim state As Boolean
-            If o.unOutlet = focOutletUn Then
-                frmUpdateOutletDetails.cbBusinessUnit.Text = o.FPOBusinessUnit
-                frmUpdateOutletDetails.txtLocationName.Text = o.FPLLocationName
-                frmUpdateOutletDetails.txtOutletAddress.Text = o.FPLCurrentAddress
-                frmUpdateOutletDetails.dtpDateOpened.Value = o.FPLDateOpened
-                If o.FPLStatus = "Open" Then
-                    state = True
-                Else
-                    state = False
+
+        Dim state As Boolean
+        Try
+            Dim ol As List(Of clsOutletLocation)
+            Dim focOutletUn As Integer = pnlMain.lvOutlet.FocusedItem.Tag
+            ol = modProfiling.getInfoOutletLocation(focOutletUn)
+            For Each o In ol
+                If o.unOutlet = focOutletUn Then
+                    frmUpdateOutletDetails.cbBusinessUnit.Text = o.FPOBusinessUnit
+                    frmUpdateOutletDetails.txtLocationName.Text = o.FPLLocationName
+                    frmUpdateOutletDetails.txtOutletAddress.Text = o.FPLCurrentAddress
+                    frmUpdateOutletDetails.dtpDateOpened.Value = o.FPLDateOpened
+                    If o.FPLStatus = "Open" Then
+                        state = True
+                    Else
+                        state = False
+                    End If
+                    frmUpdateOutletDetails.cbStatusOutlet.Checked = state
+                    frmUpdateOutletDetails.cbStatusClosed.Text = o.FPLStatusClosed
+                    frmUpdateOutletDetails.dtpCloseDate.Value = o.FPLDateClosed
+                    frmUpdateOutletDetails.txtRelocationAddress.Text = o.FPLOldAddress
+
+                    frmUpdateOutletDetails.ShowDialog()
                 End If
-                frmUpdateOutletDetails.cbStatusOutlet.Checked = state
-                frmUpdateOutletDetails.cbStatusClosed.Text = o.FPLStatusClosed
-                frmUpdateOutletDetails.dtpCloseDate.Value = o.FPLDateClosed
-                frmUpdateOutletDetails.txtRelocationAddress.Text = o.FPLOldAddress
-            End If
-        Next
+            Next
+
+        Catch ex As Exception
+            MsgBox("No selected item!")
+        End Try
     End Function
 #End Region
 
@@ -771,31 +789,8 @@ Module modProfiling
         Next
     End Sub
 
-    Public Function browseImage()
-
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-            Try
-                Dim OFD As FileDialog = New OpenFileDialog()
-
-                OFD.Filter = "Image File (*.jpg;*.bmp;*.gif)|*.jpg;*.bmp;*.gif"
-
-                If OFD.ShowDialog() = DialogResult.OK Then
-                    Dim imgpath As String = OFD.FileName
-                    frmCreateNewFranchisee.pbFranchisee.ImageLocation = imgpath
-
-                End If
-
-                OFD = Nothing
-
-            Catch ex As Exception
-                MsgBox(ex.Message.ToString())
-            End Try
-        End Using
-        Return False
-    End Function
-
     Public Function displayImage(ByVal focItem As Integer, ByVal pb As PictureBox)
-        Dim sQuery As String = "Select FPFImage from Franchisee where idFranchisee=" & Val(focItem)
+        Dim sQuery As String = "Select FPFImage from Franchisee where unFranchisee=" & Val(focItem)
 
         Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
             Try
