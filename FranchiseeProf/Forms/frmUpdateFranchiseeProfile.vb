@@ -12,13 +12,24 @@
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim pnl As New pnlMain
         Dim unF As Integer = Me.lblUnFranchisee.Text
-        If modProfiling.updateFranchisee(unF) Then
-            modProfiling.updateFranchisee(unF)
+        If modProfiling.updateFranchisee(unF, statState) Then
+            'modProfiling.updateFranchisee(unF, statState)
             MsgBox("Updated Successfully")
             Me.Close()
             modProfiling.displayInfoFranchisee()
             pnl.Main_Load(Me, New System.EventArgs)
             'pnl.pnlInfo.Refresh()
         End If
+    End Sub
+    Dim statState As Integer
+    Private Sub cbFPFStatus_CheckedChanged(sender As Object, e As EventArgs) Handles cbFPFStatus.CheckedChanged
+
+        If cbFPFStatus.Checked = True Then
+            statState = 1
+        ElseIf cbFPFStatus.Checked = False Then
+            statState = 0
+        End If
+
+
     End Sub
 End Class

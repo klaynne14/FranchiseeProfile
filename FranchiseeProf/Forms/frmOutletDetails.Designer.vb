@@ -58,12 +58,14 @@ Partial Class frmOutletDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnUpdateContact = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.btnUpdateContact)
         Me.Panel1.Controls.Add(Me.lnkEditPackage)
         Me.Panel1.Controls.Add(Me.lblDateOfRefund)
         Me.Panel1.Controls.Add(Me.Label17)
@@ -160,7 +162,7 @@ Partial Class frmOutletDetails
         '
         'btnAddContract
         '
-        Me.btnAddContract.Location = New System.Drawing.Point(437, 233)
+        Me.btnAddContract.Location = New System.Drawing.Point(382, 260)
         Me.btnAddContract.Name = "btnAddContract"
         Me.btnAddContract.Size = New System.Drawing.Size(52, 23)
         Me.btnAddContract.TabIndex = 28
@@ -171,7 +173,7 @@ Partial Class frmOutletDetails
         '
         Me.txtRemarks.Location = New System.Drawing.Point(232, 235)
         Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(202, 20)
+        Me.txtRemarks.Size = New System.Drawing.Size(256, 20)
         Me.txtRemarks.TabIndex = 27
         '
         'lvContract
@@ -179,7 +181,7 @@ Partial Class frmOutletDetails
         Me.lvContract.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lvContract.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idContract, Me.FPCStartTerm, Me.FPCEndTerm, Me.FPCRemark})
         Me.lvContract.FullRowSelect = True
-        Me.lvContract.Location = New System.Drawing.Point(47, 285)
+        Me.lvContract.Location = New System.Drawing.Point(47, 291)
         Me.lvContract.Name = "lvContract"
         Me.lvContract.Size = New System.Drawing.Size(442, 97)
         Me.lvContract.TabIndex = 26
@@ -413,6 +415,16 @@ Partial Class frmOutletDetails
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Outlet Details"
         '
+        'btnUpdateContact
+        '
+        Me.btnUpdateContact.Location = New System.Drawing.Point(437, 260)
+        Me.btnUpdateContact.Name = "btnUpdateContact"
+        Me.btnUpdateContact.Size = New System.Drawing.Size(52, 23)
+        Me.btnUpdateContact.TabIndex = 43
+        Me.btnUpdateContact.Text = "Update"
+        Me.btnUpdateContact.UseVisualStyleBackColor = True
+        Me.btnUpdateContact.Visible = False
+        '
         'frmOutletDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -477,4 +489,5 @@ Partial Class frmOutletDetails
     Friend WithEvents lblDateOfRefund As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents lnkEditPackage As LinkLabel
+    Friend WithEvents btnUpdateContact As Button
 End Class

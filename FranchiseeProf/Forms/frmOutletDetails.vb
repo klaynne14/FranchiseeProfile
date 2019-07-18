@@ -45,5 +45,11 @@ Public Class frmOutletDetails
     Private Sub lvContract_DoubleClick(sender As Object, e As EventArgs) Handles lvContract.DoubleClick
         Dim unC As Integer = Me.lvContract.FocusedItem.Tag
         modProfiling.displayCon(unC)
+        btnAddContract.Hide()
+        btnUpdateContact.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnUpdateContact.Click
+
     End Sub
 End Class
