@@ -176,7 +176,9 @@ Partial Class frmOutletDetails
         '
         'lvContract
         '
+        Me.lvContract.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lvContract.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idContract, Me.FPCStartTerm, Me.FPCEndTerm, Me.FPCRemark})
+        Me.lvContract.FullRowSelect = True
         Me.lvContract.Location = New System.Drawing.Point(47, 285)
         Me.lvContract.Name = "lvContract"
         Me.lvContract.Size = New System.Drawing.Size(442, 97)

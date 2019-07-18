@@ -76,6 +76,8 @@ Partial Class frmUpdateFranchiseeProfile
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.lblUnFranchiseeLabel = New System.Windows.Forms.Label()
+        Me.lblUnFranchisee = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.pbUserPhoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,6 +85,8 @@ Partial Class frmUpdateFranchiseeProfile
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.lblUnFranchisee)
+        Me.Panel1.Controls.Add(Me.lblUnFranchiseeLabel)
         Me.Panel1.Controls.Add(Me.pbUserPhoto)
         Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.dtpDateOfBirth)
@@ -747,6 +751,24 @@ Partial Class frmUpdateFranchiseeProfile
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
         '
+        'lblUnFranchiseeLabel
+        '
+        Me.lblUnFranchiseeLabel.AutoSize = True
+        Me.lblUnFranchiseeLabel.Location = New System.Drawing.Point(677, 29)
+        Me.lblUnFranchiseeLabel.Name = "lblUnFranchiseeLabel"
+        Me.lblUnFranchiseeLabel.Size = New System.Drawing.Size(91, 13)
+        Me.lblUnFranchiseeLabel.TabIndex = 99
+        Me.lblUnFranchiseeLabel.Text = "Franchisee ID:"
+        '
+        'lblUnFranchisee
+        '
+        Me.lblUnFranchisee.AutoSize = True
+        Me.lblUnFranchisee.Location = New System.Drawing.Point(774, 29)
+        Me.lblUnFranchisee.Name = "lblUnFranchisee"
+        Me.lblUnFranchisee.Size = New System.Drawing.Size(82, 13)
+        Me.lblUnFranchisee.TabIndex = 100
+        Me.lblUnFranchisee.Text = "unFranchisee"
+        '
         'frmUpdateFranchiseeProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -822,4 +844,6 @@ Partial Class frmUpdateFranchiseeProfile
     Friend WithEvents pbUserPhoto As PictureBox
     Friend WithEvents LinkLabel1 As LinkLabel
     Private WithEvents dtpDateOfBirth As DateTimePicker
+    Friend WithEvents lblUnFranchisee As Label
+    Friend WithEvents lblUnFranchiseeLabel As Label
 End Class

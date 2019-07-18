@@ -1,6 +1,5 @@
 Public Class frmOutletDetails
 
-
     Private Sub frmAddContract_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         modProfiling.getfocusedOId(lblOutletID)
@@ -8,7 +7,6 @@ Public Class frmOutletDetails
         Dim unO As Integer = lblOutletID.Text
         modProfiling.displayContract(unO)
         modProfiling.displayInfoPackage(unO)
-
     End Sub
     Private Sub BtnAddContract_Click(sender As Object, e As EventArgs) Handles btnAddContract.Click
         Dim ac As clsContract = New clsContract
@@ -22,7 +20,6 @@ Public Class frmOutletDetails
             'MessageBox.Show(modProfiling.getLatestCId().ToString)
             Dim unO As Integer = ac.unOutlet
             modProfiling.displayContract(unO)
-
             clearText()
         End If
     End Sub
@@ -36,7 +33,6 @@ Public Class frmOutletDetails
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkEditPackage.LinkClicked
-
         Dim unO As Integer = lblOutletID.Text
         modProfiling.getInfoPackage(unO)
         frmUpdatePackage.ShowDialog()
@@ -44,5 +40,10 @@ Public Class frmOutletDetails
 
     Private Sub BtnApply_click(sender As Object, e As EventArgs) Handles btnApply.Click
         Me.Close()
+    End Sub
+
+    Private Sub lvContract_DoubleClick(sender As Object, e As EventArgs) Handles lvContract.DoubleClick
+        Dim unO As Integer = lvContract.Tag
+        modProfiling.displayCon(unO)
     End Sub
 End Class
