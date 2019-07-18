@@ -154,8 +154,13 @@ Module modProfiling
 
     'Display info from listview to panel
     Public Function displayInfoFranchisee()
-        Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
-        Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
+        Dim focItemUn As Integer
+        Try
+            focItemUn = pnlMain.lvUserProfile.FocusedItem.Tag
+        Catch ex As Exception
+            focItemUn = pnlMain.lblIDFranchisee.Text
+        End Try
+
         l = modProfiling.getFranchiseeList
         Dim pb = pnlMain.pbUserProfile
         Dim unF As Integer
@@ -219,15 +224,17 @@ Module modProfiling
             Dim checkState As Boolean
             For Each o In l
                 If o.unFranchisee = focItemUn Then
-                    If o.Status = 1 Then
-                        checkState = True
-                    ElseIf o.Status = 0 Then
-                        checkState = False
-                    End If
-                    frmUpdateFranchiseeProfile.cbFPFStatus.Checked = checkState
                     frmUpdateFranchiseeProfile.txtFName.Text = o.FName
                     frmUpdateFranchiseeProfile.txtMName.Text = o.MName
                     frmUpdateFranchiseeProfile.txtLName.Text = o.LName
+
+                    If o.Status = 0 Then
+                        checkState = False
+                    Else
+                        checkState = True
+                    End If
+
+                    frmUpdateFranchiseeProfile.cbFPFStatus.Checked = checkState
                     frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
                     frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
                     frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
@@ -448,11 +455,13 @@ Module modProfiling
             lItem.SubItems.Add(item.FPLCurrentAddress)
             lItem.SubItems.Add(item.FPLDateOpened)
             lItem.SubItems.Add(item.FPLStatus)
-            lItem.SubItems.Add(item.FPLStatusClosed)
-            lItem.SubItems.Add(item.FPLOldAddress)
+
             If item.FPLStatus = "Close" Then
+                lItem.SubItems.Add(item.FPLStatusClosed)
+                lItem.SubItems.Add(item.FPLOldAddress)
                 lItem.SubItems.Add(item.FPLDateClosed)
             End If
+
             lItem.Tag = item.unOutlet
 
             pnlMain.lvOutlet.Items.Add(lItem)
@@ -538,7 +547,7 @@ Module modProfiling
 
                 Using oCommand As New SqlCommand(sQuery, oConnection)
 
-                    oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.cbBusinessUnit.Text)
+                    oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.txtLocationName.Text)
                     oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
                     oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
                     oCommand.Parameters.AddWithValue("@FPLStatus", status)

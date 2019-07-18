@@ -33,6 +33,17 @@ Public Class frmUpdateFranchiseeProfile
         Me.Close()
     End Sub
 
+    Dim statState As Integer
+    Private Sub cbFPFStatus_CheckedChanged(sender As Object, e As EventArgs) Handles cbFPFStatus.CheckedChanged
+
+        If cbFPFStatus.Checked = True Then
+            statState = 1
+        ElseIf cbFPFStatus.Checked = False Then
+            statState = 0
+        End If
+
+
+    End Sub
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim pnl As New pnlMain
         Dim unF As Integer = Me.lblUnFranchisee.Text
@@ -45,19 +56,10 @@ Public Class frmUpdateFranchiseeProfile
             'pnl.pnlInfo.Refresh()
         End If
     End Sub
-    Dim statState As Integer
-    Private Sub cbFPFStatus_CheckedChanged(sender As Object, e As EventArgs) Handles cbFPFStatus.CheckedChanged
 
-        If cbFPFStatus.Checked = True Then
-            statState = 1
-        ElseIf cbFPFStatus.Checked = False Then
-            statState = 0
-        End If
-
-
-    End Sub
 
     Private Sub LnkChangePicture_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkChangePicture.LinkClicked
         browseImage()
     End Sub
+
 End Class
