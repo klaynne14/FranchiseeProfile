@@ -23,6 +23,8 @@ Partial Class frmUpdateFranchiseeProfile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblUnFranchisee = New System.Windows.Forms.Label()
+        Me.lblUnFranchiseeLabel = New System.Windows.Forms.Label()
         Me.pbUserPhoto = New System.Windows.Forms.PictureBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.dtpDateOfBirth = New System.Windows.Forms.DateTimePicker()
@@ -76,8 +78,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.lblPersoInfo = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.lblUnFranchiseeLabel = New System.Windows.Forms.Label()
-        Me.lblUnFranchisee = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.pbUserPhoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -143,12 +143,31 @@ Partial Class frmUpdateFranchiseeProfile
         Me.Panel1.Size = New System.Drawing.Size(958, 388)
         Me.Panel1.TabIndex = 1
         '
+        'lblUnFranchisee
+        '
+        Me.lblUnFranchisee.AutoSize = True
+        Me.lblUnFranchisee.Location = New System.Drawing.Point(774, 29)
+        Me.lblUnFranchisee.Name = "lblUnFranchisee"
+        Me.lblUnFranchisee.Size = New System.Drawing.Size(82, 13)
+        Me.lblUnFranchisee.TabIndex = 100
+        Me.lblUnFranchisee.Text = "unFranchisee"
+        '
+        'lblUnFranchiseeLabel
+        '
+        Me.lblUnFranchiseeLabel.AutoSize = True
+        Me.lblUnFranchiseeLabel.Location = New System.Drawing.Point(677, 29)
+        Me.lblUnFranchiseeLabel.Name = "lblUnFranchiseeLabel"
+        Me.lblUnFranchiseeLabel.Size = New System.Drawing.Size(91, 13)
+        Me.lblUnFranchiseeLabel.TabIndex = 99
+        Me.lblUnFranchiseeLabel.Text = "Franchisee ID:"
+        '
         'pbUserPhoto
         '
         Me.pbUserPhoto.BackColor = System.Drawing.Color.LightGray
         Me.pbUserPhoto.Location = New System.Drawing.Point(34, 69)
         Me.pbUserPhoto.Name = "pbUserPhoto"
         Me.pbUserPhoto.Size = New System.Drawing.Size(95, 95)
+        Me.pbUserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbUserPhoto.TabIndex = 98
         Me.pbUserPhoto.TabStop = False
         '
@@ -750,24 +769,6 @@ Partial Class frmUpdateFranchiseeProfile
         Me.btnClose.TabIndex = 50
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
-        '
-        'lblUnFranchiseeLabel
-        '
-        Me.lblUnFranchiseeLabel.AutoSize = True
-        Me.lblUnFranchiseeLabel.Location = New System.Drawing.Point(677, 29)
-        Me.lblUnFranchiseeLabel.Name = "lblUnFranchiseeLabel"
-        Me.lblUnFranchiseeLabel.Size = New System.Drawing.Size(91, 13)
-        Me.lblUnFranchiseeLabel.TabIndex = 99
-        Me.lblUnFranchiseeLabel.Text = "Franchisee ID:"
-        '
-        'lblUnFranchisee
-        '
-        Me.lblUnFranchisee.AutoSize = True
-        Me.lblUnFranchisee.Location = New System.Drawing.Point(774, 29)
-        Me.lblUnFranchisee.Name = "lblUnFranchisee"
-        Me.lblUnFranchisee.Size = New System.Drawing.Size(82, 13)
-        Me.lblUnFranchisee.TabIndex = 100
-        Me.lblUnFranchisee.Text = "unFranchisee"
         '
         'frmUpdateFranchiseeProfile
         '
