@@ -711,7 +711,7 @@ Module modProfiling
 
     '******************************************************************************************************
     Public Function updateContract(unC As Integer)
-        Dim cQuery As String = "UPDATE Contract SET(FPCStartTerm=@FPCStartTerm, FPCEndTerm=@FPCEndTerm, FPCRemark=@FPCRemark)
+        Dim cQuery As String = "UPDATE Contract SET FPCStartTerm=@FPCStartTerm, FPCEndTerm=@FPCEndTerm, FPCRemark=@FPCRemark
                                 WHERE unContract =" & Val(unC)
         'Dim listContract As List(Of clsContract) = modProfiling.getConList(unC)
         'Dim getContract As New clsContract
