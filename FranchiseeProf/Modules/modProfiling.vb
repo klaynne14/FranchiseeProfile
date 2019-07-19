@@ -619,11 +619,11 @@ Module modProfiling
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
-                Using oCom As New SqlCommand(sQuery, oConnection)
+                Using oCommand As New SqlCommand(sQuery, oConnection)
 
-                    oCom.Parameters.AddWithValue("unOutlet", unO)
+                    oCommand.Parameters.AddWithValue("unOutlet", unO)
 
-                    Dim oRead As SqlDataReader = oCom.ExecuteReader
+                    Dim oRead As SqlDataReader = oCommand.ExecuteReader
 
                     While oRead.Read
                         getContract = New clsContract
@@ -705,6 +705,30 @@ Module modProfiling
         Next
         Return False
     End Function
+
+    '******************************************************************************************************
+    Public Function updateContract(unC As Integer)
+        Dim cQuery As String = "UPDATE Contract SET(FPCStartTerm=@FPCStartTerm, FPCEndTerm=@FPCEndTerm, FPCRemark=@FPCRemark)
+                                WHERE unContract =" & Val(unC)
+        'Dim listContract As List(Of clsContract) = modProfiling.getConList(unC)
+        'Dim getContract As New clsContract
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(cQuery, oConnection)
+                    With oCommand
+                        .Parameters.AddWithValue("@FPCStartTerm", frmOutletDetails.dtpStartTerm.Value)
+                        .Parameters.AddWithValue("@FPCEndTerm", frmOutletDetails.dtpEndTerm.Value)
+                        .Parameters.AddWithValue("@FPCRemark", frmOutletDetails.txtRemarks.Text)
+                        .ExecuteNonQuery()
+                    End With
+                End Using
+            Catch ex As Exception
+                MsgBox("@updateContract:" + ex.Message)
+            End Try
+        End Using
+    End Function
+    '******************************************************************************************************
 
     'Public Function getLatestCId() As Integer
     '    Dim getContract As New clsContract
@@ -997,4 +1021,5 @@ Module modProfiling
         End Using
         Return False
     End Function
+
 End Module

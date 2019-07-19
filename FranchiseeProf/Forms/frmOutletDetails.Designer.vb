@@ -23,6 +23,7 @@ Partial Class frmOutletDetails
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnUpdateContact = New System.Windows.Forms.Button()
         Me.lnkEditPackage = New System.Windows.Forms.LinkLabel()
         Me.lblDateOfRefund = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -58,7 +59,6 @@ Partial Class frmOutletDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnUpdateContact = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -99,6 +99,16 @@ Partial Class frmOutletDetails
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(526, 448)
         Me.Panel1.TabIndex = 0
+        '
+        'btnUpdateContact
+        '
+        Me.btnUpdateContact.Location = New System.Drawing.Point(437, 260)
+        Me.btnUpdateContact.Name = "btnUpdateContact"
+        Me.btnUpdateContact.Size = New System.Drawing.Size(52, 23)
+        Me.btnUpdateContact.TabIndex = 43
+        Me.btnUpdateContact.Text = "Update"
+        Me.btnUpdateContact.UseVisualStyleBackColor = True
+        Me.btnUpdateContact.Visible = False
         '
         'lnkEditPackage
         '
@@ -414,16 +424,6 @@ Partial Class frmOutletDetails
         Me.Label2.Size = New System.Drawing.Size(103, 17)
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Outlet Details"
-        '
-        'btnUpdateContact
-        '
-        Me.btnUpdateContact.Location = New System.Drawing.Point(437, 260)
-        Me.btnUpdateContact.Name = "btnUpdateContact"
-        Me.btnUpdateContact.Size = New System.Drawing.Size(52, 23)
-        Me.btnUpdateContact.TabIndex = 43
-        Me.btnUpdateContact.Text = "Update"
-        Me.btnUpdateContact.UseVisualStyleBackColor = True
-        Me.btnUpdateContact.Visible = False
         '
         'frmOutletDetails
         '
