@@ -64,15 +64,20 @@ Public Class frmOutletDetails
         modProfiling.displayCon(unC)
         btnAddContract.Enabled = False
         btnUpdateContact.Enabled = True
-
+        txtRemarks.Enabled = True
+        dtpEndTerm.Enabled = True
+        dtpStartTerm.Enabled = True
     End Sub
 
     Private Sub BtnUpdateContact_Click(sender As Object, e As EventArgs) Handles btnUpdateContact.Click
-
+        Dim unC As Integer = lvContract.FocusedItem.Tag
+        modProfiling.updateContract(unC)
+        Me.frmAddContract_Load(sender, e)
     End Sub
 
     Private Sub BtnAddEnabled_Click(sender As Object, e As EventArgs) Handles btnAddEnabled.Click
         enabledConInfo(True)
+
 
         btnAddEnabled.Hide()
         btnAddContract.Show()
