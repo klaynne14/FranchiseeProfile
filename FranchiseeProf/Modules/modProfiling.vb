@@ -208,11 +208,15 @@ Module modProfiling
 
         'Display Outlet to Outlet Listview under franchisee's ID (unFranchisee)
         modProfiling.loadOutletLocation(unF)
-        modProfiling.countOutlet(unF)
-        modProfiling.countOutletActive(unF)
+
         modProfiling.displayImage(focItemUn, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
         pnlMain.btnConfirmOutlet.Visible = False
+
+        modProfiling.countOutlet(unF)
+        modProfiling.countOutletActive(unF)
+        modProfiling.countOutletTemp(unF)
+        modProfiling.countOutletPerm(unF)
     End Function
 
     Public Function getInfo()
@@ -468,6 +472,8 @@ Module modProfiling
             pnlMain.lvOutlet.Items.Add(lItem)
             modProfiling.countOutlet(unF)
             modProfiling.countOutletActive(unF)
+            modProfiling.countOutletTemp(unF)
+            modProfiling.countOutletPerm(unF)
         Next
         Return listOL
     End Function
@@ -935,6 +941,54 @@ Module modProfiling
 
                     ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
                     pnlMain.lblTotalActive.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+    Public Function countOutletTemp(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Location.FPLStatusClosed = 'Temporary' AND Outlet.unFranchisee =" & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblTemporaryClosed.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+    Public Function countOutletPerm(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Location.FPLStatusClosed = 'Permanent' AND Outlet.unFranchisee =" & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblPermanentlyClosed.Text = ctOutlet
                     Return True
                 End Using
             Catch ex As Exception
