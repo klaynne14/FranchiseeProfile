@@ -62,4 +62,6 @@ Public Class frmUpdateFranchiseeProfile
         browseImage()
     End Sub
 
+
+
 End Class
