@@ -85,9 +85,9 @@ Partial Class frmUpdateOutletDetails
         Me.lblRelocationAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.lblRelocationAddress.Location = New System.Drawing.Point(209, 170)
         Me.lblRelocationAddress.Name = "lblRelocationAddress"
-        Me.lblRelocationAddress.Size = New System.Drawing.Size(99, 13)
+        Me.lblRelocationAddress.Size = New System.Drawing.Size(58, 13)
         Me.lblRelocationAddress.TabIndex = 61
-        Me.lblRelocationAddress.Text = "Relocation Address"
+        Me.lblRelocationAddress.Text = "Relocation"
         '
         'lblStatusClosed
         '

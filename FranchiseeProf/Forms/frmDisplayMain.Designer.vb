@@ -82,7 +82,7 @@ Partial Class pnlMain
         Me.DateOpened = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StatusClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.OldAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Relocation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DateClosed = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblPermanentlyClosed = New System.Windows.Forms.Label()
         Me.lblTemporaryClosed = New System.Windows.Forms.Label()
@@ -721,7 +721,7 @@ Partial Class pnlMain
         '
         Me.lvOutlet.BackColor = System.Drawing.Color.White
         Me.lvOutlet.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.BusinessUnit, Me.Location, Me.Address, Me.DateOpened, Me.Status, Me.StatusClosed, Me.OldAddress, Me.DateClosed})
+        Me.lvOutlet.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.BusinessUnit, Me.Location, Me.Address, Me.DateOpened, Me.Status, Me.StatusClosed, Me.Relocation, Me.DateClosed})
         Me.lvOutlet.FullRowSelect = True
         Me.lvOutlet.Location = New System.Drawing.Point(18, 448)
         Me.lvOutlet.Name = "lvOutlet"
@@ -765,10 +765,10 @@ Partial Class pnlMain
         Me.StatusClosed.Text = "Closed Status"
         Me.StatusClosed.Width = 94
         '
-        'OldAddress
+        'Relocation
         '
-        Me.OldAddress.Text = "Old Address"
-        Me.OldAddress.Width = 197
+        Me.Relocation.Text = "Relocation"
+        Me.Relocation.Width = 197
         '
         'DateClosed
         '
@@ -1352,5 +1352,5 @@ Partial Class pnlMain
     Friend WithEvents btnAddNewOutletMain As Button
     Friend WithEvents btnConfirmOutlet As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents OldAddress As ColumnHeader
+    Friend WithEvents Relocation As ColumnHeader
 End Class
