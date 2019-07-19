@@ -76,7 +76,7 @@ Module modProfiling
     Public Function getFranchiseeList() As List(Of clsFranchisee)
         Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
         Dim fs As New clsFranchisee
-        Dim fsQuery As String = "Select idFranchisee, unFranchisee, FPFName,FPFLName,FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
+        Dim fsQuery As String = "Select idFranchisee, unFranchisee, FPFName,FPFLName,FPFMName, FPFStatus, FPFTotalActive, FPFTotalTempClosed, FPFTotalPermClosed, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                     FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                     FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
                                     FROM Franchisee Order by idFranchisee"
@@ -94,6 +94,9 @@ Module modProfiling
                         fs.LName = oReader("FPFLName")
                         fs.MName = oReader("FPFMName")
                         fs.Status = oReader("FPFStatus")
+                        fs.totalactive = oReader("FPFTotalActive")
+                        fs.totaltempclosed = oReader("FPFTotalTempClosed")
+                        fs.totalpermclosed = oReader("FPFTotalPermClosed")
                         fs.OwnershipType = oReader("FPFOwnershipType")
                         fs.CorpAuthorizedName = oReader("FPFCorpAuthorizedName")
                         fs.YearStarted = oReader("FPFYearStarted")
@@ -115,9 +118,6 @@ Module modProfiling
                         fs.EmailAdd1 = oReader("FPFEmailAdd1")
                         fs.EmailAdd2 = oReader("FPFEmailAdd2")
 
-                        'fsOutlet.idOutlet = oReader("idOutlet")
-
-                        'franchiseeOutlet.Add(fsOutlet)
                         franchiseeList.Add(fs)
                     End While
                 End Using
@@ -204,6 +204,7 @@ Module modProfiling
             pnlMain.lblFPFStatus.ForeColor = Color.Red
             pnlMain.btnAddNewOutletMain.Enabled = False
             pnlMain.btnAddNewOutletMain.BackColor = Color.LightGray
+            frmOutletDetails.btnAddEnabled.Enabled = False
         End If
 
         'Display Outlet to Outlet Listview under franchisee's ID (unFranchisee)
@@ -211,12 +212,9 @@ Module modProfiling
 
         modProfiling.displayImage(focItemUn, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
-        pnlMain.btnConfirmOutlet.Visible = False
 
         modProfiling.countOutlet(unF)
-        modProfiling.countOutletActive(unF)
-        modProfiling.countOutletTemp(unF)
-        modProfiling.countOutletPerm(unF)
+        modProfiling.updateCount(unF)
     End Function
 
     Public Function getInfo()
@@ -288,10 +286,7 @@ Module modProfiling
                                     FPFOccupation=@FPFOccupation, FPFMobileNum1=@FPFMobileNum1, FPFMobileNum2=@FPFMobileNum2, FPFTelNum1=@FPFTelNum1, 
                                     FPFTelNum2=@FPFTelNum2, FPFFaxNum=@FPFFaxNum, FPFEmailAdd1=@FPFEmailAdd1, FPFEmailAdd2=@FPFEmailAdd2
                                     WHERE unFranchisee = " & Val(unF)
-        'FPFStatus=@FPFStatus, 
-        'Dim uQuery As String = "UPDATE Franchisee
-        '                        SET FPFName=@FPFName
-        '                        WHERE unFranchisee = " & Val(unF)
+
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
@@ -338,8 +333,6 @@ Module modProfiling
     Public Function getUnOutlet() As List(Of clsOutlet)
         Dim outletList As List(Of clsOutlet) = New List(Of clsOutlet)
         Dim getOutlet As New clsOutlet
-        'Dim oQuery As String = "SELECT unOutlet, FPOBusinessUnit
-        '                        FROM Outlet"
 
         Dim oQuery As String = "SELECT unOutlet FROM Outlet"
 
@@ -350,8 +343,6 @@ Module modProfiling
                     Dim oRead As SqlDataReader = oCom.ExecuteReader
                     While oRead.Read
                         getOutlet = New clsOutlet
-                        'getOutlet.unOutlet = oRead("unOutlet")
-                        'getOutlet.FPOBusinessUnit = oRead("FPOBusinessUnit")
                         getOutlet.unOutlet = oRead("unOutlet")
                         outletList.Add(getOutlet)
                     End While
@@ -367,6 +358,7 @@ Module modProfiling
         Dim listOutlet As List(Of clsOutlet)
         Dim getUnOutlet As String
         listOutlet = modProfiling.getUnOutlet()
+
         Try
             getUnOutlet = pnlMain.lvOutlet.FocusedItem.Tag
             For Each o In listOutlet
@@ -452,6 +444,15 @@ Module modProfiling
         Dim listOL As List(Of clsOutletLocation) = modProfiling.getOutletLocList(unF)
         'l = modProfiling.getFranchiseeList
 
+        Dim fl As List(Of clsFranchisee)
+        fl = modProfiling.getFranchiseeList()
+
+        For Each f In fl
+            pnlMain.lblTotalActive.Text = f.totalactive
+            pnlMain.lblTemporaryClosed.Text = f.totaltempclosed
+            pnlMain.lblPermanentlyClosed.Text = f.totalpermclosed
+        Next
+
         For Each item In listOL
             Dim lItem As New ListViewItem()
             lItem.Text = item.unOutlet
@@ -471,9 +472,7 @@ Module modProfiling
 
             pnlMain.lvOutlet.Items.Add(lItem)
             modProfiling.countOutlet(unF)
-            modProfiling.countOutletActive(unF)
-            modProfiling.countOutletTemp(unF)
-            modProfiling.countOutletPerm(unF)
+            modProfiling.updateCount(unF)
         Next
         Return listOL
     End Function
@@ -578,9 +577,11 @@ Module modProfiling
 
         Dim state As Boolean
         Try
+
             Dim ol As List(Of clsOutletLocation)
             Dim focOutletUn As Integer = pnlMain.lvOutlet.FocusedItem.Tag
             ol = modProfiling.getInfoOutletLocation(focOutletUn)
+
             For Each o In ol
                 If o.unOutlet = focOutletUn Then
                     frmUpdateOutletDetails.cbBusinessUnit.Text = o.FPOBusinessUnit
@@ -953,7 +954,7 @@ Module modProfiling
 
 
     'Put in Updates
-    Public Function countOutletActive(unF As Integer) As Boolean
+    Public Function countOutletActive(unF As Integer) As Integer
         Dim ctOutlet As Integer
         Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
                                 FROM Outlet 
@@ -967,17 +968,16 @@ Module modProfiling
                 Using oCom As New SqlCommand(sQuery, oConnection)
 
                     ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
-                    pnlMain.lblTotalActive.Text = ctOutlet
-                    Return True
+
+                    Return ctOutlet
                 End Using
             Catch ex As Exception
                 MsgBox("@countOutlet " + ex.Message)
             End Try
         End Using
-        Return False
     End Function
 
-    Public Function countOutletTemp(unF As Integer) As Boolean
+    Public Function countOutletTemp(unF As Integer) As Integer
         Dim ctOutlet As Integer
         Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
                                 FROM Outlet 
@@ -991,17 +991,17 @@ Module modProfiling
                 Using oCom As New SqlCommand(sQuery, oConnection)
 
                     ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
-                    pnlMain.lblTemporaryClosed.Text = ctOutlet
-                    Return True
+
+                    Return ctOutlet
                 End Using
             Catch ex As Exception
                 MsgBox("@countOutlet " + ex.Message)
             End Try
         End Using
-        Return False
+
     End Function
 
-    Public Function countOutletPerm(unF As Integer) As Boolean
+    Public Function countOutletPerm(unF As Integer) As Integer
         Dim ctOutlet As Integer
         Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
                                 FROM Outlet 
@@ -1015,8 +1015,8 @@ Module modProfiling
                 Using oCom As New SqlCommand(sQuery, oConnection)
 
                     ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
-                    pnlMain.lblPermanentlyClosed.Text = ctOutlet
-                    Return True
+
+                    Return ctOutlet
                 End Using
             Catch ex As Exception
                 MsgBox("@countOutlet " + ex.Message)
@@ -1024,5 +1024,36 @@ Module modProfiling
         End Using
         Return False
     End Function
+
+    Public Function updateCount(unF As Integer) As Boolean
+
+
+        Dim sQuery As String = "Update Franchisee
+                                Set FPFTotalActive = @FPFTotalActive, FPFTotalTempClosed = @FPFTotalTempClosed, FPFTotalPermClosed = @FPFTotalTempClosed
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Outlet.unFranchisee = " & Val(unF)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+
+                    oCommand.Parameters.AddWithValue("@FPFTotalActive", countOutletActive(unF))
+                    oCommand.Parameters.AddWithValue("@FPFTotalTempClosed", countOutletTemp(unF))
+                    oCommand.Parameters.AddWithValue("@FPFTotalPermClosed", countOutletPerm(unF))
+
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("@updateCount" + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
 
 End Module

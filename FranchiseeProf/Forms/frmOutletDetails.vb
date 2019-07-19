@@ -42,7 +42,9 @@ Public Class frmOutletDetails
     End Sub
 
     Public Function clearText()
-        txtRemarks.Text = " "
+        dtpStartTerm.Value = Now
+        dtpEndTerm.Value = Now
+        txtRemarks.Clear()
     End Function
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -73,6 +75,7 @@ Public Class frmOutletDetails
         Dim unC As Integer = lvContract.FocusedItem.Tag
         modProfiling.updateContract(unC)
         Me.frmAddContract_Load(sender, e)
+        clearText()
     End Sub
 
     Private Sub BtnAddEnabled_Click(sender As Object, e As EventArgs) Handles btnAddEnabled.Click

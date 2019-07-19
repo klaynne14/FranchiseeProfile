@@ -32,38 +32,45 @@ Public Class frmCreateNewFranchisee
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        Try
+            Dim afs As clsFranchisee = New clsFranchisee
 
-        Dim afs As clsFranchisee = New clsFranchisee
+            afs.FName = txtFName.Text
+            afs.LName = txtLName.Text
+            afs.MName = txtMName.Text
+            afs.Status = activeStatus
+            afs.totalactive = 0
+            afs.totalpermclosed = 0
+            afs.totaltempclosed = 0
+            afs.OwnershipType = cbOwnershipType.Text
+            afs.CorpAuthorizedName = txtCorpAuthorizedName.Text
+            afs.YearStarted = txtYearStarted.Text
+            afs.Address1 = txtAddress1.Text
+            afs.Address2 = txtAddress2.Text
+            afs.TinNumber = txtTinNumber.Text
+            afs.DateOfBirth = dtpDateOfBirth.Value.Date
+            afs.Age = txtAge.Text
+            afs.Gender = cbGender.Text
+            afs.CivilStatus = cbCivilStatus.Text
+            afs.Nationality = txtNationality.Text
+            afs.Religion = txtReligion.Text
+            afs.Occupation = txtOccupation.Text
+            afs.MobileNumber1 = txtMobileNum1.Text
+            afs.MobileNumber2 = txtMobileNum2.Text
+            afs.TelNumber1 = txtTelNum1.Text
+            afs.TelNumber2 = txtTelNum2.Text
+            afs.FaxNumber = txtFaxNumber.Text
+            afs.EmailAdd1 = txtEmailAddress1.Text
+            afs.EmailAdd2 = txtEmailAddress2.Text
 
-        afs.FName = txtFName.Text
-        afs.LName = txtLName.Text
-        afs.MName = txtMName.Text
-        afs.Status = activeStatus
-        afs.OwnershipType = cbOwnershipType.Text
-        afs.CorpAuthorizedName = txtCorpAuthorizedName.Text
-        afs.YearStarted = txtYearStarted.Text
-        afs.Address1 = txtAddress1.Text
-        afs.Address2 = txtAddress2.Text
-        afs.TinNumber = txtTinNumber.Text
-        afs.DateOfBirth = dtpDateOfBirth.Value.Date
-        afs.Age = txtAge.Text
-        afs.Gender = cbGender.Text
-        afs.CivilStatus = cbCivilStatus.Text
-        afs.Nationality = txtNationality.Text
-        afs.Religion = txtReligion.Text
-        afs.Occupation = txtOccupation.Text
-        afs.MobileNumber1 = txtMobileNum1.Text
-        afs.MobileNumber2 = txtMobileNum2.Text
-        afs.TelNumber1 = txtTelNum1.Text
-        afs.TelNumber2 = txtTelNum2.Text
-        afs.FaxNumber = txtFaxNumber.Text
-        afs.EmailAdd1 = txtEmailAddress1.Text
-        afs.EmailAdd2 = txtEmailAddress2.Text
+            If afs.addFranchisee() Then
+                MsgBox("Added Successfully")
+                Me.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("@SubmitClick" + ex.Message)
+        End Try
 
-        If afs.addFranchisee() Then
-            MsgBox("Added Successfully")
-            Me.Close()
-        End If
 
     End Sub
 

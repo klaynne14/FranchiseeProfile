@@ -365,7 +365,7 @@ Partial Class frmAddNewOutlet
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(85, 30)
         Me.btnAddNew.TabIndex = 17
-        Me.btnAddNew.Text = "Add"
+        Me.btnAddNew.Text = "Confirm"
         Me.btnAddNew.UseVisualStyleBackColor = False
         '
         'Label2

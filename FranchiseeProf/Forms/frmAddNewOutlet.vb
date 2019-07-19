@@ -53,6 +53,7 @@ Public Class frmAddNewOutlet
     End Sub
 
     Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
+
         Dim unO As Integer = lblOutletID.Text
 
         Dim al As clsLocation = New clsLocation
@@ -75,11 +76,16 @@ Public Class frmAddNewOutlet
         ap.unOutlet = unO
 
         If al.addLocation() And ap.addPackage() Then
-            MsgBox("Added to outlet successfully")
+            MsgBox("Outlet added successfully")
+            pnlMain.cbBusinessUnit.Text = " "
+            Dim unF As Integer = pnlMain.lblIDFranchisee.Text
+            modProfiling.loadOutletLocation(unF)
+
             Me.Close()
-            pnlMain.btnAddNewOutletMain.Visible = False
-            pnlMain.btnConfirmOutlet.Visible = True
         End If
+
+
+
     End Sub
 
     Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged

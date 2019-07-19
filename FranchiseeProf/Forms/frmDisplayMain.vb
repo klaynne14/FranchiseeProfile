@@ -68,15 +68,9 @@ Public Class pnlMain
         'modProfiling.getOId()
     End Sub
 
-    Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
-        cbBusinessUnit.Text = " "
-        Dim unF As Integer = lblIDFranchisee.Text
-        MsgBox("Outlet added successfully")
-        modProfiling.loadOutletLocation(unF)
-
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Application.Exit()
     End Sub
+
 End Class

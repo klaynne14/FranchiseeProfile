@@ -8,9 +8,9 @@ Public Class clsFranchisee
     Public LName As String
     Public MName As String
     Public Status As Integer
-    'Public TotalActive As Integer
-    'Public TotalTempCLosed As Integer
-    'Public TotalPermClosed As Integer
+    Public totalactive As Integer
+    Public totaltempclosed As Integer
+    Public totalpermclosed As Integer
     Public OwnershipType As String
     Public CorpAuthorizedName As String
     Public YearStarted As String
@@ -44,11 +44,11 @@ Public Class clsFranchisee
 
         mstream.Close()
 
-        Dim sQuery As String = "INSERT INTO Franchisee(unFranchisee ,FPFName ,FPFLName, FPFMName, FPFStatus, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
+        Dim sQuery As String = "INSERT INTO Franchisee(unFranchisee ,FPFName ,FPFLName, FPFMName, FPFStatus,FPFTotalActive, FPFTotalTempClosed,FPFTotalPermClosed, FPFOwnershipType, FPFCorpAuthorizedName, FPFYearStarted,
                                                         FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth ,FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                                         FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2, FPFImage)
 
-                                Values(((SELECT COUNT(*) FROM Franchisee)+ 1000001) ,@FPFName,@FPFLName,@FPFMName,@FPFStatus,@FPFOwnershipType,@FPFCorpAuthorizedName,@FPFYearStarted,
+                                Values(((SELECT COUNT(*) FROM Franchisee)+ 1000001) ,@FPFName,@FPFLName,@FPFMName,@FPFStatus, @FPFTotalActive, @FPFTotalTempClosed, @FPFTotalPermClosed, @FPFOwnershipType, @FPFCorpAuthorizedName, @FPFYearStarted,
                                         @FPFAddress1,@FPFAddress2,@FPFTinNumber,@FPFDateOfBirth,@FPFAge,@FPFGender,@FPFCivilStatus,@FPFNationality,@FPFReligion,@FPFOccupation,@FPFMobileNum1,
                                         @FPFMobileNum2,@FPFTelNum1,@FPFTelNum2,@FPFFaxNum,@FPFEmailAdd1,@FPFEmailAdd2, @FPFImage)"
 
@@ -64,9 +64,9 @@ Public Class clsFranchisee
                     oCommand.Parameters.AddWithValue("@FPFLName", Me.LName)
                     oCommand.Parameters.AddWithValue("@FPFMName", Me.MName)
                     oCommand.Parameters.AddWithValue("@FPFStatus", Me.Status)
-                    'oCommand.Parameters.AddWithValue("@FPFTotalActive", Me.TotalActive)
-                    'oCommand.Parameters.AddWithValue("@FPFTotalTempClosed", Me.TotalTempCLosed)
-                    'oCommand.Parameters.AddWithValue("@FPFTotalPermClosed", Me.TotalPermClosed)
+                    oCommand.Parameters.AddWithValue("@FPFTotalActive", Me.totalactive)
+                    oCommand.Parameters.AddWithValue("@FPFTotalTempClosed", Me.totaltempclosed)
+                    oCommand.Parameters.AddWithValue("@FPFTotalPermClosed", Me.totalpermclosed)
                     oCommand.Parameters.AddWithValue("@FPFOwnershipType", Me.OwnershipType)
                     oCommand.Parameters.AddWithValue("@FPFCorpAuthorizedName", Me.CorpAuthorizedName)
                     oCommand.Parameters.AddWithValue("@FPFYearStarted", Me.YearStarted)
