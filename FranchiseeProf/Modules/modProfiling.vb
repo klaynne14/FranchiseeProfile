@@ -663,9 +663,9 @@ Module modProfiling
     Public Function getConList(unC As Integer) As List(Of clsContract)
         Dim contractList As List(Of clsContract) = New List(Of clsContract)
         Dim getContract As New clsContract
-        Dim sQuery As String = "SELECT FPCStartTerm, FPCEndTerm, FPCRemark 
+        Dim sQuery As String = "SELECT unContract, FPCStartTerm, FPCEndTerm, FPCRemark 
                                 FROM Contract  
-                                WHERE idContract =" & Val(unC)
+                                WHERE unContract =" & Val(unC)
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -677,6 +677,7 @@ Module modProfiling
                     While oRead.Read
                         getContract = New clsContract
                         'getContract.unContract = oRead("unContract")
+                        getContract.unContract = oRead("unContract")
                         getContract.FPCStartTerm = oRead("FPCStartTerm")
                         getContract.FPCEndTerm = oRead("FPCEndTerm")
                         getContract.FPCRemark = oRead("FPCRemark")
@@ -697,9 +698,11 @@ Module modProfiling
         'Dim frm As frmOutletDetails... d gid ni pag gamita gina gago yaka
         For Each o In cl
             If o.idContract = focItemUn Then
+                frmOutletDetails.lblUnContract.Text = o.unContract
                 frmOutletDetails.dtpStartTerm.Value = o.FPCStartTerm
                 frmOutletDetails.dtpEndTerm.Value = o.FPCEndTerm
                 frmOutletDetails.txtRemarks.Text = o.FPCRemark
+
                 Return True
             End If
         Next

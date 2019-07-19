@@ -36,10 +36,6 @@ Public Class pnlMain
 
     End Sub
 
-    Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
-        frmUpdateOutletDetails.ShowDialog()
-    End Sub
-
     Private Sub BtnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
         frmUpdateFranchiseeProfile.ShowDialog()
         'modProfiling.getFranchiseeInfoText()
