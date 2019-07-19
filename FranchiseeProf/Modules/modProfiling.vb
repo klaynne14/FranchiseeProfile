@@ -698,7 +698,7 @@ Module modProfiling
         'Dim frm As frmOutletDetails... d gid ni pag gamita gina gago yaka
         For Each o In cl
             If o.idContract = focItemUn Then
-                frmOutletDetails.lblUnContract.Text = o.unContract
+                'frmOutletDetails.lblUnContract.Text = o.unContract
                 frmOutletDetails.dtpStartTerm.Value = o.FPCStartTerm
                 frmOutletDetails.dtpEndTerm.Value = o.FPCEndTerm
                 frmOutletDetails.txtRemarks.Text = o.FPCRemark

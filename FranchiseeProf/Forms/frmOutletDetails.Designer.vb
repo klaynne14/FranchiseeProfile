@@ -23,8 +23,7 @@ Partial Class frmOutletDetails
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblUnContract = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.btnAddEnabled = New System.Windows.Forms.Button()
         Me.btnUpdateContact = New System.Windows.Forms.Button()
         Me.lnkEditPackage = New System.Windows.Forms.LinkLabel()
         Me.lblDateOfRefund = New System.Windows.Forms.Label()
@@ -61,7 +60,6 @@ Partial Class frmOutletDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnAddEnabled = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,8 +67,6 @@ Partial Class frmOutletDetails
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.Controls.Add(Me.btnAddEnabled)
-        Me.Panel1.Controls.Add(Me.lblUnContract)
-        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.btnUpdateContact)
         Me.Panel1.Controls.Add(Me.lnkEditPackage)
         Me.Panel1.Controls.Add(Me.lblDateOfRefund)
@@ -106,23 +102,14 @@ Partial Class frmOutletDetails
         Me.Panel1.Size = New System.Drawing.Size(526, 476)
         Me.Panel1.TabIndex = 0
         '
-        'lblUnContract
+        'btnAddEnabled
         '
-        Me.lblUnContract.AutoSize = True
-        Me.lblUnContract.Location = New System.Drawing.Point(467, 225)
-        Me.lblUnContract.Name = "lblUnContract"
-        Me.lblUnContract.Size = New System.Drawing.Size(19, 13)
-        Me.lblUnContract.TabIndex = 45
-        Me.lblUnContract.Text = "00"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(403, 225)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(64, 13)
-        Me.Label16.TabIndex = 44
-        Me.Label16.Text = "Contract ID:"
+        Me.btnAddEnabled.Location = New System.Drawing.Point(383, 276)
+        Me.btnAddEnabled.Name = "btnAddEnabled"
+        Me.btnAddEnabled.Size = New System.Drawing.Size(52, 23)
+        Me.btnAddEnabled.TabIndex = 47
+        Me.btnAddEnabled.Text = "Add"
+        Me.btnAddEnabled.UseVisualStyleBackColor = True
         '
         'btnUpdateContact
         '
@@ -451,15 +438,6 @@ Partial Class frmOutletDetails
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Outlet Details"
         '
-        'btnAddEnabled
-        '
-        Me.btnAddEnabled.Location = New System.Drawing.Point(383, 276)
-        Me.btnAddEnabled.Name = "btnAddEnabled"
-        Me.btnAddEnabled.Size = New System.Drawing.Size(52, 23)
-        Me.btnAddEnabled.TabIndex = 47
-        Me.btnAddEnabled.Text = "Add"
-        Me.btnAddEnabled.UseVisualStyleBackColor = True
-        '
         'frmOutletDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -524,8 +502,6 @@ Partial Class frmOutletDetails
     Friend WithEvents Label17 As Label
     Friend WithEvents lnkEditPackage As LinkLabel
     Friend WithEvents btnUpdateContact As Button
-    Friend WithEvents lblUnContract As Label
-    Friend WithEvents Label16 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents btnAddEnabled As Button
 End Class
