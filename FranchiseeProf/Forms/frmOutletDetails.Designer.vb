@@ -23,6 +23,9 @@ Partial Class frmOutletDetails
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblUnContract = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.btnUpdateContact = New System.Windows.Forms.Button()
         Me.lnkEditPackage = New System.Windows.Forms.LinkLabel()
         Me.lblDateOfRefund = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -58,13 +61,16 @@ Partial Class frmOutletDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnUpdateContact = New System.Windows.Forms.Button()
+        Me.btnAddEnabled = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.btnAddEnabled)
+        Me.Panel1.Controls.Add(Me.lblUnContract)
+        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.btnUpdateContact)
         Me.Panel1.Controls.Add(Me.lnkEditPackage)
         Me.Panel1.Controls.Add(Me.lblDateOfRefund)
@@ -97,8 +103,35 @@ Partial Class frmOutletDetails
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(5, 46)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(526, 448)
+        Me.Panel1.Size = New System.Drawing.Size(526, 476)
         Me.Panel1.TabIndex = 0
+        '
+        'lblUnContract
+        '
+        Me.lblUnContract.AutoSize = True
+        Me.lblUnContract.Location = New System.Drawing.Point(467, 225)
+        Me.lblUnContract.Name = "lblUnContract"
+        Me.lblUnContract.Size = New System.Drawing.Size(19, 13)
+        Me.lblUnContract.TabIndex = 45
+        Me.lblUnContract.Text = "00"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(403, 225)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(64, 13)
+        Me.Label16.TabIndex = 44
+        Me.Label16.Text = "Contract ID:"
+        '
+        'btnUpdateContact
+        '
+        Me.btnUpdateContact.Location = New System.Drawing.Point(438, 276)
+        Me.btnUpdateContact.Name = "btnUpdateContact"
+        Me.btnUpdateContact.Size = New System.Drawing.Size(52, 23)
+        Me.btnUpdateContact.TabIndex = 43
+        Me.btnUpdateContact.Text = "Update"
+        Me.btnUpdateContact.UseVisualStyleBackColor = True
         '
         'lnkEditPackage
         '
@@ -135,7 +168,7 @@ Partial Class frmOutletDetails
         Me.btnApply.BackColor = System.Drawing.Color.CadetBlue
         Me.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnApply.ForeColor = System.Drawing.SystemColors.Window
-        Me.btnApply.Location = New System.Drawing.Point(403, 396)
+        Me.btnApply.Location = New System.Drawing.Point(404, 422)
         Me.btnApply.Name = "btnApply"
         Me.btnApply.Size = New System.Drawing.Size(85, 30)
         Me.btnApply.TabIndex = 39
@@ -162,7 +195,7 @@ Partial Class frmOutletDetails
         '
         'btnAddContract
         '
-        Me.btnAddContract.Location = New System.Drawing.Point(382, 260)
+        Me.btnAddContract.Location = New System.Drawing.Point(383, 276)
         Me.btnAddContract.Name = "btnAddContract"
         Me.btnAddContract.Size = New System.Drawing.Size(52, 23)
         Me.btnAddContract.TabIndex = 28
@@ -171,7 +204,7 @@ Partial Class frmOutletDetails
         '
         'txtRemarks
         '
-        Me.txtRemarks.Location = New System.Drawing.Point(232, 235)
+        Me.txtRemarks.Location = New System.Drawing.Point(233, 251)
         Me.txtRemarks.Name = "txtRemarks"
         Me.txtRemarks.Size = New System.Drawing.Size(256, 20)
         Me.txtRemarks.TabIndex = 27
@@ -181,7 +214,7 @@ Partial Class frmOutletDetails
         Me.lvContract.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lvContract.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idContract, Me.FPCStartTerm, Me.FPCEndTerm, Me.FPCRemark})
         Me.lvContract.FullRowSelect = True
-        Me.lvContract.Location = New System.Drawing.Point(47, 291)
+        Me.lvContract.Location = New System.Drawing.Point(47, 310)
         Me.lvContract.Name = "lvContract"
         Me.lvContract.Size = New System.Drawing.Size(442, 97)
         Me.lvContract.TabIndex = 26
@@ -206,12 +239,13 @@ Partial Class frmOutletDetails
         'FPCRemark
         '
         Me.FPCRemark.Text = "Remarks"
-        Me.FPCRemark.Width = 171
+        Me.FPCRemark.Width = 192
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(229, 258)
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(230, 274)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 13)
         Me.Label11.TabIndex = 25
@@ -222,7 +256,7 @@ Partial Class frmOutletDetails
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(27, 208)
+        Me.Label8.Location = New System.Drawing.Point(28, 224)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(61, 14)
         Me.Label8.TabIndex = 23
@@ -231,7 +265,8 @@ Partial Class frmOutletDetails
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(134, 259)
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(135, 275)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 18
@@ -241,7 +276,7 @@ Partial Class frmOutletDetails
         '
         Me.dtpEndTerm.CustomFormat = "MM/dd/yyyy"
         Me.dtpEndTerm.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpEndTerm.Location = New System.Drawing.Point(137, 236)
+        Me.dtpEndTerm.Location = New System.Drawing.Point(138, 252)
         Me.dtpEndTerm.Name = "dtpEndTerm"
         Me.dtpEndTerm.Size = New System.Drawing.Size(84, 20)
         Me.dtpEndTerm.TabIndex = 17
@@ -250,7 +285,7 @@ Partial Class frmOutletDetails
         '
         Me.dtpStartTerm.CustomFormat = "MM/dd/yyy"
         Me.dtpStartTerm.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpStartTerm.Location = New System.Drawing.Point(47, 236)
+        Me.dtpStartTerm.Location = New System.Drawing.Point(48, 252)
         Me.dtpStartTerm.Name = "dtpStartTerm"
         Me.dtpStartTerm.Size = New System.Drawing.Size(84, 20)
         Me.dtpStartTerm.TabIndex = 16
@@ -312,7 +347,8 @@ Partial Class frmOutletDetails
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(44, 259)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(45, 275)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 13)
         Me.Label3.TabIndex = 9
@@ -415,22 +451,21 @@ Partial Class frmOutletDetails
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Outlet Details"
         '
-        'btnUpdateContact
+        'btnAddEnabled
         '
-        Me.btnUpdateContact.Location = New System.Drawing.Point(437, 260)
-        Me.btnUpdateContact.Name = "btnUpdateContact"
-        Me.btnUpdateContact.Size = New System.Drawing.Size(52, 23)
-        Me.btnUpdateContact.TabIndex = 43
-        Me.btnUpdateContact.Text = "Update"
-        Me.btnUpdateContact.UseVisualStyleBackColor = True
-        Me.btnUpdateContact.Visible = False
+        Me.btnAddEnabled.Location = New System.Drawing.Point(383, 276)
+        Me.btnAddEnabled.Name = "btnAddEnabled"
+        Me.btnAddEnabled.Size = New System.Drawing.Size(52, 23)
+        Me.btnAddEnabled.TabIndex = 47
+        Me.btnAddEnabled.Text = "Add"
+        Me.btnAddEnabled.UseVisualStyleBackColor = True
         '
         'frmOutletDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientSize = New System.Drawing.Size(537, 501)
+        Me.ClientSize = New System.Drawing.Size(537, 528)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Panel1)
@@ -469,7 +504,6 @@ Partial Class frmOutletDetails
     Friend WithEvents txtRemarks As TextBox
     Friend WithEvents lvContract As ListView
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents lblOutletID As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents idContract As ColumnHeader
@@ -490,4 +524,8 @@ Partial Class frmOutletDetails
     Friend WithEvents Label17 As Label
     Friend WithEvents lnkEditPackage As LinkLabel
     Friend WithEvents btnUpdateContact As Button
+    Friend WithEvents lblUnContract As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents btnAddEnabled As Button
 End Class

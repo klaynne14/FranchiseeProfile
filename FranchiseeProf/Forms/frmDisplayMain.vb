@@ -4,6 +4,7 @@ Public Class pnlMain
 
     Public Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         modProfiling.loadFranchisee()
+
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
 
         Dim List As List(Of clsFranchisee) = modProfiling.getFranchisee
@@ -33,10 +34,6 @@ Public Class pnlMain
 
     Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs)
 
-    End Sub
-
-    Private Sub lvOutlet_DoubleClick(sender As Object, e As EventArgs) Handles lvOutlet.DoubleClick
-        frmUpdateOutletDetails.ShowDialog()
     End Sub
 
     Private Sub BtnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
@@ -74,8 +71,9 @@ Public Class pnlMain
     Private Sub BtnConfirmOutlet_Click(sender As Object, e As EventArgs) Handles btnConfirmOutlet.Click
         cbBusinessUnit.Text = " "
         Dim unF As Integer = lblIDFranchisee.Text
+        MsgBox("Outlet added successfully")
         modProfiling.loadOutletLocation(unF)
-        'MsgBox("Outlet added successfully")
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

@@ -1,5 +1,10 @@
 Public Class frmOutletDetails
 
+    Public Function enabledConInfo(state As Boolean)
+        dtpStartTerm.Enabled = state
+        dtpEndTerm.Enabled = state
+        txtRemarks.Enabled = state
+    End Function
     Private Sub frmAddContract_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         modProfiling.getfocusedOId(lblOutletID)
@@ -10,6 +15,11 @@ Public Class frmOutletDetails
         Catch ex As Exception
             Me.Close()
         End Try
+        If btnAddEnabled.Enabled = True Then
+            enabledConInfo(False)
+        End If
+        btnAddContract.Hide()
+        btnUpdateContact.Enabled = False
 
     End Sub
     Private Sub BtnAddContract_Click(sender As Object, e As EventArgs) Handles btnAddContract.Click
@@ -24,6 +34,9 @@ Public Class frmOutletDetails
             'MessageBox.Show(modProfiling.getLatestCId().ToString)
             Dim unO As Integer = ac.unOutlet
             modProfiling.displayContract(unO)
+            enabledConInfo(False)
+            btnAddContract.Hide()
+            btnAddEnabled.Show()
             clearText()
         End If
     End Sub
@@ -49,11 +62,19 @@ Public Class frmOutletDetails
     Private Sub lvContract_DoubleClick(sender As Object, e As EventArgs) Handles lvContract.DoubleClick
         Dim unC As Integer = Me.lvContract.FocusedItem.Tag
         modProfiling.displayCon(unC)
-        btnAddContract.Hide()
-        btnUpdateContact.Show()
+        btnAddContract.Enabled = False
+        btnUpdateContact.Enabled = True
+
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnUpdateContact.Click
+    Private Sub BtnUpdateContact_Click(sender As Object, e As EventArgs) Handles btnUpdateContact.Click
 
+    End Sub
+
+    Private Sub BtnAddEnabled_Click(sender As Object, e As EventArgs) Handles btnAddEnabled.Click
+        enabledConInfo(True)
+
+        btnAddEnabled.Hide()
+        btnAddContract.Show()
     End Sub
 End Class

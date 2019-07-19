@@ -154,8 +154,13 @@ Module modProfiling
 
     'Display info from listview to panel
     Public Function displayInfoFranchisee()
-        Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
-        Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
+        Dim focItemUn As Integer
+        Try
+            focItemUn = pnlMain.lvUserProfile.FocusedItem.Tag
+        Catch ex As Exception
+            focItemUn = pnlMain.lblIDFranchisee.Text
+        End Try
+
         l = modProfiling.getFranchiseeList
         Dim pb = pnlMain.pbUserProfile
         Dim unF As Integer
@@ -207,47 +212,55 @@ Module modProfiling
         modProfiling.displayImage(focItemUn, pb)
         pnlMain.btnAddNewOutletMain.Visible = True
         pnlMain.btnConfirmOutlet.Visible = False
+
+        modProfiling.countOutlet(unF)
+        modProfiling.countOutletActive(unF)
+        modProfiling.countOutletTemp(unF)
+        modProfiling.countOutletPerm(unF)
     End Function
 
     Public Function getInfo()
-        Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
-        Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
-        Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
-        l = modProfiling.getFranchiseeList
-        Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
-        Dim checkState As Boolean
-        For Each o In l
-            If o.unFranchisee = focItemUn Then
-                If o.Status = 1 Then
-                    checkState = True
-                ElseIf o.Status = 0 Then
-                    checkState = False
+        Try
+            Dim focItem As Integer = pnlMain.lvUserProfile.FocusedItem.Index + 1
+            Dim focItemUn As Integer = pnlMain.lvUserProfile.FocusedItem.Tag
+            Dim unF As Integer = Convert.ToInt32(pnlMain.lblIDFranchisee.Text)
+            l = modProfiling.getFranchiseeList
+            Dim pb = frmUpdateFranchiseeProfile.pbUserPhoto
+            Dim checkState As Boolean
+            For Each o In l
+                If o.unFranchisee = focItemUn Then
+                    frmUpdateFranchiseeProfile.txtFName.Text = o.FName
+                    frmUpdateFranchiseeProfile.txtMName.Text = o.MName
+                    frmUpdateFranchiseeProfile.txtLName.Text = o.LName
+
+                    If o.Status = 0 Then
+                        checkState = False
+                    Else
+                        checkState = True
+                    End If
+
+                    frmUpdateFranchiseeProfile.cbFPFStatus.Checked = checkState
+                    frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
+                    frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
+                    frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
+                    frmUpdateFranchiseeProfile.txtAge.Text = o.Age
+                    frmUpdateFranchiseeProfile.cbCivilStatus.Text = o.CivilStatus
+                    frmUpdateFranchiseeProfile.dtpDateBirth.Value = o.DateOfBirth
+                    frmUpdateFranchiseeProfile.txtNationality.Text = o.Nationality
+                    frmUpdateFranchiseeProfile.txtReligion.Text = o.Religion
+                    frmUpdateFranchiseeProfile.txtTelNum1.Text = o.TelNumber1
+                    frmUpdateFranchiseeProfile.txtTelNum2.Text = o.TelNumber2
+                    frmUpdateFranchiseeProfile.txtMobileNum1.Text = o.MobileNumber1
+                    frmUpdateFranchiseeProfile.txtMobileNum2.Text = o.MobileNumber1
+                    frmUpdateFranchiseeProfile.txtEmailAddress1.Text = o.EmailAdd1
+                    frmUpdateFranchiseeProfile.txtEmailAddress2.Text = o.EmailAdd2
+                    frmUpdateFranchiseeProfile.cbOwnershipType.Text = o.OwnershipType
+                    frmUpdateFranchiseeProfile.txtCorpAuthorizedName.Text = o.CorpAuthorizedName
+                    frmUpdateFranchiseeProfile.txtYearStarted.Text = o.YearStarted
+                    frmUpdateFranchiseeProfile.txtTinNumber.Text = o.TinNumber
+                    frmUpdateFranchiseeProfile.txtFaxNumber.Text = o.FaxNumber
+                    frmUpdateFranchiseeProfile.txtOccupation.Text = o.Occupation
                 End If
-                frmUpdateFranchiseeProfile.cbFPFStatus.Checked = checkState
-                frmUpdateFranchiseeProfile.txtFName.Text = o.FName
-                frmUpdateFranchiseeProfile.txtMName.Text = o.MName
-                frmUpdateFranchiseeProfile.txtLName.Text = o.LName
-                frmUpdateFranchiseeProfile.cbGender.Text = o.Gender
-                frmUpdateFranchiseeProfile.txtAddress1.Text = o.Address1
-                frmUpdateFranchiseeProfile.txtAddress2.Text = o.Address2
-                frmUpdateFranchiseeProfile.txtAge.Text = o.Age
-                frmUpdateFranchiseeProfile.cbCivilStatus.Text = o.CivilStatus
-                frmUpdateFranchiseeProfile.dtpDateOfBirth.Value = o.DateOfBirth
-                frmUpdateFranchiseeProfile.txtNationality.Text = o.Nationality
-                frmUpdateFranchiseeProfile.txtReligion.Text = o.Religion
-                frmUpdateFranchiseeProfile.txtTelNum1.Text = o.TelNumber1
-                frmUpdateFranchiseeProfile.txtTelNum2.Text = o.TelNumber2
-                frmUpdateFranchiseeProfile.txtMobileNum1.Text = o.MobileNumber1
-                frmUpdateFranchiseeProfile.txtMobileNum2.Text = o.MobileNumber1
-                frmUpdateFranchiseeProfile.txtEmailAddress1.Text = o.EmailAdd1
-                frmUpdateFranchiseeProfile.txtEmailAddress2.Text = o.EmailAdd2
-                frmUpdateFranchiseeProfile.cbOwnershipType.Text = o.OwnershipType
-                frmUpdateFranchiseeProfile.txtCorpAuthorizedName.Text = o.CorpAuthorizedName
-                frmUpdateFranchiseeProfile.txtYearStarted.Text = o.YearStarted
-                frmUpdateFranchiseeProfile.txtTinNumber.Text = o.TinNumber
-                frmUpdateFranchiseeProfile.txtFaxNumber.Text = o.FaxNumber
-                frmUpdateFranchiseeProfile.txtOccupation.Text = o.Occupation
-            End If
 
                 modProfiling.displayImage(focItemUn, pb)
             Next
@@ -294,7 +307,7 @@ Module modProfiling
                     oCommand.Parameters.AddWithValue("@FPFAddress1", frmUpdateFranchiseeProfile.txtAddress1.Text)
                     oCommand.Parameters.AddWithValue("@FPFAddress2", frmUpdateFranchiseeProfile.txtAddress2.Text)
                     oCommand.Parameters.AddWithValue("@FPFTinNumber", frmUpdateFranchiseeProfile.txtTinNumber.Text)
-                    oCommand.Parameters.AddWithValue("@FPFDateOfBirth", frmUpdateFranchiseeProfile.dtpDateOfBirth.Value)
+                    oCommand.Parameters.AddWithValue("@FPFDateOfBirth", frmUpdateFranchiseeProfile.dtpDateBirth.Value)
                     oCommand.Parameters.AddWithValue("@FPFAge", frmUpdateFranchiseeProfile.txtAge.Text)
                     oCommand.Parameters.AddWithValue("@FPFGender", frmUpdateFranchiseeProfile.cbGender.Text)
                     oCommand.Parameters.AddWithValue("@FPFCivilStatus", frmUpdateFranchiseeProfile.cbCivilStatus.Text)
@@ -447,17 +460,21 @@ Module modProfiling
             lItem.SubItems.Add(item.FPLCurrentAddress)
             lItem.SubItems.Add(item.FPLDateOpened)
             lItem.SubItems.Add(item.FPLStatus)
-            lItem.SubItems.Add(item.FPLStatusClosed)
-            lItem.SubItems.Add(item.FPLOldAddress)
+
             If item.FPLStatus = "Close" Then
+                lItem.SubItems.Add(item.FPLStatusClosed)
+                lItem.SubItems.Add(item.FPLOldAddress)
                 lItem.SubItems.Add(item.FPLDateClosed)
             End If
+
             lItem.Tag = item.unOutlet
 
             pnlMain.lvOutlet.Items.Add(lItem)
-
+            modProfiling.countOutlet(unF)
+            modProfiling.countOutletActive(unF)
+            modProfiling.countOutletTemp(unF)
+            modProfiling.countOutletPerm(unF)
         Next
-
         Return listOL
     End Function
 
@@ -537,7 +554,7 @@ Module modProfiling
 
                 Using oCommand As New SqlCommand(sQuery, oConnection)
 
-                    oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.cbBusinessUnit.Text)
+                    oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.txtLocationName.Text)
                     oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
                     oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
                     oCommand.Parameters.AddWithValue("@FPLStatus", status)
@@ -646,9 +663,9 @@ Module modProfiling
     Public Function getConList(unC As Integer) As List(Of clsContract)
         Dim contractList As List(Of clsContract) = New List(Of clsContract)
         Dim getContract As New clsContract
-        Dim sQuery As String = "SELECT FPCStartTerm, FPCEndTerm, FPCRemark 
+        Dim sQuery As String = "SELECT unContract, FPCStartTerm, FPCEndTerm, FPCRemark 
                                 FROM Contract  
-                                WHERE idContract =" & Val(unC)
+                                WHERE unContract =" & Val(unC)
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -660,6 +677,7 @@ Module modProfiling
                     While oRead.Read
                         getContract = New clsContract
                         'getContract.unContract = oRead("unContract")
+                        getContract.unContract = oRead("unContract")
                         getContract.FPCStartTerm = oRead("FPCStartTerm")
                         getContract.FPCEndTerm = oRead("FPCEndTerm")
                         getContract.FPCRemark = oRead("FPCRemark")
@@ -680,9 +698,11 @@ Module modProfiling
         'Dim frm As frmOutletDetails... d gid ni pag gamita gina gago yaka
         For Each o In cl
             If o.idContract = focItemUn Then
+                frmOutletDetails.lblUnContract.Text = o.unContract
                 frmOutletDetails.dtpStartTerm.Value = o.FPCStartTerm
                 frmOutletDetails.dtpEndTerm.Value = o.FPCEndTerm
                 frmOutletDetails.txtRemarks.Text = o.FPCRemark
+
                 Return True
             End If
         Next
@@ -883,4 +903,101 @@ Module modProfiling
         End Using
     End Function
 
+    Public Function countOutlet(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Outlet.unFranchisee = " & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblTotalOutlets.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+
+    'Put in Updates
+    Public Function countOutletActive(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Location.FPLStatus = 'Open' AND Outlet.unFranchisee =" & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblTotalActive.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+    Public Function countOutletTemp(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Location.FPLStatusClosed = 'Temporary' AND Outlet.unFranchisee =" & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblTemporaryClosed.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
+
+    Public Function countOutletPerm(unF As Integer) As Boolean
+        Dim ctOutlet As Integer
+        Dim sQuery As String = "SELECT COUNT (Outlet.unOutlet)
+                                FROM Outlet 
+                                JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
+                                JOIN Location On Location.unOutlet = Outlet.unOutlet
+                                Where Location.FPLStatusClosed = 'Permanent' AND Outlet.unFranchisee =" & Val(unF)
+
+        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(sQuery, oConnection)
+
+                    ctOutlet = Convert.ToInt32(oCom.ExecuteScalar())
+                    pnlMain.lblPermanentlyClosed.Text = ctOutlet
+                    Return True
+                End Using
+            Catch ex As Exception
+                MsgBox("@countOutlet " + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
 End Module
