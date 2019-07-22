@@ -7,6 +7,7 @@ Public Class pnlMain
 
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
 
+        Dim lvList As New ListViewItem
         Dim List As List(Of clsFranchisee) = modProfiling.getFranchisee
         Dim autoComp As AutoCompleteStringCollection = New AutoCompleteStringCollection
 
@@ -16,6 +17,7 @@ Public Class pnlMain
         txtSearchBar.AutoCompleteCustomSource = autoComp
 
 
+        'modProfiling.searchList()
     End Sub
 
     Private Sub BtnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
@@ -30,10 +32,6 @@ Public Class pnlMain
         modProfiling.displayInfoFranchisee()
         modProfiling.getInfo()
         modProfiling.recolorListView(lvUserProfile)
-    End Sub
-
-    Private Sub BtnSelectedOutlet_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub BtnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
@@ -78,5 +76,16 @@ Public Class pnlMain
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Application.Exit()
+    End Sub
+
+    Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged
+        'modProfiling.getSearch
+
+    End Sub
+
+    Private Sub txtSearchBar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearchBar.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            modProfiling.searchList()
+        End If
     End Sub
 End Class

@@ -150,9 +150,124 @@ Module modProfiling
 
         Return listFs
     End Function
+    '*************************************************************************************
+    'Public Function searchList(unF As Integer) As List(Of clsFranchisee)
+    '    Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
+    '    Dim fs As New clsFranchisee
+    '    Dim sQuery As String = "Select FPFName, FPLName, FPMName From Franchisee Where FPFFName like '%" & Val(unF) & "%' And FPFMName like'%" & Val(unF) & "%'  And FPFLName like'%" & Val(unF) & "%'"
+
+    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseeProfiling"))
+    '        Try
+    '            oConnection.Open()
+    '            Using oCommand As New SqlCommand(sQuery, oConnection)
+    '                Dim oReader As SqlDataReader = oCommand.ExecuteReader
+    '                While oReader.Read()
+    '                    fs = New clsFranchisee
+    '                    fs.FName = oReader("FPFFName")
+    '                    fs.MName = oReader("FPFMName")
+    '                    fs.LName = oReader("FPFLName")
+    '                End While
+    '            End Using
+    '        Catch ex As Exception
+    '            MsgBox("@searchList:" + ex.Message)
+    '        End Try
+    '    End Using
+    '    Return franchiseeList
+    'End Function
+
+    'Dim lvList As New List(Of ListViewItem)
+    'Public Function searchList()
+    '    pnlMain.lvUserProfile.BeginUpdate()
+    '    If pnlMain.txtSearchBar.Text.Trim().Length = 0 Then
+    '        pnlMain.lvUserProfile.Items.Clear()
+    '        For Each item In lvList
+    '            pnlMain.lvUserProfile.Items.Add(item)
+    '        Next
+    '    Else
+    '        'pnlMain.lvUserProfile.Items.Clear()
+    '        For Each item In lvList
+    '            If item.Text.Contains(pnlMain.txtSearchBar.Text) Then
+    '                pnlMain.lvUserProfile.Items.Add(item)
+    '            End If
+    '        Next
+    '    End If
+    '    pnlMain.lvUserProfile.EndUpdate()
+    'End Function
+
+    Public Function searchList()
+        pnlMain.lvUserProfile.SelectedIndices.Clear()
+        Dim searchstring As String = pnlMain.txtSearchBar.Text
+        For Each lvi As ListViewItem In pnlMain.lvUserProfile.Items
+            For Each lvisub As ListViewItem.ListViewSubItem In lvi.SubItems
+                If lvisub.Text = searchstring Then
+                    pnlMain.lvUserProfile.SelectedIndices.Add(lvi.Index)
+                    If lvi.Index > 0 Then
+                        lvi.EnsureVisible()
+                    End If
+                    'Exit For
+                End If
+            Next
+        Next
+        pnlMain.lvUserProfile.Focus()
+
+    End Function
+
+    'Public Function searchList()
 
 
+    '    If pnlMain.txtSearchBar.Text = String.Empty Then
+    '        'Don't bother searching if there's no text to search for.
+    '        MessageBox.Show("Please enter search text.")
+    '    Else
+    '        Dim startIndex = 0
+    '        Dim item As ListViewItem = Nothing
+
+    '        'If one item is selected and it already matches the search text, start searching from the next item.
+    '        'Otherwise, start searching from the beginning.
+    '        If pnlMain.lvUserProfile.SelectedItems.Count >= 1 AndAlso pnlMain.lvUserProfile.SelectedItems(0).Text = pnlMain.txtSearchBar.Text Then
+    '            startIndex = pnlMain.lvUserProfile.SelectedIndices(0) + 1
+    '        End If
+
+    '        'Don't search if we're already at the end of the items.
+    '        If startIndex < pnlMain.lvUserProfile.Items.Count Then
+    '            Do
+    '                'Find the first partial match.
+    '                item = pnlMain.lvUserProfile.FindItemWithText(pnlMain.txtSearchBar.Text, False, startIndex)
+
+    '                If item Is Nothing OrElse item.Text = pnlMain.txtSearchBar.Text Then
+    '                    'There is no partial match or we have already found a full match.
+    '                    Exit Do
+    '                End If
+
+    '                'Search again from the item after the last partial match.
+    '                startIndex = item.Index + 1
+
+    '                'Stop searching if we're at the end of the items.
+    '                If startIndex >= pnlMain.lvUserProfile.Items.Count Then
+    '                    Exit Do
+    '                End If
+    '            Loop
+    '        End If
+
+    '        'Clear the current selection.
+    '        pnlMain.lvUserProfile.SelectedItems.Clear()
+
+    '        If item Is Nothing Then
+    '            MessageBox.Show("No match found.")
+    '        Else
+    '            'Select the matching item.
+    '            item.Selected = True
+    '            item.EnsureVisible()
+    '            pnlMain.lvUserProfile.Select()
+    '        End If
+    '    End If
+
+
+    'End Function
+
+    '*************************************************************************************
     'Display info from listview to panel
+
     Public Function displayInfoFranchisee()
         Dim focItemUn As Integer
         Try
@@ -709,7 +824,6 @@ Module modProfiling
         Return False
     End Function
 
-    '******************************************************************************************************
     Public Function updateContract(unC As Integer)
         Dim cQuery As String = "UPDATE Contract SET FPCStartTerm=@FPCStartTerm, FPCEndTerm=@FPCEndTerm, FPCRemark=@FPCRemark
                                 WHERE unContract =" & Val(unC)
@@ -731,32 +845,8 @@ Module modProfiling
             End Try
         End Using
     End Function
-    '******************************************************************************************************
 
-    'Public Function getLatestCId() As Integer
-    '    Dim getContract As New clsContract
-    '    'Dim listOutlet As List(Of clsOutlet)
-    '    Dim latestCId As Integer
-    '    Dim oQuery As String = "SELECT TOP 1 unContract FROM Contract ORDER BY unContract DESC"
-    '    'Dim oQuery As String = "SELECT Count(idContract) FROM Contract"
 
-    '    Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-    '        Try
-    '            oConnection.Open()
-    '            Using oCom As New SqlCommand(oQuery, oConnection)
-    '                Dim oRead As SqlDataReader = oCom.ExecuteReader
-    '                While oRead.Read
-    '                    getContract = New clsContract
-    '                    getContract.unContract = oRead("unContract")
-    '                End While
-    '                latestCId = getContract.unContract
-    '            End Using
-    '        Catch ex As Exception
-    '            MessageBox.Show("Error @:getLatestCId() " + ex.Message)
-    '        End Try
-    '    End Using
-    '    Return latestCId
-    'End Function
 
 #End Region
 
@@ -1024,5 +1114,23 @@ Module modProfiling
         End Using
         Return False
     End Function
+
+
+
+    'Public Sub SwapListViewItems(index1 As Integer)
+    '    Dim item1 = pnlMain.lvUserProfile.Items(index1)
+    '    Dim item2 = pnlMain.lvUserProfile.Items(index1 + 1)
+
+    '    Dim text As String
+
+    '    For i = 0 To item1.SubItems.Count - 1
+    '        Dim subitem1 = item1.SubItems(i)
+    '        Dim subitem2 = item2.SubItems(i)
+
+    '        text = subitem1.Text
+    '        subitem1.Text = subitem2.Text
+    '        subitem2.Text = text
+    '    Next
+    'End Sub
 
 End Module
