@@ -65,6 +65,7 @@ Public Class frmOutletDetails
         Dim unC As Integer = Me.lvContract.FocusedItem.Tag
         modProfiling.displayCon(unC)
         btnAddContract.Enabled = False
+        btnAddEnabled.Enabled = False
         btnUpdateContact.Enabled = True
         txtRemarks.Enabled = True
         dtpEndTerm.Enabled = True

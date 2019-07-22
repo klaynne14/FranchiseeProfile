@@ -69,7 +69,6 @@ Public Class frmAddNewOutlet
         ap.FPPFranchiseFee = Convert.ToInt32(txtFranchiseeFee.Text)
         ap.FPPPackageFee = Convert.ToInt32(txtPackageFee.Text)
         ap.FPPSecurityDeposit = Convert.ToInt32(txtSecurityDeposit.Text)
-        ap.FPPDateOfRefund = dtpDateOfRefund.Value.Date
         ap.FPPFranchiseRemark = txtFranchiseRemark.Text
         ap.FPPPackageRemark = txtPackageRemark.Text
         ap.FPPDepositRemark = txtDepositRemark.Text

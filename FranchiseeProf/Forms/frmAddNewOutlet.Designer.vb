@@ -154,6 +154,7 @@ Partial Class frmAddNewOutlet
         Me.Label6.Size = New System.Drawing.Size(93, 13)
         Me.Label6.TabIndex = 53
         Me.Label6.Text = "Date of Refund"
+        Me.Label6.Visible = False
         '
         'dtpDateOfRefund
         '
@@ -163,6 +164,7 @@ Partial Class frmAddNewOutlet
         Me.dtpDateOfRefund.Name = "dtpDateOfRefund"
         Me.dtpDateOfRefund.Size = New System.Drawing.Size(90, 20)
         Me.dtpDateOfRefund.TabIndex = 52
+        Me.dtpDateOfRefund.Visible = False
         '
         'txtLocationName
         '
