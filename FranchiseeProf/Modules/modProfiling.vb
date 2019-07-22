@@ -215,6 +215,7 @@ Module modProfiling
 
         modProfiling.countOutlet(unF)
         modProfiling.updateCount(unF)
+        modProfiling.displayCount(unF)
     End Function
 
     Public Function getInfo()
@@ -473,6 +474,7 @@ Module modProfiling
             pnlMain.lvOutlet.Items.Add(lItem)
             modProfiling.countOutlet(unF)
             modProfiling.updateCount(unF)
+            modProfiling.displayCount(unF)
         Next
         Return listOL
     End Function
@@ -1055,5 +1057,17 @@ Module modProfiling
         Return False
     End Function
 
+    Public Function displayCount(unF As Integer) As Boolean
+        Try
+            pnlMain.lblTotalActive.Text = countOutletActive(unF)
+            pnlMain.lblTemporaryClosed.Text = countOutletTemp(unF)
+            pnlMain.lblPermanentlyClosed.Text = countOutletPerm(unF)
+
+            Return True
+        Catch ex As Exception
+            MsgBox("@displayCount" + ex.Message)
+        End Try
+        Return False
+    End Function
 
 End Module
