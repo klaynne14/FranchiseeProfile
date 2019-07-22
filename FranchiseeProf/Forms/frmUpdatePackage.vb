@@ -59,7 +59,12 @@
         ElseIf cbPackageType.Text = "School-Counter" Then
             setPackageType(PackageType.SchoolCounter)
         ElseIf cbPackageType.Text = "Counter" Then
-            setPackageType(PackageType.Counter)
+            'setPackageType(PackageType.Counter)
         End If
     End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
+
 End Class

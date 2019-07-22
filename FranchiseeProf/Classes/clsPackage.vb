@@ -14,10 +14,10 @@ Public Class clsPackage
     Public unOutlet As Integer
 
     Public Function addPackage() As Boolean
-        Dim sQuery As String = "INSERT INTO Package(unPackage, FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit, FPPDateOfRefund, 
+        Dim sQuery As String = "INSERT INTO Package(unPackage, FPPPackageType, FPPFranchiseFee, FPPPackageFee, FPPSecurityDeposit,
                                 FPPFranchiseRemark, FPPPackageRemark, FPPDepositRemark, unOutlet)
 
-                                VALUES (((SELECT COUNT(*) FROM Package)+ 1), @FPPPackageType, @FPPFranchiseFee, @FPPPackageFee, @FPPSecurityDeposit, @FPPDateOfRefund, 
+                                VALUES (((SELECT COUNT(*) FROM Package)+ 1), @FPPPackageType, @FPPFranchiseFee, @FPPPackageFee, @FPPSecurityDeposit,
                                 @FPPFranchiseRemark, @FPPPackageRemark, @FPPDepositRemark, @unOutlet)"
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
@@ -30,7 +30,7 @@ Public Class clsPackage
                     oCommand.Parameters.AddWithValue("@FPPFranchiseFee", Me.FPPFranchiseFee)
                     oCommand.Parameters.AddWithValue("@FPPPackageFee", Me.FPPPackageFee)
                     oCommand.Parameters.AddWithValue("@FPPSecurityDeposit", Me.FPPSecurityDeposit)
-                    oCommand.Parameters.AddWithValue("@FPPDateOfRefund", Me.FPPDateOfRefund)
+                    'oCommand.Parameters.AddWithValue("@FPPDateOfRefund", Me.FPPDateOfRefund)
                     oCommand.Parameters.AddWithValue("@FPPFranchiseRemark", Me.FPPFranchiseRemark)
                     oCommand.Parameters.AddWithValue("@FPPPackageRemark", Me.FPPPackageRemark)
                     oCommand.Parameters.AddWithValue("@FPPDepositRemark", Me.FPPDepositRemark)
