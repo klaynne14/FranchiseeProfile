@@ -102,7 +102,7 @@ Partial Class frmUpdateOutletDetails
         'cbStatusClosed
         '
         Me.cbStatusClosed.FormattingEnabled = True
-        Me.cbStatusClosed.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated"})
+        Me.cbStatusClosed.Items.AddRange(New Object() {"Temporary", "Permanent", "Relocated", " "})
         Me.cbStatusClosed.Location = New System.Drawing.Point(32, 146)
         Me.cbStatusClosed.Name = "cbStatusClosed"
         Me.cbStatusClosed.Size = New System.Drawing.Size(83, 21)

@@ -150,7 +150,7 @@ Module modProfiling
         pnlMain.tslblRowCount.Text = pnlMain.lvUserProfile.Items.Count
         Return listFs
     End Function
-    '*************************************************************************************
+
     'Public Function searchList(unF As Integer) As List(Of clsFranchisee)
     '    Dim franchiseeList As List(Of clsFranchisee) = New List(Of clsFranchisee)
     '    Dim fs As New clsFranchisee
@@ -193,8 +193,6 @@ Module modProfiling
     '    End If
     '    pnlMain.lvUserProfile.EndUpdate()
     'End Function
-
-
 
     Public Function searchList()
         pnlMain.lvUserProfile.SelectedIndices.Clear()
@@ -576,7 +574,13 @@ Module modProfiling
                         ol.FPLCurrentAddress = oRead("FPLCurrentAddress")
                         ol.FPLDateOpened = oRead("FPLDateOpened")
                         ol.FPLStatus = oRead("FPLStatus")
-                        ol.FPLStatusClosed = oRead("FPLStatusClosed")
+
+                        If ol.FPLStatus = "Open" Then
+                            ol.FPLStatusClosed = " "
+                        Else
+                            ol.FPLStatusClosed = oRead("FPLStatusClosed")
+                        End If
+
                         ol.FPLDateClosed = oRead("FPLDateClosed")
                         ol.FPLOldAddress = oRead("FPLOldAddress")
 
@@ -612,11 +616,18 @@ Module modProfiling
             lItem.SubItems.Add(item.FPLCurrentAddress)
             lItem.SubItems.Add(item.FPLDateOpened)
             lItem.SubItems.Add(item.FPLStatus)
+            lItem.SubItems.Add(item.FPLStatusClosed)
+            lItem.SubItems.Add(item.FPLOldAddress)
 
             If item.FPLStatus = "Close" Then
-                lItem.SubItems.Add(item.FPLStatusClosed)
-                lItem.SubItems.Add(item.FPLOldAddress)
                 lItem.SubItems.Add(item.FPLDateClosed)
+
+                frmOutletDetails.btnAddEnabled.Enabled = False
+                frmOutletDetails.enabledConInfo(False)
+                lItem.ForeColor = Color.Red
+            Else
+                frmOutletDetails.btnAddEnabled.Enabled = True
+                frmOutletDetails.enabledConInfo(True)
             End If
 
             lItem.Tag = item.unOutlet
@@ -693,11 +704,22 @@ Module modProfiling
     End Function
 
     Public Function updateInfoLocation(ByVal unO As Integer, ByVal status As String) As Boolean
+        Dim lStatusClosed As String
+        Dim lRelocation As String
         Dim sQuery As String = "Update Location
                                 Set FPLLocationName = @FPLLocationName, FPLCurrentAddress = @FPLCurrentAddress, 
                                 FPLDateOpened = @FPLDateOpened,FPLStatus = @FPLStatus, FPLStatusClosed = @FPLStatusClosed, 
                                 FPLDateClosed = @FPLDateClosed, FPLOldAddress = @FPLOldAddress
                                 where unOutlet = " & Val(unO)
+
+        If status = "Open" Then
+            lStatusClosed = " "
+            lRelocation = " "
+
+        Else
+            lStatusClosed = frmUpdateOutletDetails.cbStatusClosed.Text
+            lRelocation = frmUpdateOutletDetails.txtRelocationAddress.Text
+        End If
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
@@ -709,8 +731,8 @@ Module modProfiling
                     oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
                     oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
                     oCommand.Parameters.AddWithValue("@FPLStatus", status)
-                    oCommand.Parameters.AddWithValue("@FPLStatusClosed", frmUpdateOutletDetails.cbStatusClosed.Text)
-                    oCommand.Parameters.AddWithValue("@FPLOldAddress", frmUpdateOutletDetails.txtRelocationAddress.Text)
+                    oCommand.Parameters.AddWithValue("@FPLStatusClosed", lStatusClosed)
+                    oCommand.Parameters.AddWithValue("@FPLOldAddress", lRelocation)
                     oCommand.Parameters.AddWithValue("@FPLDateClosed", frmUpdateOutletDetails.dtpCloseDate.Value.Date)
 
                     oCommand.ExecuteNonQuery()
