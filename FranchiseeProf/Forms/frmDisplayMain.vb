@@ -17,7 +17,6 @@ Public Class pnlMain
         txtSearchBar.AutoCompleteCustomSource = autoComp
 
 
-        'modProfiling.searchList()
     End Sub
 
     Private Sub BtnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
@@ -45,10 +44,11 @@ Public Class pnlMain
         Else
             Dim ao As clsOutlet = New clsOutlet
             ao.FPOBusinessUnit = cbBusinessUnit.Text
+
             ao.unFranchisee = lblIDFranchisee.Text
             If ao.addOutlet() Then
                 frmAddNewOutlet.lblOutletID.Text = modProfiling.getLatestOId()
-                'modProfiling.displayInfo()
+
                 frmAddNewOutlet.ShowDialog()
             End If
         End If
@@ -81,4 +81,6 @@ Public Class pnlMain
             modProfiling.searchList()
         End If
     End Sub
+
+
 End Class

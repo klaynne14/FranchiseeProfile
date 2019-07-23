@@ -43,7 +43,10 @@ Public Class frmAddNewOutlet
     End Sub
 #End Region
 
+    Dim unF As Integer = pnlMain.lblIDFranchisee.Text
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        modProfiling.deleteLatestUn()
+        modProfiling.loadOutletLocation(unF)
         Me.Close()
     End Sub
 
@@ -77,7 +80,7 @@ Public Class frmAddNewOutlet
         If al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
             pnlMain.cbBusinessUnit.Text = " "
-            Dim unF As Integer = pnlMain.lblIDFranchisee.Text
+
             modProfiling.loadOutletLocation(unF)
 
             Me.Close()

@@ -147,7 +147,7 @@ Module modProfiling
                 lItem.ForeColor = Color.Red
             End If
         Next
-
+        pnlMain.tslblRowCount.Text = pnlMain.lvUserProfile.Items.Count
         Return listFs
     End Function
     '*************************************************************************************
@@ -512,6 +512,22 @@ Module modProfiling
             End Try
         End Using
         Return latestOId
+    End Function
+
+    Public Function deleteLatestUn() As Boolean
+        Dim unO As Integer = modProfiling.getLatestOId()
+        Dim oQuery As String = "DELETE FROM Outlet WHERE unOutlet=" & Val(unO)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+            Try
+                oConnection.Open()
+                Using oCom As New SqlCommand(oQuery, oConnection)
+
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error @:deleteLatestUn() " + ex.Message)
+            End Try
+        End Using
     End Function
 
     Public Function getOutletLocList(ByVal unF As Integer) As List(Of clsOutletLocation)
