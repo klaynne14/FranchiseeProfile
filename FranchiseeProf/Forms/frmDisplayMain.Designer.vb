@@ -44,7 +44,7 @@ Partial Class pnlMain
         Me.pnlUPDash = New System.Windows.Forms.Panel()
         Me.tsFrachiseeRowStatus = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.tslblRowCount = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.lvUserProfile = New System.Windows.Forms.ListView()
@@ -340,7 +340,7 @@ Partial Class pnlMain
         Me.tsFrachiseeRowStatus.BackColor = System.Drawing.Color.Gainsboro
         Me.tsFrachiseeRowStatus.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.tsFrachiseeRowStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.tsFrachiseeRowStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripLabel2, Me.ToolStripSeparator1, Me.ToolStripLabel3})
+        Me.tsFrachiseeRowStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.tslblRowCount, Me.ToolStripSeparator1, Me.ToolStripLabel3})
         Me.tsFrachiseeRowStatus.Location = New System.Drawing.Point(0, 633)
         Me.tsFrachiseeRowStatus.Name = "tsFrachiseeRowStatus"
         Me.tsFrachiseeRowStatus.Padding = New System.Windows.Forms.Padding(0)
@@ -354,11 +354,11 @@ Partial Class pnlMain
         Me.ToolStripLabel1.Size = New System.Drawing.Size(38, 22)
         Me.ToolStripLabel1.Text = "Rows:"
         '
-        'ToolStripLabel2
+        'tslblRowCount
         '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(19, 22)
-        Me.ToolStripLabel2.Text = "00"
+        Me.tslblRowCount.Name = "tslblRowCount"
+        Me.tslblRowCount.Size = New System.Drawing.Size(19, 22)
+        Me.tslblRowCount.Text = "00"
         '
         'ToolStripSeparator1
         '
@@ -1250,7 +1250,7 @@ Partial Class pnlMain
     Friend WithEvents pnlUPDash As Panel
     Friend WithEvents tsFrachiseeRowStatus As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
-    Friend WithEvents ToolStripLabel2 As ToolStripLabel
+    Friend WithEvents tslblRowCount As ToolStripLabel
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents lvUserProfile As ListView
