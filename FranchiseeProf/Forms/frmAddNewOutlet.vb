@@ -44,9 +44,12 @@ Public Class frmAddNewOutlet
 #End Region
 
     Dim unF As Integer = pnlMain.lblIDFranchisee.Text
+
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        modProfiling.deleteLatestUn()
-        modProfiling.loadOutletLocation(unF)
+        Dim unO As Integer = lblOutletID.Text
+        modProfiling.deleteLatestUn(unO)
+        'modProfiling.loadOutletLocation(unF)
+        pnlMain.cbBusinessUnit.Text = " "
         Me.Close()
     End Sub
 
@@ -85,9 +88,6 @@ Public Class frmAddNewOutlet
 
             Me.Close()
         End If
-
-
-
     End Sub
 
     Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged

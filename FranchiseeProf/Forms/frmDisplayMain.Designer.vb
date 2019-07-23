@@ -377,7 +377,7 @@ Partial Class pnlMain
         Me.lvUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvUserProfile.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idFranchisee, Me.chName})
         Me.lvUserProfile.FullRowSelect = True
-        Me.lvUserProfile.Location = New System.Drawing.Point(1, 99)
+        Me.lvUserProfile.Location = New System.Drawing.Point(1, 101)
         Me.lvUserProfile.Name = "lvUserProfile"
         Me.lvUserProfile.Size = New System.Drawing.Size(300, 531)
         Me.lvUserProfile.TabIndex = 21
@@ -392,7 +392,7 @@ Partial Class pnlMain
         'chName
         '
         Me.chName.Text = "Name"
-        Me.chName.Width = 297
+        Me.chName.Width = 203
         '
         'pnlUPHeader
         '

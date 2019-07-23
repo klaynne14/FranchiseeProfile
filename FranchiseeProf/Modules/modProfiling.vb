@@ -514,20 +514,22 @@ Module modProfiling
         Return latestOId
     End Function
 
-    Public Function deleteLatestUn() As Boolean
-        Dim unO As Integer = modProfiling.getLatestOId()
+    Public Function deleteLatestUn(unO As Integer) As Boolean
+
         Dim oQuery As String = "DELETE FROM Outlet WHERE unOutlet=" & Val(unO)
 
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(oQuery, oConnection)
-
+                    oCom.ExecuteNonQuery()
+                    Return True
                 End Using
             Catch ex As Exception
                 MessageBox.Show("Error @:deleteLatestUn() " + ex.Message)
             End Try
         End Using
+        Return False
     End Function
 
     Public Function getOutletLocList(ByVal unF As Integer) As List(Of clsOutletLocation)

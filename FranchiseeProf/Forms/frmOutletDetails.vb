@@ -64,18 +64,21 @@ Public Class frmOutletDetails
     Private Sub lvContract_DoubleClick(sender As Object, e As EventArgs) Handles lvContract.DoubleClick
         Dim unC As Integer = Me.lvContract.FocusedItem.Tag
         modProfiling.displayCon(unC)
-        btnAddContract.Enabled = False
+        btnAddContract.Enabled = True
         btnAddEnabled.Enabled = False
         btnUpdateContact.Enabled = True
-        txtRemarks.Enabled = True
-        dtpEndTerm.Enabled = True
-        dtpStartTerm.Enabled = True
+        enabledConInfo(True)
     End Sub
 
     Private Sub BtnUpdateContact_Click(sender As Object, e As EventArgs) Handles btnUpdateContact.Click
         Dim unC As Integer = lvContract.FocusedItem.Tag
         modProfiling.updateContract(unC)
         Me.frmAddContract_Load(sender, e)
+        If btnUpdateContact.Enabled = False Then
+            btnAddEnabled.Enabled = True
+            enabledConInfo(False)
+
+        End If
         clearText()
     End Sub
 

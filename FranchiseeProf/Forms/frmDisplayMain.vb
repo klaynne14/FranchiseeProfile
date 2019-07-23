@@ -16,7 +16,6 @@ Public Class pnlMain
         Next
         txtSearchBar.AutoCompleteCustomSource = autoComp
 
-
     End Sub
 
     Private Sub BtnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click

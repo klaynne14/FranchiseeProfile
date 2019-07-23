@@ -34,7 +34,7 @@ Public Class clsFranchisee
     Public arrImage() As Byte
 
 
-    Public Function addFranchisee() As Boolean
+    Public Function addFranchisee() As String
 
         Dim mstream As New System.IO.MemoryStream()
         frmCreateNewFranchisee.pbFranchisee.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
