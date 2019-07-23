@@ -80,6 +80,4 @@ Public Class pnlMain
             modProfiling.searchList()
         End If
     End Sub
-
-
 End Class
