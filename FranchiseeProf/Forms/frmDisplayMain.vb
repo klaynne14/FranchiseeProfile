@@ -7,14 +7,14 @@ Public Class pnlMain
 
         Me.MaximumSize = Screen.FromRectangle(Me.Bounds).WorkingArea.Size
 
-        Dim lvList As New ListViewItem
-        Dim List As List(Of clsFranchisee) = modProfiling.getFranchisee
-        Dim autoComp As AutoCompleteStringCollection = New AutoCompleteStringCollection
+        'Dim lvList As New ListViewItem
+        'Dim List As List(Of clsFranchisee) = modProfiling.getFranchisee
+        'Dim autoComp As AutoCompleteStringCollection = New AutoCompleteStringCollection
 
-        For Each item As clsFranchisee In List
-            autoComp.Add(item.FName + " " + item.MName + " " + item.LName)
-        Next
-        txtSearchBar.AutoCompleteCustomSource = autoComp
+        'For Each item As clsFranchisee In List
+        '    autoComp.Add(item.FName + " " + item.MName + " " + item.LName)
+        'Next
+        'txtSearchBar.AutoCompleteCustomSource = autoComp
 
     End Sub
 

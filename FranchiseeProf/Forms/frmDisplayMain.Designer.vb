@@ -126,6 +126,7 @@ Partial Class pnlMain
         Me.pbUserProfile = New System.Windows.Forms.PictureBox()
         Me.tcProd = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.pbMainLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBackdrop.SuspendLayout()
         Me.tcFranchisee.SuspendLayout()
@@ -397,6 +398,7 @@ Partial Class pnlMain
         'pnlUPHeader
         '
         Me.pnlUPHeader.BackColor = System.Drawing.Color.CadetBlue
+        Me.pnlUPHeader.Controls.Add(Me.Button2)
         Me.pnlUPHeader.Controls.Add(Me.btnCreateNew)
         Me.pnlUPHeader.Controls.Add(Me.lblSearch)
         Me.pnlUPHeader.Controls.Add(Me.txtSearchBar)
@@ -1195,6 +1197,15 @@ Partial Class pnlMain
         Me.Button1.Text = "Exit"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(110, 17)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 20
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'pnlMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1336,4 +1347,5 @@ Partial Class pnlMain
     Friend WithEvents btnAddNewOutletMain As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Relocation As ColumnHeader
+    Friend WithEvents Button2 As Button
 End Class

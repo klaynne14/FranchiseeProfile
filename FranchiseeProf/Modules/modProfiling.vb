@@ -194,6 +194,8 @@ Module modProfiling
     '    pnlMain.lvUserProfile.EndUpdate()
     'End Function
 
+
+
     Public Function searchList()
         pnlMain.lvUserProfile.SelectedIndices.Clear()
         Dim searchstring As String = pnlMain.txtSearchBar.Text
@@ -204,13 +206,28 @@ Module modProfiling
                     If lvi.Index > 0 Then
                         lvi.EnsureVisible()
                     End If
-                    'Exit For
+                    Exit For
                 End If
             Next
         Next
         pnlMain.lvUserProfile.Focus()
-
     End Function
+
+    'Public Sub SwapListViewItems(index1 As Integer)
+    '    Dim item1 = pnlMain.lvUserProfile.Items(index1)
+    '    Dim item2 = pnlMain.lvUserProfile.Items(index1 + 1)
+
+    '    Dim text As String
+
+    '    For i = 0 To item1.SubItems.Count - 1
+    '        Dim subitem1 = item1.SubItems(i)
+    '        Dim subitem2 = item2.SubItems(i)
+
+    '        text = subitem1.Text
+    '        subitem1.Text = subitem2.Text
+    '        subitem2.Text = text
+    '    Next
+    'End Sub
 
     'Public Function searchList()
 
