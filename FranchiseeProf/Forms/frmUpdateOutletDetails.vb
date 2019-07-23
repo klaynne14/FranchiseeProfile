@@ -2,10 +2,12 @@
 
     Private Sub frmUpdateOutletDetails_Load(sender As Object, e As EventArgs) Handles Me.Load
         modProfiling.getfocusedOId(lblOutletUn)
+
     End Sub
 
     Dim lDateClosed As DateTime
     Dim lStatus As String
+    Dim lStatusClosed As String
     Private Sub CbStatusOutlet_CheckedChanged(sender As Object, e As EventArgs) Handles cbStatusOutlet.CheckedChanged
         If cbStatusOutlet.Checked = True Then
             cbStatusClosed.Visible = False
@@ -16,6 +18,7 @@
             lblRelocationAddress.Visible = False
 
             lStatus = "Open"
+
         Else
             cbStatusClosed.Visible = True
             lblStatusClosed.Visible = True
@@ -24,6 +27,7 @@
 
             lStatus = "Close"
             lDateClosed = dtpCloseDate.Value.Date
+            lStatusClosed = cbStatusClosed.Text
         End If
     End Sub
 
@@ -45,6 +49,8 @@
     Private Sub BtnUpdateOutletDetails_Click(sender As Object, e As EventArgs) Handles btnUpdateOutletDetails.Click
         Dim unO As Integer = lblOutletUn.Text
         Dim unF As Integer = pnlMain.lblIDFranchisee.Text
+
+
         modProfiling.updateInfoLocation(unO, lStatus)
         modProfiling.loadOutletLocation(unF)
         Me.Close()

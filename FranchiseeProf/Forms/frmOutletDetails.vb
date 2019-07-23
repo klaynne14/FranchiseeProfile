@@ -15,6 +15,7 @@ Public Class frmOutletDetails
         Catch ex As Exception
             Me.Close()
         End Try
+        btnAddEnabled.Show()
         If btnAddEnabled.Enabled = True Then
             enabledConInfo(False)
         End If
@@ -29,16 +30,22 @@ Public Class frmOutletDetails
         ac.FPCEndTerm = dtpEndTerm.Value.Date
         ac.FPCRemark = txtRemarks.Text
         ac.unOutlet = lblOutletID.Text
-        If ac.addContract() Then
-            'modProfiling.getLatestCId()
-            'MessageBox.Show(modProfiling.getLatestCId().ToString)
-            Dim unO As Integer = ac.unOutlet
-            modProfiling.displayContract(unO)
-            enabledConInfo(False)
-            btnAddContract.Hide()
-            btnAddEnabled.Show()
-            clearText()
+
+        If ac.FPCRemark = Nothing Then
+            MsgBox("Please fill up remark")
+        Else
+            If ac.addContract() Then
+                'modProfiling.getLatestCId()
+                'MessageBox.Show(modProfiling.getLatestCId().ToString)
+                Dim unO As Integer = ac.unOutlet
+                modProfiling.displayContract(unO)
+                enabledConInfo(False)
+                btnAddContract.Hide()
+                btnAddEnabled.Show()
+                clearText()
+            End If
         End If
+
     End Sub
 
     Public Function clearText()
