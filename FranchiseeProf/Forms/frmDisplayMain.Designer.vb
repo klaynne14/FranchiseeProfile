@@ -602,6 +602,7 @@ Partial Class pnlMain
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label21.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label21.Location = New System.Drawing.Point(706, 307)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(69, 12)
@@ -612,6 +613,7 @@ Partial Class pnlMain
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label23.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label23.Location = New System.Drawing.Point(568, 307)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(66, 12)
@@ -622,6 +624,7 @@ Partial Class pnlMain
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label28.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label28.Location = New System.Drawing.Point(824, 307)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(72, 12)
@@ -642,6 +645,7 @@ Partial Class pnlMain
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label19.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label19.Location = New System.Drawing.Point(437, 307)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(73, 12)
@@ -662,6 +666,7 @@ Partial Class pnlMain
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label17.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label17.Location = New System.Drawing.Point(248, 307)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(171, 12)
@@ -683,6 +688,7 @@ Partial Class pnlMain
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label12.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label12.Location = New System.Drawing.Point(136, 307)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(92, 12)
@@ -807,6 +813,7 @@ Partial Class pnlMain
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label27.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label27.Location = New System.Drawing.Point(815, 85)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(153, 12)
@@ -817,6 +824,7 @@ Partial Class pnlMain
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label26.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label26.Location = New System.Drawing.Point(815, 67)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(142, 12)
@@ -827,6 +835,7 @@ Partial Class pnlMain
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label25.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label25.Location = New System.Drawing.Point(815, 50)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(73, 12)
@@ -837,6 +846,7 @@ Partial Class pnlMain
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label24.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label24.Location = New System.Drawing.Point(815, 33)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(81, 12)
@@ -847,6 +857,7 @@ Partial Class pnlMain
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label22.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label22.Location = New System.Drawing.Point(706, 266)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(79, 12)
@@ -867,6 +878,7 @@ Partial Class pnlMain
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label20.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label20.Location = New System.Drawing.Point(706, 223)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(79, 12)
@@ -887,6 +899,7 @@ Partial Class pnlMain
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label16.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label16.Location = New System.Drawing.Point(568, 266)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(99, 12)
@@ -907,6 +920,7 @@ Partial Class pnlMain
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label18.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label18.Location = New System.Drawing.Point(568, 223)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(99, 12)
@@ -927,6 +941,7 @@ Partial Class pnlMain
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label14.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label14.Location = New System.Drawing.Point(824, 266)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(94, 12)
@@ -947,6 +962,7 @@ Partial Class pnlMain
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label10.Location = New System.Drawing.Point(823, 222)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(94, 12)
@@ -967,6 +983,7 @@ Partial Class pnlMain
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label13.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label13.Location = New System.Drawing.Point(707, 176)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(26, 12)
@@ -987,6 +1004,7 @@ Partial Class pnlMain
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label11.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label11.Location = New System.Drawing.Point(569, 176)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 12)
@@ -1007,6 +1025,7 @@ Partial Class pnlMain
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label5.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label5.Location = New System.Drawing.Point(823, 176)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(45, 12)
@@ -1027,6 +1046,7 @@ Partial Class pnlMain
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label3.Location = New System.Drawing.Point(371, 266)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 12)
@@ -1047,6 +1067,7 @@ Partial Class pnlMain
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label6.Location = New System.Drawing.Point(249, 266)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(63, 12)
@@ -1067,6 +1088,7 @@ Partial Class pnlMain
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label4.Location = New System.Drawing.Point(135, 266)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 12)
@@ -1087,6 +1109,7 @@ Partial Class pnlMain
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label2.Location = New System.Drawing.Point(135, 222)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 12)
@@ -1107,6 +1130,7 @@ Partial Class pnlMain
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.CadetBlue
         Me.Label1.Location = New System.Drawing.Point(136, 176)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 12)
@@ -1139,6 +1163,7 @@ Partial Class pnlMain
         '
         Me.lblIDFranchisee.AutoSize = True
         Me.lblIDFranchisee.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.lblIDFranchisee.ForeColor = System.Drawing.Color.CadetBlue
         Me.lblIDFranchisee.Location = New System.Drawing.Point(134, 61)
         Me.lblIDFranchisee.Name = "lblIDFranchisee"
         Me.lblIDFranchisee.Size = New System.Drawing.Size(82, 13)
@@ -1149,7 +1174,7 @@ Partial Class pnlMain
         '
         Me.lblFullName.AutoSize = True
         Me.lblFullName.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblFullName.ForeColor = System.Drawing.Color.Black
         Me.lblFullName.Location = New System.Drawing.Point(133, 41)
         Me.lblFullName.Name = "lblFullName"
         Me.lblFullName.Size = New System.Drawing.Size(93, 18)
