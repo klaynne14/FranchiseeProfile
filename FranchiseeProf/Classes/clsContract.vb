@@ -11,7 +11,7 @@ Public Class clsContract
         Dim sQuery As String = "INSERT INTO Contract(unContract, FPCStartTerm, FPCEndTerm, FPCRemark, unOutlet)
                                 VALUES (((SELECT COUNT(*) FROM contract)+ 1), @FPCStartTerm, @FPCEndTerm, @FPCRemark, @unOutlet)"
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
 

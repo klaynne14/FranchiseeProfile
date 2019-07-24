@@ -3,7 +3,7 @@
 Public Class frmCreateNewFranchisee
     Public Function browseImage()
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 Dim OFD As FileDialog = New OpenFileDialog()
 
