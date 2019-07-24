@@ -721,20 +721,19 @@ Module modProfiling
             lRelocation = frmUpdateOutletDetails.txtRelocationAddress.Text
         End If
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
-            Try
-                oConnection.Open()
+                Try
+                    oConnection.Open()
 
-                Using oCommand As New SqlCommand(sQuery, oConnection)
+                    Using oCommand As New SqlCommand(sQuery, oConnection)
 
-                    oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.txtLocationName.Text)
-                    oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
-                    oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
-                    oCommand.Parameters.AddWithValue("@FPLStatus", status)
-                    oCommand.Parameters.AddWithValue("@FPLStatusClosed", lStatusClosed)
-                    oCommand.Parameters.AddWithValue("@FPLOldAddress", lRelocation)
-                    oCommand.Parameters.AddWithValue("@FPLDateClosed", frmUpdateOutletDetails.dtpCloseDate.Value.Date)
+                        oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.txtLocationName.Text)
+                        oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
+                        oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
+                        oCommand.Parameters.AddWithValue("@FPLStatus", status)
+                        oCommand.Parameters.AddWithValue("@FPLStatusClosed", lStatusClosed)
+                        oCommand.Parameters.AddWithValue("@FPLOldAddress", lRelocation)
+                        oCommand.Parameters.AddWithValue("@FPLDateClosed", frmUpdateOutletDetails.dtpCloseDate.Value.Date)
 
                     oCommand.ExecuteNonQuery()
                     Return True
