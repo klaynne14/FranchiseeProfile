@@ -500,7 +500,7 @@ Partial Class pnlMain
         Me.pnlInfo.Controls.Add(Me.lblFullName)
         Me.pnlInfo.Controls.Add(Me.lblBranch)
         Me.pnlInfo.Controls.Add(Me.pbUserProfile)
-        Me.pnlInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.pnlInfo.ForeColor = System.Drawing.Color.Black
         Me.pnlInfo.Location = New System.Drawing.Point(309, 0)
         Me.pnlInfo.Name = "pnlInfo"
         Me.pnlInfo.Size = New System.Drawing.Size(1049, 668)
@@ -571,7 +571,7 @@ Partial Class pnlMain
         '
         Me.lblFaxNumber.AutoSize = True
         Me.lblFaxNumber.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblFaxNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblFaxNumber.ForeColor = System.Drawing.Color.Black
         Me.lblFaxNumber.Location = New System.Drawing.Point(823, 290)
         Me.lblFaxNumber.Name = "lblFaxNumber"
         Me.lblFaxNumber.Size = New System.Drawing.Size(11, 13)
@@ -582,7 +582,7 @@ Partial Class pnlMain
         '
         Me.lblTinNumber.AutoSize = True
         Me.lblTinNumber.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblTinNumber.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTinNumber.ForeColor = System.Drawing.Color.Black
         Me.lblTinNumber.Location = New System.Drawing.Point(705, 290)
         Me.lblTinNumber.Name = "lblTinNumber"
         Me.lblTinNumber.Size = New System.Drawing.Size(0, 13)
@@ -592,7 +592,7 @@ Partial Class pnlMain
         '
         Me.lblOccupation.AutoSize = True
         Me.lblOccupation.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblOccupation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblOccupation.ForeColor = System.Drawing.Color.Black
         Me.lblOccupation.Location = New System.Drawing.Point(567, 290)
         Me.lblOccupation.Name = "lblOccupation"
         Me.lblOccupation.Size = New System.Drawing.Size(0, 13)
@@ -632,7 +632,7 @@ Partial Class pnlMain
         '
         Me.lblYearStarted.AutoSize = True
         Me.lblYearStarted.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblYearStarted.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblYearStarted.ForeColor = System.Drawing.Color.Black
         Me.lblYearStarted.Location = New System.Drawing.Point(436, 290)
         Me.lblYearStarted.Name = "lblYearStarted"
         Me.lblYearStarted.Size = New System.Drawing.Size(0, 13)
@@ -652,7 +652,7 @@ Partial Class pnlMain
         '
         Me.lblCorpAuthorizedName.AutoSize = True
         Me.lblCorpAuthorizedName.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblCorpAuthorizedName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblCorpAuthorizedName.ForeColor = System.Drawing.Color.Black
         Me.lblCorpAuthorizedName.Location = New System.Drawing.Point(247, 290)
         Me.lblCorpAuthorizedName.Name = "lblCorpAuthorizedName"
         Me.lblCorpAuthorizedName.Size = New System.Drawing.Size(0, 13)
@@ -672,7 +672,7 @@ Partial Class pnlMain
         '
         Me.lblOwnershipType.AutoSize = True
         Me.lblOwnershipType.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblOwnershipType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblOwnershipType.ForeColor = System.Drawing.Color.Black
         Me.lblOwnershipType.Location = New System.Drawing.Point(135, 290)
         Me.lblOwnershipType.Name = "lblOwnershipType"
         Me.lblOwnershipType.Size = New System.Drawing.Size(11, 13)
@@ -763,7 +763,7 @@ Partial Class pnlMain
         '
         Me.lblPermanentlyClosed.AutoSize = True
         Me.lblPermanentlyClosed.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblPermanentlyClosed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblPermanentlyClosed.ForeColor = System.Drawing.Color.Black
         Me.lblPermanentlyClosed.Location = New System.Drawing.Point(1000, 85)
         Me.lblPermanentlyClosed.Name = "lblPermanentlyClosed"
         Me.lblPermanentlyClosed.Size = New System.Drawing.Size(14, 13)
@@ -774,7 +774,7 @@ Partial Class pnlMain
         '
         Me.lblTemporaryClosed.AutoSize = True
         Me.lblTemporaryClosed.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblTemporaryClosed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTemporaryClosed.ForeColor = System.Drawing.Color.Black
         Me.lblTemporaryClosed.Location = New System.Drawing.Point(1000, 67)
         Me.lblTemporaryClosed.Name = "lblTemporaryClosed"
         Me.lblTemporaryClosed.Size = New System.Drawing.Size(14, 13)
@@ -785,7 +785,7 @@ Partial Class pnlMain
         '
         Me.lblTotalActive.AutoSize = True
         Me.lblTotalActive.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblTotalActive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTotalActive.ForeColor = System.Drawing.Color.Black
         Me.lblTotalActive.Location = New System.Drawing.Point(1000, 50)
         Me.lblTotalActive.Name = "lblTotalActive"
         Me.lblTotalActive.Size = New System.Drawing.Size(14, 13)
@@ -796,7 +796,7 @@ Partial Class pnlMain
         '
         Me.lblTotalOutlets.AutoSize = True
         Me.lblTotalOutlets.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblTotalOutlets.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTotalOutlets.ForeColor = System.Drawing.Color.Black
         Me.lblTotalOutlets.Location = New System.Drawing.Point(1000, 32)
         Me.lblTotalOutlets.Name = "lblTotalOutlets"
         Me.lblTotalOutlets.Size = New System.Drawing.Size(14, 13)
@@ -857,7 +857,7 @@ Partial Class pnlMain
         '
         Me.lblTelNum2.AutoSize = True
         Me.lblTelNum2.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblTelNum2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTelNum2.ForeColor = System.Drawing.Color.Black
         Me.lblTelNum2.Location = New System.Drawing.Point(706, 249)
         Me.lblTelNum2.Name = "lblTelNum2"
         Me.lblTelNum2.Size = New System.Drawing.Size(0, 13)
@@ -877,7 +877,7 @@ Partial Class pnlMain
         '
         Me.lblTelNum1.AutoSize = True
         Me.lblTelNum1.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblTelNum1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblTelNum1.ForeColor = System.Drawing.Color.Black
         Me.lblTelNum1.Location = New System.Drawing.Point(706, 206)
         Me.lblTelNum1.Name = "lblTelNum1"
         Me.lblTelNum1.Size = New System.Drawing.Size(0, 13)
@@ -897,7 +897,7 @@ Partial Class pnlMain
         '
         Me.lblMobileNum2.AutoSize = True
         Me.lblMobileNum2.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblMobileNum2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblMobileNum2.ForeColor = System.Drawing.Color.Black
         Me.lblMobileNum2.Location = New System.Drawing.Point(568, 249)
         Me.lblMobileNum2.Name = "lblMobileNum2"
         Me.lblMobileNum2.Size = New System.Drawing.Size(0, 13)
@@ -917,7 +917,7 @@ Partial Class pnlMain
         '
         Me.lblMobileNum1.AutoSize = True
         Me.lblMobileNum1.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblMobileNum1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblMobileNum1.ForeColor = System.Drawing.Color.Black
         Me.lblMobileNum1.Location = New System.Drawing.Point(568, 206)
         Me.lblMobileNum1.Name = "lblMobileNum1"
         Me.lblMobileNum1.Size = New System.Drawing.Size(0, 13)
@@ -937,7 +937,7 @@ Partial Class pnlMain
         '
         Me.lblEmailAdd2.AutoSize = True
         Me.lblEmailAdd2.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblEmailAdd2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblEmailAdd2.ForeColor = System.Drawing.Color.Black
         Me.lblEmailAdd2.Location = New System.Drawing.Point(824, 249)
         Me.lblEmailAdd2.Name = "lblEmailAdd2"
         Me.lblEmailAdd2.Size = New System.Drawing.Size(0, 13)
@@ -957,7 +957,7 @@ Partial Class pnlMain
         '
         Me.lblEmailAdd1.AutoSize = True
         Me.lblEmailAdd1.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblEmailAdd1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblEmailAdd1.ForeColor = System.Drawing.Color.Black
         Me.lblEmailAdd1.Location = New System.Drawing.Point(823, 205)
         Me.lblEmailAdd1.Name = "lblEmailAdd1"
         Me.lblEmailAdd1.Size = New System.Drawing.Size(0, 13)
@@ -977,7 +977,7 @@ Partial Class pnlMain
         '
         Me.lblAge.AutoSize = True
         Me.lblAge.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblAge.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAge.ForeColor = System.Drawing.Color.Black
         Me.lblAge.Location = New System.Drawing.Point(706, 159)
         Me.lblAge.Name = "lblAge"
         Me.lblAge.Size = New System.Drawing.Size(0, 13)
@@ -997,7 +997,7 @@ Partial Class pnlMain
         '
         Me.lblDateOfBirth.AutoSize = True
         Me.lblDateOfBirth.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblDateOfBirth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDateOfBirth.ForeColor = System.Drawing.Color.Black
         Me.lblDateOfBirth.Location = New System.Drawing.Point(569, 159)
         Me.lblDateOfBirth.Name = "lblDateOfBirth"
         Me.lblDateOfBirth.Size = New System.Drawing.Size(0, 13)
@@ -1017,7 +1017,7 @@ Partial Class pnlMain
         '
         Me.lblGender.AutoSize = True
         Me.lblGender.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblGender.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblGender.ForeColor = System.Drawing.Color.Black
         Me.lblGender.Location = New System.Drawing.Point(823, 159)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(0, 13)
@@ -1037,7 +1037,7 @@ Partial Class pnlMain
         '
         Me.lblReligion.AutoSize = True
         Me.lblReligion.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblReligion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblReligion.ForeColor = System.Drawing.Color.Black
         Me.lblReligion.Location = New System.Drawing.Point(370, 249)
         Me.lblReligion.Name = "lblReligion"
         Me.lblReligion.Size = New System.Drawing.Size(0, 13)
@@ -1057,7 +1057,7 @@ Partial Class pnlMain
         '
         Me.lblNationality.AutoSize = True
         Me.lblNationality.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblNationality.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblNationality.ForeColor = System.Drawing.Color.Black
         Me.lblNationality.Location = New System.Drawing.Point(248, 249)
         Me.lblNationality.Name = "lblNationality"
         Me.lblNationality.Size = New System.Drawing.Size(0, 13)
@@ -1077,7 +1077,7 @@ Partial Class pnlMain
         '
         Me.lblCivilStatus.AutoSize = True
         Me.lblCivilStatus.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblCivilStatus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblCivilStatus.ForeColor = System.Drawing.Color.Black
         Me.lblCivilStatus.Location = New System.Drawing.Point(135, 249)
         Me.lblCivilStatus.Name = "lblCivilStatus"
         Me.lblCivilStatus.Size = New System.Drawing.Size(0, 13)
@@ -1097,7 +1097,7 @@ Partial Class pnlMain
         '
         Me.lblAddress2.AutoSize = True
         Me.lblAddress2.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblAddress2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAddress2.ForeColor = System.Drawing.Color.Black
         Me.lblAddress2.Location = New System.Drawing.Point(135, 205)
         Me.lblAddress2.Name = "lblAddress2"
         Me.lblAddress2.Size = New System.Drawing.Size(0, 13)
@@ -1117,11 +1117,12 @@ Partial Class pnlMain
         '
         Me.lblAddress1.AutoSize = True
         Me.lblAddress1.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.lblAddress1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblAddress1.ForeColor = System.Drawing.Color.Black
         Me.lblAddress1.Location = New System.Drawing.Point(136, 159)
         Me.lblAddress1.Name = "lblAddress1"
-        Me.lblAddress1.Size = New System.Drawing.Size(0, 13)
+        Me.lblAddress1.Size = New System.Drawing.Size(63, 13)
         Me.lblAddress1.TabIndex = 39
+        Me.lblAddress1.Text = "address 1"
         '
         'lblFPFStatus
         '
