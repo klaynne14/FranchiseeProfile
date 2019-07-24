@@ -20,7 +20,7 @@ Public Class clsPackage
                                 VALUES (((SELECT COUNT(*) FROM Package)+ 1), @FPPPackageType, @FPPFranchiseFee, @FPPPackageFee, @FPPSecurityDeposit,
                                 @FPPFranchiseRemark, @FPPPackageRemark, @FPPDepositRemark, @unOutlet)"
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
 
