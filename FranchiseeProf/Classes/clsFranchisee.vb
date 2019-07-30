@@ -54,7 +54,7 @@ Public Class clsFranchisee
 
         ',FPFTotalActive,FPFTotalTempClosed,FPFTotalPermClosed
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 oConnection.Open()
 

@@ -43,9 +43,8 @@ Public Class frmAddNewOutlet
     End Sub
 #End Region
 
-    Dim unF As Integer = pnlMain.lblIDFranchisee.Text
 
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs)
         Dim unO As Integer = lblOutletID.Text
         modProfiling.deleteLatestUn(unO)
         'modProfiling.loadOutletLocation(unF)
@@ -58,8 +57,26 @@ Public Class frmAddNewOutlet
         'modProfiling.getOId(lblOutletID)
     End Sub
 
-    Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
+    Private Sub BtnAddNew_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged
+        If cbPackageType.Text = "School" Then
+            setPackageType(PackageType.School)
+        ElseIf cbPackageType.Text = "Customize" Then
+            setPackageType(PackageType.Customize)
+        ElseIf cbPackageType.Text = "Standard" Then
+            setPackageType(PackageType.Standard)
+        ElseIf cbPackageType.Text = "School-Counter" Then
+            setPackageType(PackageType.SchoolCounter)
+        ElseIf cbPackageType.Text = "Counter" Then
+            setPackageType(PackageType.Counter)
+        End If
+    End Sub
+
+    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+        Dim unF As Integer = pnlMain.lblIDFranchisee.Text
         Dim unO As Integer = lblOutletID.Text
 
         Dim al As clsLocation = New clsLocation
@@ -87,20 +104,6 @@ Public Class frmAddNewOutlet
             modProfiling.loadOutletLocation(unF)
 
             Me.Close()
-        End If
-    End Sub
-
-    Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged
-        If cbPackageType.Text = "School" Then
-            setPackageType(PackageType.School)
-        ElseIf cbPackageType.Text = "Customize" Then
-            setPackageType(PackageType.Customize)
-        ElseIf cbPackageType.Text = "Standard" Then
-            setPackageType(PackageType.Standard)
-        ElseIf cbPackageType.Text = "School-Counter" Then
-            setPackageType(PackageType.SchoolCounter)
-        ElseIf cbPackageType.Text = "Counter" Then
-            setPackageType(PackageType.Counter)
         End If
     End Sub
 End Class

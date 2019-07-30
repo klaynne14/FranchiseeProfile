@@ -3,7 +3,7 @@
 Public Class frmUpdateFranchiseeProfile
     Public Function browseImage()
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 Dim OFD As FileDialog = New OpenFileDialog()
 
@@ -42,8 +42,8 @@ Public Class frmUpdateFranchiseeProfile
             statState = 0
         End If
 
-
     End Sub
+
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Dim pnl As New pnlMain
         Dim unF As Integer = Me.lblUnFranchisee.Text
@@ -57,11 +57,7 @@ Public Class frmUpdateFranchiseeProfile
         End If
     End Sub
 
-
     Private Sub LnkChangePicture_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkChangePicture.LinkClicked
         browseImage()
     End Sub
-
-
-
 End Class

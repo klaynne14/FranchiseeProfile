@@ -22,6 +22,8 @@ Public Class frmOutletDetails
         btnAddContract.Hide()
         btnUpdateContact.Enabled = False
 
+        Dim listOutlet As clsOutlet = New clsOutlet
+        lblOutletRemarks.Text = listOutlet.FPORemarks
     End Sub
     Private Sub BtnAddContract_Click(sender As Object, e As EventArgs) Handles btnAddContract.Click
         Dim ac As clsContract = New clsContract

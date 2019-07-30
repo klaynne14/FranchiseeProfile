@@ -3,7 +3,7 @@
 Public Class frmCreateNewFranchisee
     Public Function browseImage()
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
             Try
                 Dim OFD As FileDialog = New OpenFileDialog()
 
@@ -88,7 +88,7 @@ Public Class frmCreateNewFranchisee
         End If
     End Sub
 
-    Private Sub cbOwnershipType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbOwnershipType.SelectedIndexChanged
+    Private Sub cbOwnershipType_SelectedIndexChanged(sender As Object, e As EventArgs)
         Dim cbOwnershipValue As String = cbOwnershipType.Text
 
         If cbOwnershipValue = "Corporation" Then
