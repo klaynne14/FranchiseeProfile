@@ -112,14 +112,14 @@ Partial Class frmUpdatePackage
         Me.dtpDateOfRefund.Location = New System.Drawing.Point(163, 240)
         Me.dtpDateOfRefund.Name = "dtpDateOfRefund"
         Me.dtpDateOfRefund.Size = New System.Drawing.Size(90, 20)
-        Me.dtpDateOfRefund.TabIndex = 52
+        Me.dtpDateOfRefund.TabIndex = 8
         '
         'txtDepositRemark
         '
         Me.txtDepositRemark.Location = New System.Drawing.Point(163, 196)
         Me.txtDepositRemark.Name = "txtDepositRemark"
         Me.txtDepositRemark.Size = New System.Drawing.Size(169, 20)
-        Me.txtDepositRemark.TabIndex = 48
+        Me.txtDepositRemark.TabIndex = 7
         '
         'Label14
         '
@@ -138,7 +138,7 @@ Partial Class frmUpdatePackage
         Me.txtSecurityDeposit.Location = New System.Drawing.Point(31, 196)
         Me.txtSecurityDeposit.Name = "txtSecurityDeposit"
         Me.txtSecurityDeposit.Size = New System.Drawing.Size(126, 20)
-        Me.txtSecurityDeposit.TabIndex = 46
+        Me.txtSecurityDeposit.TabIndex = 6
         Me.txtSecurityDeposit.Text = "0"
         '
         'Label15
@@ -157,7 +157,7 @@ Partial Class frmUpdatePackage
         Me.txtFranchiseRemark.Location = New System.Drawing.Point(164, 151)
         Me.txtFranchiseRemark.Name = "txtFranchiseRemark"
         Me.txtFranchiseRemark.Size = New System.Drawing.Size(169, 20)
-        Me.txtFranchiseRemark.TabIndex = 44
+        Me.txtFranchiseRemark.TabIndex = 5
         '
         'Label12
         '
@@ -176,7 +176,7 @@ Partial Class frmUpdatePackage
         Me.txtFranchiseeFee.Location = New System.Drawing.Point(32, 151)
         Me.txtFranchiseeFee.Name = "txtFranchiseeFee"
         Me.txtFranchiseeFee.Size = New System.Drawing.Size(126, 20)
-        Me.txtFranchiseeFee.TabIndex = 42
+        Me.txtFranchiseeFee.TabIndex = 4
         Me.txtFranchiseeFee.Text = "0"
         '
         'Label13
@@ -195,7 +195,7 @@ Partial Class frmUpdatePackage
         Me.txtPackageRemark.Location = New System.Drawing.Point(164, 105)
         Me.txtPackageRemark.Name = "txtPackageRemark"
         Me.txtPackageRemark.Size = New System.Drawing.Size(169, 20)
-        Me.txtPackageRemark.TabIndex = 40
+        Me.txtPackageRemark.TabIndex = 3
         '
         'Label11
         '
@@ -214,7 +214,7 @@ Partial Class frmUpdatePackage
         Me.txtPackageFee.Location = New System.Drawing.Point(32, 105)
         Me.txtPackageFee.Name = "txtPackageFee"
         Me.txtPackageFee.Size = New System.Drawing.Size(126, 20)
-        Me.txtPackageFee.TabIndex = 38
+        Me.txtPackageFee.TabIndex = 2
         Me.txtPackageFee.Text = "0"
         '
         'Label10
@@ -247,7 +247,7 @@ Partial Class frmUpdatePackage
         Me.cbPackageType.Location = New System.Drawing.Point(33, 59)
         Me.cbPackageType.Name = "cbPackageType"
         Me.cbPackageType.Size = New System.Drawing.Size(125, 21)
-        Me.cbPackageType.TabIndex = 35
+        Me.cbPackageType.TabIndex = 1
         '
         'btnUpdatePackage
         '

@@ -1,6 +1,9 @@
 Imports System.Data.SqlClient
 Imports System.IO
 
+'FranchiseProfiling
+'FranchiseMasterFile
+
 Module modProfiling
     Public Class clsOutletLocation
 
@@ -721,19 +724,20 @@ Module modProfiling
             lRelocation = frmUpdateOutletDetails.txtRelocationAddress.Text
         End If
 
+
         Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
-                Try
-                    oConnection.Open()
+            Try
+                oConnection.Open()
 
-                    Using oCommand As New SqlCommand(sQuery, oConnection)
+                Using oCommand As New SqlCommand(sQuery, oConnection)
 
-                        oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.txtLocationName.Text)
-                        oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
-                        oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
-                        oCommand.Parameters.AddWithValue("@FPLStatus", status)
-                        oCommand.Parameters.AddWithValue("@FPLStatusClosed", lStatusClosed)
-                        oCommand.Parameters.AddWithValue("@FPLOldAddress", lRelocation)
-                        oCommand.Parameters.AddWithValue("@FPLDateClosed", frmUpdateOutletDetails.dtpCloseDate.Value.Date)
+                    oCommand.Parameters.AddWithValue("@FPLLocationName", frmUpdateOutletDetails.txtLocationName.Text)
+                    oCommand.Parameters.AddWithValue("@FPLCurrentAddress", frmUpdateOutletDetails.txtOutletAddress.Text)
+                    oCommand.Parameters.AddWithValue("@FPLDateOpened", frmUpdateOutletDetails.dtpDateOpened.Value)
+                    oCommand.Parameters.AddWithValue("@FPLStatus", status)
+                    oCommand.Parameters.AddWithValue("@FPLStatusClosed", lStatusClosed)
+                    oCommand.Parameters.AddWithValue("@FPLOldAddress", lRelocation)
+                    oCommand.Parameters.AddWithValue("@FPLDateClosed", frmUpdateOutletDetails.dtpCloseDate.Value.Date)
 
                     oCommand.ExecuteNonQuery()
                     Return True
@@ -779,6 +783,27 @@ Module modProfiling
         Catch ex As Exception
             MsgBox("No selected item!")
         End Try
+    End Function
+
+    Public Function outletRemarks(ByVal unO As Integer) As Boolean
+        '
+        Dim uQuery As String = "Update Outlet 
+                                Set FPORemarks = @FPORemarks 
+                                Where unOutlet=" & Val(unO)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(uQuery, oConnection)
+                    oCommand.Parameters.AddWithValue("@FPORemarks", frmAddNewOutlet.txtOutletRemarks.Text)
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("@addOutlet()" + ex.Message)
+            End Try
+        End Using
+        Return False
     End Function
 #End Region
 

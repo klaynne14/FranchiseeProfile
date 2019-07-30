@@ -9,6 +9,7 @@ Public Class clsOutlet
     Public unContract As Integer
     Public unLocation As Integer
     Public unFranchisee As String
+    Public FPORemarks As String
 
     Public Function addOutlet() As Boolean
         Dim sQuery As String = "INSERT INTO Outlet (unOutlet, FPOBusinessUnit, unFranchisee)
@@ -21,6 +22,7 @@ Public Class clsOutlet
                 Using oCommand As New SqlCommand(sQuery, oConnection)
 
                     oCommand.Parameters.AddWithValue("@FPOBusinessUnit", Me.FPOBusinessUnit)
+                    'oCommand.Parameters.AddWithValue("@FPORemarks", Me.FPORemarks)
                     oCommand.Parameters.AddWithValue("@unFranchisee", Me.unFranchisee)
 
                     oCommand.ExecuteNonQuery()

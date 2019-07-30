@@ -12,7 +12,9 @@ Public Class frmCreateNewFranchisee
                 If OFD.ShowDialog() = DialogResult.OK Then
                     Dim imgpath As String = OFD.FileName
                     pbFranchisee.ImageLocation = imgpath
-
+                    'If imgpath.Length > 500000 Then
+                    '    MsgBox("FIle is too big")
+                    'End If
                 End If
 
                 OFD = Nothing
@@ -88,7 +90,7 @@ Public Class frmCreateNewFranchisee
         End If
     End Sub
 
-    Private Sub cbOwnershipType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbOwnershipType.SelectedIndexChanged
+    Private Sub cbOwnershipType_SelectedIndexChanged(sender As Object, e As EventArgs)
         Dim cbOwnershipValue As String = cbOwnershipType.Text
 
         If cbOwnershipValue = "Corporation" Then

@@ -43,24 +43,37 @@ Public Class frmAddNewOutlet
     End Sub
 #End Region
 
-    Dim unF As Integer = pnlMain.lblIDFranchisee.Text
-
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim unO As Integer = lblOutletID.Text
-        modProfiling.deleteLatestUn(unO)
-        'modProfiling.loadOutletLocation(unF)
-        pnlMain.cbBusinessUnit.Text = " "
-        Me.Close()
-    End Sub
-
     Private Sub frmAddNewOutlet_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         'modProfiling.getOId(lblOutletID)
     End Sub
 
-    Private Sub BtnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
+    Private Sub BtnAddNew_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged
+        If cbPackageType.Text = "School" Then
+            setPackageType(PackageType.School)
+        ElseIf cbPackageType.Text = "Customize" Then
+            setPackageType(PackageType.Customize)
+        ElseIf cbPackageType.Text = "Standard" Then
+            setPackageType(PackageType.Standard)
+        ElseIf cbPackageType.Text = "School-Counter" Then
+            setPackageType(PackageType.SchoolCounter)
+        ElseIf cbPackageType.Text = "Counter" Then
+            setPackageType(PackageType.Counter)
+        End If
+    End Sub
+
+    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+        Dim unF As Integer = pnlMain.lblIDFranchisee.Text
         Dim unO As Integer = lblOutletID.Text
+
+        modProfiling.outletRemarks(unO)
+
+        Dim olR As clsOutlet = New clsOutlet
+        olR.FPORemarks = txtOutletRemarks.Text
 
         Dim al As clsLocation = New clsLocation
         al.FPLLocationName = txtLocationName.Text
@@ -80,6 +93,20 @@ Public Class frmAddNewOutlet
         ap.FPPDepositRemark = txtDepositRemark.Text
         ap.unOutlet = unO
 
+        'Dim olR As clsOutlet = New clsOutlet
+        'olR.FPORemarks = txtOutletRemarks.Text
+        'Dim uQuery As String = "Update Outlet Set FPORemarks=@FPORemarks Where unOutlet=" & Val(unO)
+        'Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+        '    Try
+        '        oConnection.Open()
+        '        Using oCommand As New SqlCommand(uQuery, oConnection)
+        '            oCommand.Parameters.AddWithValue("@FPORemarks", olR.FPORemarks)
+        '            oCommand.ExecuteNonQuery()
+        '        End Using
+        '    Catch ex As Exception
+        '        MessageBox.Show("@addOutlet()" + ex.Message)
+        '    End Try
+        'End Using
         If al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
             pnlMain.cbBusinessUnit.Text = " "
@@ -90,17 +117,11 @@ Public Class frmAddNewOutlet
         End If
     End Sub
 
-    Private Sub cbPackageType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPackageType.SelectedIndexChanged
-        If cbPackageType.Text = "School" Then
-            setPackageType(PackageType.School)
-        ElseIf cbPackageType.Text = "Customize" Then
-            setPackageType(PackageType.Customize)
-        ElseIf cbPackageType.Text = "Standard" Then
-            setPackageType(PackageType.Standard)
-        ElseIf cbPackageType.Text = "School-Counter" Then
-            setPackageType(PackageType.SchoolCounter)
-        ElseIf cbPackageType.Text = "Counter" Then
-            setPackageType(PackageType.Counter)
-        End If
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Dim unO As Integer = lblOutletID.Text
+        modProfiling.deleteLatestUn(unO)
+        'modProfiling.loadOutletLocation(unF)
+        pnlMain.cbBusinessUnit.Text = " "
+        Me.Close()
     End Sub
 End Class

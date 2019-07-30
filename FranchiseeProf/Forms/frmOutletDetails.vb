@@ -1,3 +1,5 @@
+Imports System.Data.SqlClient
+
 Public Class frmOutletDetails
 
     Public Function enabledConInfo(state As Boolean)
@@ -5,24 +7,44 @@ Public Class frmOutletDetails
         dtpEndTerm.Enabled = state
         txtRemarks.Enabled = state
     End Function
+
     Private Sub frmAddContract_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         modProfiling.getfocusedOId(lblOutletID)
+
+        Dim unO As Integer = lblOutletID.Text
         Try
-            Dim unO As Integer = lblOutletID.Text
             modProfiling.displayContract(unO)
             modProfiling.displayInfoPackage(unO)
         Catch ex As Exception
             Me.Close()
         End Try
+        'Dim outCls As clsOutlet = New clsOutlet
+        Dim sQuery As String = "Select FPORemarks From Outlet Where unOutlet=" & Val(unO)
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(sQuery, oConnection)
+                    Dim oRead As SqlDataReader = oCommand.ExecuteReader
+                    While oRead.Read
+                        lblOutletRemarks.Text = oRead("FPORemarks")
+                    End While
+                End Using
+            Catch ex As Exception
+
+            End Try
+        End Using
+
         btnAddEnabled.Show()
+
         If btnAddEnabled.Enabled = True Then
             enabledConInfo(False)
         End If
+
         btnAddContract.Hide()
         btnUpdateContact.Enabled = False
-
     End Sub
+
     Private Sub BtnAddContract_Click(sender As Object, e As EventArgs) Handles btnAddContract.Click
         Dim ac As clsContract = New clsContract
 
