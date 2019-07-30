@@ -23,6 +23,8 @@ Partial Class frmOutletDetails
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblOutletRemarks = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.btnAddEnabled = New System.Windows.Forms.Button()
         Me.btnUpdateContact = New System.Windows.Forms.Button()
         Me.lnkEditPackage = New System.Windows.Forms.LinkLabel()
@@ -60,8 +62,6 @@ Partial Class frmOutletDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.lblOutletRemarks = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -107,9 +107,29 @@ Partial Class frmOutletDetails
         Me.Panel1.Size = New System.Drawing.Size(526, 476)
         Me.Panel1.TabIndex = 0
         '
+        'lblOutletRemarks
+        '
+        Me.lblOutletRemarks.AutoSize = True
+        Me.lblOutletRemarks.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOutletRemarks.Location = New System.Drawing.Point(93, 62)
+        Me.lblOutletRemarks.Name = "lblOutletRemarks"
+        Me.lblOutletRemarks.Size = New System.Drawing.Size(51, 13)
+        Me.lblOutletRemarks.TabIndex = 49
+        Me.lblOutletRemarks.Text = "Label16"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(26, 62)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(63, 13)
+        Me.Label15.TabIndex = 48
+        Me.Label15.Text = "Remarks:"
+        '
         'btnAddEnabled
         '
-        Me.btnAddEnabled.Location = New System.Drawing.Point(373, 276)
+        Me.btnAddEnabled.Location = New System.Drawing.Point(373, 272)
         Me.btnAddEnabled.Name = "btnAddEnabled"
         Me.btnAddEnabled.Size = New System.Drawing.Size(52, 23)
         Me.btnAddEnabled.TabIndex = 47
@@ -118,7 +138,7 @@ Partial Class frmOutletDetails
         '
         'btnUpdateContact
         '
-        Me.btnUpdateContact.Location = New System.Drawing.Point(427, 276)
+        Me.btnUpdateContact.Location = New System.Drawing.Point(427, 272)
         Me.btnUpdateContact.Name = "btnUpdateContact"
         Me.btnUpdateContact.Size = New System.Drawing.Size(63, 23)
         Me.btnUpdateContact.TabIndex = 43
@@ -131,7 +151,7 @@ Partial Class frmOutletDetails
         Me.lnkEditPackage.AutoSize = True
         Me.lnkEditPackage.Font = New System.Drawing.Font("Verdana", 8.25!)
         Me.lnkEditPackage.LinkColor = System.Drawing.Color.CadetBlue
-        Me.lnkEditPackage.Location = New System.Drawing.Point(424, 113)
+        Me.lnkEditPackage.Location = New System.Drawing.Point(424, 99)
         Me.lnkEditPackage.Name = "lnkEditPackage"
         Me.lnkEditPackage.Size = New System.Drawing.Size(80, 13)
         Me.lnkEditPackage.TabIndex = 42
@@ -142,7 +162,7 @@ Partial Class frmOutletDetails
         '
         Me.lblDateOfRefund.AutoSize = True
         Me.lblDateOfRefund.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblDateOfRefund.Location = New System.Drawing.Point(367, 198)
+        Me.lblDateOfRefund.Location = New System.Drawing.Point(367, 184)
         Me.lblDateOfRefund.Name = "lblDateOfRefund"
         Me.lblDateOfRefund.Size = New System.Drawing.Size(100, 13)
         Me.lblDateOfRefund.TabIndex = 41
@@ -152,7 +172,7 @@ Partial Class frmOutletDetails
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label17.Location = New System.Drawing.Point(268, 198)
+        Me.Label17.Location = New System.Drawing.Point(268, 184)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(98, 13)
         Me.Label17.TabIndex = 40
@@ -173,26 +193,26 @@ Partial Class frmOutletDetails
         'lblOutletID
         '
         Me.lblOutletID.AutoSize = True
-        Me.lblOutletID.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblOutletID.Location = New System.Drawing.Point(88, 28)
+        Me.lblOutletID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lblOutletID.Location = New System.Drawing.Point(93, 28)
         Me.lblOutletID.Name = "lblOutletID"
-        Me.lblOutletID.Size = New System.Drawing.Size(68, 13)
+        Me.lblOutletID.Size = New System.Drawing.Size(77, 13)
         Me.lblOutletID.TabIndex = 30
         Me.lblOutletID.Text = "lblOutletID"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.Label14.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
         Me.Label14.Location = New System.Drawing.Point(25, 28)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(64, 13)
+        Me.Label14.Size = New System.Drawing.Size(69, 13)
         Me.Label14.TabIndex = 29
         Me.Label14.Text = "Outlet ID:"
         '
         'btnAddContract
         '
-        Me.btnAddContract.Location = New System.Drawing.Point(383, 276)
+        Me.btnAddContract.Location = New System.Drawing.Point(383, 272)
         Me.btnAddContract.Name = "btnAddContract"
         Me.btnAddContract.Size = New System.Drawing.Size(52, 23)
         Me.btnAddContract.TabIndex = 28
@@ -201,7 +221,7 @@ Partial Class frmOutletDetails
         '
         'txtRemarks
         '
-        Me.txtRemarks.Location = New System.Drawing.Point(233, 251)
+        Me.txtRemarks.Location = New System.Drawing.Point(233, 245)
         Me.txtRemarks.Name = "txtRemarks"
         Me.txtRemarks.Size = New System.Drawing.Size(256, 21)
         Me.txtRemarks.TabIndex = 27
@@ -211,7 +231,7 @@ Partial Class frmOutletDetails
         Me.lvContract.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lvContract.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.idContract, Me.FPCStartTerm, Me.FPCEndTerm, Me.FPCRemark})
         Me.lvContract.FullRowSelect = True
-        Me.lvContract.Location = New System.Drawing.Point(47, 310)
+        Me.lvContract.Location = New System.Drawing.Point(47, 308)
         Me.lvContract.Name = "lvContract"
         Me.lvContract.Size = New System.Drawing.Size(442, 97)
         Me.lvContract.TabIndex = 26
@@ -242,7 +262,7 @@ Partial Class frmOutletDetails
         '
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(230, 274)
+        Me.Label11.Location = New System.Drawing.Point(230, 269)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(58, 13)
         Me.Label11.TabIndex = 25
@@ -251,11 +271,11 @@ Partial Class frmOutletDetails
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold)
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(25, 224)
+        Me.Label8.Location = New System.Drawing.Point(25, 214)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(56, 13)
+        Me.Label8.Size = New System.Drawing.Size(62, 13)
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Contract"
         '
@@ -263,7 +283,7 @@ Partial Class frmOutletDetails
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(135, 275)
+        Me.Label5.Location = New System.Drawing.Point(140, 269)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(61, 13)
         Me.Label5.TabIndex = 18
@@ -273,25 +293,25 @@ Partial Class frmOutletDetails
         '
         Me.dtpEndTerm.CustomFormat = "MM/dd/yyyy"
         Me.dtpEndTerm.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpEndTerm.Location = New System.Drawing.Point(138, 252)
+        Me.dtpEndTerm.Location = New System.Drawing.Point(143, 245)
         Me.dtpEndTerm.Name = "dtpEndTerm"
-        Me.dtpEndTerm.Size = New System.Drawing.Size(84, 21)
+        Me.dtpEndTerm.Size = New System.Drawing.Size(88, 21)
         Me.dtpEndTerm.TabIndex = 17
         '
         'dtpStartTerm
         '
         Me.dtpStartTerm.CustomFormat = "MM/dd/yyy"
         Me.dtpStartTerm.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpStartTerm.Location = New System.Drawing.Point(48, 252)
+        Me.dtpStartTerm.Location = New System.Drawing.Point(48, 245)
         Me.dtpStartTerm.Name = "dtpStartTerm"
-        Me.dtpStartTerm.Size = New System.Drawing.Size(84, 21)
+        Me.dtpStartTerm.Size = New System.Drawing.Size(92, 21)
         Me.dtpStartTerm.TabIndex = 16
         '
         'lblDepositRemarks
         '
         Me.lblDepositRemarks.AutoSize = True
         Me.lblDepositRemarks.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblDepositRemarks.Location = New System.Drawing.Point(336, 179)
+        Me.lblDepositRemarks.Location = New System.Drawing.Point(336, 165)
         Me.lblDepositRemarks.Name = "lblDepositRemarks"
         Me.lblDepositRemarks.Size = New System.Drawing.Size(114, 13)
         Me.lblDepositRemarks.TabIndex = 15
@@ -301,7 +321,7 @@ Partial Class frmOutletDetails
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label6.Location = New System.Drawing.Point(268, 179)
+        Me.Label6.Location = New System.Drawing.Point(268, 165)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(63, 13)
         Me.Label6.TabIndex = 14
@@ -311,7 +331,7 @@ Partial Class frmOutletDetails
         '
         Me.lblFranchiseRemarks.AutoSize = True
         Me.lblFranchiseRemarks.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblFranchiseRemarks.Location = New System.Drawing.Point(336, 160)
+        Me.lblFranchiseRemarks.Location = New System.Drawing.Point(336, 146)
         Me.lblFranchiseRemarks.Name = "lblFranchiseRemarks"
         Me.lblFranchiseRemarks.Size = New System.Drawing.Size(125, 13)
         Me.lblFranchiseRemarks.TabIndex = 13
@@ -321,7 +341,7 @@ Partial Class frmOutletDetails
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label10.Location = New System.Drawing.Point(268, 160)
+        Me.Label10.Location = New System.Drawing.Point(268, 146)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(63, 13)
         Me.Label10.TabIndex = 12
@@ -331,7 +351,7 @@ Partial Class frmOutletDetails
         '
         Me.lblPackageRemarks.AutoSize = True
         Me.lblPackageRemarks.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblPackageRemarks.Location = New System.Drawing.Point(336, 141)
+        Me.lblPackageRemarks.Location = New System.Drawing.Point(336, 127)
         Me.lblPackageRemarks.Name = "lblPackageRemarks"
         Me.lblPackageRemarks.Size = New System.Drawing.Size(119, 13)
         Me.lblPackageRemarks.TabIndex = 11
@@ -341,7 +361,7 @@ Partial Class frmOutletDetails
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label12.Location = New System.Drawing.Point(268, 141)
+        Me.Label12.Location = New System.Drawing.Point(268, 127)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(63, 13)
         Me.Label12.TabIndex = 10
@@ -351,7 +371,7 @@ Partial Class frmOutletDetails
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(45, 275)
+        Me.Label3.Location = New System.Drawing.Point(45, 269)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(68, 13)
         Me.Label3.TabIndex = 9
@@ -361,7 +381,7 @@ Partial Class frmOutletDetails
         '
         Me.lblSecurityDeposit.AutoSize = True
         Me.lblSecurityDeposit.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblSecurityDeposit.Location = New System.Drawing.Point(143, 179)
+        Me.lblSecurityDeposit.Location = New System.Drawing.Point(143, 165)
         Me.lblSecurityDeposit.Name = "lblSecurityDeposit"
         Me.lblSecurityDeposit.Size = New System.Drawing.Size(110, 13)
         Me.lblSecurityDeposit.TabIndex = 7
@@ -371,7 +391,7 @@ Partial Class frmOutletDetails
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label9.Location = New System.Drawing.Point(37, 179)
+        Me.Label9.Location = New System.Drawing.Point(37, 165)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(106, 13)
         Me.Label9.TabIndex = 6
@@ -381,7 +401,7 @@ Partial Class frmOutletDetails
         '
         Me.lblFranchiseFee.AutoSize = True
         Me.lblFranchiseFee.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblFranchiseFee.Location = New System.Drawing.Point(143, 160)
+        Me.lblFranchiseFee.Location = New System.Drawing.Point(143, 146)
         Me.lblFranchiseFee.Name = "lblFranchiseFee"
         Me.lblFranchiseFee.Size = New System.Drawing.Size(94, 13)
         Me.lblFranchiseFee.TabIndex = 5
@@ -391,7 +411,7 @@ Partial Class frmOutletDetails
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label7.Location = New System.Drawing.Point(38, 160)
+        Me.Label7.Location = New System.Drawing.Point(38, 146)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(90, 13)
         Me.Label7.TabIndex = 4
@@ -401,7 +421,7 @@ Partial Class frmOutletDetails
         '
         Me.lblPackageFee.AutoSize = True
         Me.lblPackageFee.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblPackageFee.Location = New System.Drawing.Point(143, 141)
+        Me.lblPackageFee.Location = New System.Drawing.Point(143, 127)
         Me.lblPackageFee.Name = "lblPackageFee"
         Me.lblPackageFee.Size = New System.Drawing.Size(88, 13)
         Me.lblPackageFee.TabIndex = 3
@@ -411,7 +431,7 @@ Partial Class frmOutletDetails
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label4.Location = New System.Drawing.Point(38, 141)
+        Me.Label4.Location = New System.Drawing.Point(38, 127)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(84, 13)
         Me.Label4.TabIndex = 2
@@ -421,7 +441,7 @@ Partial Class frmOutletDetails
         '
         Me.lblPackageType.AutoSize = True
         Me.lblPackageType.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblPackageType.Location = New System.Drawing.Point(85, 113)
+        Me.lblPackageType.Location = New System.Drawing.Point(93, 99)
         Me.lblPackageType.Name = "lblPackageType"
         Me.lblPackageType.Size = New System.Drawing.Size(86, 13)
         Me.lblPackageType.TabIndex = 1
@@ -431,7 +451,7 @@ Partial Class frmOutletDetails
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.Label1.Location = New System.Drawing.Point(26, 113)
+        Me.Label1.Location = New System.Drawing.Point(26, 99)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 13)
         Me.Label1.TabIndex = 0
@@ -461,26 +481,6 @@ Partial Class frmOutletDetails
         Me.Label2.Size = New System.Drawing.Size(103, 17)
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Outlet Details"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(38, 62)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(63, 13)
-        Me.Label15.TabIndex = 48
-        Me.Label15.Text = "Remarks:"
-        '
-        'lblOutletRemarks
-        '
-        Me.lblOutletRemarks.AutoSize = True
-        Me.lblOutletRemarks.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutletRemarks.Location = New System.Drawing.Point(120, 62)
-        Me.lblOutletRemarks.Name = "lblOutletRemarks"
-        Me.lblOutletRemarks.Size = New System.Drawing.Size(51, 13)
-        Me.lblOutletRemarks.TabIndex = 49
-        Me.lblOutletRemarks.Text = "Label16"
         '
         'frmOutletDetails
         '

@@ -53,6 +53,7 @@ Partial Class frmAddNewOutlet
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.pnlBorderLeft.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -376,12 +377,27 @@ Partial Class frmAddNewOutlet
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Add New Outlet"
         '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.CadetBlue
+        Me.btnClose.FlatAppearance.BorderSize = 0
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.Location = New System.Drawing.Point(348, 6)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(25, 25)
+        Me.btnClose.TabIndex = 52
+        Me.btnClose.Text = "X"
+        Me.btnClose.UseVisualStyleBackColor = False
+        '
         'frmAddNewOutlet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CadetBlue
         Me.ClientSize = New System.Drawing.Size(379, 509)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlBorderBottom)
@@ -429,4 +445,5 @@ Partial Class frmAddNewOutlet
     Friend WithEvents btnConfirm As Button
     Friend WithEvents txtOutletRemarks As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents btnClose As Button
 End Class

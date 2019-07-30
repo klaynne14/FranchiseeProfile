@@ -1,6 +1,9 @@
 Imports System.Data.SqlClient
 Imports System.IO
 
+'FranchiseProfiling
+'FranchiseMasterFile
+
 Module modProfiling
     Public Class clsOutletLocation
 
@@ -50,7 +53,7 @@ Module modProfiling
         Dim list As New List(Of clsFranchisee)
         Dim franchiseelist As clsFranchisee
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand("SELECT unFranchisee, FPFName,FPFLName,FPFMName FROM Franchisee", oConnection)
@@ -80,7 +83,7 @@ Module modProfiling
                                     FPFAddress1, FPFAddress2, FPFTinNumber, FPFDateOfBirth, FPFAge, FPFGender, FPFCivilStatus, FPFNationality, FPFReligion,
                                     FPFOccupation, FPFMobileNum1, FPFMobileNum2, FPFTelNum1, FPFTelNum2, FPFFaxNum, FPFEmailAdd1, FPFEmailAdd2
                                     FROM Franchisee Order by idFranchisee"
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(fsQuery, oConnection)
@@ -418,7 +421,7 @@ Module modProfiling
                                     FPFTelNum2=@FPFTelNum2, FPFFaxNum=@FPFFaxNum, FPFEmailAdd1=@FPFEmailAdd1, FPFEmailAdd2=@FPFEmailAdd2
                                     WHERE unFranchisee = " & Val(unF)
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(uQuery, oConnection)
@@ -467,7 +470,7 @@ Module modProfiling
 
         Dim oQuery As String = "SELECT unOutlet FROM Outlet"
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(oQuery, oConnection)
@@ -511,7 +514,7 @@ Module modProfiling
         Dim latestOId As Integer
         Dim oQuery As String = "SELECT TOP 1 unOutlet FROM Outlet ORDER BY unOutlet DESC"
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(oQuery, oConnection)
@@ -533,7 +536,7 @@ Module modProfiling
 
         Dim oQuery As String = "DELETE FROM Outlet WHERE unOutlet=" & Val(unO)
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(oQuery, oConnection)
@@ -557,7 +560,7 @@ Module modProfiling
                                  JOIN Location On Location.unOutlet = Outlet.unOutlet
                                  Where Outlet.unFranchisee = @unFranchisee
                                  ORDER BY unOutlet DESC"
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -649,7 +652,7 @@ Module modProfiling
                                  JOIN Franchisee On Outlet.unFranchisee = Franchisee.unFranchisee 
                                  JOIN Location On Location.unOutlet = Outlet.unOutlet
                                  Where Outlet.unOutlet=" & Val(unO)
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -685,7 +688,7 @@ Module modProfiling
                                 Set FPOBusinessUnit = @FPOBusinessUnit
                                 where unOutlet = " & Val(unO)
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
 
@@ -721,8 +724,8 @@ Module modProfiling
             lRelocation = frmUpdateOutletDetails.txtRelocationAddress.Text
         End If
 
-        'Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
 
@@ -781,6 +784,27 @@ Module modProfiling
             MsgBox("No selected item!")
         End Try
     End Function
+
+    Public Function outletRemarks(ByVal unO As Integer) As Boolean
+        '
+        Dim uQuery As String = "Update Outlet 
+                                Set FPORemarks = @FPORemarks 
+                                Where unOutlet=" & Val(unO)
+
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+            Try
+                oConnection.Open()
+                Using oCommand As New SqlCommand(uQuery, oConnection)
+                    oCommand.Parameters.AddWithValue("@FPORemarks", frmAddNewOutlet.txtOutletRemarks.Text)
+                    oCommand.ExecuteNonQuery()
+                    Return True
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("@addOutlet()" + ex.Message)
+            End Try
+        End Using
+        Return False
+    End Function
 #End Region
 
 #Region "Contract"
@@ -792,7 +816,7 @@ Module modProfiling
                                 INNER JOIN Outlet On Contract.unOutlet = Outlet.unOutlet where Outlet.unOutlet = @unOutlet
                                 ORDER BY unContract desc"
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(sQuery, oConnection)
@@ -843,7 +867,7 @@ Module modProfiling
                                 FROM Contract  
                                 WHERE unContract =" & Val(unC)
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -890,7 +914,7 @@ Module modProfiling
                                 WHERE unContract =" & Val(unC)
         'Dim listContract As List(Of clsContract) = modProfiling.getConList(unC)
         'Dim getContract As New clsContract
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(cQuery, oConnection)
@@ -920,7 +944,7 @@ Module modProfiling
                                 FROM Package
                                 INNER JOIN Outlet On Package.unOutlet = Outlet.unOutlet where Outlet.unOutlet = @unOutlet"
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -997,7 +1021,7 @@ Module modProfiling
                                 FPPPackageRemark = @FPPPackageRemark, FPPDepositRemark = @FPPDepositRemark
                                 where unOutlet = " & Val(unO)
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
 
@@ -1060,7 +1084,7 @@ Module modProfiling
     Public Function displayImage(ByVal focItem As Integer, ByVal pb As PictureBox)
         Dim sQuery As String = "Select FPFImage from Franchisee where unFranchisee=" & Val(focItem)
 
-        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCommand As New SqlCommand(sQuery, oConnection)
@@ -1086,7 +1110,7 @@ Module modProfiling
                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
                                 Where Outlet.unFranchisee = " & Val(unF)
 
-        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -1112,7 +1136,7 @@ Module modProfiling
                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
                                 Where Location.FPLStatus = 'Open' AND Outlet.unFranchisee =" & Val(unF)
 
-        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -1135,7 +1159,7 @@ Module modProfiling
                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
                                 Where Location.FPLStatusClosed = 'Temporary' AND Outlet.unFranchisee =" & Val(unF)
 
-        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -1159,7 +1183,7 @@ Module modProfiling
                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
                                 Where Location.FPLStatusClosed = 'Permanent' AND Outlet.unFranchisee =" & Val(unF)
 
-        Using oConnection As New SqlConnection(getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
                 Using oCom As New SqlCommand(sQuery, oConnection)
@@ -1203,7 +1227,7 @@ Module modProfiling
                                 JOIN Location On Location.unOutlet = Outlet.unOutlet
                                 Where Outlet.unFranchisee = " & Val(unF)
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 oConnection.Open()
 

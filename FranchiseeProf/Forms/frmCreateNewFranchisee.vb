@@ -3,7 +3,7 @@
 Public Class frmCreateNewFranchisee
     Public Function browseImage()
 
-        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseProfiling"))
+        Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
             Try
                 Dim OFD As FileDialog = New OpenFileDialog()
 
@@ -12,7 +12,9 @@ Public Class frmCreateNewFranchisee
                 If OFD.ShowDialog() = DialogResult.OK Then
                     Dim imgpath As String = OFD.FileName
                     pbFranchisee.ImageLocation = imgpath
-
+                    'If imgpath.Length > 500000 Then
+                    '    MsgBox("FIle is too big")
+                    'End If
                 End If
 
                 OFD = Nothing

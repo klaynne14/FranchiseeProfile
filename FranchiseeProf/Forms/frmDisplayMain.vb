@@ -62,6 +62,9 @@ Public Class pnlMain
 
     Private Sub BtnViewOutlet_Click(sender As Object, e As EventArgs) Handles btnViewOutlet.Click
         frmOutletDetails.ShowDialog()
+        Dim olR As clsOutlet = New clsOutlet
+        'frmOutletDetails.lblOutletRemarks.Text = olR.FPORemarks
+
         'modProfiling.getOId()
     End Sub
 

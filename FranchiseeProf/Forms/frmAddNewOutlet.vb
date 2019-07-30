@@ -43,15 +43,6 @@ Public Class frmAddNewOutlet
     End Sub
 #End Region
 
-
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs)
-        Dim unO As Integer = lblOutletID.Text
-        modProfiling.deleteLatestUn(unO)
-        'modProfiling.loadOutletLocation(unF)
-        pnlMain.cbBusinessUnit.Text = " "
-        Me.Close()
-    End Sub
-
     Private Sub frmAddNewOutlet_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.CenterToParent()
         'modProfiling.getOId(lblOutletID)
@@ -79,6 +70,11 @@ Public Class frmAddNewOutlet
         Dim unF As Integer = pnlMain.lblIDFranchisee.Text
         Dim unO As Integer = lblOutletID.Text
 
+        modProfiling.outletRemarks(unO)
+
+        Dim olR As clsOutlet = New clsOutlet
+        olR.FPORemarks = txtOutletRemarks.Text
+
         Dim al As clsLocation = New clsLocation
         al.FPLLocationName = txtLocationName.Text
         al.FPLCurrentAddress = txtOutletAddress.Text
@@ -97,6 +93,20 @@ Public Class frmAddNewOutlet
         ap.FPPDepositRemark = txtDepositRemark.Text
         ap.unOutlet = unO
 
+        'Dim olR As clsOutlet = New clsOutlet
+        'olR.FPORemarks = txtOutletRemarks.Text
+        'Dim uQuery As String = "Update Outlet Set FPORemarks=@FPORemarks Where unOutlet=" & Val(unO)
+        'Using oConnection As New SqlConnection(modGeneral.getConnection("FranchiseMasterFile"))
+        '    Try
+        '        oConnection.Open()
+        '        Using oCommand As New SqlCommand(uQuery, oConnection)
+        '            oCommand.Parameters.AddWithValue("@FPORemarks", olR.FPORemarks)
+        '            oCommand.ExecuteNonQuery()
+        '        End Using
+        '    Catch ex As Exception
+        '        MessageBox.Show("@addOutlet()" + ex.Message)
+        '    End Try
+        'End Using
         If al.addLocation() And ap.addPackage() Then
             MsgBox("Outlet added successfully")
             pnlMain.cbBusinessUnit.Text = " "
@@ -105,5 +115,13 @@ Public Class frmAddNewOutlet
 
             Me.Close()
         End If
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Dim unO As Integer = lblOutletID.Text
+        modProfiling.deleteLatestUn(unO)
+        'modProfiling.loadOutletLocation(unF)
+        pnlMain.cbBusinessUnit.Text = " "
+        Me.Close()
     End Sub
 End Class
